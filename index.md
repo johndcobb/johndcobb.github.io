@@ -9,19 +9,23 @@ class: home
 <div class="columns" markdown="1">
 
 <div class="intro" markdown="1">
-I'm a PhD candidate in the [Paul G. Allen School](https://www.cs.washington.edu/) at the [University of Washington](https://www.washington.edu/). I work with [Jeff Heer](https://homes.cs.washington.edu/~jheer/) and [Bill Howe](https://homes.cs.washington.edu/~billhowe/) in the [Interactive Data Lab](http://idl.cs.washington.edu/) and the [Database Group](https://db.cs.washington.edu/).
+I'm a research scientist at [Apple](https://www.apple.com/) , working on data visualization and interactive systems for artificial intelligence. In 2020, I will start as an assistant professor at [Carnegie Mellon University](https://hcii.cmu.edu/) where I co-started the [Data Interaction Group](https://dig.cmu.edu/).
 
-I research scalable interactive systems for visualization and analysis. My systems have won awards at premier academic venues and are used by the [Python](https://altair-viz.github.io) and [JavaScript](https://vega.github.io/vega-lite/) data science communities.
+I received my PhD from the [Paul G. Allen School](https://www.cs.washington.edu/) at the [University of Washington](https://www.washington.edu/), where I worked with [Jeff Heer](https://homes.cs.washington.edu/~jheer/) and [Bill Howe](https://homes.cs.washington.edu/~billhowe/) in the [Interactive Data Lab](http://idl.cs.washington.edu/) and the [Database Group](https://db.cs.washington.edu/).
 
-<span style="color:firebrick; font-weight: 500; font-size: 0.9em;">I am on the tenure faculty market this year. To learn more about my research, please read my <a href="{{ '/assets/dominik_research_statement.pdf' | absolute_url }}" style="color:firebrick; text-decoration: underline;">research statement</a>.</span>
+I research scalable interactive systems for visualization and analysis. My systems have [won](https://vega.github.io/vega-lite/) [awards](https://uwdata.github.io/draco/) at premier academic venues and are used by the [Python](https://altair-viz.github.io) and [JavaScript](https://vega.github.io/vega-lite/) data science communities.
 </div>
 
 <div class="me" markdown="1">
-<img src="{{ '/images/dominik_berlin.jpg' | absolute_url }}" alt="Image of me">
+<picture>
+  <source srcset='/images/dominik_berlin.webp' type='image/webp' />
+  <img
+    src='/images/dominik_berlin.jpg'
+    alt='Dominik Moritz'/>
+</picture>
 
 {:.no-list}
 * <a href="mailto:{{ site.email }}">{{ site.email }}</a>
-* [Paul G. Allen Center](http://www.washington.edu/maps/?q=cse) Room [486](https://norfolk.cs.washington.edu/directory/index.php?prev_floor=4&show_room=CSE486)
 </div>
 
 </div>
@@ -69,7 +73,7 @@ During my first year at UW, I received support from the [Fulbright program](http
 ## News
 
 <ul>
-{% for news in site.data.news %}
+{% for news in site.data.news limit:10 %}
   {% include news.html news=news %}
 {% endfor %}
 </ul>
@@ -86,7 +90,7 @@ During my first year at UW, I received support from the [Fulbright program](http
   {% include travel.html travel=travel %}
 {% endfor %}
 {% assign sorted_travel = site.data.travel | where_exp:'item','item.start' | sort: 'start' | reverse %}
-{% for travel in sorted_travel %}
+{% for travel in sorted_travel limit:12 %}
   {% include travel.html travel=travel %}
 {% endfor %}
 </tbody>

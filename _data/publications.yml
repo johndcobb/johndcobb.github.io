@@ -1,3 +1,68 @@
+- id: benchmarking
+  title: "Database Benchmarking for SupportingReal-Time Interactive Querying of Large Data"
+  year: 2020
+  doi: 10.1145/3318464.3389732
+  authors:
+    - Leilani Battle
+    - Philipp Eichmann
+    - Marco Angelini
+    - Tiziana Catarci
+    - Giuseppe Santucci
+    - Yukun Zheng
+    - Carsten Binnig
+    - Jean-Daniel Fekete
+    - Dominik Moritz
+  venue: SIGMOD
+  venue_location: Portland
+  venue_tags:
+    - SIGMOD
+  type:
+    - Conference
+  pdf: /papers/2020-DatabaseBenchmarking-SIGMOD.pdf
+- id: dziban
+  title: "Dziban: Balancing Agency & Automation in Visualization Design via Anchored Recommendations"
+  authors:
+    - Halden Lin
+    - Dominik Moritz
+    - Jeffrey Heer
+  year: 2020
+  doi: 10.1145/3313831.3376880
+  venue: CHI
+  venue_tags:
+    - CHI
+  venue_url: https://chi2020.acm.org/
+  pdf: /papers/2020-Dziban-CHI.pdf
+  type:
+    - Conference
+- id: spacegraphcats
+  year: 2020
+  pdf: https://www.biorxiv.org/content/10.1101/462788v3.full.pdf
+  title: "Exploring neighborhoods in large metagenome assembly graphs reveals hidden sequence diversity"
+  authors:
+    - C. Titus Brown
+    - Dominik Moritz
+    - Michael O'Brien
+    - Felix Reidl
+    - Taylor Reiter
+    - Blair Sullivan
+  doi: https://doi.org/10.1101/462788
+  short_doi: cwrw
+
+- id: thesis
+  title: "Interactive Systems for Scalable Visualization and Analysis"
+  authors:
+    - Dominik Moritz
+  year: 2019
+  description: PhD thesis.
+  pdf: /assets/dominik_thesis.pdf
+  tags:
+    - Visualization
+    - Big Data
+    - Vega-Lite
+    - Machine Learning
+    - Recommendation
+    - Data Science
+
 - id: istc-chapter
   title: "Advances in Visualization of Big Data"
   year: 2019
@@ -18,7 +83,8 @@
 - id: falcon
   title: "Falcon: Balancing Interactive Latency and Resolution Sensitivity for Scalable Linked Visualizations"
   year: 2019
-  doi: 10.1145/3290605
+  doi: 10.1145/3290605.3300924
+  short_doi: c5cv
   osf: szpqm
   pdf: /papers/2019-Falcon-CHI.pdf
   authors:
@@ -411,6 +477,8 @@
   venue_url: http://sigmod2016.org/
   link: https://uwescience.github.io/sqlshare/
   pdf: https://uwescience.github.io/sqlshare/pdfs/sqlshare_shrainik.pdf
+  doi: 10.1145/2882903.2882957
+  short_doi: 10/c5rw
   awards:
     - Most Reproducible Paper Award
   tweet: Data analysts can use SQL to analyze data; if the system supports complex queries.
