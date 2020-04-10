@@ -4,7 +4,7 @@ title: "Home"
 class: home
 ---
 
-# Hi, I'm Dominik Moritz
+# Hi, I'm John Cobb
 
 <div class="columns" markdown="1">
 
