@@ -36,8 +36,8 @@
 #    - Conference
 #    - Journal
 
-- id:P3HT
-  title: Aggregate Dispersions to Enhance the Intrachain Order in Surfactant-Stabilized Aqueous Colloids of Poly(3-hexylthiophene)
+- id: P3HT
+  title: "Aggregate Dispersions to Enhance the Intrachain Order in Surfactant-Stabilized Aqueous Colloids of Poly(3-hexylthiophene)"
   year: 2019
   authors:
     - McKenna Andrews
@@ -59,7 +59,7 @@
     - Journal
 
 - id: QKdV
-  title: Quarternion-Valued Breather Soliton, Rational, and Periodic QKdV Solutions
+  title: "Quarternion-Valued Breather Soliton, Rational, and Periodic QKdV Solutions"
   year: 2019
   authors:
     - John Cobb
@@ -81,7 +81,7 @@
   
 
 - id: bachelor-thesis
-  title: Quaternion-Valued KdV Solutions
+  title: "Quaternion-Valued KdV Solutions"
   year: 2019
   description: My bachelor thesis.
   authors:
