@@ -23,8 +23,8 @@ I'm a first year graduate student in the mathematics department at the [Universi
 {:.no-list}
 * <a href="mailto:{{ site.email }}">{{ site.email }}</a>
 </div>
-<!-- Try putting stuff here in the future! --> Test
 </div>
+<!-- Try putting stuff here in the future! --> 
 
 <!---
 ## Featured Projects
