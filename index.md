@@ -24,7 +24,7 @@ I'm a first year graduate student in the mathematics department at the [Universi
 * <a href="mailto:{{ site.email }}">{{ site.email }}</a>
 </div>
 </div>
-<!-- Try putting stuff here in the future! --> 
+Contact: 
 
 <!---
 ## Featured Projects
