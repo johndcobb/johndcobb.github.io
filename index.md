@@ -18,10 +18,10 @@ I research scalable interactive systems for visualization and analysis. My syste
 
 <div class="me" markdown="1">
 <picture>
-  <source srcset='/images/dominik_berlin.webp' type='image/webp' />
+  <source srcset='/images/john_purple.webp' type='image/webp' />
   <img
-    src='/images/dominik_berlin.jpg'
-    alt='Dominik Moritz'/>
+    src='/images/john_purple.jpg'
+    alt='John Cobb'/>
 </picture>
 
 {:.no-list}
