@@ -9,11 +9,7 @@ class: home
 <div class="columns" markdown="1">
 
 <div class="intro" markdown="1">
-I'm a research scientist at [Apple](https://www.apple.com/) , working on data visualization and interactive systems for artificial intelligence. In 2020, I will start as an assistant professor at [Carnegie Mellon University](https://hcii.cmu.edu/) where I co-started the [Data Interaction Group](https://dig.cmu.edu/).
-
-I received my PhD from the [Paul G. Allen School](https://www.cs.washington.edu/) at the [University of Washington](https://www.washington.edu/), where I worked with [Jeff Heer](https://homes.cs.washington.edu/~jheer/) and [Bill Howe](https://homes.cs.washington.edu/~billhowe/) in the [Interactive Data Lab](http://idl.cs.washington.edu/) and the [Database Group](https://db.cs.washington.edu/).
-
-I research scalable interactive systems for visualization and analysis. My systems have [won](https://vega.github.io/vega-lite/) [awards](https://uwdata.github.io/draco/) at premier academic venues and are used by the [Python](https://altair-viz.github.io) and [JavaScript](https://vega.github.io/vega-lite/) data science communities.
+I'm a first year graduate student in the mathematics department at the [University of Wisconsin-Madison](https://www.math.wisc.edu/). I am currently supported by a [DoD NDSEG Fellowship](https://ndseg.sysplus.com/NDSEG/About/). My current research interests lie somewhere in the intersection of homological algebra and algebraic geometry. 
 </div>
 
 <div class="me" markdown="1">
@@ -30,7 +26,7 @@ I research scalable interactive systems for visualization and analysis. My syste
 
 </div>
 
-During my first year at UW, I received support from the [Fulbright program](https://en.wikipedia.org/wiki/Fulbright_Program). In 2013, I received my B.S. from [Hasso Plattner Institute](https://hpi.de/). I am a scholar of the [German National Academic Foundation](http://www.studienstiftung.de/). I have worked with the [Open Knowledge Foundation](http://www.okfn.org), [Google Research](https://ai.google/research/), and [Microsoft Research](https://www.microsoft.com/en-us/research/group/vibe/). Details are in my [CV]({{ "/cv/" | relative_url }}).
+In 2019, I received my B.S. from the [Honors College of Charleston](https://honors.cofc.edu/), where I was advised by [Alex Kasman](http://kasmana.people.cofc.edu/) and [Amy Langville](http://langvillea.people.cofc.edu/). Details are in my [CV]({{ "/cv/" | relative_url }}).
 
 <!---
 ## Featured Projects
