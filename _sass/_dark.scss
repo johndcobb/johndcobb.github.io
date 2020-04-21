@@ -1,4 +1,4 @@
-@media (prefers-color-scheme: dark) || (prefers-color-scheme: no-preference) {
+@media (prefers-color-scheme: dark || no-preference) {
   body:not(.cv) {
     background-color: #333;
     color: #fff;
