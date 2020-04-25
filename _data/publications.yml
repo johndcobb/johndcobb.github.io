@@ -50,9 +50,8 @@
   venue_tags:
     - PML
   venue_url: https://www.journals.elsevier.com/journal-of-molecular-liquids
-  doi: https://doi.org/10.1016/j.molliq.2019.01.031
+  doi: 10.1016/j.molliq.2019.01.031
   pdf: /papers/P3HTpaper.pdf
-  link: https://www.sciencedirect.com/science/article/abs/pii/S0167732218355181#!
   tags:
     - Physical Chemistry
   type:
@@ -69,9 +68,8 @@
   venue: arXiv preprint
   venue-tags:
      -arXiv
-  doi: 1911.04861
   pdf: https://arxiv.org/pdf/1911.04861.pdf
-  link: https://arxiv.org/abs/1911.04861
+  arxiv: "1911.04861"
   highlight: true
   tags:
     - Integrable Systems
@@ -79,8 +77,6 @@
   type:
     - Preprint
   
-  
-
 - id: bachelor-thesis
   title: "Quaternion-Valued KdV Solutions"
   year: 2019
