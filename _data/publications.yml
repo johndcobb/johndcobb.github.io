@@ -48,11 +48,12 @@
     - David Boucher
   venue: Journal of Molecular Liquids
   venue_tags:
-    - PML
+    - J. Mol. Liq.
   venue_url: https://www.journals.elsevier.com/journal-of-molecular-liquids
   doi: 10.1016/j.molliq.2019.01.031
   short_doi: 10/dsxc
   pdf: /papers/P3HTpaper.pdf
+  highlight: true
   tags:
     - Physical Chemistry
   type:
@@ -60,15 +61,18 @@
 
 - id: QKdV
   title: "Quarternion-Valued Breather Soliton, Rational, and Periodic QKdV Solutions"
-  year: 2019
+  year: 2020
   authors:
     - John Cobb
     - Alex Kasman
     - Albert Serna
     - Monique Sparkman
-  venue: arXiv preprint
+  venue: Journal of Nonlinear Mathematical Physics
+  venue_url: https://www.tandfonline.com/toc/tnmp20/current
+  doi: 10.1080/14029251.2020.1757234
+  short_doi: 10/dtqz
   venue-tags:
-     -arXiv
+     - J. Nonlinear Math. Phys.
   pdf: https://arxiv.org/pdf/1911.04861.pdf
   arxiv: "1911.04861"
   highlight: true
