@@ -36,6 +36,29 @@
 #    - Conference
 #    - Journal
 
+- id: QKdV
+  title: "Quarternion-Valued Breather Soliton, Rational, and Periodic QKdV Solutions"
+  year: 2020
+  authors:
+    - John Cobb
+    - Alex Kasman
+    - Albert Serna
+    - Monique Sparkman
+  venue: Journal of Nonlinear Mathematical Physics
+  venue_url: https://www.tandfonline.com/toc/tnmp20/current
+  doi: 10.1080/14029251.2020.1757234
+  short_doi: 10/dtqz
+  venue-tags:
+     - J. Nonlinear Math. Phys.
+  pdf: https://arxiv.org/pdf/1911.04861.pdf
+  arxiv: "1911.04861"
+  highlight: true
+  tags:
+    - Integrable Systems
+    - Mathematical Physics
+  type:
+    - Journal
+    
 - id: P3HT
   title: "Aggregate Dispersions to Enhance the Intrachain Order in Surfactant-Stabilized Aqueous Colloids of Poly(3-hexylthiophene)"
   year: 2019
@@ -59,28 +82,6 @@
   type:
     - Journal
 
-- id: QKdV
-  title: "Quarternion-Valued Breather Soliton, Rational, and Periodic QKdV Solutions"
-  year: 2020
-  authors:
-    - John Cobb
-    - Alex Kasman
-    - Albert Serna
-    - Monique Sparkman
-  venue: Journal of Nonlinear Mathematical Physics
-  venue_url: https://www.tandfonline.com/toc/tnmp20/current
-  doi: 10.1080/14029251.2020.1757234
-  short_doi: 10/dtqz
-  venue-tags:
-     - J. Nonlinear Math. Phys.
-  pdf: https://arxiv.org/pdf/1911.04861.pdf
-  arxiv: "1911.04861"
-  highlight: true
-  tags:
-    - Integrable Systems
-    - Mathematical Physics
-  type:
-    - Preprint
   
 - id: bachelor-thesis
   title: "Quaternion-Valued KdV Solutions"
