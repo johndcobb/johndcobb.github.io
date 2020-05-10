@@ -12,8 +12,7 @@ title: CV
     <meta name="application-name" content="{{ site.title }}">
     <link rel="shortcut icon" href="{{ '/favicon.ico' | relative_url }}"/>
     <link rel="icon" type="image/jpeg" href="{{ '/favicon.png' | relative_url }}" sizes="250x250" />
-
-    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;900&display=swap&display=swap|Roboto:wght@100;400&display=swap" rel="stylesheet">
     <link href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" rel="stylesheet">
 
     {% seo %}
@@ -21,7 +20,7 @@ title: CV
     <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}">
     <style>
       html, body {
-        font-family: Merriweather, Georgia, serif;
+        font-family: 'Source Sans Pro', Georgia, serif;
         font-size: 12px;
         background-color: white;
       }
@@ -39,21 +38,26 @@ title: CV
         font-weight: 500;
         border: none;
         color: #333;
-        font-family: Fira Sans, Halvetica Neue, sans-serif;
+        font-family: 'Roboto', Helvetica Neue, sans-serif;
         page-break-after: avoid;
       }
 
-      h1, h2, .pub-type {
-        color: #b00;
-        margin: 1em 0 .2em 0;
+      h1 {
+        text-align: center;
+        font-size: 32pt;
+        font-weight: 100;
+        margin: 0;
       }
 
-      h1 {
-        font-size: 2.7em;
+      h2, .pub-type {
+        color: #333;
+        margin: 0.5em 0 0.2em 0;
       }
 
       h2 {
-        font-size: 2.3em;
+        font-family: 'Source Sans Pro', Georgia, serif;
+        font-size: 2em;
+        font-weight: 900;
       }
 
       h2 a {
@@ -67,14 +71,18 @@ title: CV
       }
 
       .header-columns {
-        display: flex;
-        flex-direction: row;
+        display: block;
+        margin-left: 0 !important;
       }
       .header-columns > div:first-child {
         flex: 1;
+        text-align: center;
+        font-variant: small-caps;
+        font-size: 13px;
       }
       .header-columns > div:last-child {
-        width: 200px;
+        text-align: center;
+        justify-content: space-between;
       }
 
       h3 {
@@ -86,8 +94,18 @@ title: CV
 
       h4 {
         margin: 0;
-        font-size: 1.2em;
+        font-size: 1.1em;
         font-weight: 500;
+      }
+
+      hr {
+        display: block;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        margin-left: auto;
+        margin-right: auto;
+        border-style: solid;
+        border-width: 1px;
       }
 
       .pub-type {
@@ -97,10 +115,6 @@ title: CV
 
       .cv-pub h4 {
         font-size: 1.2em;
-      }
-
-      .right-align {
-        text-align: right;
       }
 
       .cv-pub {
@@ -127,7 +141,7 @@ title: CV
       }
 
       .container > * {
-        margin-left: 105px;
+        margin-left: 80px;
       }
 
       article {
@@ -135,14 +149,32 @@ title: CV
       }
 
       article > * {
-        margin-left: 105px;
+        margin-left: 80px;
+      }
+
+      .line {
+        display: inline-block;
+        color: #666;
+        margin: 0.5em 0 0.5em 0.5em;
+        border-style: solid;
+        border-width: 1px;
+        width: 100%;
+      }
+
+      .line-container {
+        width: 100%;
+        margin-left: 0 !important;
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+        white-space: nowrap;
       }
 
       .ref-container {
         margin-left: 0;
         float: left;
         text-align: right;
-        width: 85px;
+        width: 60px;
       }
 
       .date-container {
@@ -164,7 +196,7 @@ title: CV
 
       .date-container .date, .date-container time {
         display: block;
-        width: 85px;
+        width: 60px;
         text-align: right;
         padding-right: 20px;
         flex-shrink: 0;
@@ -174,6 +206,7 @@ title: CV
         padding-left: 10px;
         color: #828282;
         font-size: .9em;
+        font-style: italic;
       }
 
       /* References */
@@ -241,39 +274,28 @@ title: CV
   </head>
   <body class="cv">
     <div class="no-print back">
-      ◄ <a href="{{ absolute_url }}/">Back to John's Homepage</a>
+      <a href="{{ absolute_url }}/"> <i class="fas fa-arrow-left"></i> Back to John's Homepage</a>
     </div>
-
+    <small class="live-link">Last updated in <time datetime="{{ site.time }}">{{ site.time | date: '%B %Y'}}</time>. Get the latest version at <a href="johndcobb.github.io/cv">https://johndcobb.github.io/cv</a>.</small>
     <div class="page-content">
       <section class="container">
-<h1>John Cobb</h1>
 
-<small class="live-link">Last updated in <time datetime="{{ site.time }}">{{ site.time | date: '%B %Y'}}</time>. Get the latest version at <a href="https://www.domoritz.de/cv">www.domoritz.de/cv</a>.</small>
 
-<div class="header-columns">
+<span><h1>John D. Cobb</h1></span>
+<span class="header-columns">
+  <div> PhD Student at University of Wisconsin-Madison </div> 
   <div>
-    <p>
-      PhD Student at UW Madison<br/>
-    </p>
-  </div>
-  <div>
-    <p class="right-align">
-      <a href="{{ absolute_url }}/">https://johndcobb.github.io/</a><br/>
-      <a href="mailto:jcobb2@math.wisc.edu">jcobb2@math.wisc.edu</a><br/>
-      <a href="https://twitter.com/domoritz">@domoritz</a>
-    </p>
-  </div>
+      <a href="mailto:jcobb2@math.wisc.edu" style="margin-left:0.6em"><i class="fas fa-envelope"></i> jcobb2@math.wisc.edu</a> 
+      <a href="{{ absolute_url }}/"><i class="fas fa-home" style="margin-left:0.6em"></i> https://www.math.wisc.edu/~jcobb2</a>
+      <a href="https://github.com/johndcobb"><i class="fab fa-github" style="margin-left: 0.6em"></i> johndcobb</a>
+  </div> 
+</span>
+
+
+  <div class="line-container">
+  <h2>Positions</h2> 
+  <span class="line"></span>
 </div>
-
-
-<h2>Research Area</h2>
-
-<p>
-To enhance people’s ability to understand and communicate large and complex data, I develop methods that richly integrate the capabilities of both people and machines. I combine methods from <strong>visualization</strong>, <strong>data management</strong>, <strong>programming languages</strong>, and <strong>human-computer interaction</strong> to enable effective methods for data analysis and communication. My systems have won awards at premier academic venues, and are used by journalists, data enthusiasts, developers, educators, and the data science community.
-</p>
-
-
-<h2>Positions</h2>
 
 {% for pos in site.data.positions %}
 <article>
@@ -282,7 +304,7 @@ To enhance people’s ability to understand and communicate large and complex da
     <h3>{{ pos.title }}{% if pos.company %} at {{pos.company}}{% endif %}</h3>
     <span class="right">{{ pos.location }}</span>
   </div>
-  <!-- <p>
+  <p>
     {% if pos.mentors %}
       Mentor{% if pos.mentors.size > 1 %}s{% endif %}: {% for mentor in pos.mentors %}
         {% include person person=mentor %}{% unless forloop.last %}, {% endunless %}
@@ -292,18 +314,24 @@ To enhance people’s ability to understand and communicate large and complex da
     {% if pos.skills %}
     <small class="muted">[{% for skill in pos.skills %}{{ skill }}{% unless forloop.last %}, {% endunless %}{% endfor %}]</small>
     {% endif %}
-  </p> -->
+  </p>
 </article>
 {% endfor %}
 
 
-<h2>Education</h2>
+
+<div class="line-container">
+  <h2>Education</h2> 
+  <span class="line"></span>
+</div>
 
 {% for ed in site.data.education %}
 <article>
   <div class="date-container">
     <span class="date">{{ ed.years }}</span>
-    <h3>{{ ed.degree }}, {{ ed.university }}</h3>
+    <h3>{{ ed.university }}<br>
+    <span style="font-variant:small-caps">{{ ed.degree }}</span>
+    </h3>
     <span class="right">{{ ed.location }}</span>
   </div>
   <p>
@@ -315,7 +343,10 @@ To enhance people’s ability to understand and communicate large and complex da
 {% endfor %}
 
 
-<h2>Notable Awards</h2>
+<div class="line-container">
+  <h2>Honors & Awards</h2>
+  <span class="line"></span>
+</div>
 
 {% for award in site.data.awards %}
 <article>
@@ -331,9 +362,12 @@ To enhance people’s ability to understand and communicate large and complex da
 {% endfor %}
 
 
-<h2>Publications <a href="{{ '/publications/' | absolute_url }}">[Interactive Version]</a></h2>
+<div class="line-container">
+  <h2>Publications <a href="{{ '/publications/' | absolute_url }}">[Interactive Version]</a></h2>
+  <span class="line"></span>
+</div>
 
-{% assign types = "Conference|Journal|Book Chapter|Demo|Workshop|Thesis" | split: "|" %}
+{% assign types = "Journal|Thesis" | split: "|" %}
 {% for type in types %}
   {% assign counter = 1 %}
   {% for pub in site.data.publications %}
@@ -362,24 +396,12 @@ To enhance people’s ability to understand and communicate large and complex da
   {% endfor %}
 {% endfor %}
 
-<h2>Patents</h2>
 
-{% for patent in site.data.patents %}
-  <div class="date-container">
-    <span class="date">{{ patent.date | date: "%b %Y" }}</span>
-    <h3><a href="{{ patent.url }}">{{ patent.title }}</a></h3>
-  </div>
-  <div class="patent">
-    <p>
-      {% for author in patent.authors %}
-        {% include person person=author %}{% unless forloop.last %}, {% endunless %}
-      {% endfor %}
-    </p>
-  </div>
-{% endfor %}
+<div class="line-container">
+  <h2>Talks  <a href="{{ '/talks/' | absolute_url }}">[Interactive Version]</a></h2>
+  <span class="line"></span>
+</div>
 
-
-<h2>Talks  <a href="{{ '/talks/' | absolute_url }}">[Interactive Version]</a></h2>
 
 {% assign talktitles = site.data.talks | group_by:"title" %}
 {% for title in talktitles %}
@@ -397,7 +419,10 @@ To enhance people’s ability to understand and communicate large and complex da
 {% endfor %}
 
 
-<h2>Teaching Experience</h2>
+<div class="line-container">
+  <h2>Teaching Experience</h2>
+  <span class="line"></span>
+</div>
 
 {% for teach in site.data.teaching %}
 <article>
@@ -421,94 +446,26 @@ To enhance people’s ability to understand and communicate large and complex da
 {% endfor %}
 
 
-<h2>Mentoring Experience</h2>
+<div class="line-container">
+  <h2>Service</h2>
+  <span class="line"></span>
+</div>
 
-{% for mentor in site.data.mentoring %}
+{% for service in site.data.service %}
+<article>
   <div class="date-container">
-    <span class="date">{{mentor.year}}</span>
-    <h3>{{ mentor.title }}</h3>
-    <span class="right">{{ mentor.location }}</span>
+    <span class="date">{{service.years}}</span>
+    <h3>{{ service.title }} at {{ service.at }}</h3>
+    <span class="right">{{ service.location }}</span>
   </div>
   <p>
-    {{ mentor.description }}
-    {% if mentor.who %}
-      <br/>
-      <h4>Mentored:</h4>
-      <ul>
-      {% for person in mentor.who %}
-        <li>{% include person person=person %}{% unless forloop.last %}, {% endunless %}</li>
-      {% endfor %}
-      </ul>
-    {% endif %}
+    {{ service.description | markdownify | remove: '<p>' | remove: '</p>' }}
   </p>
-{% endfor %}
-
-
-<h2>Service</h2>
-
-<p>
-  Reviewer for ACM CHI, IEEE VIS, TVCG, EuroVis, PacificVis, Computers & Graphics, HILDA, and DSIA.
-  Program committee for <a href="http://hilda.io/2018/">HILDA 2018</a>, <a href="http://hilda.io/2019/">HILDA 2019</a>, adn <a href="http://hilda.io/2020/">HILDA 2020</a> at SIGMOD.
-  Organizer of <a href="https://www.interactive-analysis.org/year/2018/">DSIA 2018</a> and <a href="https://www.interactive-analysis.org/">DSIA 2019</a> at VIS.
-  Session chair at CHI 2019, VIS 2019.
-  <br/>
-  Member of the <a href="https://frictionlessdata.io/">Frictionless Data</a> working group that aims to submit a specification to the <a href="https://www.ietf.org/">IETF</a>.
-</p>
-
-
-<h2>Relevant Coursework</h2>
-
-{% for institution in site.data.courses %}
-<article>
-  <h3>{{ institution.title }}</h3>
-  <div>
-    <ul>
-      {% for course in institution.courses %}<li>{{ course.title }}{% if course.with %}<span class="muted"> ({% include person person=course.with %})</span>{% endif %}</li>{% endfor %}
-    </ul>
-  </div>
 </article>
 {% endfor %}
 
 
-<h2>References</h2>
 
-<div class="refs">
-  <p>
-    <strong>Jeffrey Heer</strong><br/>
-    Professor of Computer Science & Engineering<br/>
-    <i>University of Washington</i><br/>
-    <a href="mailto:jheer@uw.edu">jheer@uw.edu</a>
-  </p>
-
-  <p>
-    <strong>Bill Howe</strong><br/>
-    Professor at the Information School<br/>
-    <i>University of Washington</i><br/>
-    <a href="mailto:billhowe@uw.edu">billhowe@uw.edu</a>
-  </p>
-
-  <p>
-    <strong>Danyel Fisher</strong><br/>
-    Principal Design Researcher<br/>
-    <i>Honeycomb</i><br/>
-    Former Senior Researcher at Microsoft Research<br/>
-    <a href="mailto:danyel@gmail.com">danyel@gmail.com</a>
-  </p>
-
-  <p>
-    <strong>Tim Kraska</strong><br/>
-    Professor of Electrical Engineering & Computer Science<br/>
-    <i>Massachusetts Institute of Technology</i><br/>
-    <a href="mailto:kraska@mit.edu">kraska@mit.edu</a>
-  </p>
-
-  <p>
-    <strong>Steven Franconeri</strong><br/>
-    Professor of Psychology<br/>
-    <i>Northwestern University</i><br/>
-    <a href="mailto:franconeri@northwestern.edu">franconeri@northwestern.edu</a>
-  </p>
-</div>
 
       </section>
     </div>
