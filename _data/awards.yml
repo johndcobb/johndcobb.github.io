@@ -1,3 +1,8 @@
+- name: NDSEG Fellowship
+  years: 2019
+  sponsor: Air Force Office of Scientific Research
+  sponsor_url: https://www.ndsegfellowships.org/2019-awardees
+  description: The National Defense Science and Engineering Graduate (NDSEG) Fellowship is a highly competitive, portable fellowship that is awarded to U.S. citizens and nationals who intend to pursue a doctoral degree in one of fifteen supported disciplines. NDSEG confers high honors upon its recipients, and allows them to attend whichever U.S. institution they choose. The NDSEG Fellowship lasts for 3 years and pays for full tuition and all mandatory fees; a monthly stipend ($38,400 annually); a $5,000 travel budget over the Fellow’s tenure for professional development; and up to $1,200 a year in health insurance.
 - name: Phi Kappa Phi Fellowship
   years: 2019
   sponsor: Phi Kappa Phi
@@ -12,11 +17,6 @@
   years: 2019
   sponsor: American Chemical Society
   description: The local ACS chapter of the chemistry department of the College of Charleston chooses one graduating senior.
-- name: NDSEG Fellowship
-  years: 2019
-  sponsor: Department of Defense
-  sponsor_url: https://www.ndsegfellowships.org/2019-awardees
-  description: The National Defense Science and Engineering Graduate (NDSEG) Fellowship is a highly competitive, portable fellowship that is awarded to U.S. citizens and nationals who intend to pursue a doctoral degree in one of fifteen supported disciplines. NDSEG confers high honors upon its recipients, and allows them to attend whichever U.S. institution they choose. The NDSEG Fellowship lasts for 3 years and pays for full tuition and all mandatory fees; a monthly stipend ($38,400 annually); a $5,000 travel budget over the Fellow’s tenure for professional development; and up to $1,200 a year in health insurance.
 - name: Alternate Candidate 
   years: 2019
   sponsor: Fulbright

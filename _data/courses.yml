@@ -1,29 +1,30 @@
-- title: University of Washington
+- title: University of Wisconsin-Madison
   courses:
-    - title: Distributed Systems
-      with: Tom Anderson
-    - title: Data Visualization
-      with: Jeffrey Heer
-    - title: Programming Languages
-      with: Zach Tatlock
-    - title: Databases
-      with: Magdalena Balazinska
-    - title: Computer Vision
-      with: Ali Farhadi
-    - title: Machine Learning
-      with: Sham Kakade
-    - title: Statistical Methods for Machine Learning
-      with: Pedro Domingos
-    - title: Constraint Programming
-      with: Alan Borning
-    - title: User Studies
-      with: Mike Ernst
-- title: University of Potsdam
-  courses:
-    - title: Declarative Problem Solving
-    - title: Applied Logic
-    - title: Artificial Intelligence
-- title: Hasso Plattner Institute
+    - title: Algebra II
+      number: MATH 742 
+      with: Daniel Erman
+      when: Spring 2020
+    - title: Homological Algebra
+      number: MATH 750 
+      with: Michael Brown
+      when: Spring 2020
+    - title: Tropical Geometry
+      number: MATH 864
+      with: Daniel Corey
+      when: Spring 2020
+    - title: Algebra I
+      number: MATH 741
+      with: Jordan Ellenberg
+      when: Fall 2019
+    - title: Topology I
+      number: MATH 751
+      with: Shaosai Huang
+      when: Fall 2019
+    - title: Algebraic Geometry I
+      number: MATH 763
+      with: Dima Arinkin
+      when: Fall 2019
+- title: Honors College of Charleston
   courses:
     - title: Databases I and II
     - title: Designing Interactive Systems

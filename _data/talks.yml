@@ -1,10 +1,3 @@
-#- title: "Vega-Lite: A Grammar of Interactive Graphics"
-#  location: OpenVis Conf
-#  city: Boston
-#  url: https://openvisconf.com/#speakers
-#  date: 2017-04-24
-#  slides: /talks/VegaLite-OpenVisConf-2017.pdf
-#  recording: https://www.youtube.com/watch?v=9uaHRWj04D4
 - title: "Gröbner Complex of a Homogenous Ideal of a Polynomial Ring."
   location: UW Madison Graduate Algebraic Geometry Seminar
   city: Madison, WI
@@ -62,5 +55,3 @@
   location: College of Charleston Celebration of Scholars
   city: Charleston, SC
   date: 2017-06-13
-  
-  
