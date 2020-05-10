@@ -3,6 +3,16 @@ layout: page
 title: "Home"
 class: home
 ---
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-145239790-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-145239790-1');
+</script>
+
 
 # Hi, I'm John Cobb
 
@@ -26,22 +36,21 @@ I'm a first year graduate student in the mathematics department at the [Universi
 </div>
 <!--- Put stuff here when ready -->
 
-<!---
-## Featured Projects
+
+## Featured Organization
 
 <div class="featured-projects">
-  {% assign sorted_projects = site.data.projects | sort: 'highlight' %}
+  {% assign sorted_projects = site.data.organization | sort: 'highlight' %}
   {% for project in sorted_projects %}
     {% if project.highlight %}
       {% include project.html project=project %}
     {% endif %}
   {% endfor %}
 </div>
-<a href="{{ "/projects/" | relative_url }}" class="button">
+<a href="{{ "/organization/" | relative_url }}" class="button">
   <i class="fas fa-chevron-circle-right"></i>
-  Show More Projects
+  Show More
 </a>
--->
 
 ## Featured Publications
 
