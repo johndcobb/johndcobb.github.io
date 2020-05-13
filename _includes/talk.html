@@ -8,6 +8,12 @@
     </a>
     {% endif %}
 
+    {% if talk.notes %}
+    <a href="{{ talk.notes }}">
+      <i class="fas fa-file-alt" aria-hidden="true"></i> Notes
+    </a>
+    {% endif %}
+
     {% if talk.recording %}
     <a href="{{ talk.recording }}">
       <i class="fas fa-video" aria-hidden="true"></i> Recording

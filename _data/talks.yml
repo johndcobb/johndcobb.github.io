@@ -2,7 +2,7 @@
   location: UW Madison Graduate Algebraic Geometry Seminar
   city: Madison, WI
   url: https://www.math.wisc.edu/wiki/index.php/Graduate_Algebraic_Geometry_Seminar
-  slides: /talks/GrobnerComplex.pdf
+  notes: /talks/GrobnerComplex.pdf
   date: 2020-05-29
 - title: "Quaternion-Valued Solutions to the KdV"
   location: College of Charleston Mathematics Colloquium
