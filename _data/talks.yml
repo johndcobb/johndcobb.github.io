@@ -25,7 +25,7 @@
   location: College of Charleston Celebration of Scholars
   city: Charleston, SC
   date: 2017-08-25
-  slides: /talks/rankability_poster.pdf
+  poster: /talks/rankability_poster.pdf
 - title: "Investigating Rankability Using Distributed Graph Analytic Frameworks"
   location: Tresata
   city: Charlotte, NC
@@ -46,7 +46,7 @@
   location: CofC Department of Chemistry and Biochemistry Colloquium
   city: Charleston, SC
   date: 2016-08-15
-  slides: /talks/Cobb_Poster.pdf
+  poster: /talks/Cobb_Poster.pdf
 - title: "Growth of P3HT-PCBM Nanostructures at Solvent-Solvent Interfaces"
   location: College of Charleston Celebration of Scholars
   city: Charleston, SC

@@ -4,7 +4,13 @@
   <span class="extra-links">
     {% if talk.slides %}
     <a href="{{ talk.slides }}">
-      <i class="fas fa-window-maximize" aria-hidden="true"></i> Slides
+      <i class="fas fa-layer-group" aria-hidden="true"></i> Slides
+    </a>
+    {% endif %}
+
+    {% if talk.poster %}
+    <a href="{{ talk.slides }}">
+      <i class="fas fa-window-maximize" aria-hidden="true"></i> Poster
     </a>
     {% endif %}
 
