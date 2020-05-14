@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-145239790-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-145239790-1');
+</script>
+
+  {% include head.html %}
+  <body>
+    {% assign current = page.url | downcase | split: '/' %}
+    <header class="page-header">
+      <nav class="container">
+        <a class="site-title">{{ page.title }}</a>
+      </nav>
+    </header>
+
+    <div class="page-content">
+      <div class="container" markdown="1">
+        {{ content }}
+      </div>
+    </div>
+
+    <footer>
+    </footer>
+
+    {% include scripts.html %}
+  </body>
+</html>
