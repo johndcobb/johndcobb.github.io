@@ -11,7 +11,7 @@ class: class
 
 ## Resources
 We will primarily use the book "The Geometry of Schemes" by Eisenbud and Harris, linked below. We will meet twice a week via Zoom. 
-<div class="container" style="text-align: center">
+<div class="button-container" style="text-align: center">
     <a href="https://www.maths.ed.ac.uk/~v1ranick/papers/eisenbudharris.pdf" class="button" style="margin:5px">
     <i class="fas fa-book"></i>
     Book
@@ -21,7 +21,7 @@ We will primarily use the book "The Geometry of Schemes" by Eisenbud and Harris,
     Zoom
     </a>
     <div class="dropdown" style="margin:5px">
-        <a onclick="buttonPress()" id="myDropdownBtn" class="dropdown-button"><i class="far fa-calendar"></i> Add to Calender</a>
+        <a onclick="buttonPress()" id="myDropdownBtn" class="dropdown-button"><i class="far fa-calendar"></i> Add to Calendar</a>
         <div id="myDropdown" class="dropdown-content">
             <a href="/assets/GeometryofSchemes.ics"><i class="fab fa-apple"></i> Apple</a>
             <a href="https://calendar.google.com/event?action=TEMPLATE&tmeid=NGFvM2tyNG1ncmo2NGJucW05bjc2aXUxa2JfMjAyMDA1MjlUMTYwMDAwWiBqY29iYjJAd2lzYy5lZHU&tmsrc=jcobb2%40wisc.edu&scp=ALL"><i class="fab fa-google"></i> Google</a>
@@ -57,6 +57,6 @@ We will meet Tuesdays and Fridays at 11:00am (CST), with the following goals in 
 * **Fridays:** We discuss whatever that week’s reading was. We can have a different person be “in charge” each week. Being in charge just means you direct the meeting that day. I think the focus would be to highlight the theorems and definitions that seem the most relevant, as well as open it up to questions we have in the group. Questions on confusing proofs, intuitions, general motivations, etc. Note that being in charge doesn’t mean you’re expected to know the material better or worse than anyone else. You’re not presenting, just facilitating the discussion. You can have lots of questions too.
 The last part of the meeting would be choosing exercises related to the reading. Ideally everyone has glanced at the exercises and has suggestions on what we might want to do. We can even just do all of them, if we want. Then the person in charge divides up the exercises and assigns them to the group members.
 
-* **Tuesdays:** We discuss the exercises done over the weekend. Each person will have been assigned exercises from the week before. Everyone should still look at as many exercises as they can, but prioritize the ones assigned to them. That way between the group, we’ll have done the whole set. In this meeting, people can ask questions about exercises they thought were difficult, get feedback on solutions, and present solutions they thought were especially interesting. Whoever was in charge on the previous Thursday will run this meeting as well. At the end of the meeting, we’ll decide what the next reading should be, then rotate who’s in charge.
+* **Tuesdays:** We discuss the exercises done over the weekend. Each person will have been assigned exercises from the week before. Everyone should still look at as many exercises as they can, but prioritize the ones assigned to them. That way between the group, we’ll have done the whole set. In this meeting, people can ask questions about exercises they thought were difficult, get feedback on solutions, and present solutions they thought were especially interesting. Whoever was in charge on the previous Friday will run this meeting as well. At the end of the meeting, we’ll decide what the next reading should be, then rotate who’s in charge.
 
 Obviously two meetings every week can be a lot, so no one should feel like they have to attend every single meeting. However, I think it will work best if everyone comes as much as possible.
