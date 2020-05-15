@@ -25,10 +25,12 @@ class: pubs
     <strong>Type</strong>
     <ul></ul>
   </div>
+  <!--
   <div class="facet" id="awards">
     <strong>Award</strong>
     <ul></ul>
   </div>
+  -->
 
 </div>
 
