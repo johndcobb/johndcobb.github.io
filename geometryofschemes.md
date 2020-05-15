@@ -2,7 +2,61 @@
 layout: page
 permalink: organization/geometryofschemes/
 title: Geometry of Schemes
-class: home
+class: class
 ---
 
-Plans are still in development.
+# Geometry of Schemes 
+![GOS](/images/projects/geometryofschemes.jpg "An illustration from Geometry of Schemes")
+
+
+## Resources
+We will primarily use the book "The Geometry of Schemes" by Eisenbud and Harris, linked below. We will meet twice a week via Zoom. 
+<div class="container" style="text-align: center">
+    <a href="https://www.maths.ed.ac.uk/~v1ranick/papers/eisenbudharris.pdf" class="button" style="margin:5px">
+    <i class="fas fa-book"></i>
+    Book
+    </a>
+    <a href="" class="button" style="margin:5px">
+    <i class="fas fa-video"></i>
+    Zoom
+    </a>
+    <div class="dropdown" style="margin:5px">
+        <a onclick="buttonPress()" id="myDropdownBtn" class="dropdown-button"><i class="far fa-calendar"></i> Add to Calender</a>
+        <div id="myDropdown" class="dropdown-content">
+            <a href="/assets/GeometryofSchemes.ics"><i class="fab fa-apple"></i> Apple</a>
+            <a href="https://calendar.google.com/event?action=TEMPLATE&tmeid=NGFvM2tyNG1ncmo2NGJucW05bjc2aXUxa2JfMjAyMDA1MjlUMTYwMDAwWiBqY29iYjJAd2lzYy5lZHU&tmsrc=jcobb2%40wisc.edu&scp=ALL"><i class="fab fa-google"></i> Google</a>
+            <!--
+            <a href=""><i class="fas fa-envelope-square"></i> Outlook</a>
+            -->
+        </div>
+    </div>
+</div>
+
+
+## Schedule 
+
+
+| Date                    | Leader      | Reading | Problems  |
+| :---------              | :---------  | :-----  | :---      |
+| Week 1 (May 29, Jun 2)         | John Cobb | I.1-I.2 Affine Schemes and Schemes in General    | TBA  |
+| Week 2 (Jun 5, Jun 9)   | John Cobb  | I.3-I.4 & II.1 Relative Schemes, The Functor of Points, Reduced Schemes | TBA |
+| Week 3 (Jun 12, Jun 16)  | TBA      |  II.2-II.3 Reduced Schemes over non-alg closed fields, Nonreduced schemes | TBA  |
+| Week 4 (Jun 19, Jun 23) | TBA      |    II.4, III.1 Arithmetic Schemes and Attributes of Morphisms | TBA  |
+| Week 5 (Jun 26, Jun 30) | TBA      |    III.2 Proj of a Graded Ring | TBA |
+| Week 6 (Jul 3, Jul 7)  | TBA      |    III.3 Invariants of Projective Schemes |  TBA |
+| Week 7 (Jul 10, Jul 14)  | TBA      |    (Break? Possible Erman appearance?) | TBA
+| Week 8 (Jul 17, Jul 21) | TBA     |   V.1-V.2 Images and Resultants | TBA
+| Week 9 (Jul 24, Jul 28) | TBA   |   V.3-V.5 Singular Schemes, Dual Curves, Double Point Loci | TBA
+| Week 10 (Jul 31, Aug 4)| TBA    |   VI.1 The Functor of Points | TBA
+| Week 11 (Aug 7, Aug 11)  | TBA     | VI.2 Characterization of Space by its Functor of Points   | TBA
+
+    
+## General Meeting Structure
+We will meet Tuesdays and Fridays at 11:00am (CST), with the following goals in mind:
+
+* **Fridays:** We discuss whatever that week’s reading was. We can have a different person be “in charge” each week. Being in charge just means you direct the meeting that day. I think the focus would be to highlight the theorems and definitions that seem the most relevant, as well as open it up to questions we have in the group. Questions on confusing proofs, intuitions, general motivations, etc. Note that being in charge doesn’t mean you’re expected to know the material better or worse than anyone else. You’re not presenting, just facilitating the discussion. You can have lots of questions too.
+The last part of the meeting would be choosing exercises related to the reading. Ideally everyone has glanced at the exercises and has suggestions on what we might want to do. We can even just do all of them, if we want. Then the person in charge divides up the exercises and assigns them to the group members.
+
+* **Tuesdays:** We discuss the exercises done over the weekend. Each person will have been assigned exercises from the week before. Everyone should still look at as many exercises as they can, but prioritize the ones assigned to them. That way between the group, we’ll have done the whole set. In this meeting, people can ask questions about exercises they thought were difficult, get feedback on solutions, and present solutions they thought were especially interesting. Whoever was in charge on the previous Thursday will run this meeting as well. At the end of the meeting, we’ll decide what the next reading should be, then rotate who’s in charge.
+
+Obviously two meetings every week can be a lot, so no one should feel like they have to attend every single meeting. However, I think it will work best if everyone comes as much as possible.
