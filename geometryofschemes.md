@@ -25,9 +25,7 @@ We intend to cover the first half of "The Geometry of Schemes" by Eisenbud and H
         <div id="myDropdown" class="dropdown-content">
             <a href="/assets/GeometryofSchemes.ics"><i class="fab fa-apple"></i> Apple</a>
             <a href="https://calendar.google.com/event?action=TEMPLATE&tmeid=NGFvM2tyNG1ncmo2NGJucW05bjc2aXUxa2JfMjAyMDA1MjlUMTYwMDAwWiBqY29iYjJAd2lzYy5lZHU&tmsrc=jcobb2%40wisc.edu&scp=ALL"><i class="fab fa-google"></i> Google</a>
-            <!--
-            <a href=""><i class="fas fa-envelope-square"></i> Outlook</a>
-            -->
+            <a href="/assets/GeometryofSchemesoutlook.ics"><i class="fas fa-envelope-square"></i> Outlook</a>
         </div>
     </div>
 </div>
