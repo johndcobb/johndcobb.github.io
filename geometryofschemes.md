@@ -10,7 +10,7 @@ class: class
 
 
 ## Resources
-We will follow the book "The Geometry of Schemes" by Eisenbud and Harris, linked below. I've slowed down the pace of the course in order to make room for [Vakil's online AG course](https://math216.wordpress.com/2020/05/10/algebraic-geometry-in-the-time-of-covid-launch/), which I think would be nice to do concurrently. If you'd like to be kept updated, please join the mailing list by sending a blank email to [join-geometryofschemes@lists.wisc.edu](mailto:join-geometryofschemes@lists.wisc.edu).
+We intend to cover the first half of "The Geometry of Schemes" by Eisenbud and Harris, linked below. I've slowed down the pace in order to make room for [Vakil's online AG course](https://math216.wordpress.com/2020/05/10/algebraic-geometry-in-the-time-of-covid-launch/), which I think would be nice to do concurrently. If you'd like to be kept updated, please join the mailing list by sending a blank email to [join-geometryofschemes@lists.wisc.edu](mailto:join-geometryofschemes@lists.wisc.edu).
 <div class="button-container" style="text-align: center">
     <a href="https://www.maths.ed.ac.uk/~v1ranick/papers/eisenbudharris.pdf" class="button" style="margin:5px">
     <i class="fas fa-book"></i>
