@@ -1,0 +1,43 @@
+.class{
+  /* Table */
+  table { 
+    color: #333;
+    font-family: Helvetica, Arial, sans-serif;
+    width: 100%;
+    /* Table reset stuff */
+    border-collapse: collapse; border-spacing: 0; 
+  }
+          
+  td, th {  border: 0 none; height: 30px; padding:0 5px 0 5px;}
+              
+  th {
+      background: $footer-background;
+      text-align: center;
+      color: #FFF; font-weight: bold;
+      height: 40px;
+  }
+          
+  td { background: #FAFAFA; text-align: center; }
+  
+  /* Zebra Stripe Rows */
+  tr:nth-child(even) td { background: darken($grey-color-lightest, 5%); } 
+  tr:nth-child(odd) td { background: $grey-color-lightest; }
+  
+  /* Add border-radius to specific cells! */
+  tr:first-child th:first-child { 
+    border-radius: 6px 0 0 0; 
+  } 
+  
+  tr:first-child th:last-child { 
+    border-radius: 0 6px 0 0; 
+  }
+  
+  tr:last-child td:last-child { 
+    border-radius: 0 0 6px 0; 
+  }
+  
+  tr:last-child td:first-child { 
+    border-radius: 0 0 0 6px; 
+  }
+  
+}
