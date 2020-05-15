@@ -6,11 +6,11 @@ class: class
 ---
 
 # Geometry of Schemes 
-![GOS](/images/projects/geometryofschemes.jpg "An illustration from Geometry of Schemes")
+![GOS](/images/projects/geometryofschemes.jpg "An illustration from The Geometry of Schemes, page 86.")
 
 
 ## Resources
-We will primarily use the book "The Geometry of Schemes" by Eisenbud and Harris, linked below. We will meet twice a week via Zoom. 
+We will follow the book "The Geometry of Schemes" by Eisenbud and Harris, linked below. I've slowed down the pace of the course in order to make room for [Vakil's online AG course](https://math216.wordpress.com/2020/05/10/algebraic-geometry-in-the-time-of-covid-launch/), which I think would be nice to do concurrently. If you'd like to be kept updated, please join the mailing list by sending a blank email to [join-geometryofschemes@lists.wisc.edu](mailto:join-geometryofschemes@lists.wisc.edu).
 <div class="button-container" style="text-align: center">
     <a href="https://www.maths.ed.ac.uk/~v1ranick/papers/eisenbudharris.pdf" class="button" style="margin:5px">
     <i class="fas fa-book"></i>
@@ -38,25 +38,25 @@ We will primarily use the book "The Geometry of Schemes" by Eisenbud and Harris,
 
 | Date                    | Leader      | Reading | Problems  |
 | :---------              | :---------  | :-----  | :---      |
-| Week 1 (May 29, Jun 2)         | John Cobb | I.1-I.2 Affine Schemes and Schemes in General    | TBA  |
-| Week 2 (Jun 5, Jun 9)   | John Cobb  | I.3-I.4 & II.1 Relative Schemes, The Functor of Points, Reduced Schemes | TBA |
-| Week 3 (Jun 12, Jun 16)  | TBA      |  II.2-II.3 Reduced Schemes over non-alg closed fields, Nonreduced schemes | TBA  |
-| Week 4 (Jun 19, Jun 23) | TBA      |    II.4, III.1 Arithmetic Schemes and Attributes of Morphisms | TBA  |
-| Week 5 (Jun 26, Jun 30) | TBA      |    III.2 Proj of a Graded Ring | TBA |
-| Week 6 (Jul 3, Jul 7)  | TBA      |    III.3 Invariants of Projective Schemes |  TBA |
-| Week 7 (Jul 10, Jul 14)  | TBA      |    (Break? Possible Erman appearance?) | TBA
-| Week 8 (Jul 17, Jul 21) | TBA     |   V.1-V.2 Images and Resultants | TBA
-| Week 9 (Jul 24, Jul 28) | TBA   |   V.3-V.5 Singular Schemes, Dual Curves, Double Point Loci | TBA
-| Week 10 (Jul 31, Aug 4)| TBA    |   VI.1 The Functor of Points | TBA
-| Week 11 (Aug 7, Aug 11)  | TBA     | VI.2 Characterization of Space by its Functor of Points   | TBA
+| Week 1 (May 29, Jun 2)  | John Cobb   | I.1 Affine Schemes   | TBA  |
+| Week 2 (Jun 5, Jun 9)   | TBA         | I.2 Schemes in General                           | TBA |
+| Week 3 (Jun 12, Jun 16) | TBA         | I.3-I.4 Relative Schemes & The Functor of Points | TBA  |
+| Week 4 (Jun 19, Jun 23) | TBA         | II.1-II.2 Reduced Schemes                        | TBA  |
+| Week 5 (Jun 26, Jun 30) | TBA         | II.3 Nonreduced Schemes                            | TBA |
+| Week 6 (Jul 3, Jul 7)   | TBA         | II.4-III.1 Arithmetic Schemes & Attributes of Morphisms  |  TBA |
+| Week 7 (Jul 14)         | TBA         | (Break. Erman Lecture.)                      | TBA
+| Week 8 (Jul 17, Jul 21) | TBA         | III.1-III.2.4 Proj of a Graded Ring  | TBA
+| Week 9 (Jul 24, Jul 28) | TBA         | III.2.5-III.2.8 Proj of a Graded Ring  | TBA
+| Week 10 (Jul 31, Aug 4) | TBA         | III.3.1-III.3.4 Invariants of Projective Schemes | TBA
+| Week 11 (Aug 7, Aug 11) | TBA         | III.3.5-III.3.6 Invariants of Projective Schemes & IV.1 Flexes of Plane Curves | TBA |
 
-    
+If we have the time, covering V.1-V-2 Images and Resultants or VI.1 The Functor of Points would be a good.
+
 ## General Meeting Structure
-We will meet Tuesdays and Fridays at 11:00am (CST), with the following goals in mind:
+We will meet Tuesdays and Fridays at 11:00am (CST) for about 40 minutes, with the following goals in mind:
 
-* **Fridays:** We discuss whatever that week’s reading was. We can have a different person be “in charge” each week. Being in charge just means you direct the meeting that day. I think the focus would be to highlight the theorems and definitions that seem the most relevant, as well as open it up to questions we have in the group. Questions on confusing proofs, intuitions, general motivations, etc. Note that being in charge doesn’t mean you’re expected to know the material better or worse than anyone else. You’re not presenting, just facilitating the discussion. You can have lots of questions too.
-The last part of the meeting would be choosing exercises related to the reading. Ideally everyone has glanced at the exercises and has suggestions on what we might want to do. We can even just do all of them, if we want. Then the person in charge divides up the exercises and assigns them to the group members.
+* **Fridays:** We discuss the reading of the week. A different person will be the "leader" each week, who directs the meeting that day. The focus would be to quickly highlight the theorems and definitions that seem the most relevant, preferably alongside prepared examples or counterexamples. Then, we collectively discuss questions we thought of while reading. Note that being in charge doesn’t mean you’re expected to know everything -- You can have lots of questions too. The last part of the meeting would be choosing exercises related to the reading. Ideally everyone has glanced at the exercises and has suggestions on what we might want to do. Then the leader divides up the exercises and assigns them to the group members.
 
-* **Tuesdays:** We discuss the exercises done over the weekend. Each person will have been assigned exercises from the week before. Everyone should still look at as many exercises as they can, but prioritize the ones assigned to them. That way between the group, we’ll have done the whole set. In this meeting, people can ask questions about exercises they thought were difficult, get feedback on solutions, and present solutions they thought were especially interesting. Whoever was in charge on the previous Friday will run this meeting as well. At the end of the meeting, we’ll decide what the next reading should be, then rotate who’s in charge.
+* **Tuesdays:** We discuss the exercises done over the weekend. Each person will have been assigned exercises from the week before. Everyone should still look at as many exercises as they can, but prioritize the ones assigned to them. That way between the group, we’ll have done the whole set. In this meeting, people can ask questions about exercises they thought were difficult, get feedback on solutions, and present solutions they thought were especially interesting. Whoever was in charge on the previous Friday will run this meeting as well.
 
 Obviously two meetings every week can be a lot, so no one should feel like they have to attend every single meeting. However, I think it will work best if everyone comes as much as possible.
