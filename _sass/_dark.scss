@@ -23,7 +23,7 @@
       border-bottom-color: #eee;
     }
 
-    .button {
+    .button, .dropdown-button {
       color: lighten($brand-color, 30%);
     }
 
@@ -54,6 +54,21 @@
     footer {
       background-color: #2d4964;
     }
+
+    .table th {
+      background: #2d4964;
+    }
+
+    .dropdown-content a {
+      background-color: #333;
+      color: lighten($brand-color, 30%) !important;
+    }
+
+    .dropdown-content {
+      background-color: #333;
+    }
+
+
   }
 }
 
@@ -82,7 +97,7 @@
       border-bottom-color: #eee;
     }
 
-    .home .button {
+    .button, .dropdown-button {
       color: lighten($brand-color, 30%);
     }
 
@@ -113,5 +128,19 @@
     footer {
       background-color: #2d4964;
     }
+    
+    .table th {
+      background: #2d4964;
+    }
+
+    .dropdown-content a {
+      background-color: #333;
+      color: lighten($brand-color, 30%) !important;
+    }
+
+    .dropdown-content {
+      background-color: #333;
+    }
+
   }
 }

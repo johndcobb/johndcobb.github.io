@@ -40,19 +40,6 @@ body {
   text-decoration-skip: ink;
 }
 
-.button {
-  color: $brand-color;
-  padding: 6px 16px;
-  border-radius: 3px;
-  border: 1px solid lighten($brand-color, 20%);
-
-  &:hover {
-    opacity: 1;
-    text-decoration: none;
-    background-color: lighten($brand-color, 50%);
-  }
-}
-
 
 /**
  * Reset some basic elements
@@ -221,4 +208,74 @@ iframe {
 
 .lead {
   font-size: 1.3em;
+}
+
+
+/* 
+ * Button Dropdown behavior
+*/
+
+.button, .dropdown-button{
+  color: $brand-color;
+  padding: 6px 16px;
+  border-radius: 3px;
+  border: 1px solid lighten($brand-color, 20%);
+  cursor: pointer;
+
+  &:hover{
+    opacity: 1;
+    text-decoration: none;
+    background-color: lighten($brand-color, 50%);
+  }
+}
+
+
+.press{
+  opacity: 1;
+  text-decoration: none;
+  background-color: lighten($brand-color, 50%);
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  margin-top: 3px;
+  text-align: left;
+  background-color: $background-color;
+  width:100%;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  padding: 6px 16px;
+  color: lighten($brand-color, 20%) !important;
+  background-color: $background-color;
+  text-decoration: none;
+  display: block;
+
+  &:hover{
+    background-color: $background-color;
+  }
+}
+
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {
+  display:block;
+}
+
+@include media-query($on-palm) {
+  .button {
+    font-size: 1.1em;
+    background-color: lighten($brand-color, 57%);
+  }
 }
