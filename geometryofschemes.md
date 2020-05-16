@@ -48,8 +48,8 @@ We intend to cover the first half of "The Geometry of Schemes" by Eisenbud and H
 | Week 10 (Jul 31, Aug 4) | TBA         | III.3.1-III.3.4 Invariants of Projective Schemes | TBA
 | Week 11 (Aug 7, Aug 11) | TBA         | III.3.5-III.3.6 Invariants of Projective Schemes & IV.1 Flexes of Plane Curves | TBA |
 
-If we have the time, covering V.1-V-2 Images and Resultants or VI.1 The Functor of Points would be a good. \\
-As we go along, keep a list of questions (especially questions about motivation). Daniel Erman mentioned he'd be available to set up a Q&A to answer such things.
+If we have the time, covering V.1-V-2 Images and Resultants or VI.1 The Functor of Points would be good. \\
+As we go along, keep a list of questions (especially questions about motivation). Daniel Erman mentioned he'd be available to set up some Q&A's to answer such things.
 ## General Meeting Structure
 We will meet Tuesdays and Fridays at 11:00am (CST) for about 40 minutes, with the following goals in mind:
 
