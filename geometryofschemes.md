@@ -36,7 +36,7 @@ We intend to cover the first half of "The Geometry of Schemes" by Eisenbud and H
 
 | Date                    | Leader      | Reading | Problems  |
 | :---------              | :---------  | :-----  | :---      |
-| Week 1 (May 29, Jun 2)  | John Cobb   | I.1 Affine Schemes   | 5, 7, 9, 10, 20, 21  |
+| Week 1 (May 29, Jun 2)  | John Cobb   | I.1 Affine Schemes   | 5, 7, 9, 10, [20, 21](assets/Schemes_Week1.pdf)  |
 | Week 2 (Jun 5, Jun 9)   | Tejasi Bhatnagar | I.2 Schemes in General              | TBA |
 | Week 3 (Jun 12, Jun 16) | TBA         | I.3-I.4 Relative Schemes & The Functor of Points | TBA  |
 | Week 4 (Jun 19, Jun 23) | TBA         | II.1-II.2 Reduced Schemes                        | TBA  |
