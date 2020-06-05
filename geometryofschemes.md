@@ -16,7 +16,7 @@ We intend to cover the first half of "The Geometry of Schemes" by Eisenbud and H
     <i class="fas fa-book"></i>
     Book
     </a>
-    <a href="" class="button" style="margin:5px">
+    <a href="https://zoom.us/j/94890235606?pwd=Z1RvTko0b0Nmb3daZnRsc3RFNVlSdz09" class="button" style="margin:5px">
     <i class="fas fa-video"></i>
     Zoom
     </a>
