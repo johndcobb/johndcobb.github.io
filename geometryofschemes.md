@@ -37,8 +37,8 @@ We intend to cover the first half of "The Geometry of Schemes" by Eisenbud and H
 | Date                    | Leader      | Reading | Problems  |
 | :---------              | :---------  | :-----  | :---      |
 | Week 1 (May 29, Jun 2)  | John Cobb   | I.1 Affine Schemes   | 5, 7, 9, 10, [20, 21](assets/Schemes_Week1.pdf)  |
-| Week 2 (Jun 5, Jun 9)   | Tejasi Bhatnagar | I.2 Schemes in General              | TBA |
-| Week 3 (Jun 12, Jun 16) | TBA         | I.3-I.4 Relative Schemes & The Functor of Points | TBA  |
+| Week 2 (Jun 5, Jun 9)   | Tejasi Bhatnagar | I.2 Schemes in General            | 24, 25, 30, 31, 32, 38 |
+| Week 3 (Jun 12, Jun 16) | Tejasi Bhatnagar        | I.3-I.4 Relative Schemes & The Functor of Points | TBA  |
 | Week 4 (Jun 19, Jun 23) | TBA         | II.1-II.2 Reduced Schemes                        | TBA  |
 | Week 5 (Jun 26, Jun 30) | TBA         | II.3 Nonreduced Schemes                            | TBA |
 | Week 6 (Jul 3, Jul 7)   | TBA         | II.4-III.1 Arithmetic Schemes & Attributes of Morphisms  |  TBA |
@@ -53,7 +53,7 @@ As we go along, keep a list of questions (especially questions about motivation)
 ## General Meeting Structure
 We will meet Tuesdays and Fridays at 11:00am (CST) for about 40 minutes, with the following goals in mind:
 
-* **Fridays:** We discuss the reading of the week. A different person will be the "leader" each week, who directs the meeting that day. The focus would be to quickly highlight the theorems and definitions that seem the most relevant, preferably alongside prepared examples or counterexamples. Then, we collectively discuss questions we thought of while reading. Note that being in charge doesn’t mean you’re expected to know everything -- You can have lots of questions too. The last part of the meeting would be choosing exercises related to the reading. Ideally everyone has glanced at the exercises and has suggestions on what we might want to do. Then the leader divides up the exercises and assigns them to the group members.
+* **Fridays:** We discuss the reading of the week. A different person will be the "leader" each week, who directs the meeting that day. The focus would be to quickly highlight (around 20 minutes max) the theorems and definitions that seem the most relevant, preferably alongside prepared examples or counterexamples. Then, we collectively discuss questions we thought of while reading. Note that being in charge doesn’t mean you’re expected to know everything -- You can have lots of questions too. The last part of the meeting would be choosing exercises related to the reading. Ideally everyone has glanced at the exercises and has suggestions on what we might want to do. Then the leader divides up the exercises and assigns them to the group members.
 
 * **Tuesdays:** We discuss the exercises done over the weekend. Each person will have been assigned exercises from the week before. Everyone should still look at as many exercises as they can, but prioritize the ones assigned to them. That way between the group, we’ll have done the whole set. In this meeting, people can ask questions about exercises they thought were difficult, get feedback on solutions, and present solutions they thought were especially interesting. Whoever was in charge on the previous Friday will run this meeting as well.
 
