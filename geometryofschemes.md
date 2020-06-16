@@ -38,8 +38,8 @@ We intend to cover the first half of "The Geometry of Schemes" by Eisenbud and H
 | :---------              | :---------  | :-----  | :---      |
 | Week 1 (May 29, Jun 2)  | John Cobb   | I.1 Affine Schemes   | 5, 7, 9, 10, [20, 21](assets/Schemes_Week1.pdf)  |
 | Week 2 (Jun 5, Jun 9)   | Tejasi Bhatnagar | I.2 Schemes in General            | [24, 25,](assets/tejasi_24.pdf) [30, 31, 34,](assets/Eisenbud_Harris_Wk2.pdf) [32, 37,](assets/Schemes_Week2.pdf) 44, 45 |
-| Week 3 (Jun 12, Jun 16) | John Cobb         | I.3 Relative Schemes | 46, 47, 48, 50, 51,  |
-| Week 4 (Jun 19, Jun 23) | TBA         | II.1-II.2 Reduced Schemes                        | TBA  |
+| Week 3 (Jun 12, Jun 16) | John Cobb         | I.3 Relative Schemes | 46, 47, 48, 50, 51  |
+| Week 4 (Jun 19, Jun 23) | Daniel Levitin         | II.1-II.2 Reduced Schemes                        | TBA  |
 | Week 5 (Jun 26, Jun 30) | TBA         | II.3 Nonreduced Schemes                            | TBA |
 | Week 6 (Jul 3, Jul 7)   | TBA         | II.4-III.1 Arithmetic Schemes & Attributes of Morphisms  |  TBA |
 | Week 7 (Jul 14)         | TBA         | (Break. Erman Lecture.)                      | TBA
@@ -51,7 +51,7 @@ We intend to cover the first half of "The Geometry of Schemes" by Eisenbud and H
 If we have the time, covering V.1-V-2 Images and Resultants or VI.1 The Functor of Points would be good. \\
 As we go along, keep a list of questions (especially questions about motivation). Daniel Erman mentioned he'd be available to set up some Q&A's to answer such things.
 ## General Meeting Structure
-We will meet Tuesdays and Fridays at 11:00am (CST) for about 40 minutes, with the following goals in mind:
+We will meet Tuesdays at 11:00am and Fridays at 12:00pm (CST) for about 40 minutes, with the following goals in mind:
 
 * **Fridays:** We discuss the reading of the week. A different person will be the "leader" each week, who directs the meeting that day. The focus would be to quickly highlight (around 20 minutes max) the theorems and definitions that seem the most relevant, preferably alongside prepared examples or counterexamples. Then, we collectively discuss questions we thought of while reading. Note that being in charge doesn’t mean you’re expected to know everything -- You can have lots of questions too. The last part of the meeting would be choosing exercises related to the reading. Ideally everyone has glanced at the exercises and has suggestions on what we might want to do. Then the leader divides up the exercises and assigns them to the group members.
 
