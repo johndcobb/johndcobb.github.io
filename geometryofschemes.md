@@ -23,9 +23,9 @@ We intend to cover the first half of "The Geometry of Schemes" by Eisenbud and H
     <div class="dropdown" style="margin:5px">
         <a onclick="buttonPress()" id="myDropdownBtn" class="dropdown-button"><i class="far fa-calendar"></i> Add to Calendar</a>
         <div id="myDropdown" class="dropdown-content">
-            <a href="/assets/GeometryofSchemes.ics"><i class="fab fa-apple"></i> Apple</a>
+            <a href="/assets/eisenbudharris/GeometryofSchemes.ics"><i class="fab fa-apple"></i> Apple</a>
             <a href="https://calendar.google.com/event?action=TEMPLATE&tmeid=NGFvM2tyNG1ncmo2NGJucW05bjc2aXUxa2JfMjAyMDA1MjlUMTYwMDAwWiBqY29iYjJAd2lzYy5lZHU&tmsrc=jcobb2%40wisc.edu&scp=ALL"><i class="fab fa-google"></i> Google</a>
-            <a href="/assets/GeometryofSchemesoutlook.ics"><i class="fas fa-envelope-square"></i> Outlook</a>
+            <a href="/assets/eisenbudharris/GeometryofSchemesoutlook.ics"><i class="fas fa-envelope-square"></i> Outlook</a>
         </div>
     </div>
 </div>
@@ -36,11 +36,11 @@ We intend to cover the first half of "The Geometry of Schemes" by Eisenbud and H
 
 | Date                    | Leader      | Reading | Problems  |
 | :---------              | :---------  | :-----  | :---      |
-| Week 1 (May 29, Jun 2)  | John Cobb   | I.1 Affine Schemes   | 5, 7, 9, 10, [20, 21](assets/Schemes_Week1.pdf)  |
-| Week 2 (Jun 5, Jun 9)   | Tejasi Bhatnagar | I.2 Schemes in General            | [24, 25,](assets/tejasi_24.pdf) [30, 31, 34,](assets/Eisenbud_Harris_Wk2.pdf) [32, 37,](assets/Schemes_Week2.pdf) 44, 45 |
+| Week 1 (May 29, Jun 2)  | John Cobb   | I.1 Affine Schemes   | 5, 7, 9, 10, [20, 21](assets/eisenbudharris/Schemes_Week1.pdf)  |
+| Week 2 (Jun 5, Jun 9)   | Tejasi Bhatnagar | I.2 Schemes in General            | [24, 25,](assets/eisenbudharris/tejasi_24.pdf) [30, 31, 34,](assets/eisenbudharris/Eisenbud_Harris_Wk2.pdf) [32, 37,](assets/eisenbudharris/Schemes_Week2.pdf) 44, 45 |
 | Week 3 (Jun 12, Jun 16) | John Cobb         | I.3 Relative Schemes | 46, 47, 48, 50, 51  |
-| Week 4 (Jun 19, Jun 23) | Daniel Levitin         | II.1-II.2 Reduced Schemes                        | 2, 3, 6, 7, (maybe 8)  |
-| Week 5 (Jun 26, Jun 30) | Ivan Aidun        | II.3.1-II.3.3 Nonreduced Schemes                  | TBA |
+| Week 4 (Jun 19, Jun 23) | Daniel Levitin         | II.1-II.2 Reduced Schemes                        | 2, 3, [6, 7,](assets/eisenbudharris/Eisenbud_Harris_Wk4.pdf) (maybe 8)  |
+| Week 5 (Jun 26, Jun 30) | Ivan Aidun        | II.3.1-II.3.4 Nonreduced Schemes                  | 11, 14, 15, 22 |
 | Week 6 (Jul 3, Jul 7)   | TBA         | II.3.4-II.3.5 Nonreduced Schemes   |  TBA |
 | Week 7 (Jul 10, Jul 14)         | TBA         | II.4 Arithmetic Schemes                      | TBA
 | Week 8 (Jul 17, Jul 21) | TBA         | III.1-III.2.4 Proj of a Graded Ring  | TBA
