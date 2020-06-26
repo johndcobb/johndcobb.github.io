@@ -58,3 +58,19 @@ We will meet Tuesdays at 11:00am and Fridays at 12:00pm (CST) for about 40 minut
 * **Tuesdays:** We discuss the exercises done over the weekend. Each person will have been assigned exercises from the week before. Everyone should still look at as many exercises as they can, but prioritize the ones assigned to them. That way between the group, we’ll have done the whole set. In this meeting, people can ask questions about exercises they thought were difficult, get feedback on solutions, and present solutions they thought were especially interesting. Whoever was in charge on the previous Friday will run this meeting as well.
 
 Obviously two meetings every week can be a lot, so no one should feel like they have to attend every single meeting. However, I think it will work best if everyone comes as much as possible.
+ 
+ ## Test 
+ 
+<iframe id="forum_embed"
+  src="javascript:void(0)"
+  scrolling="no"
+  frameborder="0"
+  width="900"
+  height="700">
+</iframe>
+<script type="text/javascript">
+  document.getElementById('forum_embed').src =
+     'https://groups.google.com/a/g-groups.wisc.edu/forum/embed/?place=forum/geometryofschemes'
+     + '&showsearch=true&showpopout=true&showtabs=false'
+     + '&parenturl=' + encodeURIComponent(window.location.href);
+</script>
