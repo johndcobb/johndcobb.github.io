@@ -66,7 +66,7 @@ While going through the settings of our new google group, I found a way to embed
 
 <iframe id="forum_embed"
   allowtransparency="true" 
-  style="background: #FFFFFF;"
+  style="background: $grey-color-lightest;"
   src="javascript:void(0)"
   scrolling="no"
   frameborder="0"
