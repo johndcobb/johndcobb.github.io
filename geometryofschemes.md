@@ -42,7 +42,7 @@ We intend to cover the first half of "The Geometry of Schemes" by Eisenbud and H
 | Week 3 (Jun 12, Jun 16) | John Cobb         | I.3 Relative Schemes | 46, 47, 48, 50, 51  |
 | Week 4 (Jun 19, Jun 23) | Daniel Levitin         | II.1-II.2 Reduced Schemes                        | [2,](assets/eisenbudharris/probschemes(II-2).pdf) 3, [6, 7,](assets/eisenbudharris/Eisenbud_Harris_Wk4.pdf) (maybe 8)  |
 | Week 5 (Jun 26, Jun 30) | Ivan Aidun        | II.3.1-II.3.4 Nonreduced Schemes                  | [11, 15,](assets/eisenbudharris/Schemes_Week5.pdf) [14,](assets/eisenbudharris/Eisenbud_Harris_Wk5.pdf) [22](assets/eisenbudharris/probschemes(II-22).pdf) |
-| Week 6 (Jul 3, Jul 7)   | John Cobb        | II.3.4-II.3.5 Nonreduced Schemes   |  TBA |
+| Week 6 (Jul 3, Jul 7)   | John Cobb        | II.3.4-II.3.5 Nonreduced Schemes   |  25, 33, 31, 35 |
 | Week 7 (Jul 10, Jul 14)         | Daniel Erman Q&A     | II.4 Arithmetic Schemes                      | TBA
 | Week 8 (Jul 17, Jul 21) | TBA         | III.1-III.2.4 Proj of a Graded Ring  | TBA
 | Week 9 (Jul 24, Jul 28) | TBA         | III.2.5-III.2.8 Proj of a Graded Ring  | TBA
