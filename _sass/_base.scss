@@ -274,10 +274,13 @@ iframe {
 }
 
 @include media-query($on-palm) {
+  .button, .dropdown-button {
+    font-size: 1.1em;
+  }
+
   .button-container {
     .button, .dropdown-button {
       display: grid;
-      font-size: 1.1em;
     }
   }
 }
