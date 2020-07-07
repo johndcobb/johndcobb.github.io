@@ -49,8 +49,9 @@ We intend to cover the first half of "The Geometry of Schemes" by Eisenbud and H
 | Week 10 (Jul 31, Aug 4) | TBA         | III.2.5-III.2.8 Proj of a Graded Ring | TBA
 | Week 11 (Aug 7, Aug 11) | TBA         | III.3.1-III.3.4 Invariants of Projective Schemes | TBA |
 
-Material that has been pushed off schedule: III.3.5-III.3.6 Invariants of Projective Schemes & IV.1 Flexes of Plane Curves \\
-If we have the time, covering V.1-V-2 Images and Resultants or VI.1 The Functor of Points would be good. \\
+Material that has been pushed off schedule: III.3.5-III.3.6 Invariants of Projective Schemes & IV.1 Flexes of Plane Curves.
+
+If we have the time, covering V.1-V-2 Images and Resultants or VI.1 The Functor of Points would be good.
 
 ## General Meeting Structure
 We will meet Tuesdays at 11:00am and Fridays at 12:00pm (CST) for about 40 minutes, with the following goals in mind:
