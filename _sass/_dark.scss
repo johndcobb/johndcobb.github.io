@@ -68,6 +68,17 @@
       background-color: #333;
     }
 
+    @include media-query($on-palm) {
+      .button, .dropdown-button {   
+        background-color: transparent;
+        &:hover{
+          opacity: 1;
+          text-decoration: none;
+          background-color: lighten($brand-color, 50%);
+        }
+      }
+    }
+
 
   }
 }
