@@ -26,7 +26,7 @@
     padding: 0 $spacing-unit/2;
   }
   .button-container {
-    display: flex;
+    display: grid;
     max-width: $content-width + $spacing-unit;
     margin: 0 auto;
     padding: 0 $spacing-unit/2;
