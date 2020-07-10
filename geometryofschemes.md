@@ -43,7 +43,7 @@ We intend to cover the first half of "The Geometry of Schemes" by Eisenbud and H
 | Week 4 (Jun 19, Jun 23) | Daniel Levitin         | II.1-II.2 Reduced Schemes                        | [2](assets/eisenbudharris/probschemesII_2.pdf), 3, [6, 7](assets/eisenbudharris/Eisenbud_Harris_Wk4.pdf), (maybe 8)  |
 | Week 5 (Jun 26, Jun 30) | Ivan Aidun        | II.3.1-II.3.4 Nonreduced Schemes                  | [11, 15](assets/eisenbudharris/Schemes_Week5.pdf), [14](assets/eisenbudharris/Eisenbud_Harris_Wk5.pdf), [22](assets/eisenbudharris/probschemesII_22.pdf) |
 | Week 6 (Jul 3, Jul 7)   | John Cobb        | II.3.4-II.3.5 Nonreduced Schemes   |  25, [31](assets/eisenbudharris/Eisenbud_Harris_Wk6.pdf), [33](assets/eisenbudharris/Schemes_Week6.pdf), 35 |
-| Week 7 (Jul 10, Jul 14)         | Daniel Erman Q&A     |    Break                  | Come up with questions!
+| Week 7 (Jul 10, Jul 14)         | Daniel Erman Q&A     |    II.4 Arithmetic Schemes            | Come up with questions!
 | Week 8 (Jul 17, Jul 21) | TBA         | II.4 Arithmetic Schemes  | TBA
 | Week 9 (Jul 24, Jul 28) | TBA         | III.1-III.2.4 Proj of a Graded Ring   | TBA
 | Week 10 (Jul 31, Aug 4) | TBA         | III.2.5-III.2.8 Proj of a Graded Ring | TBA
@@ -54,7 +54,7 @@ Material that has been pushed off schedule: III.3.5-III.3.6 Invariants of Projec
 If we have the time, covering V.1-V-2 Images and Resultants or VI.1 The Functor of Points would be good.
 
 ## General Meeting Structure
-We will meet Tuesdays at 11:00am and Fridays at 12:00pm (CST) for about 40 minutes, with the following goals in mind:
+We will meet Tuesdays at 1:00pm and Fridays at 1:00pm (CST) for about an hour, with the following goals in mind:
 
 * **Fridays:** We discuss the reading of the week. A different person will be the "leader" each week, who directs the meeting that day. The focus would be to quickly highlight (around 20 minutes max) the theorems and definitions that seem the most relevant, preferably alongside prepared examples or counterexamples. Then, we collectively discuss questions we thought of while reading. Note that being in charge doesn’t mean you’re expected to know everything -- You can have lots of questions too. The last part of the meeting would be choosing exercises related to the reading. Ideally everyone has glanced at the exercises and has suggestions on what we might want to do. Then the leader divides up the exercises and assigns them to the group members.
 
@@ -64,7 +64,7 @@ Obviously two meetings every week can be a lot, so no one should feel like they 
  
 ## Google Forum
 
-While going through the settings of our new google group, I found a way to embed a whole forum system. Here goes!
+While going through the settings of our new google group, I found a way to embed a whole forum system. I've included it below in case it turns out to be helpful.
 
 <iframe id="forum_embed"
   allowtransparency="true" 
