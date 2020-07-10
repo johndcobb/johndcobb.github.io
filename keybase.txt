@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/jdcobb
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://johndcobb.github.io
+  * I am jdcobb (https://keybase.io/jdcobb) on keybase.
+  * I have a public key ASCg3uTAxKkuYxaO7KFKZOEg4nXeW6DrzKAgqU4XUhNQkgo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120a0dee4c0c4a92e63168eeca14a64e120e275de5ba0ebcca020a94e17521350920a",
+      "host": "keybase.io",
+      "kid": "0120a0dee4c0c4a92e63168eeca14a64e120e275de5ba0ebcca020a94e17521350920a",
+      "uid": "c747320b3e6c75b7c1bacfa1c05eec19",
+      "username": "jdcobb"
+    },
+    "merkle_root": {
+      "ctime": 1594178420,
+      "hash": "61223b600496cdf2f17400fda266d1aeb30cfa88a46d4e4810954fb82f1815ae3ff7a2617c7fe8e47fd391e90d8fce171ae51a459a1a3c64d74fd855abeed6e7",
+      "hash_meta": "4f854739b62b587192f8464f369b2a67dddedeff4a395c260de6115d0bfe2484",
+      "seqno": 16902823
+    },
+    "service": {
+      "entropy": "EmQSJ6pyDCpyNS0nGhJ9K7x8",
+      "hostname": "johndcobb.github.io",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "5.5.0"
+  },
+  "ctime": 1594178456,
+  "expire_in": 504576000,
+  "prev": "f2692ddb9c59666f1a2606f3435d118c6a555d967a8413a54b712a495466dbd9",
+  "seqno": 8,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgoN7kwMSpLmMWjuyhSmThIOJ13lug68ygIKlOF1ITUJIKp3BheWxvYWTESpcCCMQg8mkt25xZZm8aJgbzQ10RjGpVXZZ6hBOlS3EqSVRm29nEIOASJuDjH1E/Pb7P19uG5YNH6tHqfiWhEu6nPvcFNzVqAgHCo3NpZ8RAVCBQy2h7QREi42/iza5rGQ13VCHOaBzJOrjy0n37RpkV6aC1HTQoHwspuK3/FWn5mpbYOG8ZPE8+u2HQqoxLBKhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEILrP6Z23tlI58PM1E98ScBUuY5TxhIiQRpQm6pz4DRMdo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/jdcobb
+
+==================================================================
