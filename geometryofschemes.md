@@ -44,8 +44,8 @@ We intend to cover the first half of "The Geometry of Schemes" by Eisenbud and H
 | Week 5 (Jun 26, Jun 30) | Ivan Aidun        | II.3.1-II.3.4 Nonreduced Schemes                  | [11, 15](assets/eisenbudharris/Schemes_Week5.pdf), [14](assets/eisenbudharris/Eisenbud_Harris_Wk5.pdf), [22](assets/eisenbudharris/probschemesII_22.pdf) |
 | Week 6 (Jul 3, Jul 7)   | John Cobb        | II.3.4-II.3.5 Nonreduced Schemes   |  25, [31](assets/eisenbudharris/Eisenbud_Harris_Wk6.pdf), [33](assets/eisenbudharris/Schemes_Week6.pdf), 35 |
 | Week 7 (Jul 10)         | Daniel Erman Q&A     |    II.4 Arithmetic Schemes            | Come up with questions!
-| Week 8 (Jul 14, Jul 17) | Ivan Aidun  | II.4 Arithmetic Schemes   | 36, 38, 40, 44
-| Week 9 (Jul 21, Jul 24) | Tejasi Bhatnagar      | III.1-III.2.3 Attributes of Morphisms    | TBA
+| Week 8 (Jul 14, Jul 17) | Ivan Aidun  | II.4 Arithmetic Schemes   | 36, [38](assets/eisenbudharris/Schemes_Week7.pdf), 40, 44
+| Week 9 (Jul 21, Jul 24) | Tejasi Bhatnagar      | III.1-III.2.3 Attributes of Morphisms    | 1, 2, 3, 4, 6, 12, 15
 | Week 10 (Jul 28, Jul 31) | TBA         | III.2.4-III.2.8 Proj of a Graded Ring  | TBA
 | Week 11 (Aug 4, Aug 7) | TBA         | III.3.1-III.3.4 Invariants of Projective Schemes | TBA |
 
