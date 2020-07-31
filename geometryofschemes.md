@@ -46,14 +46,15 @@ We intend to cover the first half of "The Geometry of Schemes" by Eisenbud and H
 | Week 7 (Jul 10)         | Daniel Erman Q&A     |    Break           | Come up with questions!
 | Week 8 (Jul 14, Jul 17) | Ivan Aidun  | II.4 Arithmetic Schemes   | 36, [38](assets/eisenbudharris/Schemes_Week7.pdf), 40, 44
 | Week 9 (Jul 21, Jul 24, Jul 28) | Tejasi Bhatnagar      | III.1-III.2.3 Attributes of Morphisms    | 1, 2, 3, 4, [6](assets/eisenbudharris/Schemes_Week9.pdf), 12, 15
-| Week 10 (Jul 31, Aug 4) | TBA         | III.2.4-III.2.8 Proj of a Graded Ring  | TBA
 
-Pushed off schedule: III.3.1-III.3.4 Invariants of Projective Schemes, III.3.5-III.3.6 Invariants of Projective Schemes & IV.1 Flexes of Plane Curves
+From here, the group has decided that it will be more worthwhile at this point to pick up with another book after taking our qualifying exams, likely Vakil's notes. 
+
+Pushed off schedule: III.2.4-III.2.8 Proj of a Graded Ring, III.3.1-III.3.4 Invariants of Projective Schemes, III.3.5-III.3.6 Invariants of Projective Schemes & IV.1 Flexes of Plane Curves
 
 If we have the time, covering V.1-V-2 Images and Resultants or VI.1 The Functor of Points would be good.
 
 ## General Meeting Structure
-We will meet Tuesdays at 1:00pm and Fridays at 1:00pm (CST) for about an hour, with the following goals in mind:
+We will meet Tuesdays at 1:00pm and Fridays at 1:00pm (CST) via Zoom for about an hour, with the following goals in mind:
 
 * **Fridays:** We discuss the reading of the week. A different person will be the "leader" each week, who directs the meeting that day. The focus would be to quickly highlight (around 20 minutes max) the theorems and definitions that seem the most relevant, preferably alongside prepared examples or counterexamples. Then, we collectively discuss questions we thought of while reading. Note that being in charge doesn’t mean you’re expected to know everything -- You can have lots of questions too. The last part of the meeting would be choosing exercises related to the reading. Ideally everyone has glanced at the exercises and has suggestions on what we might want to do. Then the leader divides up the exercises and assigns them to the group members.
 
