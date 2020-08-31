@@ -40,7 +40,7 @@ I'm a second year graduate student in the mathematics department at the [Univers
 ## Featured Organization
 
 <div class="featured-projects">
-  {% assign sorted_projects = site.data.organization | sort: 'highlight' %}
+  {% assign sorted_projects = site.data.organization | concat: site.data.teaching | sort: 'highlight' %}
   {% for project in sorted_projects %}
     {% if project.highlight %}
       {% include project.html project=project %}
