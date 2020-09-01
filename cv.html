@@ -298,10 +298,11 @@ title: CV
 </div>
 
 {% for pos in site.data.positions %}
+<h3>{{ pos.title }}{% if pos.company %} at {{pos.company}}{% endif %}</h3>
 <article>
   <div class="date-container">
     <span class="date">{{ pos.years }}</span>
-    <h3>{{ pos.title }}{% if pos.company %} at {{pos.company}}{% endif %}</h3>
+    <span style="flex: 1">{{ pos.description | markdownify }}</span>
     <span class="right">{{ pos.location }}</span>
   </div>
   <p>
@@ -310,7 +311,6 @@ title: CV
         {% include person person=mentor %}{% unless forloop.last %}, {% endunless %}
       {% endfor %}<br/>
     {% endif %}
-    {{ pos.description | markdownify | remove: '<p>' | remove: '</p>' }}
     {% if pos.skills %}
     <small class="muted">[{% for skill in pos.skills %}{{ skill }}{% unless forloop.last %}, {% endunless %}{% endfor %}]</small>
     {% endif %}
@@ -424,27 +424,19 @@ title: CV
   <span class="line"></span>
 </div>
 
-{% for teach in site.data.teaching %}
+{% assign coursetitles = site.data.teaching | group_by: "title" %} 
+{% for title in coursetitles %}
 <article>
+  <h3>{{ title.name }}</h3>
   <div class="date-container">
-    <span class="date">{{teach.year}}</span>
-    <h3>{{ teach.title }}</h3>
-    <span class="right">{{ teach.location }}</span>
+    <span class="date"> {% for class in title.items %} {{ class.year }} {% endfor %} </span>
+    {% assign recentcourse = title.items[-1] %}
+    <span style="flex: 1"> {{ recentcourse.roledescription | markdownify }} </span>
+    <span class="right">{{ recentcourse.location }}</span>
   </div>
-  <p>
-    {% if teach.professor %}
-      {% if teach.role %}
-        {{ teach.role }} for
-      {% endif %}
-      {% include person person=teach.professor %},
-      {{ teach.students }}
-      <br/>
-    {% endif %}
-    {{ teach.description | markdownify | remove: '<p>' | remove: '</p>' }}
-  </p>
+  <br/>
 </article>
 {% endfor %}
-
 
 <div class="line-container">
   <h2>Service</h2>
@@ -452,15 +444,13 @@ title: CV
 </div>
 
 {% for service in site.data.service %}
+<h3>{{ service.title }} at {{ service.at }}</h3>
 <article>
   <div class="date-container">
     <span class="date">{{service.years}}</span>
-    <h3>{{ service.title }} at {{ service.at }}</h3>
+    <span style="flex: 1">{{ service.description | markdownify }}</span>
     <span class="right">{{ service.location }}</span>
   </div>
-  <p>
-    {{ service.description | markdownify | remove: '<p>' | remove: '</p>' }}
-  </p>
 </article>
 {% endfor %}
 
