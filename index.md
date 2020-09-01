@@ -37,7 +37,7 @@ I'm a second year graduate student in the mathematics department at the [Univers
 <!--- Put stuff here when ready -->
 
 
-## Featured Organization
+## Featured Courses and Organization
 
 <div class="featured-projects">
   {% assign sorted_projects = site.data.organization | concat: site.data.teaching | sort: 'highlight' %}
@@ -47,7 +47,7 @@ I'm a second year graduate student in the mathematics department at the [Univers
     {% endif %}
   {% endfor %}
 </div>
-<a href="{{ "/organization/" | relative_url }}" class="button">
+<a href="{{ "/teaching/" | relative_url }}" class="button">
   <i class="fas fa-chevron-circle-right"></i>
   Show More
 </a>

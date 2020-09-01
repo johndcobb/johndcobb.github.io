@@ -5,7 +5,7 @@ title: Teaching
 class: projects
 ---
 
-{:.hidden}
+
 # Teaching
 
 {% assign coursetypes = site.data.teaching | group_by:"type" %} 
@@ -16,6 +16,7 @@ class: projects
 {% assign coursetitles = type.items | group_by:"title" %} {% comment %} I only want to show one panel per unique course, so group by course title {% endcomment %}
 <div class="grid" markdown="1">
 {% for course in coursetitles %} 
+{:.lead}
 {% comment %} Now for each course in course titles, {% endcomment %}
   {% assign project = course.items[-1] %}  
   {% comment %} Pick the most recent course. {% endcomment %}
@@ -24,3 +25,13 @@ class: projects
 {% endfor %}
 </div>
 {% endfor %}
+
+# Organization {#organization}
+
+{:.lead}
+
+<div class="grid">
+  {% for project in site.data.organization %}
+    {% include project.html project=project %}
+  {% endfor %}
+</div>
