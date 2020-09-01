@@ -25,7 +25,7 @@
   role: Teaching Assistant
   year: Spring 2019
   location: College of Charleston
-  description: Presented new content and held problem sessions.
+  description: This course is aimed at students preparing for a course in physical chemistry. It combines topics from Calculus I-III, linear algebra, and group theory to explain things like symmetries in molecules and crystal structures. 
 - title: "MATH 221: Calculus and Analytic Geometry I"
   sections: 429, 431
   type: Current
@@ -34,4 +34,5 @@
   location: University of Wisconsin-Madison
   url: "/teaching/221Fall2020"
   image: calculus1.jpg
+  description: This page organizes calculus discussion sections 429 and 431 running in Fall 2020.
   highlight: 1
