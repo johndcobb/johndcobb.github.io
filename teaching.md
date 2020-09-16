@@ -8,7 +8,7 @@ class: projects
 
 # Teaching
 
-{% assign coursetypes = site.data.teaching | group_by:"type" %} 
+{% assign coursetypes = site.data.teaching | where: "panel", "true" | group_by:"type" %} 
 {% comment %} This tells us if the course is Current or Past {% endcomment %}
 {% for type in coursetypes reversed %} 
 {% comment %} Note that the data type is strange, each entry of coursetitles is an array containing items of the form {name: title}{items: an array of all the courses with that title} {% endcomment %}
