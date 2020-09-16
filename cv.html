@@ -439,7 +439,7 @@ title: CV
 {% endfor %}
 
 <div class="line-container">
-  <h2>Service</h2>
+  <h2>Service & Organization</h2>
   <span class="line"></span>
 </div>
 
@@ -454,7 +454,21 @@ title: CV
 </article>
 {% endfor %}
 
+<div class="line-container">
+  <h2>Extracurricular</h2>
+  <span class="line"></span>
+</div>
 
+{% for hobby in site.data.extracurricular %}
+<h3>{{ hobby.title }} at {{ hobby.at }}</h3>
+<article>
+  <div class="date-container">
+    <span class="date">{{hobby.years}}</span>
+    <span style="flex: 1">{{ hobby.description | markdownify }}</span>
+    <span class="right">{{ hobby.location }}</span>
+  </div>
+</article>
+{% endfor %}
 
 
       </section>

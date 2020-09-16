@@ -5,12 +5,6 @@
   notes: /talks/GrobnerComplex.pdf
   date: 2020-05-29
 - title: "Quaternion-Valued Solutions to the KdV"
-  location: College of Charleston Mathematics Colloquium
-  city: Charleston, SC
-  url: http://math.cofc.edu/colloquium/index-2018-fall.php
-  date: 2018-11-16
-  slides: /talks/QKdVSolutions.pptx
-- title: "Quaternion-Valued Solutions to the KdV"
   location: JMM Quaternion Special Session
   city: Baltimore, MD
   url: https://jointmathematicsmeetings.org/amsmtgs/2217_abstracts/1145-35-453.pdf
@@ -21,6 +15,12 @@
   date: 2019-01-16
   awards:
     -Outstanding Poster
+- title: "Quaternion-Valued Solutions to the KdV"
+  location: College of Charleston Mathematics Colloquium
+  city: Charleston, SC
+  url: http://math.cofc.edu/colloquium/index-2018-fall.php
+  date: 2018-11-16
+  slides: /talks/QKdVSolutions.pptx
 - title: "Investigating Rankability Using Distributed Graph Analytic Frameworks"
   location: College of Charleston Celebration of Scholars
   city: Charleston, SC
@@ -30,14 +30,22 @@
   location: Tresata
   city: Charlotte, NC
   date: 2017-08-15
-- title: "Singular Value Decomposition and Digital Image Processing"
-  location: Data Science Club
+- title: "Growth of P3HT-PCBM Nanostructures at Solvent-Solvent Interfaces"
+  location: College of Charleston Celebration of Scholars
   city: Charleston, SC
-  date: 2016-11-13
+  date: 2017-08-16
+- title: "Solvent-Induced Assembly of P3HT: Controlling Organic Photovoltaic Film Morphology"
+  location: College of Charleston Celebration of Scholars
+  city: Charleston, SC
+  date: 2017-06-13
 - title: "Affine Transformations and Fractal Images"
   location: Data Science Club
   city: Charleston, SC
   date: 2016-10-3
+- title: "Singular Value Decomposition and Digital Image Processing"
+  location: Data Science Club
+  city: Charleston, SC
+  date: 2016-11-13
 - title: "Investigating the Stability of P3HT Solutions Using Light Scattering and Zeta-Potential Measurements"
   location: ACS Southeast Regional Meeting
   city: Columbia, SC
@@ -47,11 +55,3 @@
   city: Charleston, SC
   date: 2016-08-15
   poster: /talks/Cobb_Poster.pdf
-- title: "Growth of P3HT-PCBM Nanostructures at Solvent-Solvent Interfaces"
-  location: College of Charleston Celebration of Scholars
-  city: Charleston, SC
-  date: 2017-08-16
-- title: "Solvent-Induced Assembly of P3HT: Controlling Organic Photovoltaic Film Morphology"
-  location: College of Charleston Celebration of Scholars
-  city: Charleston, SC
-  date: 2017-06-13
