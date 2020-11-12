@@ -3,6 +3,7 @@
   city: Madison, WI
   url: https://www.math.wisc.edu/wiki/index.php/Graduate_Algebraic_Geometry_Seminar
   notes: /talks/Boij-Söderberg.pdf
+  abstract: The main complication to understanding the structure of a module M comes from the lack of a basis. Instead, we have a system of generators with some relations between them, and then relations between those relations, and so on. Hilbert’s insight in 1890 was that by associating free resolutions to M, we can keep track of this data and get a handle on its structure. In 2006, Mats Boij and Jonas Söderberg put out a few striking conjectures (now theorems due to Eisenbud and Schreyer in 2007) that greatly improved our understanding of free resolutions of modules over polynomial rings k[x_1,…,x_n] where k is a field, yielding near immediate proofs to a number of other conjectures. Starting from the definition of a free resolution and proceeding by examples, I will introduce Betti tables and a convex cone they span, the Boij-Söderberg conjectures that completely characterize this cone, and then sketch a surprising duality with the cohomology tables of vector bundles on projective spaces that powers the proof.
   date: 2020-11-11
 - title: "Gröbner Complex of a Homogenous Ideal of a Polynomial Ring"
   location: UW Madison Graduate Algebraic Geometry Seminar
