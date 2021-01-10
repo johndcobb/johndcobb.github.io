@@ -43,7 +43,7 @@
   panel: true
   professor: Gabriele Meyer 
   sections: 429, 431
-  type: Current
+  type: Past
   role: Teaching Assistant
   year: Fall 2020
   location: University of Wisconsin-Madison
@@ -51,4 +51,3 @@
   image: calculus1.jpg
   description: This page organizes calculus discussion sections 429 and 431 running in Fall 2020.
   roledescription: Hold weekly problem solving sessions.
-  highlight: 1

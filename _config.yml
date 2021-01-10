@@ -15,11 +15,7 @@ twitter:
 sass:
   style: compressed
 
-jekyll-mentions:
-  base_url: https://twitter.com
-
 plugins:
   - jekyll-sitemap
   - jekyll-feed
   - jekyll-seo-tag
-  - jekyll-mentions
