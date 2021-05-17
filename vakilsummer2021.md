@@ -27,33 +27,33 @@ We intend to cover
 
 | Date                    | Leader      | Reading | Problems  |
 | :---------              | :---------  | :-----  | :---      |
-| Monday (05/17) | Ivan | 1.1-1.3 | N/A |
-| Wednesday (05/19) | | 1.4-1.6 | N/A | 
-| Monday (05/24) | | 1.1-1.3 | N/A |
-| Wednesday (05/26) | | 1.4-1.6 | N/A | 
-| Monday (05/31) | | 1.1-1.3 | N/A |
-| Wednesday (06/02) | | 1.4-1.6 | N/A | 
-| Monday (06/07) | | 1.1-1.3 | N/A |
-| Wednesday (06/09) | | 1.4-1.6 | N/A | 
-| Monday (06/14) | | 1.1-1.3 | N/A |
-| Wednesday (06/16) | | 1.4-1.6 | N/A | 
-| Monday (06/21) | | 1.1-1.3 | N/A |
-| Wednesday (06/23) | | 1.4-1.6 | N/A | 
-| Monday (06/28) | | 1.1-1.3 | N/A |
-| Wednesday (06/30) | | 1.4-1.6 | N/A | 
-| Monday (07/05) | | 1.1-1.3 | N/A |
-| Wednesday (07/07) | | 1.4-1.6 | N/A | 
-| Monday (07/12) | | 1.1-1.3 | N/A |
-| Wednesday (07/14) | | 1.4-1.6 | N/A | 
+| Monday (05/17) | Ivan | 1.1-1.3 Categories and Functors | N/A |
+| Wednesday (05/19) | | 1.4-1.6 (Co)Limits, Adjoints, Ab Categories | N/A | 
+| Monday (05/24) | | 2.1-2.4 Intro to Sheaves | 1.1-1.3 |
+| Wednesday (05/26) | | 2.5-2.7 Sheaf constructions | 1.4-1.6 | 
+| Monday (05/31) | | 3.1-3.3 Intro to Schemes | 2.1-2.4 |
+| Wednesday (06/02) | | 3.4-3.7 Scheme Constructions | 2.5-2.7 | 
+| Monday (06/07) | | 4.1-4.4 Structure Sheaves and General Schemes | 3.1-3.3 |
+| Wednesday (06/09) | | 4.5 + catch up Projective Schemes and Proj | 3.4-3.7 | 
+| Monday (06/14) | | 5.1-5.4 Properties of Schemes | 4.1-4.4 |
+| Wednesday (06/16) | | 5.5 + catch up Associated Points and Primes | 4.5 + catch up | 
+| Monday (06/21) | | 6.1-6.4 Morphisms of Schemes | 5.1-5.4 |
+| Wednesday (06/23) | | 6.5 + catch up Rational Maps from Reduced Schemes | 5.5 + catch up | 
+| Monday (06/28) | | 7.1-7.3 Useful classes of morphisms of schemes | 6.1-6.4 |
+| Wednesday (06/30) | | 7.4 + catch up Images of Morphisms: Chevalley's Theorem and Elimination Theory | 6.5 + catch up | 
+| Monday (07/05) | | 8.1-8.3 Closed Embeddings and Related Notions | 7.1-7.3 |
+| Wednesday (07/07) | | 8.4 + catch up Effective Cartier Divisors, Regular Sequences and Regular Embeddings | 7.4 + catch up | 
+| Monday (07/12) | | 9.1-9.3 Intro to Fibered Products | 8.1-8.3 |
+| Wednesday (07/14) | | 9.4, 9.6, 9.7 Base Changes, Products, Normalization | 8.4 + catch up | 
 | BREAK | | | |
-| Monday (08/03) | | 1.1-1.3 | N/A |
-| Wednesday (08/05) | | 1.4-1.6 | N/A | 
-| Monday (08/10) | | 1.1-1.3 | N/A |
-| Wednesday (08/12) | | 1.4-1.6 | N/A | 
-| Monday (08/17) | | 1.1-1.3 | N/A |
-| Wednesday (08/19) | | 1.4-1.6 | N/A | 
-| Monday (08/24) | | 1.1-1.3 | N/A |
-| Wednesday (08/26 | | 1.4-1.6 | N/A | 
+| Monday (08/03) | | 10.1-10.2 Separated Morphisms | 9.1-9.3 |
+| Wednesday (08/05) | | 10.3 + catch up Proper Morphisms | 9.4, 9.6, 9.7  | 
+| Monday (08/10) | | 11.1-11.2 Dimension and Noether Normalization | 10.1-10.2 |
+| Wednesday (08/12) | | 11.3-11.4 Codimension 1 and Dimension of Fibers | 10.3 + catch up | 
+| Monday (08/17) | | 12.1-12.3 Zariski Tangent Spaces, Regularity and Smoothness | 11.1-11.2 |
+| Wednesday (08/19) | | 12.4-12.6 Bertini's Theorem, DVRs, Smooth and Étale Morphisms | 11.3-11.4 | 
+| Monday (08/24) | | N/A | 12.1-12.3 |
+| Wednesday (08/26) | | N/A | 12.4-12.6 | 
  
 ## General Meeting Structure
 
