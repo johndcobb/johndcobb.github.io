@@ -9,7 +9,7 @@ class: class
 ![RRS](/images/projects/clebsch.jpg "An illustration of a clebsch surface.")
 
 ## Resources
-We intend to cover 
+We intend to cover parts I-IV of Vakil's notes. This will leave us in a good place to continue on during the semester to Part V on Quasicoherent Sheaves and some of the extra chapters at the end (27 lines), which will give a different perspective on the material taught in the second semester of algebraic geometry here at UW Madison. 
 <div class="button-container" style="text-align: center">
     <a href="http://math.stanford.edu/~vakil/216blog/FOAGdec3014public.pdf05" class="button" style="margin:5px">
     <i class="fas fa-book"></i>
