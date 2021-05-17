@@ -19,7 +19,7 @@ class: home
 <div class="columns" markdown="1">
 
 <div class="intro" markdown="1">
-I'm a second year graduate student in the mathematics department at the [University of Wisconsin-Madison](https://www.math.wisc.edu/). I am supported by a [DoD NDSEG Fellowship](https://ndseg.sysplus.com/NDSEG/About/). My current research interests lie somewhere in the intersection of homological algebra and algebraic geometry. In 2019, I received my B.S. from the [Honors College of Charleston](https://honors.cofc.edu/), where I was advised by [Alex Kasman](http://kasmana.people.cofc.edu/) and [Amy Langville](http://langvillea.people.cofc.edu/). Details are in my [CV]({{ absolute_url }}/cv).
+I'm a third year graduate student in the mathematics department at the [University of Wisconsin-Madison](https://www.math.wisc.edu/). I am supported by a [DoD NDSEG Fellowship](https://ndseg.sysplus.com/NDSEG/About/) and am a current [WISCIENCE Public Service Fellow](https://wiscience.wisc.edu/program/public-service-fellows). My current research interests lie somewhere in the intersection of homological algebra and algebraic geometry. In 2019, I received my B.S. from the [Honors College of Charleston](https://honors.cofc.edu/), where I was advised by [Alex Kasman](http://kasmana.people.cofc.edu/) and [Amy Langville](http://langvillea.people.cofc.edu/). Details are in my [CV]({{ absolute_url }}/cv).
 </div>
 
 <div class="me" markdown="1">
