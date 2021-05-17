@@ -10,3 +10,10 @@
   image: drp.jpg
   description: "The DRP is a math mentoring program that pairs undergraduate students with graduate student mentors, for a semester-long independent study project."
   highlight: 1
+- title: The Rising Sea
+  type: Reading Group
+  url: "/organization/vakilsummer2021"
+  book: "http://math.stanford.edu/~vakil/216blog/FOAGdec3014public.pdf05"
+  image: clebsch.jpg
+  description: "The Red Rising Sea is a set of notes by Ravi Vakil. This page organizes the Summer 2021 reading schedule."
+  highlight: 1
