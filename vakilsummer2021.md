@@ -34,8 +34,8 @@ We intend to cover parts I-IV of Vakil's notes. This will leave us in a good pla
 | Tuesday (06/01) | Ivan | 3.1-3.3 Intro to Schemes | 2.1-2.4 |
 | Thursday (06/03) | Ivan | 3.4-3.7 Scheme Constructions | 2.5-2.7 | 
 | BREAK | | | |
-| Thursday (06/10) | John | 4.1-4.4 Structure Sheaves and General Schemes | 3.1-3.3 |
-| Tuesday (06/15) | | 4.5 + catch up Projective Schemes and Proj | 3.4-3.7 | 
+| Thursday (06/10) | John | 4.1-4.4 Structure Sheaves and General Schemes |  |
+| Tuesday (06/15) | | 4.5 + catch up Projective Schemes and Proj |  | 
 | Thursday (06/17) | | 5.1-5.4 Properties of Schemes | 4.1-4.4 |
 | Tuesday (06/22) | | 5.5 + catch up Associated Points and Primes | 4.5 + catch up | 
 | Thursday (06/24) | | 6.1-6.4 Morphisms of Schemes | 5.1-5.4 |
