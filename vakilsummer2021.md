@@ -9,7 +9,9 @@ class: class
 ![RRS](/images/projects/clebsch.jpg "An illustration of a clebsch surface.")
 
 ## Resources
-We intend to cover parts I-IV of Vakil's notes. This will leave us in a good place to continue on during the semester to Part V on Quasicoherent Sheaves and some of the extra chapters at the end (27 lines), which will give a different perspective on the material taught in the second semester of algebraic geometry here at UW Madison. 
+We intend to cover parts I-IV of Vakil's notes. This will leave us in a good place to continue on during the semester to Part V on Quasicoherent Sheaves and some of the extra chapters at the end (27 lines), which will give a different perspective on the material taught in the second semester of algebraic geometry here at UW Madison.
+
+Also, we are choosing to focus on Problems and are using the helpful write-up's of Ravi Vakil to guide our attention. Here is a [link](https://math216.wordpress.com/category/agittoc-2020/). 
 <div class="button-container" style="text-align: center">
     <a href="http://math.stanford.edu/~vakil/216blog/FOAGdec3014public.pdf05" class="button" style="margin:5px">
     <i class="fas fa-book"></i>
@@ -35,8 +37,8 @@ We intend to cover parts I-IV of Vakil's notes. This will leave us in a good pla
 | Thursday (06/03) | Ivan | 3.4-3.7 Scheme Constructions | 2.5-2.7 | 
 | BREAK | | | |
 | Thursday (06/10) | John | 4.1-4.4 Structure Sheaves and General Schemes |  |
-| Tuesday (06/15) | | 4.5 + catch up Projective Schemes and Proj |  | 
-| Thursday (06/17) | | 5.1-5.4 Properties of Schemes | 4.1-4.4 |
+| Tuesday (06/15) | John | 4.5 + catch up Projective Schemes and Proj |  | 
+| Thursday (06/17) | | 5.1-5.4 Properties of Schemes | 4.1-4.4 (4.1.A, 4.3.A, 4.3.F, 4.3.G) |
 | Tuesday (06/22) | | 5.5 + catch up Associated Points and Primes | 4.5 + catch up | 
 | Thursday (06/24) | | 6.1-6.4 Morphisms of Schemes | 5.1-5.4 |
 | Tuesday (06/29) | | 6.5 + catch up Rational Maps from Reduced Schemes | 5.5 + catch up | 
