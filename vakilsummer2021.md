@@ -36,9 +36,9 @@ Also, we are choosing to focus on Problems and are using the helpful write-up's 
 | Tuesday (06/01) | Ivan | 3.1-3.3 Intro to Schemes | 2.1-2.4 |
 | Thursday (06/03) | Ivan | 3.4-3.7 Scheme Constructions | 2.5-2.7 | 
 | BREAK | | | |
-| Thursday (06/10) | John | 4.1-4.4 Structure Sheaves and General Schemes |  |
-| Tuesday (06/15) | John | 4.5 + catch up Projective Schemes and Proj |  | 
-| Thursday (06/17) | | 5.1-5.4 Properties of Schemes | 4.1-4.4 (4.1.A, 4.3.A, 4.3.F, 4.3.G) |
+| Thursday (06/10) | John | 4.1-4.3 Structure Sheaves and General Schemes |  |
+| Tuesday (06/15) | John | 4.4-4.5 + catch up Projective Schemes and Proj |  | 
+| Thursday (06/17) | | 5.1-5.4 Properties of Schemes | 4.1-4.3 (4.1.A, 4.3.A, 4.3.F, 4.3.G) |
 | Tuesday (06/22) | | 5.5 + catch up Associated Points and Primes | 4.5 + catch up | 
 | Thursday (06/24) | | 6.1-6.4 Morphisms of Schemes | 5.1-5.4 |
 | Tuesday (06/29) | | 6.5 + catch up Rational Maps from Reduced Schemes | 5.5 + catch up | 
