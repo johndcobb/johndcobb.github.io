@@ -9,9 +9,7 @@ class: class
 ![RRS](/images/projects/clebsch.jpg "An illustration of a clebsch surface.")
 
 ## Resources
-We intend to cover parts I-IV of Vakil's notes. This will leave us in a good place to continue on during the semester to Part V on Quasicoherent Sheaves and some of the extra chapters at the end (27 lines), which will give a different perspective on the material taught in the second semester of algebraic geometry here at UW Madison.
-
-Also, we are choosing to focus on Problems and are using the helpful write-up's of Ravi Vakil to guide our attention. Here is a [link](https://math216.wordpress.com/category/agittoc-2020/). 
+We intend to cover parts I-IV of Vakil's notes, focusing on problems [he suggested](https://math216.wordpress.com/category/agittoc-2020/). 
 <div class="button-container" style="text-align: center">
     <a href="http://math.stanford.edu/~vakil/216blog/FOAGdec3014public.pdf05" class="button" style="margin:5px">
     <i class="fas fa-book"></i>
@@ -64,9 +62,7 @@ We’ll meet twice a week on Tuesday and Thursday via zoom. Each meeting we’ll
 
 We'll need people to volunteer to lead at least two discussions.  You can see roughly what topics we will cover when and sign up to be a discussion leader here.  As you will see, we intend to skip starred and double starred sections of the text.  If you're interested in reading those sections you can do that on your own and tell us about it when we discuss...
 
-The majority of the time each meeting will be spent discussing problems, since a lot of understanding the content of this book lies in doing the problems.  John and I have found that we really want a long time to meditate on problems in Vakil in order to get the most out of them.  So, we have chosen to stagger the problems from the readings by a week: e.g. we’ll talk about problems from section 1.1-1.3 a week after we discuss those sections.  Because of this, the first week's meetings are likely to be quite short.
-
-We will not assign particular exercises, so everyone should feel free to do whatever piques their interest.  We have enough people that we’re probabilistically guaranteed good coverage, so the exercises you don’t get to someone else probably did.
+The majority of the time each meeting will be spent discussing problems, since a lot of understanding the content of this book lies in doing the problems. Ivan and I have found that we really want a long time to meditate on problems in Vakil in order to get the most out of them.  So, we have chosen to stagger the problems from the readings by a week: e.g. we’ll talk about problems from section 1.1-1.3 a week after we discuss those sections.  Because of this, the first week's meetings are likely to be quite short.
 
 Obviously two meetings every week can be a lot, so no one should feel like they have to attend every single meeting. However, I think it will work best if everyone comes as much as possible.
  
