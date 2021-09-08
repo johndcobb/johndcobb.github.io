@@ -53,6 +53,7 @@
   roledescription: Hold weekly problem solving sessions.
 - title: "MATH 221: Calculus and Analytic Geometry I"
   panel: true
+  highlight: 1
   professor: Alex Waldron
   type: Current
   role: Teaching Assistant
