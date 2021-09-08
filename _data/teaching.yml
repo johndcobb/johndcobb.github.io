@@ -40,7 +40,7 @@
   roledescription: Graded homework assignments and tests for this introductory proof class.
   description: The primary aim of this course is to develop the ideas of rigor and proof in mathematics through the study of topics in discrete mathematics.
 - title: "MATH 221: Calculus and Analytic Geometry I"
-  panel: true
+  panel: false
   professor: Gabriele Meyer 
   sections: 429, 431
   type: Past
