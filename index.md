@@ -33,7 +33,8 @@ In 2019, I received my B.S. from the [Honors College of Charleston](https://hono
 </picture>
 
 {:.no-list}
-* <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+* <i class="fas fa-envelope-square"></i> <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+* <i class="fas fa-map-marker-alt"></i> <a href="https://www.google.com/maps/dir/?api=1&destination=Van+Vleck+Hall%2C+Madison%2C+WI">Van Vleck</a>, Office 820
 </div>
 </div>
 <!--- Put stuff here when ready -->
