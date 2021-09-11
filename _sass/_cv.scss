@@ -230,6 +230,10 @@
 
     @media print {
         font-size: 0.9rem;
+
+        a {
+            color: $text-color;
+        }
     
         h1 {
           font-size: 1.7rem;
@@ -266,6 +270,9 @@
 
         h3, h4 {
             color: $text-color;
+            a {
+                color: $text-color;
+            }
         }
 
         .header-columns a {
