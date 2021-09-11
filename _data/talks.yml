@@ -1,3 +1,10 @@
+- title: "Algebraic Geometry Beer Label"
+  location: Delta Beer Lab
+  city: Madison, WI
+  url: https://casp.wisc.edu/delta-beer-lab-competition/
+  slides: /talks/DeltaBeerLabtalk.pptx
+  abstract: This was a brief talk about the algebraic geometry inspired design that was printed on one of Delta Beer Lab's new beers. It is an extremely low level introduction to higher mathematics, algebraic geometry, and an explanation of various figures on the design.
+  date: 2021-05-15
 - title: "Introduction to Boij-Söderberg Theory"
   location: UW Madison Graduate Algebraic Geometry Seminar
   city: Madison, WI
