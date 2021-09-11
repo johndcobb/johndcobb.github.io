@@ -1,0 +1,282 @@
+#cv {
+    line-height: 1.5;
+
+    b, strong {
+        font-weight: 600;
+    }
+
+    /* It's not good to hide links but looks better in a CV. */
+    a {
+        color: white;
+    }
+
+    h1, h2, h3, h4 {
+        font-weight: 500;
+        border: none;
+        color: white;
+        font-family: 'Roboto', Helvetica Neue, sans-serif;
+        page-break-after: avoid;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 32pt;
+        font-weight: 100;
+        margin: 0;
+        a:hover {
+            font-weight: 150;
+            text-decoration: none;
+        }
+    }
+
+    h2, .pub-type {
+        color: white;
+        margin: 0.5em 0 0.2em 0;
+    }
+
+    h2 {
+        font-family: 'Source Sans Pro', Georgia, serif;
+        font-size: 2em;
+        font-weight: 900;
+    }
+
+    h2 a {
+        font-size: 0.7em;
+        color: #828282;
+    }
+    .live-link {
+        display: none;
+        opacity: 0.8;
+    }
+
+    .header-columns {
+        display: block;
+        margin-left: 0 !important;
+    }
+    .header-columns > div:first-child {
+        flex: 1;
+        text-align: center;
+        font-variant: small-caps;
+        font-size: 13px;
+    }
+    .header-columns > div:last-child {
+        text-align: center;
+        justify-content: space-between;
+    }
+
+    h3 {
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 1.2em;
+        font-weight: 500;
+    }
+
+    h4 {
+        margin: 0;
+        font-size: 1.1em;
+        font-weight: 500;
+    }
+
+    hr {
+        display: block;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        margin-left: auto;
+        margin-right: auto;
+        border-style: solid;
+        border-width: 1px;
+    }
+
+    .pub-type {
+        font-size: 1.3em;
+        margin-bottom: 0.4em;
+    }
+
+    .cv-pub h4 {
+        font-size: 1.2em;
+    }
+
+    .cv-pub {
+        margin-bottom: 1.2em;
+    }
+
+    .muted, .muted a {
+        color: #666;
+    }
+
+    .award {
+        color: firebrick;
+        white-space: nowrap;
+    }
+
+    ul {
+        list-style: none;
+        margin-left: 0;
+    }
+
+    .container {
+        min-width: 480px;
+        max-width: 800px;
+    }
+
+    .container > * {
+        margin-left: 90px;
+    }
+
+    article {
+        margin-left: 0 !important;
+    }
+
+    article > * {
+        margin-left: 90px;
+    }
+
+    .line {
+        display: inline-block;
+        color: #666;
+        margin: 0.5em 0 0.5em 0.5em;
+        border-style: solid;
+        border-width: 1px;
+        width: 100%;
+    }
+
+    .line-container {
+        width: 100%;
+        margin-left: 0 !important;
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+        white-space: nowrap;
+    }
+
+    .ref-container {
+        margin-left: 0;
+        float: left;
+        text-align: right;
+        width: 60px;
+    }
+
+    .date-container {
+        width: 100%;
+        margin-left: 0 !important;
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+        justify-content: space-between;
+    }
+
+    .date-container h3, .date-container .fill {
+        flex: 1;
+    }
+
+    .cv-talk-title {
+        margin-top: 1.2em;
+    }
+
+    .date-container .date, .date-container time {
+        display: block;
+        width: 90px;
+        text-align: right;
+        padding-right: 20px;
+        flex-shrink: 0;
+        font-size: 0.75rem;
+    }
+
+    .date-container .right {
+        padding-left: 10px;
+        color: #828282;
+        font-size: .9em;
+        font-style: italic;
+    }
+
+    /* References */
+
+    .refs {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .refs > p {
+        width: 50%;
+    }
+
+    /* Link back to homepage */
+
+    .back {
+        font-family: sans-serif;
+        min-width: 480px;  /* same as container */
+        padding: 0.6em 1em;
+        background-color: #666;
+        color: #fff;
+    }
+
+    .back a {
+        color: #fff;
+        font-size: 1.1em;
+        font-weight: 600;
+    }
+
+    .back a:hover {
+        text-decoration: none;
+    }
+
+    .live-link {
+        margin-bottom: 1rem;
+        display: none;
+        opacity: 0.8;
+    }
+
+    @media print {
+        font-size: 0.9rem;
+    
+        h1 {
+          font-size: 1.7rem;
+          color: $text-color;
+          a {
+              color: $text-color;
+          }
+        }
+    
+        h2 {
+          font-size: 1.4rem;
+        }
+    
+        h2 {
+          font-size: 1.2rem;
+        }
+    
+        .pub-type {
+          font-size: 1.1rem;
+          margin-bottom: 0.3rem;
+        }
+    
+        .live-link {
+            display: block;
+            a {
+                color: $text-color;
+            }
+        }
+    
+        h1, h2 {
+          margin: .4rem 0 .1rem 0;
+          color: $text-color;
+        }
+
+        h3, h4 {
+            color: $text-color;
+        }
+
+        .header-columns a {
+            color: $text-color;
+        }
+    
+        /* link to interactive talk/publications */
+        h2 a {
+          display: none;
+          color: $text-color;
+        }
+      }
+
+}

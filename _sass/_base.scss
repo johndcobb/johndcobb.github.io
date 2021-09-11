@@ -285,3 +285,20 @@ iframe {
     }
   }
 }
+
+/* Print */
+
+@media print {
+  .no-print, .no-print * {
+    display: none !important;
+  }
+  
+  body {
+    margin: 0;
+  }
+
+  @page {
+    size: portrait;
+    margin: 12mm 12mm 12mm 12mm;
+  }
+}
