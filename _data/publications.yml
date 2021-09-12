@@ -36,6 +36,19 @@
 #    - Conference
 #    - Journal
 
+- id: VirtualENComplexes
+  title: "Virtual Criterion for Generalized Eagon-Northcott Complexes"
+  year: 2021
+  authors:
+    - Caitlyn Booms
+    - John Cobb
+  venue: In Preparation...
+  tags:
+    - Virtual Complexes
+    - Toric Varieties
+  type:
+    - Journal
+
 - id: QKdV
   title: "Quarternion-Valued Breather Soliton, Rational, and Periodic QKdV Solutions"
   year: 2020
