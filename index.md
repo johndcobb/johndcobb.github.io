@@ -19,9 +19,9 @@ class: home
 <div class="columns" markdown="1">
 
 <div class="intro" markdown="1">
-I'm a third year PhD student in the mathematics department at the [University of Wisconsin-Madison](https://www.math.wisc.edu/) advised by both [Daniel Erman](https://people.math.wisc.edu/~derman/) and [Michael Kemeny](https://people.math.wisc.edu/~kemeny/homepage.html). I am supported by a [DoD NDSEG Fellowship](https://ndseg.sysplus.com/NDSEG/About/) and am a current [WISCIENCE Public Service Fellow](https://wiscience.wisc.edu/program/public-service-fellows). My research interests are within algebraic geometry. I am currently studying geometric perspectives of syzygies and moduli spaces of curves.
+I'm a third year PhD student in the mathematics department at the [University of Wisconsin-Madison](https://www.math.wisc.edu/) advised by both [Daniel Erman](https://people.math.wisc.edu/~derman/) and [Michael Kemeny](https://people.math.wisc.edu/~kemeny/homepage.html). I am supported by a [DoD NDSEG Fellowship](https://ndseg.sysplus.com/NDSEG/About/) and am a current [WISCIENCE Public Service Fellow](https://wiscience.wisc.edu/program/public-service-fellows). Details are in my [CV]({{ absolute_url }}/cv).
 
-In 2019, I received my B.S. from the [Honors College of Charleston](https://honors.cofc.edu/), where I was advised by [Alex Kasman](http://kasmana.people.cofc.edu/) and [Amy Langville](http://langvillea.people.cofc.edu/). Details are in my [CV]({{ absolute_url }}/cv).
+My research interests are within algebraic geometry and commutative algebra. Currently, I am studying things like geometric perspectives of syzygies and moduli spaces of curves. 
 </div>
 
 <div class="me" markdown="1">
