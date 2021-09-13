@@ -42,13 +42,13 @@
   authors:
     - Caitlyn Booms
     - John Cobb
-  venue: In Preparation...
+  venue: In Preparation
   tags:
     - Virtual Complexes
     - Toric Varieties
   highlight: true
   type:
-    - Journal
+    - In Progress
 
 - id: QKdV
   title: "Quarternion-Valued Breather Soliton, Rational, and Periodic QKdV Solutions"
@@ -71,7 +71,7 @@
     - Integrable Systems
     - Mathematical Physics
   type:
-    - In Progress
+    - Journal
     
 - id: P3HT
   title: "Aggregate Dispersions to Enhance the Intrachain Order in Surfactant-Stabilized Aqueous Colloids of Poly(3-hexylthiophene)"
