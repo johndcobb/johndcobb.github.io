@@ -46,6 +46,7 @@
   tags:
     - Virtual Complexes
     - Toric Varieties
+  highlight: true
   type:
     - Journal
 
@@ -89,7 +90,6 @@
   doi: 10.1016/j.molliq.2019.01.031
   short_doi: 10/dsxc
   pdf: /papers/P3HTpaper.pdf
-  highlight: true
   tags:
     - Physical Chemistry
   type:
