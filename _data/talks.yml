@@ -1,9 +1,19 @@
+- title: "Construction of Hilb and Quot I"
+  location: UW Madison Moduli Theory Reading Group
+  abstract: I define the quot functor and hint towards the proof of representability.
+  date: 2021-09-29
+  hide: true
 - title: "Rooms on a Sphere"
   location: UW Madison AMS Student Chapter Seminar
   city: Madison, WI
   url: https://hilbert.math.wisc.edu/wiki/index.php/AMS_Student_Chapter_Seminar
-  abstract: A classic combinatorial lemma becomes very simple to state and prove when on the surface of a sphere, leading to easy constructive proofs of other well known theorems.
+  abstract: A classic combinatorial lemma becomes very simple to state and prove when on the surface of a sphere, leading to easy constructive proofs of some other well known theorems.
   date: 2021-09-29
+- title: "Construction of Hilb and Quot II"
+  location: UW Madison Moduli Theory Reading Group
+  abstract: I define the quot functor and hint towards the proof of representability.
+  date: 2021-09-23
+  hide: true
 - title: "Algebraic Geometry Beer Label"
   location: Delta Beer Lab
   city: Madison, WI

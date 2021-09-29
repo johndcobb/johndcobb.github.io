@@ -104,7 +104,7 @@ title: CV
 
 
   {% assign talktitles = site.data.talks | group_by:"title" %}
-  {% for title in talktitles %}
+  {% for title in talktitles %}{% if title.items[0].hide == nil%}
   <article>
     <h3 class="cv-talk-title">{{ title.name }}</h3>
     {% assign sorted_talks = title.items | sort: 'date' | reverse %}
@@ -116,7 +116,7 @@ title: CV
       </div>
     {% endfor %}
   </article>
-  {% endfor %}
+  {% endif %}{% endfor %}
 
   <div class="line-container">
     <h2>Research Experience</h2> 
