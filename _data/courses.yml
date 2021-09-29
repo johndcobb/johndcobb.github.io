@@ -1,5 +1,57 @@
 - title: University of Wisconsin-Madison
   courses:
+    - title: Modern Commutative Algebra
+      number: MATH 746
+      with: Daniel Erman
+      when: Fall 2022
+    - title: Moduli Theory
+      number: MATH 990
+      with: Michael Kemeny
+      when: Fall 2022
+    - title: Practicum in STEM Public Service
+      number: INTEGSCI 840
+      with: Anna Courtier
+      when: Fall 2022
+    - title: STEM Relationship Development
+      number: INTEGSCI 740
+      with: Anna Courtier
+      when: Summer 2021
+    - title: Koszul Cohomology
+      number: MATH 990
+      with: Michael Kemeny
+      when: Summer 2021
+    - title: Public Service in STEM
+      number: INTEGSCI 640
+      with: Anna Courtier
+      when: Spring 2021
+    - title: Differentiable Manifolds
+      number: MATH 761
+      with: Tullia Dymarz
+      when: Spring 2021
+    - title: Algebraic Geometry II
+      number: MATH 764
+      with: Michael Kemeny
+      when: Spring 2021
+    - title:  Intersection Homology and Perverse Sheaves
+      number: MATH 853
+      with: Laurentiu Maxim
+      when: Spring 2021
+    - title: Algebraic Number Theory
+      number: MATH 748
+      with: Jordan Ellenberg
+      when: Fall 2021
+    - title: Algebraic Geometry I
+      number: MATH 763
+      with: Dima Arinkin
+      when: Fall 2021
+    - title: Geometry of Schemes
+      number: MATH 990
+      with: Daniel Erman
+      when: Summer 2020
+    - title: Intersection Homology and Perverse Sheaves
+      number: MATH 990
+      with: Laurentiu Maxim
+      when: Summer 2020
     - title: Algebra II
       number: MATH 742 
       with: Daniel Erman
