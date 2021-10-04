@@ -32,7 +32,7 @@
     }
 
     .page-header {
-      border-top-color: lighten($brand-color, 20%);
+      border-top-color: $brand-color;
     }
 
     .pubs .publication .award-icon.fa-award, .pubs .publication .awards, .home .featured-publications .publication .fa-award {
