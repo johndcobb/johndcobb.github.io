@@ -3,6 +3,11 @@
   where: Boston, MA
   start: 2022-07-24
   end: 2022-07-28
+- title: GAel XXIX
+  venue: Université Paris-Saclay
+  where: Paris, France
+  start: 2022-05-23
+  end: 2022-05-27
 - title: Géometrie Algébrique en l'honneur de Claire Voisin
   venue: Institut Henri Poincare
   where: Paris, France
@@ -13,18 +18,6 @@
   where: Minneapolis, MN
   start: 2021-10-30
   end: 2021-10-30
-- title: AMS Fall Central Sectional Meeting
-  where: Virtual
-  start: 2021-10-09
-  end: 2021-10-10
-- title: WARTHOG 2020 (Infinite-dimensional methods in commutative algebra)
-  where: University of Oregon
-  start: 2020-07-27
-  end: 2020-07-31
-- title: CA+ Conference
-  where: Ames, IA
-  start: 2020-04-18
-  end: 2020-04-19
 - title: Joint Mathematical Meetings
   where: Baltimore, MA
   start: 2019-01-16
