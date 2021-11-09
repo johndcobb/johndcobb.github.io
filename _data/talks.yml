@@ -1,3 +1,8 @@
+- title: "Syzygies and Koszul Cohomology"
+  location: UW Madison Graduate Algebraic Geometry Seminar
+  abstract: Early on in the history of algebraic geometry it was recognized that many properties/invariants of projective varieties could be deduced by looking at their hyperplane sections. Starting in the 1950s, this classical picture was gradually refined into general theory by people like Serre and Kodaira — many hard-earned numbers could now be obtained by more brainless methods. I hope to motivate a few ideas in the 1980’s as a continuation of this story beginning from Serre’s vanishing theorem.
+  date: 2021-10-04
+  url: https://www.math.wisc.edu/wiki/index.php/Graduate_Algebraic_Geometry_Seminar
 - title: "Construction of Hilb and Quot I"
   location: UW Madison Moduli Theory Reading Group
   abstract: I define the quot functor and hint towards the proof of representability.
