@@ -42,13 +42,14 @@
   authors:
     - Caitlyn Booms
     - John Cobb
-  venue: In Preparation
+  pdf: https://arxiv.org/pdf/2111.13773.pdf
+  arxiv: "2111.13773"
+  highlight: true
   tags:
     - Virtual Complexes
     - Toric Varieties
-  highlight: true
   type:
-    - In Progress
+    - Preprint
 
 - id: QKdV
   title: "Quarternion-Valued Breather Soliton, Rational, and Periodic QKdV Solutions"
