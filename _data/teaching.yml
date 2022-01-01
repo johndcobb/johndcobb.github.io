@@ -40,7 +40,7 @@
   roledescription: Graded homework assignments and tests for this introductory proof class.
   description: The primary aim of this course is to develop the ideas of rigor and proof in mathematics through the study of topics in discrete mathematics.
 - title: "MATH 221: Calculus and Analytic Geometry I"
-  panel: false
+  panel: true
   professor: Gabriele Meyer 
   sections: 429, 431
   type: Past
@@ -56,7 +56,7 @@
   highlight: 1
   sections: 341, 344
   professor: Alex Waldron
-  type: Current
+  type: Past
   role: Teaching Assistant
   year: Fall 2021
   location: University of Wisconsin-Madison
