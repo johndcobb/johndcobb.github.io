@@ -9,13 +9,13 @@
   url: "https://www.math.wisc.edu/~drp/"
   image: drp.jpg
   description: "The DRP is a math mentoring program that pairs undergraduate students with graduate student mentors, for a semester-long independent study project."
-  highlight: 2
+  highlight: 1
 - title: Graduate Algebraic Geometry Seminar (GAGS)
   type: Seminar
   url: "https://hilbert.math.wisc.edu/wiki/index.php/Graduate_Algebraic_Geometry_Seminar"
   image: grothendieck_devil.jpg
   description: "The purpose of this seminar is to learn algebraic geometry and commutative algebra by giving and listening to talks in a informal setting."
-  highlight: 3
+  highlight: 2
 - title: The Rising Sea
   type: Reading Group
   url: "/organization/vakilsummer2021"
