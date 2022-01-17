@@ -1,3 +1,10 @@
+- title: Positivity in Algebraic Geometry
+  type: Reading Group
+  highlight: 1
+  url: "/organization/positivity"
+  book: "https://cims.nyu.edu/~rodion/lib/R.%20K.%20Lazarsfeld.%20Positivity%20in%20Algebraic%20Geometry,%20I.%20Classical%20Setting:%20Line%20Bundles%20and%20Linear%20Series%20-%202003.pdf"
+  image: positivity.jpg
+  description: "Positivity in Algebraic Geometry is a textbook by Robert Lazarsfeld. This page organizes the Spring 2022 reading schedule."
 - title: Geometry of Schemes
   type: Reading Group
   url: "/organization/geometryofschemes"
@@ -9,13 +16,13 @@
   url: "https://www.math.wisc.edu/~drp/"
   image: drp.jpg
   description: "The DRP is a math mentoring program that pairs undergraduate students with graduate student mentors, for a semester-long independent study project."
-  highlight: 1
+  highlight: 2
 - title: Graduate Algebraic Geometry Seminar (GAGS)
   type: Seminar
   url: "https://hilbert.math.wisc.edu/wiki/index.php/Graduate_Algebraic_Geometry_Seminar"
   image: grothendieck_devil.jpg
   description: "The purpose of this seminar is to learn algebraic geometry and commutative algebra by giving and listening to talks in a informal setting."
-  highlight: 2
+  highlight: 3
 - title: The Rising Sea
   type: Reading Group
   url: "/organization/vakilsummer2021"
