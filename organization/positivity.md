@@ -6,7 +6,7 @@ class: class
 ---
 
 # Positivity in Algebraic Geometry
-![GOS](/images/projects/positivity.jpg "An illustration from The Geometry of Schemes, page 86.")
+![GOS](/images/projects/positivity.jpg "Various illustrations from Positivity in Algebraic Geometry I.")
 
 
 ## Resources
