@@ -17,6 +17,15 @@ We are reading Positivity in Algebraic Geometry I by Robert Lazarsfeld. The curr
     <i class="fas fa-book"></i>
     Book
     </a>
+    <a href="https://discord.gg/hsVGtY8wWE" class="button" style="margin:5px">
+    <i class="fab fa-discord"></i>
+    Discord
+    </a>
+    <a href="https://groups.google.com/a/g-groups.wisc.edu/g/positivity" class="button" style="margin:5px">
+    <i class="fas fa-envelope"></i>
+    Email List
+    </a>
+    
 </div>
 
 
