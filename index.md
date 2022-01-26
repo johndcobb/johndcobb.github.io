@@ -33,8 +33,8 @@ My research interests are within algebraic geometry and commutative algebra. Cur
 </picture>
 
 {:.no-list}
-* <i class="fas fa-envelope-square"></i> <a href="mailto:{{ site.email }}">{{ site.email }}</a>
-* <i class="fas fa-map-marker-alt"></i> <a href="https://www.google.com/maps/dir/?api=1&destination=Van+Vleck+Hall%2C+Madison%2C+WI">Van Vleck</a>, Office 820
+* <i class="fas fa-envelope-square" aria-hidden="true"></i> <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+* <i class="fas fa-map-marker-alt" aria-hidden="true"></i> <a href="https://www.google.com/maps/dir/?api=1&destination=Van+Vleck+Hall%2C+Madison%2C+WI">Van Vleck</a>, Office 820
 * he/him/his
 </div>
 </div>
@@ -52,7 +52,7 @@ My research interests are within algebraic geometry and commutative algebra. Cur
   {% endfor %}
 </div>
 <a href="{{ "/teaching/" | relative_url }}" class="button">
-  <i class="fas fa-chevron-circle-right"></i>
+  <i class="fas fa-chevron-circle-right" aria-hidden="true"></i>
   Show More
 </a>
 
@@ -82,7 +82,7 @@ My research interests are within algebraic geometry and commutative algebra. Cur
 </div>
 
 <a href="{{ "/publications/" | relative_url }}" class="button">
-  <i class="fas fa-chevron-circle-right"></i>
+  <i class="fas fa-chevron-circle-right" aria-hidden="true"></i>
   Show All Publications
 </a>
 

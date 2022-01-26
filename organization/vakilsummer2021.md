@@ -12,11 +12,11 @@ class: class
 We intend to cover parts I-IV of Vakil's notes, focusing on problems [he suggested](https://math216.wordpress.com/category/agittoc-2020/). 
 <div class="button-container" style="text-align: center">
     <a href="http://math.stanford.edu/~vakil/216blog/FOAGdec3014public.pdf05" class="button" style="margin:5px">
-    <i class="fas fa-book"></i>
+    <i class="fas fa-book" aria-hidden="true"></i>
     Book
     </a>
     <a href="https://uwmadison.zoom.us/j/96404725398?pwd=RzRoU3lVMkt1MWRScHJDYm84V3pZZz09" class="button" style="margin:5px">
-    <i class="fas fa-video"></i>
+    <i class="fas fa-video" aria-hidden="true"></i>
     Zoom
     </a>
 </div>
