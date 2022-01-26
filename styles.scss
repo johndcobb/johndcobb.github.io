@@ -39,7 +39,6 @@ $on-laptop:        800px;
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
   "base",
-  "dark",
   "layout",
   "nav",
   "footer",
@@ -50,6 +49,7 @@ $on-laptop:        800px;
   "talks",
   "class",
   "syntax-highlighting",
-  "cv"
+  "cv",
+  "dark"
 ;
 
