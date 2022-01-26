@@ -14,11 +14,11 @@ We intend to cover the first half of "The Geometry of Schemes" by Eisenbud and H
 
 <div class="button-container" style="text-align: center">
     <a href="https://www.maths.ed.ac.uk/~v1ranick/papers/eisenbudharris.pdf" class="button" style="margin:5px">
-    <i class="fas fa-book"></i>
+    <i class="fas fa-book" aria-hidden="true"></i>
     Book
     </a>
     <a href="https://zoom.us/j/94890235606?pwd=Z1RvTko0b0Nmb3daZnRsc3RFNVlSdz09" class="button" style="margin:5px">
-    <i class="fas fa-video"></i>
+    <i class="fas fa-video" aria-hidden="true"></i>
     Zoom
     </a>
     <div class="dropdown" style="margin:5px">
