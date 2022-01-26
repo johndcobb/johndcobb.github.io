@@ -14,15 +14,15 @@ We are reading Positivity in Algebraic Geometry I by Robert Lazarsfeld. The curr
 
 <div class="button-container" style="text-align: center">
     <a href="https://cims.nyu.edu/~rodion/lib/R.%20K.%20Lazarsfeld.%20Positivity%20in%20Algebraic%20Geometry,%20I.%20Classical%20Setting:%20Line%20Bundles%20and%20Linear%20Series%20-%202003.pdf" class="button" style="margin:5px">
-    <i class="fas fa-book" aria-hidden="true"></i>
+    <i class="fas fa-book"></i>
     Book
     </a>
     <a href="https://discord.gg/hsVGtY8wWE" class="button" style="margin:5px">
-    <i class="fab fa-discord" aria-hidden="true"></i>
+    <i class="fab fa-discord"></i>
     Discord
     </a>
     <a href="https://groups.google.com/a/g-groups.wisc.edu/g/positivity" class="button" style="margin:5px">
-    <i class="fas fa-envelope" aria-hidden="true"></i>
+    <i class="fas fa-envelope"></i>
     Email List
     </a>
     
