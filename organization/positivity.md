@@ -25,6 +25,11 @@ We are reading Positivity in Algebraic Geometry I by Robert Lazarsfeld. The curr
     <i class="fas fa-envelope" aria-hidden="true"></i>
     Email List
     </a>
+    <a href="https://forms.gle/jx78ZbB4qj98h1v29" class="button" style="margin:5px">
+    <i class="fa-regular fa-keynote" aria-hidden="true"></i>
+    Sign up for a talk
+    </a>
+    
     
 </div>
 
