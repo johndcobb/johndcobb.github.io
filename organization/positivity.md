@@ -26,7 +26,7 @@ We are reading Positivity in Algebraic Geometry I by Robert Lazarsfeld. The curr
     Email List
     </a>
     <a href="https://forms.gle/jx78ZbB4qj98h1v29" class="button" style="margin:5px">
-    <i class="fa-solid fa-keynote" aria-hidden="true"></i>
+    <i class="fas fa-chalkboard-teacher" aria-hidden="true"></i>
     Sign up for a talk
     </a>
     
@@ -38,19 +38,19 @@ We are reading Positivity in Algebraic Geometry I by Robert Lazarsfeld. The curr
 
 | Date                    | Speaker      | Reading |
 | :---------              | :---------  | :-----  |
-| Week 1 | John Cobb  | 1.1 Preliminaries: Divisors, Line Bundles, and Linear Series (17 pages)  |  
-| Week 2 | | 1.2-3 The Classical Theory, $$\mathbb{Q}$$-Divisors and $$\mathbb{R}$$-Divisors (26 pages) |
-| Week 3 | | 1.4 Nef Line Bundles and Divisors (20 pages) |
-| Week 4 | | 1.5 Examples and Complements (18 pages) |
-| Week 5 | | 1.8 Castelnuovo-Mumford Regularity (21 pages) |
-| Week 6 | | 2.1 Asymptotic Theory (18 pages) |
-| Week 7 | | 2.2 Big Line Bundles and Divisors (18 pages) |
-| Week 8 | | 2.3 Examples and Complements (15 pages) |
-| Week 9 | | 3.1 The Lefschetz Theorems (16 pages) |
-| Week 10 | | 4.1 Preliminaries (8 pages) |
-| Week 11 | | 4.2-3 Kodaira and Nakano Vanishing Theorems (13 pages) |
+| Week 1 (February 8)  | John Cobb  | 1.1 Preliminaries: Divisors, Line Bundles, and Linear Series (17 pages)  |  
+| Week 2 (February 15) | | 1.2-3 The Classical Theory, $$\mathbb{Q}$$-Divisors and $$\mathbb{R}$$-Divisors (26 pages) |
+| Week 3 (February 22) | Colin | 1.4 Nef Line Bundles and Divisors (20 pages) |
+| Week 4 (March 1) | | 1.5 Examples and Complements (18 pages) |
+| Week 5 (March 8) | | 1.8 Castelnuovo-Mumford Regularity (21 pages) |
+| Week 6 (March 22) | Yifan | 2.1 Asymptotic Theory (18 pages) |
+| Week 7 (March 29) | | 2.2 Big Line Bundles and Divisors (18 pages) |
+| Week 8 (April 5) | | 2.3 Examples and Complements (15 pages) |
+| Week 9 (April 12) | | 3.1 The Lefschetz Theorems (16 pages) |
+| Week 10 (April 19) | | 4.1 Preliminaries (8 pages) |
+| Week 11 (April 26) | | 4.2-3 Kodaira and Nakano Vanishing Theorems (13 pages) |
 
 I'm leaving some room to split any readings into two weeks, or to veer in another direction if we would like. I know that Daniel Erman would like to give a lecture. By coincidence, Lazarsfeld will be in town around the middle of the semester.
 
 ## Meeting Structure
-We will be meeting weekly (details TBD). While reading, write any questions you have and bring them. Each week the speaker will be giving a ~50 minute talk summarizing and motivating the reading that week, preferably picking a few of the many examples to work through in detail. Note that being the speaker does *not* mean you are expected to know everything -- You can have lots of questions too. During the talk, you should ask your questions for everyone to collectively discuss, perhaps saving any "harder" questions for the end.
+We will be meeting weekly at 3:45-4:45 on Tuesdays. While reading, write any questions you have and bring them. Each week the speaker will be giving a ~50 minute talk summarizing and motivating the reading that week, preferably picking a few of the many examples to work through in detail. Note that being the speaker does *not* mean you are expected to know everything -- You can have lots of questions too. During the talk, you should ask your questions for everyone to collectively discuss, perhaps saving any "harder" questions for the end.
