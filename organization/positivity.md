@@ -41,10 +41,10 @@ We are reading Positivity in Algebraic Geometry I by Robert Lazarsfeld. The curr
 | Week 1 (February 8)  | John Cobb  | 1.1 Preliminaries: Divisors, Line Bundles, and Linear Series (17 pages)  |  
 | Week 2 (February 15) | Alex Hof | 1.2-3 The Classical Theory, $$\mathbb{Q}$$-Divisors and $$\mathbb{R}$$-Divisors (26 pages) |
 | Week 3 (February 22) | Colin | 1.4 Nef Line Bundles and Divisors (20 pages) |
-| Week 4 (March 1) | | 1.5 Examples and Complements (18 pages) |
+| Week 4 (March 1) | Ivan | 1.5 Examples and Complements (18 pages) |
 | Week 5 (March 8) | | 1.8 Castelnuovo-Mumford Regularity (21 pages) |
 | Week 6 (March 22) | Yifan | 2.1 Asymptotic Theory (18 pages) |
-| Week 7 (March 29) | | 2.2 Big Line Bundles and Divisors (18 pages) |
+| Week 7 (March 29) | John Cobb | 2.2 Big Line Bundles and Divisors (18 pages) |
 | Week 8 (April 5) | | 2.3 Examples and Complements (15 pages) |
 | Week 9 (April 12) | | 3.1 The Lefschetz Theorems (16 pages) |
 | Week 10 (April 19) | | 4.1 Preliminaries (8 pages) |
