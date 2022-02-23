@@ -88,7 +88,7 @@ title: CV
           <h4>{% if pub.pdf %}<a href="{{ pub.pdf }}">{{ pub.title }}</a>{% else %}{{ pub.title }}{%endif%}</h4>
           <div>
             {% for author in pub.authors %}{% include person person=author %}{% unless forloop.last %}, {% endunless %}{% endfor %}.
-            {% if pub.venue or pub.description %}<i>{% if pub.description %}{{ pub.description | markdownify | remove: '<p>' | remove: '</p>' }}{% endif %}{{ pub.venue }}</i>{% if pub.venue %},{% endif %} {% endif %}{{ pub.year }}.
+            {% if pub.venue %}<i>{{ pub.venue }}</i>,{% endif %} {{ pub.year }}.
             {% for award in pub.awards %}<br/><strong class="award"><i class="fas fa-{% if award == "Best Paper Award" %}trophy{% else %}award{% endif %}" aria-hidden="true"></i> {{ award }}</strong>{% endfor %}
           </div>
         </article>
