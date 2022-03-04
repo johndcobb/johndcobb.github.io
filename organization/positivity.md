@@ -42,14 +42,13 @@ We are reading Positivity in Algebraic Geometry I by Robert Lazarsfeld. The curr
 | Week 2 (February 15) | Alex Hof | 1.2-3 The Classical Theory, $$\mathbb{Q}$$-Divisors and $$\mathbb{R}$$-Divisors (26 pages) |
 | Week 3 (February 22) | Colin | 1.4 Nef Line Bundles and Divisors (20 pages) |
 | March 4 (March 1) | Lazarsfeld | Pythagorean triples and parametrized curves |
-| Week 5 (March 8) | Ivan | 1.5 Examples and Complements (18 pages) |
-| Week 6 (March 22) | | 1.8 Castelnuovo-Mumford Regularity (21 pages) |
-| Week 7 (March 29) | Yifan | 2.1 Asymptotic Theory (18 pages) |
-| Week 8 (April 5) | John Cobb | 2.2 Big Line Bundles and Divisors (18 pages) |
-| Week 9 (April 12) | | 2.3 Examples and Complements (15 pages) |
-| Week 10 (April 19) | | 3.1 The Lefschetz Theorems (16 pages) |
-| Week 11 (April 26) | | 4.1 Preliminaries (8 pages) |
-| Week 12 (May 3) | | 4.2-3 Kodaira and Nakano Vanishing Theorems (13 pages) |
+| Week 5 (March 22) | Asvin | 1.5 Examples and Complements (18 pages) |
+| Week 6 (March 29) | Ivan | 1.8 Castelnuovo-Mumford Regularity (21 pages) |
+| Week 7 (April 5) | Yifan | 2.1 Asymptotic Theory (18 pages) |
+| Week 8 (April 12) | John Cobb | 2.2 Big Line Bundles and Divisors (18 pages) |
+| Week 9 (April 19) | | 2.3 Examples and Complements (15 pages) |
+| Week 10 (April 26) | | 3.1 The Lefschetz Theorems (16 pages) |
+| Week 11 (May 3) | | 4.1-3 Kodaira and Nakano Vanishing Theorems (21 pages) |\
 
 I'm leaving some room to split any readings into two weeks, or to veer in another direction if we would like. I know that Daniel Erman would like to give a lecture. By coincidence, Lazarsfeld will be in town around the middle of the semester.
 
