@@ -57,6 +57,7 @@
   url: http://math.cofc.edu/colloquium/index-2018-fall.php
   date: 2018-11-16
   slides: /talks/QKdVSolutions.pptx
+  hide: true
 - title: "Investigating Rankability Using Distributed Graph Analytic Frameworks"
   location: College of Charleston Celebration of Scholars
   city: Charleston, SC
