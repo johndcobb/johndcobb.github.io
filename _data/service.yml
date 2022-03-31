@@ -22,12 +22,6 @@
   location: Madison, WI
   years: Fall 2020-Spring 2021
   description: "FGSS is a student organization dedicated to helping students locate resources, connect with peers and faculty, and support them along their college journey. FGSS links first-generation college students to first generation graduate and faculty mentors for monthly meetings. "
-- title: Geometry of Schemes Reading Group
-  at: UW Madison
-  url: https://johndcobb.github.io/organization/geometryofschemes/
-  location: Madison, WI
-  years: Summer 2020
-  description: "Organizer, Book: Geometry of Schemes by Eisenbud and Harris."
 - title: Organizer
   at: UW Madison Directed Reading Program 
   url: https://sites.google.com/site/uwmadisondrp/
@@ -39,6 +33,7 @@
   years: Sep 2019
   location: Madison, WI
   description: "Signed in attendees to the 3-day AMS Fall central sectional meeting."
+  hide: true
 - title: Student Ambassador
   at: College of Charleston School of Sciences and Mathematics
   years: Sep 2018-May 2019
@@ -49,17 +44,20 @@
   years: Apr 2017-May 2019
   location: Charleston, SC
   description: Met with board to coordinate volunteer opportunities and promote education throughout the College of Charleston campus. Helped organize events on campus for Phi Kappa Phi members. Managed the College of Charleston Chapter Phi Kappa Phi Website.
+  hide: true
 - title: Volunteer
   at: AMS Spring Southeastern Sectional Meeting
   years: Mar 2017
   location: Charleston, SC
   description: "Signed in attendees to the 3-day AMS Spring southeastern sectional meeting."
+  hide: true
 - title: Volunteer
   at: College of Charleston Math Meet
   years: 2016-2018
   url: https://mathmeet.cofc.edu/
   location: Charleston, SC
   description: "Volunteered to oversee various parts of the planned activities including judging timed sprints and signing students in."
+  hide: true
 - title: Volunteer Tutor
   at: Trident Literacy Association
   years: Oct 2015-Oct 2016

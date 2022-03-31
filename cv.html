@@ -119,7 +119,7 @@ title: CV
     <span class="line"></span>
   </div>
 
-
+  {% comment %}
   {% assign talktitles = site.data.talks | group_by:"title" %}
   {% for title in talktitles %}{% if title.items[0].hide == nil %}
   <article>
@@ -129,11 +129,20 @@ title: CV
       <div class="date-container">
         <time datetime="{{ talk.date }}">{{ talk.date | date: "%b %Y" }}</time>
         <span class="fill">{{ talk.location }}{% if talk.city %}, <small class="muted">{{ talk.city }}</small>{% endif %}</span>
-
       </div>
     {% endfor %}
   </article>
   {% endif %}{% endfor %}
+  {% endcomment %}
+
+  <article>
+  {% for talk in site.data.talks %}{% if talk.hide == nil %}
+    <div class="date-container">
+      <time datetime="{{ talk.date }}">{{ talk.date | date: "%b %Y" }}</time>
+      <span class="fill">{{ talk.title }}{% if talk.city %}, <small class="muted">{{ talk.location }}. <em>{{ talk.city }}</em> </small>{% endif %}</span>
+    </div>
+  {% endif %}{% endfor %}
+  </article>
 
   <div class="line-container">
     <h2>Research Experience</h2> 

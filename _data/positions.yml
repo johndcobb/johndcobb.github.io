@@ -12,7 +12,7 @@
   location: Charlotte, NC
   mentors: 
     - Tim Chartier
-  description: "Invited by Chief Analyst Dr. Tim Chartier to represent IGARDS and design efficiently stored graph theory algorithms for the rankability project. Involved rewriting prospective rankability measures (primarily using scala) to fit the memory partitioning schemes of computer clusters, with the ultimate goal of speeding up the computation of large ranking problems. "
+  description: "Invited by Chief Analyst Dr. Tim Chartier to represent IGARDS and design efficiently stored graph theory algorithms for the rankability project. Involved rewriting prospective rankability measures (primarily using Apache spark) to fit the memory partitioning schemes of computer clusters, with the ultimate goal of speeding up the computation of large ranking problems. "
 - title: Student Researcher
   years: Dec 2016-May 2019
   company: Institute on Graph Analytics and Research in Data Science

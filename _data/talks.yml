@@ -1,7 +1,7 @@
 - title: "Chip Firing on Graphs"
   location: Madison Math Circle
   city: Madison, WI
-  date: 2021-04-18
+  date: 2022-04-18
   url: https://hilbert.math.wisc.edu/wiki/index.php/Madison_Math_Circle
 - title: "Syzygies and Koszul Cohomology"
   location: UW Madison Graduate Algebraic Geometry Seminar
@@ -62,6 +62,7 @@
   city: Charleston, SC
   date: 2017-08-25
   poster: /talks/rankability_poster.pdf
+  hide: true
 - title: "Investigating Rankability Using Distributed Graph Analytic Frameworks"
   location: Tresata
   city: Charlotte, NC
@@ -70,6 +71,7 @@
   location: College of Charleston Celebration of Scholars
   city: Charleston, SC
   date: 2017-08-16
+  hide: true
 - title: "Solvent-Induced Assembly of P3HT: Controlling Organic Photovoltaic Film Morphology"
   location: College of Charleston Celebration of Scholars
   city: Charleston, SC
@@ -91,3 +93,4 @@
   city: Charleston, SC
   date: 2016-08-15
   poster: /talks/Cobb_Poster.pdf
+  hide: true
