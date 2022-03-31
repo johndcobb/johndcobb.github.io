@@ -1,3 +1,27 @@
+- title: "MATH 221: Calculus and Analytic Geometry I"
+  panel: true
+  professor: Gabriele Meyer 
+  sections: 429, 431
+  type: Past
+  role: Teaching Assistant
+  year: Fall 2020
+  location: University of Wisconsin-Madison
+  url: "/teaching/221Fall2020"
+  image: calculus1.jpg
+  description: This page organizes calculus discussion sections 429 and 431 running in Fall 2020.
+  roledescription: Hold weekly problem solving sessions.
+- title: "MATH 221: Calculus and Analytic Geometry I"
+  panel: true
+  sections: 341, 344
+  professor: Alex Waldron
+  type: Past
+  role: Teaching Assistant
+  year: Fall 2021
+  location: University of Wisconsin-Madison
+  url: "/teaching/221Fall2021"
+  image: calculus1.jpg
+  description: This page organizes calculus discussion sections running in Fall 2021.
+  roledescription: Hold weekly problem solving sessions.
 - title: "MATH 229: Vector Calculus with Chemical Applications"
   panel: true
   image: 6-armyresearch.jpg
@@ -31,35 +55,3 @@
   location: College of Charleston
   roledescription: Presented new content and held problem sessions.
   description: This course is aimed at students preparing for a course in physical chemistry. It combines topics from Calculus I-III, linear algebra, and group theory to explain things like symmetries in molecules and crystal structures.
-- title: "MATH 295: Introduction to Advanced Mathematics"
-  panel: false
-  type: Past
-  role: Grader
-  year: Spring 2019
-  location: College of Charleston
-  roledescription: Graded homework assignments and tests for this introductory proof class.
-  description: The primary aim of this course is to develop the ideas of rigor and proof in mathematics through the study of topics in discrete mathematics.
-- title: "MATH 221: Calculus and Analytic Geometry I"
-  panel: true
-  professor: Gabriele Meyer 
-  sections: 429, 431
-  type: Past
-  role: Teaching Assistant
-  year: Fall 2020
-  location: University of Wisconsin-Madison
-  url: "/teaching/221Fall2020"
-  image: calculus1.jpg
-  description: This page organizes calculus discussion sections 429 and 431 running in Fall 2020.
-  roledescription: Hold weekly problem solving sessions.
-- title: "MATH 221: Calculus and Analytic Geometry I"
-  panel: true
-  sections: 341, 344
-  professor: Alex Waldron
-  type: Past
-  role: Teaching Assistant
-  year: Fall 2021
-  location: University of Wisconsin-Madison
-  url: "/teaching/221Fall2021"
-  image: calculus1.jpg
-  description: This page organizes calculus discussion sections running in Fall 2021.
-  roledescription: Hold weekly problem solving sessions.

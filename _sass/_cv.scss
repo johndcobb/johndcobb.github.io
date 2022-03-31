@@ -77,6 +77,14 @@
         font-weight: 500;
     }
 
+    .extra-links {
+        font-size: 0.75rem;
+        a { 
+            color: $grey-color;
+            margin-right: 4px;
+          }
+    }
+
     hr {
         display: block;
         margin-top: 0.5em;
@@ -163,10 +171,14 @@
         flex-direction: row;
         align-items: baseline;
         justify-content: space-between;
-    }
 
-    .date-container h3, .date-container .fill {
+        & > strong {
+            display: block;
+          }
+      
+        .fill, h3 {
         flex: 1;
+        }
     }
 
     .cv-talk-title {
@@ -376,6 +388,14 @@
             margin-right: auto;
             border-style: solid;
             border-width: 1px;
+        }
+
+        .extra-links {
+            font-size: 0.75rem;
+            a { 
+                color: white;
+                margin-right: 4px;
+              }
         }
     
         .pub-type {

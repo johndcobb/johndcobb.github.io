@@ -48,17 +48,34 @@ title: CV
     <span class="line"></span>
   </div>
 
-  {% for award in site.data.awards %}
+  {% for award in site.data.awards %}{% if award.hide == nil %}
   <article>
     <div class="date-container">
       <span class="date">{{ award.years | replace: "-", "–" }}</span>
       <h3>{{ award.name }}</h3>
       <span class="right">{{ award.sponsor }}</span>
     </div>
-    <p>
+    <div>
       {{ award.description }}
-    </p>
+      {% if award.link or award.article %}
+      <div class="extra-links">
+        {% if award.link %}
+          <a href="{{ award.link }}">
+            <i class="fas fa-link" aria-hidden="true"></i> Project
+          </a>
+        {% endif %}
+        {% if award.article %}
+          <a href="{{ award.article }}">
+            <i class="fas fa-newspaper" aria-hidden="true"></i> Article
+          </a>
+        {% endif %}
+      </div>
+    {% endif %}
+    </div>
+    <br>
+    
   </article>
+  {% endif %}
   {% endfor %}
 
 
@@ -104,7 +121,7 @@ title: CV
 
 
   {% assign talktitles = site.data.talks | group_by:"title" %}
-  {% for title in talktitles %}{% if title.items[0].hide == nil%}
+  {% for title in talktitles %}{% if title.items[0].hide == nil %}
   <article>
     <h3 class="cv-talk-title">{{ title.name }}</h3>
     {% assign sorted_talks = title.items | sort: 'date' | reverse %}
@@ -170,6 +187,7 @@ title: CV
   </div>
 
   {% for service in site.data.service %}
+  {% if service.hide==nil %}
   <h3>{{ service.title }} at {{ service.at }}</h3>
   <article>
     <div class="date-container">
@@ -178,22 +196,8 @@ title: CV
       <span class="right">{{ service.location }}</span>
     </div>
   </article>
+  {% endif %}
   {% endfor %}
 
-  <div class="line-container">
-    <h2>Extracurricular</h2>
-    <span class="line"></span>
-  </div>
-
-  {% for hobby in site.data.extracurricular %}
-  <h3>{{ hobby.title }} at {{ hobby.at }}</h3>
-  <article>
-    <div class="date-container">
-      <span class="date">{{hobby.years | replace: "-", "–" }}</span>
-      <span style="flex: 1">{{ hobby.description | markdownify }}</span>
-      <span class="right">{{ hobby.location }}</span>
-    </div>
-  </article>
-  {% endfor %}
-
+<br> 
 </section>

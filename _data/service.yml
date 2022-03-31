@@ -11,7 +11,7 @@
   years: Fall 2021 -
   description: "The purpose of this seminar is to learn algebraic geometry and commutative algebra by giving and listening to talks in a informal setting."
 - title: Public Service Fellow
-  at: University of Wisconsin-Madison
+  at: WISCIENCE
   url: https://wiscience.wisc.edu/program/public-service-fellows
   location: Madison, WI
   years: Jan 2021-Jan 2022
@@ -72,4 +72,5 @@
   url: https://cancerchase5k.racesonline.com/
   location: Fort Mill, SC
   description: "Helped direct the founding of The Cancer Chase, whose first project began an annual 5k run benefiting Carolinas HealthCare System’s Levine Cancer Institute. Rallied support from local businesses to raise over $15,000 annually."
+  hide: true
   
