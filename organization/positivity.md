@@ -47,8 +47,7 @@ We are reading Positivity in Algebraic Geometry I by Robert Lazarsfeld. The curr
 | Week 7 (April 5) | Yifan | 2.1 Asymptotic Theory (18 pages) |
 | Week 8 (April 12) | John Cobb | 2.2 Big Line Bundles and Divisors (18 pages) |
 | Week 9 (April 19) | Daniel Erman (online!) | 2.3 Examples and Complements (15 pages) |
-| Week 10 (April 26) | | 3.1 The Lefschetz Theorems (16 pages) |
-| Week 11 (May 3) | | 4.1-3 Kodaira and Nakano Vanishing Theorems (21 pages) |
+| Week 10 (April 26) | Colin | 4.1-3 Kodaira and Nakano Vanishing Theorems (21 pages) |
 
 I'm leaving some room to split any readings into two weeks, or to veer in another direction if we would like. I know that Daniel Erman would like to give a lecture. By coincidence, Lazarsfeld will be in town around the middle of the semester.
 
