@@ -45,16 +45,19 @@
   pdf: https://arxiv.org/pdf/2111.13773.pdf
   arxiv: "2111.13773"
   highlight: true
-  venue: to appear in the Journal of Pure and Applied Algebra
+  venue: Journal of Pure and Applied Algebra
   venue_url: https://www.journals.elsevier.com/journal-of-pure-and-applied-algebra
   venue_tags: 
     - JPAA
+  doi: 10.1016/j.jpaa.2022.107138
+  short_doi: 10/hv9r
   description: Any matrix gives rise to an associated family of canonical complexes associated to it, including the Eagon-Northcott and Buchsbaum-Rim. Famously, there is a simple criterion for checking the exactness of these complexes. We give generalization of this criterion for these complexes to be *virtual resolutions*, which are "exact enough" to be relevant to the geometry of toric varieties.
   tags:
     - Virtual Resolutions
     - Toric Varieties
   type:
     - Journal
+
 - id: QKdV
   title: "Quarternion-Valued Breather Soliton, Rational, and Periodic QKdV Solutions"
   year: 2020
