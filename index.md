@@ -19,7 +19,7 @@ class: home
 <div class="columns" markdown="1">
 
 <div class="intro" markdown="1">
-I'm a third year PhD student in the mathematics department at the [University of Wisconsin-Madison](https://www.math.wisc.edu/) advised by both [Daniel Erman](https://people.math.wisc.edu/~derman/) and [Michael Kemeny](https://people.math.wisc.edu/~kemeny/homepage.html). I am supported by a [DoD NDSEG Fellowship](https://ndseg.sysplus.com/NDSEG/About/). Details are in my [CV]({{ absolute_url }}/cv).
+I'm a fourth year PhD student in the mathematics department at the [University of Wisconsin-Madison](https://www.math.wisc.edu/) advised by both [Daniel Erman](https://people.math.wisc.edu/~derman/) and [Michael Kemeny](https://people.math.wisc.edu/~kemeny/homepage.html). I am supported by a [DoD NDSEG Fellowship](https://ndseg.sysplus.com/NDSEG/About/). Details are in my [CV]({{ absolute_url }}/cv).
 
 My research interests are within algebraic geometry and commutative algebra. Currently, I am studying things like geometric/homological perspectives on syzygies and moduli spaces of curves. 
 </div>
