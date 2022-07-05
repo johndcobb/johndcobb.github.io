@@ -1,6 +1,11 @@
+- title: GAeL XXX
+  type: Conference
+  highlight: 1
+  url: "https://sites.google.com/view/gaelxxix/home"
+  image: gaelgroupphoto.jpeg
+  description: Géométrie Algébrique en Liberté, also known as GAeL, is an annual workshop organized by and for young algebraic geometers. Recently,  GAeL has been held in Trieste (Italy), Leuven (Belgium), Nesin Maths Village (Turkey), Bath (UK), Strasbourg (France), Bucharest (Romania) and Loughborough (UK).
 - title: Positivity in Algebraic Geometry
   type: Reading Group
-  highlight: 1
   url: "/organization/positivity"
   book: "https://cims.nyu.edu/~rodion/lib/R.%20K.%20Lazarsfeld.%20Positivity%20in%20Algebraic%20Geometry,%20I.%20Classical%20Setting:%20Line%20Bundles%20and%20Linear%20Series%20-%202003.pdf"
   image: positivity.jpg
