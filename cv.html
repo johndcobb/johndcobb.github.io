@@ -93,9 +93,11 @@ title: CV
       {% endif %}
     {% endfor %}
 
-    <h3 class="pub-type">
-      {{ type }}
-    </h3>
+    {% if counter != 1 %}
+      <h3 class="pub-type">
+        {{ type }}
+      </h3>
+    {% endif %}
 
     {% for pub in site.data.publications %}
       {% if pub.type[0] == type %}
