@@ -1,3 +1,9 @@
+- title: "Virtual Criterion for Generalized Eagon-Northcott Complexes"
+  location: AMS Fall Western Sectional Meeting
+  city: Salt Lake City, UT
+  date: 2022-10-22
+  url: https://www.ams.org/meetings/sectional/2295_other.html
+  abstract: Any matrix gives rise to an associated family of canonical complexes associated to it, including the Eagon-Northcott and Buchsbaum-Rim. Famously, there is a simple criterion for checking the exactness of these complexes. We give generalization of this criterion for these complexes to be virtual resolutions, which are “exact enough” to be relevant to the geometry of toric varieties.
 - title: "Chip Firing on Graphs"
   location: Madison Math Circle
   city: Madison, WI
