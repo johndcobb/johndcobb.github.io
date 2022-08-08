@@ -36,6 +36,15 @@
 #    - Conference
 #    - Journal
 
+- id: MultiregularityOfCurves
+  title: "Regularity of Curves for Products of Projective Spaces"
+  year: 2022
+  authors: John Cobb
+  venue: In progress
+  description: The regularity of a projective variety tells you how algebraically complicated its syzygies are. I generalize an important theorem about the regularity of curves when they are embedded in products of projective spaces.
+  type: 
+    - Preprint
+
 - id: VirtualENComplexes
   title: "Virtual Criterion for Generalized Eagon-Northcott Complexes"
   year: 2021
