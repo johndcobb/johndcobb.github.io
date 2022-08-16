@@ -61,14 +61,14 @@
   location: College of Charleston
   roledescription: Presented new content and held problem sessions.
   description: This course is aimed at students preparing for a course in physical chemistry. It combines topics from Calculus I-III, linear algebra, and group theory to explain things like symmetries in molecules and crystal structures.
-- title: "MATH 221: Calculus and Analytic Geometry I"
+- title: "MATH 234: Calculus Functions of Several Variables"
   panel: true
   type: Current
   role: Teaching Assistant
-  professor: Nathan Fisher
+  professor: Soledad Benguria Andrews
   year: Fall 2022
   location: University of Wisconsin-Madison
   url: "/teaching/221Fall2022"
   image: calculus1.jpg
-  description: This page organizes calculus discussion sections 305 and 306 running in Fall 2022.
+  description: This page organizes calculus III discussion sections 369 and 370 running in Fall 2022.
   roledescription: Hold weekly problem solving sessions and office hours.
