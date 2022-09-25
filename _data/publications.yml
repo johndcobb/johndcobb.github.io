@@ -37,12 +37,12 @@
 #    - Journal
 
 - id: MultiregularityOfCurves
-  title: "Regularity of Curves for Products of Projective Spaces"
+  title: "Syzygies of Curves in Products of Projective Spaces"
   year: 2022
   authors: 
     - John Cobb
   venue: In progress
-  description: The regularity of a projective variety tells you how algebraically complicated its syzygies are. I generalize an important theorem about the regularity of curves when they are embedded in products of projective spaces.
+  description: Motivated by toric geometry, machinery for understanding syzygies of curves in projective space is lifted to the setting of products of projective spaces. Using this machinery, we derive sample multigraded analogues of influential theorems concerning the regularity of curves and the degrees of their defining equations in this generalized setting. 
   type: 
     - Preprint
 
