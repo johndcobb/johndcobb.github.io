@@ -4,16 +4,16 @@
   date: 2022-10-22
   url: https://www.ams.org/meetings/sectional/2295_other.html
   abstract: Any matrix gives rise to an associated family of canonical complexes associated to it, including the Eagon-Northcott and Buchsbaum-Rim. Famously, there is a simple criterion for checking the exactness of these complexes. We give generalization of this criterion for these complexes to be virtual resolutions, which are “exact enough” to be relevant to the geometry of toric varieties.
-- title: "Virtual Criterion for Generalized Eagon-Northcott Complexes"
+- title: "Virtual Resolutions and Syzygies"
   location: IDA
   city: Bowie, MD
   date: 2022-10-19
-  abstract: Any matrix gives rise to an associated family of canonical complexes associated to it, including the Eagon-Northcott and Buchsbaum-Rim. Famously, there is a simple criterion for checking the exactness of these complexes. We give generalization of this criterion for these complexes to be virtual resolutions, which are “exact enough” to be relevant to the geometry of toric varieties.
-- title: "Virtual Criterion for Generalized Eagon-Northcott Complexes"
+  abstract: "Understanding the syzygies among the equations defining a projective variety continues to be instrumental in understanding their properties. Starting from polynomials and proceeding with specific examples, the first part of the talk will motivate the existence of virtual syzygies which work for the larger class of toric varieties. We will then focus on recent work addressing a few questions about these analogues, such as: How can we construct (families of) examples? How complicated do they get (at least in the case of curves)?"
+- title: "Virtual Resolutions and Syzygies"
   location: Graduate Algebraic Geometry Seminar
   city: Madison, WI
   date: 2022-10-14
-  abstract: Any matrix gives rise to an associated family of canonical complexes associated to it, including the Eagon-Northcott and Buchsbaum-Rim. Famously, there is a simple criterion for checking the exactness of these complexes. We give generalization of this criterion for these complexes to be virtual resolutions, which are “exact enough” to be relevant to the geometry of toric varieties.
+  abstract: "Understanding the syzygies among the equations defining a projective variety continues to be instrumental in understanding their properties. Starting from polynomials and proceeding with specific examples, the first part of the talk will motivate the existence of virtual syzygies which work for the larger class of toric varieties. We will then focus on recent work addressing a few questions about these analogues, such as: How can we construct (families of) examples? How complicated do they get (at least in the case of curves)?"
 - title: "Chip Firing on Graphs"
   location: Madison Math Circle
   city: Madison, WI
