@@ -38,13 +38,20 @@
 
 - id: MultiregularityOfCurves
   title: "Syzygies of Curves in Products of Projective Spaces"
-  year: 2022
+  year: 2023
   authors: 
     - John Cobb
-  venue: In progress
-  description: Motivated by toric geometry, machinery for understanding syzygies of curves in projective space is lifted to the setting of products of projective spaces. Using this machinery, we derive sample multigraded analogues of influential theorems concerning the regularity of curves and the degrees of their defining equations in this generalized setting. 
+  venue: arXiv
+  arxiv: "2301.05979"
+  pdf: https://arxiv.org/pdf/2301.05979.pdf
+  highlight: true
+  description: Motivated by toric geometry, we lift machinery for understanding syzygies of curves in projective space to the setting of products of projective spaces. Using this machinery, we show an analogue of an influential result of Gruson, Peskine, and Lazarsfeld that gives a bound on the regularity of a possibly singular curve given its degree and the dimension of the ambient projective space.
   type: 
     - Preprint
+  tags: 
+    - Virtual Resolutions
+    - Toric Varieties
+    - Syzygies
 
 - id: VirtualENComplexes
   title: "Virtual Criterion for Generalized Eagon-Northcott Complexes"
