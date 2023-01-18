@@ -91,7 +91,6 @@
      - J. Nonlinear Math. Phys.
   pdf: https://arxiv.org/pdf/1911.04861.pdf
   arxiv: "1911.04861"
-  highlight: true
   description: The KdV equation is a prototypical example of an exactly solvable PDE, due in part to its admittance of soliton solutions. This paper examines and classifies the dynamics of quaternion-valued solutions of the noncommutative KdV equation.
   tags:
     - Integrable Systems
