@@ -4,6 +4,28 @@
   year: Aug 2022 - Current
   location: Madison, WI
   roledescription: Meet with students weekly one on one to help with college level math courses.
+- title: "MATH 234: Calculus Functions of Several Variables"
+  panel: true
+  type: Past
+  role: Teaching Assistant
+  professor: Soledad Benguria Andrews
+  year: Fall 2022
+  location: University of Wisconsin-Madison
+  url: "/teaching/234Fall2022"
+  image: calculus3.jpg
+  description: This page organizes calculus III discussion sections 369 and 370 running in Fall 2022.
+  roledescription: Hold weekly problem solving sessions and office hours.
+- title: "MATH 234: Calculus Functions of Several Variables"
+  panel: true
+  type: Current
+  role: Teaching Assistant
+  professor: Cassie Williams
+  year: Spring 2023
+  location: University of Wisconsin-Madison
+  url: "/teaching/234Spring2023"
+  image: calculus3.jpg
+  description: This page organizes calculus III discussion sections 343 and 345 running in Spring 2023.
+  roledescription: Hold weekly problem solving sessions and office hours.
 - title: "MATH 221: Calculus and Analytic Geometry I"
   panel: false
   professor: Gabriele Meyer 
@@ -61,14 +83,3 @@
   location: College of Charleston
   roledescription: Presented new content and held problem sessions.
   description: This course is aimed at students preparing for a course in physical chemistry. It combines topics from Calculus I-III, linear algebra, and group theory to explain things like symmetries in molecules and crystal structures.
-- title: "MATH 234: Calculus Functions of Several Variables"
-  panel: true
-  type: Current
-  role: Teaching Assistant
-  professor: Soledad Benguria Andrews
-  year: Fall 2022
-  location: University of Wisconsin-Madison
-  url: "/teaching/221Fall2022"
-  image: calculus1.jpg
-  description: This page organizes calculus III discussion sections 369 and 370 running in Fall 2022.
-  roledescription: Hold weekly problem solving sessions and office hours.
