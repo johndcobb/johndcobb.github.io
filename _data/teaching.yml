@@ -5,7 +5,7 @@
   location: Madison, WI
   roledescription: Meet with students weekly one on one to help with college level math courses.
 - title: "MATH 234: Calculus Functions of Several Variables"
-  panel: true
+  panel: false
   type: Past
   role: Teaching Assistant
   professor: Soledad Benguria Andrews
@@ -27,7 +27,7 @@
   description: This page organizes calculus III discussion sections 343 and 345 running in Spring 2023.
   roledescription: Hold weekly problem solving sessions and office hours.
 - title: "MATH 221: Calculus and Analytic Geometry I"
-  panel: false
+  panel: true
   professor: Gabriele Meyer 
   sections: 429, 431
   type: Past
@@ -39,7 +39,7 @@
   description: This page organizes calculus discussion sections 429 and 431 running in Fall 2020.
   roledescription: Hold weekly problem solving sessions.
 - title: "MATH 221: Calculus and Analytic Geometry I"
-  panel: false
+  panel: true
   sections: 341, 344
   professor: Alex Waldron
   type: Past
