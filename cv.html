@@ -210,5 +210,15 @@ title: CV
   {% endif %}
   {% endfor %}
 
+  <div class="line-container">
+    <h2>Programming</h2>
+    <span class="line"></span>
+  </div>
+  {% for level in site.data.programming %}
+  <div>
+    <b>{{ level.level }}: </b> {{level.list}}
+  </div>
+  {% endfor %}
+
 <br> 
 </section>
