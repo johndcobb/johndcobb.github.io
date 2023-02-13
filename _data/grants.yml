@@ -1,3 +1,7 @@
+- name: NSF conference grant 
+  years: 2023
+  sponsor: NSF
+  description: $15,000 awarded to fund US participation in the 30th edition of GAeL. 
 - name: Early-career AMS-NSF-Simons-ICM Travel Grant
   years: 2022
   sponsor: NSF, Simons Foundation
@@ -6,12 +10,15 @@
   years: 2020
   sponsor: University of Wisconsin-Madison
   description: These grants are available to all Graduate Level (Masters, and PhD) students in the Mathematical Sciences. The grant will cover the JMM registration fee at the Graduate Student rate.
+  hide: True
 - name: Summer Research Grant
   years: 2018
+  hide: True
   sponsor: College of Charleston School of Science and Math
   description: The dean of the School of Science and Math reserves special funding for students over the summer, available by request of professors.
 - name: Howard Hughes Medical Institute Mentoring Grant
   years: 2017
+  hide: True
   sponsor: Howard Hughes Medical Institute
   sponsor_url: https://www.hhmi.org/news/47-colleges-participate-50-million-science-education-initiative
   description: The HHMI mentoring grant funded me as a research mentor to a talented high schooler over the summer. 
