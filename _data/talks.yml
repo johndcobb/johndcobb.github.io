@@ -1,3 +1,9 @@
+- title: "Multigraded regularity of curves"
+  location: SIAM Applied Algebraic Geometry
+  city: Eindhoven, The Netherlands
+  date: 2023-07-11
+  url: https://www.siam.org/conferences/cm/conference/ag23
+  abstract: "The syzygies of projective curves are fairly well understood — for instance, an influential theorem of Gruson, Lazarsfeld, and Peskine gives optimal bounds on their regularity. There has been a flurry of activity in the past two decades centered around generalizing work on syzygies to the toric setting. I will discuss work that lifts machinery for understanding syzygies of projective curves to obtain a bound on the multigraded regularity of a curve in a product of projective spaces."
 - title: "Introduction to Intersection Theory"
   location: UW Madison Graduate Algebraic Geometry Seminar
   city: Madison, WI
