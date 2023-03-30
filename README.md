@@ -1,4 +1,11 @@
-# Website [![Build Status](https://travis-ci.com/johndcobb/johndcobb.github.io.svg?branch=master)](https://travis-ci.com/johndcobb/johndcobb.github.io)
+# Website 
+
+```
+This website is based heavily of the original designed of Dominik Moritz, 
+https://github.com/domoritz/domoritz.github.io.
+```
+
+## Run
 
 bundle exec jekyll serve --livereload
 
