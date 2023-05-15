@@ -1,3 +1,7 @@
+- name: Student Travel Award (SIAM)
+  years: 2023
+  sponsor: SIAM
+  description: Funding to attend the SIAM Conference on Applied Algebraic Geometry (AG23) in July 2023 in Eindhoven, The Netherlands.
 - name: Exceptional Service Award
   years: 2023
   sponsor: UW Madison Mathematics Department
