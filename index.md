@@ -21,7 +21,7 @@ class: home
 <div class="intro" markdown="1">
 I'm a fourth year PhD student in the mathematics department at the [University of Wisconsin-Madison](https://www.math.wisc.edu/) advised by both [Daniel Erman](https://people.math.wisc.edu/~derman/) and [Michael Kemeny](https://people.math.wisc.edu/~kemeny/homepage.html). From 2019 to 2022, I was supported by a [DoD NDSEG Fellowship](https://ndseg.sysplus.com/NDSEG/About/). Details are in my [CV]({{ absolute_url }}/cv).
 
-My research interests are primarily within algebraic geometry and commutative algebra. I am currently thinking about geometric/homological techniques to study syzygies, vector bundles and linear series on curves, and positivity in general. I also think about cellular sheaves and their applications in machine learning.
+My research interests are primarily within algebraic geometry and commutative algebra. I am currently thinking about geometric/homological techniques to study syzygies, vector bundles and linear series on curves, and positivity in general.
 
 </div>
 
