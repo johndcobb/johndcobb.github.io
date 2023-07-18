@@ -1,11 +1,11 @@
 - title: Varieties from Statistics
-  venue: Institute for Mathematical and Statistical Innovation
+  venue: IMSI
   where: Chicago, IL
   start: 2023-10-02
   end: 2023-10-06
 - title: SIAM Conference on Applied Algebraic Geometry (AG23)
   venue: Eindhoven University of Technology
-  where: Eindhoven, the Netherlands
+  where: the Netherlands
   start: 2023-07-10
   end: 2023-07-14
 - title: GAeL XXX
@@ -15,12 +15,12 @@
   end: 2023-07-07
 - title: Derived Categories, Hodge theory and Singularities
   venue: University of Sheffield
-  where: Sheffield, UK
+  where: UK
   start: 2023-06-28
   end: 2023-06-30
 - title: Syzygies and Regularity
   venue: University of Illinois at Chicago
-  where: Chicago, IL
+  where: IL
   start: 2023-04-14
   end: 2023-04-16
 - title: CA+
@@ -35,7 +35,7 @@
   end: 2022-12-09
 - title: Western Algebraic Geometry Symposium
   venue: University of California, Riverside
-  where: Riverside, CA
+  where: 
   start: 2022-11-05
   end: 2022-11-06
 - title: AMS Fall Western Sectional Meeting
@@ -49,7 +49,7 @@
   end: 2022-10-19
 - title: MAGGC 2022
   venue: University of Illinois at Chicago
-  where: Chicago, IL
+  where: IL
   start: 2022-08-10
   end: 2022-08-11
 - title: NDSEG Fellows Conference
