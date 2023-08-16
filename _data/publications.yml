@@ -36,6 +36,21 @@
 #    - Conference
 #    - Journal
 
+- id: SheafDiffusion
+  title: Extending Transductive Knowledge Graph Embedding Models \\
+        for Inductive Logical Relational Inference
+  year: 2023
+  authors:
+    - Thomas Gebhart
+    - John Cobb
+  venue: Submitted to AAAI 2024
+  description: We utilize a sheaf-theoretic technique to optimally extend vector representations of old entities in knowledge graphs to previously unseen entities. This technique also gives an efficient way of predicting facts about these new entities and compares well to other more complicated state-of-the-art inductive reasoning methods.
+  type: 
+    - Preprint
+  tags:
+    - Machine Learning
+    - Knowledge Graphs
+
 - id: MultiregularityOfCurves
   title: "Syzygies of Curves in Products of Projective Spaces"
   year: 2023
