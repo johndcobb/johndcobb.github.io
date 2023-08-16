@@ -37,8 +37,7 @@
 #    - Journal
 
 - id: SheafDiffusion
-  title: Extending Transductive Knowledge Graph Embedding Models \\
-        for Inductive Logical Relational Inference
+  title: Extending Transductive Knowledge Graph Embedding Models for Inductive Logical Relational Inference
   year: 2023
   authors:
     - Thomas Gebhart
