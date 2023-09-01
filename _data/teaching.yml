@@ -1,6 +1,18 @@
+- title: "MATH 222: Calculus 2"
+  role: "Head Teaching Assistant"
+  highlight: 1
+  panel: true
+  year: Fall 2023
+  type: Current
+  professor: Maurice Fabien
+  location: University of Wisconsin-Madison
+  url: "/teaching/222Fall2023"
+  image: calculus2.jpg
+  description: This page organizes calculus II discussion sections 306 and 310 running in Fall 2023.
+  roledescription: Hold weekly problem solving sessions and office hours. Create worksheets and quizzes, organize all other TA's teaching the course.
 - title: "Galin Education"
   role: "Academic Tutor"
-  type: Current
+  type: Past
   year: Aug 2022 - Current
   location: Madison, WI
   roledescription: Meet with students weekly one on one to help with college level math courses.
