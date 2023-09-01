@@ -21,8 +21,7 @@ class: home
 <div class="intro" markdown="1">
 I'm a fifth year PhD student in the mathematics department at the [University of Wisconsin-Madison](https://www.math.wisc.edu/) advised by both [Daniel Erman](https://people.math.wisc.edu/~derman/) and [Michael Kemeny](https://people.math.wisc.edu/~kemeny/homepage.html). From 2019 to 2022, I was supported by a [DoD NDSEG Fellowship](https://ndseg.sysplus.com/NDSEG/About/). Details are in my [CV]({{ absolute_url }}/cv).
 
-My research interests are primarily within algebraic geometry and commutative algebra. I am currently thinking about geometric/homological techniques to study syzygies, vector bundles and linear series on curves, and positivity in general.
-
+My research interests are primarily within algebraic geometry and commutative algebra. I am currently thinking about geometric/homological techniques to study syzygies, vector bundles and linear series on curves, and using algebraic geometry to aid in classification questions and statistics.
 </div>
 
 <div class="me" markdown="1">
@@ -42,10 +41,10 @@ My research interests are primarily within algebraic geometry and commutative al
 <!--- Put stuff here when ready -->
 
 
-## Featured Courses and Organization
+## Featured Organizing
 
 <div class="featured-projects">
-  {% assign sorted_projects = site.data.organization | concat: site.data.teaching | sort: 'highlight' %}
+  {% assign sorted_projects = site.data.organizing | concat: site.data.teaching | sort: 'highlight' %}
   {% for project in sorted_projects %}
     {% if project.highlight %}
       {% include project.html project=project %}
@@ -93,7 +92,7 @@ My research interests are primarily within algebraic geometry and commutative al
 ## News
 
 <ul>
-{% for news in site.data.news limit:10 %}
+{% for news in site.data.news limit:5 %}
   {% include news.html news=news %}
 {% endfor %}
 </ul>
@@ -110,7 +109,7 @@ My research interests are primarily within algebraic geometry and commutative al
   {% include travel.html travel=travel %}
 {% endfor %}
 {% assign sorted_travel = site.data.travel | where_exp:'item','item.start' | sort: 'start' | reverse %}
-{% for travel in sorted_travel limit:12 %}
+{% for travel in sorted_travel limit:8 %}
   {% include travel.html travel=travel %}
 {% endfor %}
 </tbody>
