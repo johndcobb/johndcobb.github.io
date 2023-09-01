@@ -1,18 +1,18 @@
 ---
 layout: page
-permalink: /organization/
-title: Organization
+permalink: /organizing/
+title: Organizing
 class: projects
 ---
 
 {:.hidden}
-# Organization
+# Organizing
 
 {:.lead}
 
 
 <div class="grid">
-  {% for project in site.data.organization %}
+  {% for project in site.data.organizing %}
     {% include project.html project=project %}
   {% endfor %}
 </div>
