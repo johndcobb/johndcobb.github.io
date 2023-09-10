@@ -4,12 +4,18 @@
   date: 2024-01-06
   url: https://www.jointmathematicsmeetings.org/meetings/national/jmm2024/2300_intro
   abstract: "The syzygies of projective curves are fairly well understood — for instance, an influential theorem of Gruson, Lazarsfeld, and Peskine gives optimal bounds on their regularity. There has been a flurry of activity in the past two decades centered around generalizing work on syzygies to the toric setting. I will discuss work that lifts machinery for understanding syzygies of projective curves to obtain a bound on the multigraded regularity of a curve in a product of projective spaces."
+- title: "Multigraded regularity of curves"
+  location: Algebra Days
+  city: Tempe, AZ
+  date: 2023-11-04
+  url: https://sites.google.com/view/asu-algebra-days/home
+  abstract: "The syzygies of projective curves are fairly well understood — for instance, an influential theorem of Gruson, Lazarsfeld, and Peskine gives optimal bounds on their regularity. There has been a flurry of activity in the past two decades centered around generalizing work on syzygies to the toric setting. I will discuss work that lifts machinery for understanding syzygies of projective curves to obtain a bound on the multigraded regularity of a curve in a product of projective spaces."
 - title: "Sheaf Laplacians and Missing Data"
   location: JMM 2024
   city: San Francisco, CA
   date: 2024-01-03
   url: https://www.jointmathematicsmeetings.org/meetings/national/jmm2024/2300_intro
-  abstract: "The Laplacian of a graph is a matrix that encodes the local geometry of the graph. It is a fundamental object in spectral graph theory, and has been used to study a variety of problems in machine learning. In this talk, I will discuss a generalization called the sheaf Laplacian and how this can be used to study missing data problems."
+  abstract: "The Laplacian of a graph is a matrix that encodes the local geometry of the graph. It is a fundamental object in spectral graph theory, and has been used to study a variety of problems in machine learning. In this talk, I will discuss a generalization called the sheaf Laplacian and how this can be used to study problems with missing data in the world of knowledge graphs."
 - title: "Multigraded regularity of curves"
   location: SIAM Applied Algebraic Geometry
   city: Eindhoven, The Netherlands
