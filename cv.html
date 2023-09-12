@@ -80,7 +80,7 @@ title: CV
 
 
   <div class="line-container">
-    <h2>Publications <a href="{{ '/publications/' | absolute_url }}">[Interactive Version]</a></h2>
+    <h2>Papers <a href="{{ '/publications/' | absolute_url }}">[Interactive Version]</a></h2>
     <span class="line"></span>
   </div>
 
@@ -115,6 +115,23 @@ title: CV
     {% endfor %}
   {% endfor %}
 
+  <div class="line-container">
+    <h2>Grants</h2>
+    <span class="line"></span>
+  </div>
+
+  {% for grant in site.data.grants %}
+  {% if grant.hide==nil %}
+  <h3>{{ grant.name }}</h3>
+  <article>
+    <div class="date-container">
+      <span class="date">{{grant.years | replace: "-", "–" }}</span>
+      <span style="flex: 1">{{ grant.description | markdownify }}</span>
+    </div>
+  </article>
+  {% endif %}
+  {% endfor %}
+
 
   <div class="line-container">
     <h2>Talks  <a href="{{ '/talks/' | absolute_url }}">[Interactive Version]</a></h2>
@@ -141,13 +158,13 @@ title: CV
   {% for talk in site.data.talks %}{% if talk.hide == nil %}
     <div class="date-container">
       <time datetime="{{ talk.date }}">{{ talk.date | date: "%b %Y" }}</time>
-      <span class="fill">{{ talk.title }}{% if talk.city %}, <small class="muted">{{ talk.location }}. <em>{{ talk.city }}</em> </small>{% endif %}</span>
+      <span class="fill">{{ talk.location }}{% if talk.city %}, <small class="muted"> <em>{{ talk.city }}</em> </small>{% endif %}</span>
     </div>
   {% endif %}{% endfor %}
   </article>
 
   <div class="line-container">
-    <h2>Research Experience</h2> 
+    <h2>Work Experience</h2> 
     <span class="line"></span>
   </div>
 
@@ -209,24 +226,6 @@ title: CV
   </article>
   {% endif %}
   {% endfor %}
-
-  <div class="line-container">
-    <h2>Grants</h2>
-    <span class="line"></span>
-  </div>
-
-  {% for grant in site.data.grants %}
-  {% if grant.hide==nil %}
-  <h3>{{ grant.name }}</h3>
-  <article>
-    <div class="date-container">
-      <span class="date">{{grant.years | replace: "-", "–" }}</span>
-      <span style="flex: 1">{{ grant.description | markdownify }}</span>
-    </div>
-  </article>
-  {% endif %}
-  {% endfor %}
-
 
   <div class="line-container">
     <h2>Programming</h2>
