@@ -47,7 +47,7 @@ class: pubs
 
 {% assign pubyears = site.data.publications | group_by:"year" %}
 {% for year in pubyears %}
-<div hidden> ## {{ year.name }} </div>
+## {{ year.name }} 
 {:#y{{ year.name }} .year}
 {% for pub in year.items %}
   {% include publication.html pub=pub %}
