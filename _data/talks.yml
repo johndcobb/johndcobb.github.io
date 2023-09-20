@@ -1,35 +1,52 @@
 - title: "Multigraded regularity of curves"
   location: JMM Special Session on Recent Developments in Commutative Algebra
   city: San Francisco, CA
+  type: Conference
   date: 2024-01-06
   url: https://www.jointmathematicsmeetings.org/meetings/national/jmm2024/2300_intro
-  abstract: "The syzygies of projective curves are fairly well understood — for instance, an influential theorem of Gruson, Lazarsfeld, and Peskine gives optimal bounds on their regularity. There has been a flurry of activity in the past two decades centered around generalizing work on syzygies to the toric setting. I will discuss work that lifts machinery for understanding syzygies of projective curves to obtain a bound on the multigraded regularity of a curve in a product of projective spaces."
-- title: "Multigraded regularity of curves"
-  location: Algebra Days at ASU
-  city: Tempe, AZ
-  date: 2023-11-04
-  url: https://sites.google.com/view/asu-algebra-days/home
   abstract: "The syzygies of projective curves are fairly well understood — for instance, an influential theorem of Gruson, Lazarsfeld, and Peskine gives optimal bounds on their regularity. There has been a flurry of activity in the past two decades centered around generalizing work on syzygies to the toric setting. I will discuss work that lifts machinery for understanding syzygies of projective curves to obtain a bound on the multigraded regularity of a curve in a product of projective spaces."
 - title: "Sheaf Laplacians and Missing Data"
   location: JMM Special Session on Commutative Algebra and Algebraic Geometry
   city: San Francisco, CA
+  type: Conference
   date: 2024-01-03
   url: https://www.jointmathematicsmeetings.org/meetings/national/jmm2024/2300_intro
   abstract: "The Laplacian of a graph is a matrix that encodes the local geometry of the graph. It is a fundamental object in spectral graph theory, and has been used to study a variety of problems in machine learning. In this talk, I will discuss a generalization called the sheaf Laplacian and how this can be used to study problems with missing data in the world of knowledge graphs."
 - title: "Multigraded regularity of curves"
+  location: Algebra Days at ASU
+  city: Tempe, AZ
+  type: Conference
+  date: 2023-11-04
+  url: https://sites.google.com/view/asu-algebra-days/home
+  abstract: "The syzygies of projective curves are fairly well understood — for instance, an influential theorem of Gruson, Lazarsfeld, and Peskine gives optimal bounds on their regularity. There has been a flurry of activity in the past two decades centered around generalizing work on syzygies to the toric setting. I will discuss work that lifts machinery for understanding syzygies of projective curves to obtain a bound on the multigraded regularity of a curve in a product of projective spaces."
+- title: "Multigraded regularity of curves"
   location: AG23 Mini-Symposium on Castelnuovo-Mumford Regularity and Applications
   city: Eindhoven, The Netherlands
+  type: Conference
   date: 2023-07-11
   url: https://www.siam.org/conferences/cm/conference/ag23
   abstract: "The syzygies of projective curves are fairly well understood — for instance, an influential theorem of Gruson, Lazarsfeld, and Peskine gives optimal bounds on their regularity. There has been a flurry of activity in the past two decades centered around generalizing work on syzygies to the toric setting. I will discuss work that lifts machinery for understanding syzygies of projective curves to obtain a bound on the multigraded regularity of a curve in a product of projective spaces."
+- title: "Virtual Resolutions and Syzygies"
+  location: GAeL XXIX
+  city: Coventry, UK
+  type: Poster
+  date: 2022-05-23
+  url: https://warwick.ac.uk/fac/sci/maths/research/events/2023/gael/
 - title: "Introduction to Intersection Theory"
   location: UW Madison Graduate Algebraic Geometry Seminar
+  type: Seminar
   city: Madison, WI
   date: 2022-02-01
   url: https://wiki.math.wisc.edu/index.php/Graduate_Algebraic_Geometry_Seminar_Spring_2023
   abstract: "In this talk, I'd like to talk about some methods used in enumerative geometry. I'll define what a Chow ring is, count some things with it, and tell you why you should read '3264 and all that' this semester with me."
+- title: "Multigraded regularity of curves"
+  type: Poster
+  location: Western Algebraic Geometry Symposium
+  city: Fort Collins, CO
+  date: 2022-04-22
 - title: "Virtual Resolutions and Syzygies"
   location: AMS Special Session on Building Bridges Between Commutative Algebra and Nearby Areas 
+  type: Conference
   city: Salt Lake City, UT
   date: 2022-10-22
   url: https://www.ams.org/meetings/sectional/2295_other.html
@@ -37,44 +54,44 @@
   slides: /talks/Virtual_Resolutions_and_Syzygies_Utah.pdf
 - title: "Virtual Resolutions and Syzygies"
   location: Center for Computing Sciences
+  type: Seminar
   city: Bowie, MD
   date: 2022-10-19
   abstract: "Understanding the syzygies among the equations defining a projective variety continues to be instrumental in understanding their properties. Starting from polynomials and proceeding with specific examples, the first part of the talk will motivate the existence of virtual syzygies which work for the larger class of toric varieties. We will then focus on recent work addressing a few questions about these analogues, such as: How can we construct (families of) examples? How complicated do they get (at least in the case of curves)?"
 - title: "Virtual Resolutions and Syzygies"
   location: UW Madison Graduate Algebraic Geometry Seminar
+  type: Seminar
   city: Madison, WI
   date: 2022-10-14
   abstract: "Understanding the syzygies among the equations defining a projective variety continues to be instrumental in understanding their properties. Starting from polynomials and proceeding with specific examples, the first part of the talk will motivate the existence of virtual syzygies which work for the larger class of toric varieties. We will then focus on recent work addressing a few questions about these analogues, such as: How can we construct (families of) examples? How complicated do they get (at least in the case of curves)?"
+- title: "Virtual Resolutions and Syzygies"
+  type: Poster
+  location: Western Algebraic Geometry Symposium
+  city: Fort Collins, CO
+  date: 2022-04-22
 - title: "Chip Firing on Graphs"
   location: Madison Math Circle
   city: Madison, WI
   date: 2022-04-18
+  type: Outreach
   url: https://hilbert.math.wisc.edu/wiki/index.php/Madison_Math_Circle
 - title: "Syzygies and Koszul Cohomology"
   location: UW Madison Graduate Algebraic Geometry Seminar
+  type: Seminar
   city: Madison, WI
   abstract: Early on in the history of algebraic geometry it was recognized that many properties/invariants of projective varieties could be deduced by looking at their hyperplane sections. Starting in the 1950s, this classical picture was gradually refined into general theory by people like Serre and Kodaira — many hard-earned numbers could now be obtained by more brainless methods. I hope to motivate a few ideas in the 1980’s as a continuation of this story beginning from Serre’s vanishing theorem.
   date: 2021-10-04
   url: https://www.math.wisc.edu/wiki/index.php/Graduate_Algebraic_Geometry_Seminar
-- title: "Construction of Hilb and Quot I"
-  location: UW Madison Moduli Theory Reading Group
-  city: Madison, WI
-  abstract: I define the quot functor and hint towards the proof of representability.
-  date: 2021-09-29
-  hide: true
 - title: "Rooms on a Sphere"
   location: UW Madison AMS Student Chapter Seminar
   city: Madison, WI
+  type: Seminar
   url: https://hilbert.math.wisc.edu/wiki/index.php/AMS_Student_Chapter_Seminar
   abstract: A classic combinatorial lemma becomes very simple to state and prove when on the surface of a sphere, leading to easy constructive proofs of some other well known theorems.
   date: 2021-09-29
-- title: "Construction of Hilb and Quot II"
-  location: UW Madison Moduli Theory Reading Group
-  abstract: I define the quot functor and hint towards the proof of representability.
-  date: 2021-09-23
-  hide: true
 - title: "Algebraic Geometry Beer Label"
   location: Delta Beer Lab
+  type: Outreach
   city: Madison, WI
   url: https://casp.wisc.edu/delta-beer-lab-competition/
   slides: /talks/DeltaBeerLabtalk.pptx
@@ -82,6 +99,7 @@
   date: 2021-05-15
 - title: "Introduction to Boij-Söderberg Theory"
   location: UW Madison Graduate Algebraic Geometry Seminar
+  type: Seminar
   city: Madison, WI
   url: https://www.math.wisc.edu/wiki/index.php/Graduate_Algebraic_Geometry_Seminar
   notes: /talks/Boij-Söderberg.pdf
@@ -89,18 +107,21 @@
   date: 2020-11-11
 - title: "Breather Soliton Interactions for the Quaternionic KdV Equation"
   location: AMS Contributed Paper Session on Partial Differential Equations
+  type: Conference
   city: Baltimore, MD
   url: http://jointmathematicsmeetings.org/amsmtgs/2217_abstracts/1145-35-453.pdf
   date: 2019-01-16
 - title: "Quaternion-Valued Solutions to the KdV"
   location: JMM Undergraduate Poster Session
   city: Baltimore, MD
+  type: Poster
   date: 2019-01-16
   awards:
-    -Outstanding Poster
+    - Outstanding Poster
 - title: "Quaternion-Valued Solutions to the KdV"
   location: College of Charleston Mathematics Colloquium
   city: Charleston, SC
+  type: Seminar
   url: http://math.cofc.edu/colloquium/index-2018-fall.php
   date: 2018-11-16
   slides: /talks/QKdVSolutions.pptx
@@ -108,28 +129,35 @@
 - title: "Investigating Rankability Using Distributed Graph Analytic Frameworks"
   location: College of Charleston Celebration of Scholars
   city: Charleston, SC
+  type: Poster
   date: 2017-08-25
   poster: /talks/rankability_poster.pdf
   hide: true
 - title: "Investigating Rankability Using Distributed Graph Analytic Frameworks"
   location: Tresata Lunch Seminar
+  type: Seminar
   city: Charlotte, NC
   date: 2017-08-15
 - title: "Growth of P3HT-PCBM Nanostructures at Solvent-Solvent Interfaces"
   location: College of Charleston Celebration of Scholars
   city: Charleston, SC
+  type: Poster
   date: 2017-08-16
   hide: true
 - title: "Solvent-Induced Assembly of P3HT: Controlling Organic Photovoltaic Film Morphology"
   location: College of Charleston Celebration of Scholars
   city: Charleston, SC
+  type: Poster
+  hide: true
   date: 2017-06-13
 - title: "Affine Transformations and Fractal Images"
   location: Data Science Club
+  type: Outreach
   city: Charleston, SC
   date: 2016-10-3
 - title: "Singular Value Decomposition and Digital Image Processing"
   location: Data Science Club
+  type: Outreach
   city: Charleston, SC
   date: 2016-11-13
 - title: "Concentration Dependence of the Self-Assembly of Poly(3-hexylthiophene)"

@@ -1,34 +1,41 @@
-- name: Student Travel Award (SIAM)
+- name: SIAM Student Travel Award ($800)
   years: 2023
-  sponsor: SIAM
   description: Funding to attend the SIAM Conference on Applied Algebraic Geometry (AG23) in July 2023 in Eindhoven, The Netherlands.
 - name: Exceptional Service Award
   years: 2023
   sponsor: UW Madison Mathematics Department
   description: Award based on nominations and comments from faculty, staff, and students and is given for those who contribute to the department, university or broader community through their remarkable service.
-- name: First Place (Early Stage)
+- name: First Place for Early Stage ($3,500)
   years: 2021
-  sponsor: Transcend Madison Innovation Competition
+  sponsor: Transcend Madison Competition
   sponsor_url: https://www.transcenduw.com/about
   link: https://arxiva.org
   article: https://www.transcenduw.com/_files/ugd/908254_95a84725bcd8466c90ccce4d39c7f0e3.pdf
   description: Transcend Madison Innovation Competition is the largest student run innovation competition in the US. My friend and I created arxiva over the course of a few months, a prototype website for making academic preprints on arxiv more accessible and searchable. It is built using django, docker, elasticsearch, mySQL and is automatically updated via aws.
-- name: NDSEG Fellowship
+  short-description: For a prototype website for making academic preprints on arXiv more accessible and searchable.
+- name: Early-career AMS-NSF-Simons-ICM Travel Grant ($3,500) 
+  years: 2022
+  description: Awarded to fund participation in the International Congress of Mathematicians in Saint Petersburg, Russia, in July of 2022. Covers round-trip travel, Congress registration, accommodations, meals, cultural activities, and some ground transportation at the Congress site up to ~$3,500.
+- name: AMS Graduate Student Travel Grant ($1,430)
+  years: 2020
+  sponsor: University of Wisconsin-Madison
+  description: These grants are available to all Graduate Level (Masters, and PhD) students in the Mathematical Sciences. The grant will cover the JMM registration fee at the Graduate Student rate.
+- name: NDSEG Fellowship ($130,000)
   years: 2019
   sponsor: Air Force Office of Scientific Research
   sponsor_url: https://www.ndsegfellowships.org/2019-awardees
   description: The National Defense Science and Engineering Graduate (NDSEG) Fellowship is a highly competitive, portable fellowship that is awarded to ~120 doctoral students annually. The NDSEG Fellowship lasts for 3 years and pays for full tuition and all mandatory fees; a monthly stipend; a travel budget over the Fellow's tenure for professional development; and health insurance. I was selected for my proposal about using recent results in spectral graph theory to estimate how much confidence we should have in ranking algorithms.
-- name: Phi Kappa Phi Fellowship
+- name: Phi Kappa Phi Fellowship ($8,500)
   years: 2019
-  sponsor: Phi Kappa Phi
   sponsor_url: https://www.PhiKappaPhi.org/Fellowship
-  description: Each active Phi Kappa Phi chapter may select one graduating candidate from among its local applicants to compete for this Society-wide award. ($8,500)
+  description: Each active Phi Kappa Phi chapter may select one graduating candidate from among its local applicants to compete for this Society-wide award. 
 - name: Ewa Wojcicka Mathematics Award
   years: 2019
   sponsor: Math Department, College of Charleston
   sponsor_url: http://blogs.cofc.edu/math/2019/05/07/congratulations-to-math-department-student-award-recipients/
   description: The Ewa Wojcicka Award is the College of Charlestons math departments top award, given in memory of Professor Wojcicka to a recipient showing exceptional ability, creativity and potential in mathematics.
-- name: ACS Outstanding Student in Computational Chemistry
+  short-description: College of Charlestons math departments top award.
+- name: Outstanding Student in Computational Chemistry
   years: 2019
   sponsor: American Chemical Society
   description: The local ACS chapter of the chemistry department of the College of Charleston chooses one graduating senior.
@@ -42,30 +49,28 @@
   sponsor: MAA-JMM Undergraduate Poster Session
   sponsor_url: https://www.maa.org/sites/default/files/Programs/Outstanding%20Posters%20JMM%202019_0.pdf
   description: Outstanding Poster prize were given to the top 15% student presenters in each topical category of mathematical study at the 2019 Joint Mathematical Meetings in Baltimore.
-  hide: true
 - name: Honorable Mention
   years: 2018
   sponsor: COMAP Mathematical Modeling Competition
   sponsor_url: http://www.comap-math.com/mcm/2018Certs/88455.pdf
   description: Mathematical Contest in Modeling (MCM) is an international contest for high school students and college undergraduates. It challenges teams of students to clarify, analyze, and propose solutions to open-ended problems. The contest attracts diverse students and faculty advisors from over 900 institutions around the world.
   hide: true
-- name: Scott Ward Award for Excellence in Mathematical Studies
+- name: Scott Ward Award
   years: 2018
   sponsor: Math Department, College of Charleston
   sponsor_url: http://blogs.cofc.edu/math/2018/07/12/congratulations-to-2018-departmental-undergraduate-award-recipients/
   article: https://today.cofc.edu/2019/05/02/scott-ward-award-for-excellence-in-mathematical-studies/
-  description: Given to one student annually by the College of Charleston mathematics department.
+  description: Given to one student annually in Math Department.
 - name: Brewer Scholarship
   years: 2018
   sponsor: Chemistry Department, College of Charleston
   sponsor_url: http://chemistry.cofc.edu/current-students/student-ops/scholarships.php
-  description: The scholarship recipient is selected by the Faculty of the Department of Chemistry and Biochemistry from among the junior and senior chemistry majors who are South Carolina residents and have demonstrated ability in chemistry, are of honorable character, and show promise for future excellence.
-  hide: true
+  description: Given to one student annually in Department of Chemistry and Biochemistry.
 - name: Horatio Hughes Scholarship in Mathematics
   years: 2018
   sponsor: Math Department, College of Charleston
   sponsor_url: http://math.cofc.edu/student-ops/scholarships.php
-  description: This scholarship, given in memory of Dr. Horatio Hughes, class of 1905 and distinguished professor of chemistry and physics at the College of Charleston, is awarded to <5 math majors chosen each spring semester by the Department of Mathematics
+  description: This scholarship is awarded to <5 math majors chosen each spring semester by the Department of Mathematics
 - name: Gadsden Scholarship
   years: 2018
   sponsor: Math Department, College of Charleston
@@ -77,6 +82,7 @@
   sponsor_url: https://goldwaterscholarship.gov/2017-scholars/
   article: http://today.cofc.edu/2017/04/07/goldwater-scholars-chemistry-cofc/
   description: The Goldwater Scholarship is the premier undergraduate award in the fields of mathematics, the natural sciences, and engineering. Trustees awarded 240 scholarships for the 2017-2018 academic year to undergraduate sophomores and juniors from the United States. I recieved it for my research modeling semiconducting polymers in solution.
+  short-description: The premier undergraduate award in STEM.
 - name: Top 10%, Virginia Tech Regional Mathematics Contest
   years: 2017
   sponsor: Math Department, Virginia Tech

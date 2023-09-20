@@ -21,11 +21,3 @@
     - Paul Anderson
     - Amy Langville
   description: "Worked with a team dedicated to pursuing fundamental problems in data science. Designed algorithms to calculate suspected indicators of how ”rankable” a dataset is by virtue of its spectral properties. Created scalable approximative solutions that work across distributed systems. Invited by Dr. Tim Chartier of Davidson College to present at Tresata, a big data predictive analytics company based in Charlotte."
-- title: Student Researcher & Mentor
-  years: Sep 2015-Aug 2017
-  company: College of Charleston 
-  group: Chemistry & Biochemistry Department
-  location: Charleston, SC
-  mentors: 
-    - David Boucher
-  description: "Conduct research that focuses on: solubility parameter theory, polymer assembly in the liquid phase, morphology of polymer films, synthesis of polymer-nanopartical composites using in-situ methods for the design of organic optoelectronics. Participant in HHMI Grant supporting my work as a mentor."

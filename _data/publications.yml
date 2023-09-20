@@ -42,7 +42,7 @@
   authors:
     - Thomas Gebhart
     - John Cobb
-  venue: Submitted to AAAI
+  venue: Submitted
   pdf: https://arxiv.org/pdf/2309.03773.pdf
   arxiv: "2309.03773"
   description: We utilize a sheaf-theoretic technique to optimally extend vector representations of old entities in knowledge graphs to previously unseen entities. This technique also gives an efficient way of predicting facts about these new entities and compares well to other more complicated state-of-the-art inductive reasoning methods.
@@ -57,7 +57,7 @@
   year: 2023
   authors: 
     - John Cobb
-  venue: arXiv
+  venue: Submitted
   arxiv: "2301.05979"
   pdf: https://arxiv.org/pdf/2301.05979.pdf
   highlight: true
