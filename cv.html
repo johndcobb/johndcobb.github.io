@@ -239,9 +239,57 @@ title: CV
   {% endfor %}
 
   <div class="line-container">
-    <h2>Service & Organizing</h2>
+    <h2>Organizing</h2>
     <span class="line"></span>
   </div>
+
+  
+  <h3 class="pub-type">Conferences & Seminars</h3>
+
+  {% for meeting in site.data.organizing %}
+    {% if meeting.type=='Conference' or meeting.type=='Seminar' %}
+    {% if meeting.hide==nil %}
+    <article>
+      <div class="date-container">
+        <span class="date">{{meeting.dates | replace: "-", "–" }}</span>
+        <span style="flex: 1">{{ meeting.title}}, <small class="muted"> <em>{{ meeting.location }}</em> </small> </span>
+        {% if meeting.url %}
+      <div class="extra-links">
+        <a href="{{ meeting.url }}"><i class="fas fa-link" aria-hidden="true"></i> Website</a>
+      </div>
+    {% endif %} 
+      </div>
+    </article>
+    {% endif %}
+    {% endif %}
+  {% endfor %}
+
+  <h3 class="pub-type">Reading Groups</h3>
+
+  {% for group in site.data.organizing %}
+    {% if group.type=='Reading Group' %}
+    {% if group.hide==nil %}
+    <article>
+      <div class="date-container">
+        <span class="date">{{group.dates | replace: "-", "–" }}</span>
+        <span style="flex: 1">{{ group.title }}, <small class="muted"> <em>{{ group.location }}</em> </small> </span>
+        {% if group.url %}
+      <div class="extra-links">
+        <a href="https://johndcobb.github.io{{ group.url }}"><i class="fas fa-link" aria-hidden="true"></i> Website</a>
+      </div>
+    {% endif %} 
+      </div>
+    </article>
+    {% endif %}
+    {% endif %}
+  {% endfor %}
+
+
+  <div class="line-container">
+    <h2>Service & Outreach</h2>
+    <span class="line"></span>
+  </div>
+
 
   {% for service in site.data.service %}
   {% if service.hide==nil %}
@@ -249,10 +297,11 @@ title: CV
   <article>
     <div class="date-container">
       <span class="date">{{service.years | replace: "-", "–" }}</span>
-      <span style="flex: 1">{{ service.description | markdownify }}</span>
+      <span style="flex: 1">{{ service.description }}</span>
       <span class="right">{{ service.location }}</span>
     </div>
   </article>
+  <br>
   {% endif %}
   {% endfor %}
 

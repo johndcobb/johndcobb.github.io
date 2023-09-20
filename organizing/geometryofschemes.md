@@ -1,6 +1,6 @@
 ---
 layout: page
-permalink: organizing/geometryofschemes/
+permalink: /organizing/geometryofschemes/
 title: Geometry of Schemes
 class: class
 ---
