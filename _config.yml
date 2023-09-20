@@ -2,15 +2,12 @@
 title: John Cobb
 email: jcobb2@math.wisc.edu
 description: > # this means to ignore newlines until "baseurl:"
-  The academic website of John Cobb, a PhD Student in mathematics at the University of Wisconsin-Madison. 
+  PhD student in the Mathematics Department at the University of Wisconsin-Madison. I am interested in algebraic geometry, commutative algebra, and their applications to data science.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://johndcobb.github.io" # the base hostname & protocol for your site
 production_url: "https://johndcobb.github.io"
 github_username: johndcobb
 permalink: /blog/:year/:month/:title.html
-
-twitter:
-  username: cobbjd3
 
 sass:
   style: compressed
