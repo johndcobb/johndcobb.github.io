@@ -19,6 +19,12 @@
   date: 2023-11-04
   url: https://sites.google.com/view/asu-algebra-days/home
   abstract: "The syzygies of projective curves are fairly well understood — for instance, an influential theorem of Gruson, Lazarsfeld, and Peskine gives optimal bounds on their regularity. There has been a flurry of activity in the past two decades centered around generalizing work on syzygies to the toric setting. I will discuss work that lifts machinery for understanding syzygies of projective curves to obtain a bound on the multigraded regularity of a curve in a product of projective spaces."
+- title: "Likelihood Correspondence of Toric Models"
+  location: Institute of Mathematical and Statistical Innovation
+  city: Chicago, IL
+  type: Conference
+  date: 2023-10-02
+  url: https://www.imsi.institute/activities/apprenticeship-week-varieties-from-statistics
 - title: "Multigraded regularity of curves"
   location: AG23 Mini-Symposium on Castelnuovo-Mumford Regularity and Applications
   city: Eindhoven, The Netherlands
