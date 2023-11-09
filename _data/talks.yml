@@ -12,6 +12,11 @@
   date: 2024-01-03
   url: https://www.jointmathematicsmeetings.org/meetings/national/jmm2024/2300_intro
   abstract: "The Laplacian of a graph is a matrix that encodes the local geometry of the graph. It is a fundamental object in spectral graph theory, and has been used to study a variety of problems in machine learning. In this talk, I will discuss a generalization called the sheaf Laplacian and how this can be used to study problems with missing data in the world of knowledge graphs."
+- title: "Likelihood Correspondence of Toric Models"
+  location: UW Madison Graduate Algebraic Geometry Seminar
+  city: Madison, WI
+  type: Seminar
+  date: 2023-11-08
 - title: "Multigraded regularity of curves"
   location: Algebra Days at ASU
   city: Tempe, AZ
