@@ -28,9 +28,9 @@ I am currently on the job market.
 
 <div class="me" markdown="1">
 <picture>
-  <source srcset='/images/john_SCGP.webp' type='image/webp' />
+  <source srcset='/images/john_purple.webp' type='image/webp' />
   <img
-    src='/images/john_SCGP$.jpg'
+    src='/images/john_purple.jpg'
     alt='John Cobb'/>
 </picture>
 
