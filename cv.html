@@ -138,7 +138,7 @@ title: CV
     <span class="line"></span>
   </div>
 
-  {% assign types = "Journal|Preprint" | split: "|" %}
+  {% assign types = "Published|Preprint|In Progress" | split: "|" %}
   {% for type in types %}
     {% assign counter = 1 %}
     {% for pub in site.data.publications %}
