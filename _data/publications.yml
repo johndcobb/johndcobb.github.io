@@ -45,6 +45,9 @@
     - Matthew Faust
   venue: In progress
   hide: true
+  tags:
+    - Toric Varieties
+    - Algebraic Statistics
   type: 
     - In Progress
 
@@ -55,6 +58,8 @@
     - John Cobb
     - Nathan Gallup
   venue: In progress
+  tags:
+    - Syzygies
   type:
     - In Progress
  
@@ -110,6 +115,7 @@
   description: Any matrix gives rise to an associated family of canonical complexes associated to it, including the Eagon-Northcott and Buchsbaum-Rim. Famously, there is a simple criterion for checking the exactness of these complexes. We give generalization of this criterion for these complexes to be *virtual resolutions*, which are "exact enough" to be relevant to the geometry of toric varieties.
   tags:
     - Virtual Resolutions
+    - Syzygies
     - Toric Varieties
   type:
     - Published
