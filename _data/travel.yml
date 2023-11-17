@@ -8,14 +8,18 @@
   start: 2024-01-22
   end: 2024-01-26
 - title: Joint Mathematics Meetings
-  venue: San Francisco, CA
+  where: San Francisco, CA
   start: 2024-01-03
-  end: 2024-01-06
+  end: 2024-01-09
 - title: Algebra Days
   venue: Arizona State University
   where: Tempe, AZ
   start: 2023-11-03
   end: 2023-11-05
+- title: University of Hawaii
+  where: Honolulu, HI
+  start: 2023-10-14
+  end: 2023-10-23
 - title: Varieties from Statistics
   venue: IMSI
   where: Chicago, IL
@@ -33,12 +37,12 @@
   end: 2023-07-07
 - title: Derived Categories, Hodge theory and Singularities
   venue: University of Sheffield
-  where: UK
+  where: Sheffield, UK
   start: 2023-06-28
   end: 2023-06-30
 - title: Syzygies and Regularity
   venue: University of Illinois at Chicago
-  where: IL
+  where: Chicago, IL
   start: 2023-04-14
   end: 2023-04-16
 - title: CA+
@@ -52,8 +56,8 @@
   start: 2022-12-05
   end: 2022-12-09
 - title: Western Algebraic Geometry Symposium
-  venue: University of California, Riverside
-  where: 
+  venue: University of California-Riverside
+  where: Riverside, CA
   start: 2022-11-05
   end: 2022-11-06
 - title: AMS Fall Western Sectional Meeting
@@ -67,7 +71,7 @@
   end: 2022-10-19
 - title: MAGGC 2022
   venue: University of Illinois at Chicago
-  where: IL
+  where: Chicago, IL
   start: 2022-08-10
   end: 2022-08-11
 - title: NDSEG Fellows Conference
@@ -91,7 +95,7 @@
   end: 2022-04-24
 - title: CA+ Conference
   venue: Iowa State University
-  where: Ames, Iowa
+  where: Ames, IA
   start: 2022-04-30
   end: 2022-05-01
 - title: CA+ Conference
