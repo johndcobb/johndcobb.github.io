@@ -1,6 +1,12 @@
+- name: AMS Graduate Student Travel Grant ($1,430)
+  years: 2023
+  sponsor: University of Wisconsin-Madison
+  description: These grants are available to all Graduate Level (Masters, and PhD) students in the Mathematical Sciences. The grant will cover the JMM registration fee at the Graduate Student rate.
+  hide: true
 - name: SIAM Student Travel Award ($800)
   years: 2023
   description: Funding to attend the SIAM Conference on Applied Algebraic Geometry (AG23) in July 2023 in Eindhoven, The Netherlands.
+  hide: true
 - name: Exceptional Service Award
   years: 2023
   sponsor: UW Madison Mathematics Department
@@ -21,6 +27,7 @@
   years: 2020
   sponsor: University of Wisconsin-Madison
   description: These grants are available to all Graduate Level (Masters, and PhD) students in the Mathematical Sciences. The grant will cover the JMM registration fee at the Graduate Student rate.
+  hide: true
 - name: NDSEG Fellowship ($130,000)
   years: 2019
   sponsor: Air Force Office of Scientific Research
