@@ -36,32 +36,32 @@
 #    - Conference
 #    - Journal
 
-- id: LikelihoodGeometry
-  title: The Likelihood Correspondence of Statistical Models
-  year: 2024
-  authors:
-    - David Barnhill
-    - John Cobb
-    - Matthew Faust
-  venue: In progress
-  hide: true
-  tags:
-    - Toric Varieties
-    - Algebraic Statistics
-  type: 
-    - In Progress
+#- id: LikelihoodGeometry
+#  title: The Likelihood Correspondence of Statistical Models
+#  year: 2024
+#  authors:
+#    - David Barnhill
+#    - John Cobb
+#    - Matthew Faust
+#  venue: In progress
+#  hide: true
+#  tags:
+#    - Toric Varieties
+#    - Algebraic Statistics
+#  type: 
+#    - In Progress
 
-- id: MultigradedStillman
-  title: Multigraded Stillman's Conjecture
-  year: 2024
-  authors:
-    - John Cobb
-    - Nathan Gallup
-  venue: In progress
-  tags:
-    - Syzygies
-  type:
-    - In Progress
+#- id: MultigradedStillman
+#  title: Multigraded Stillman's Conjecture
+#  year: 2024
+#  authors:
+#    - John Cobb
+#    - Nathan Gallup
+#  venue: In progress
+#  tags:
+#    - Syzygies
+#  type:
+#    - In Progress
  
 
 - id: SheafDiffusion
@@ -91,7 +91,7 @@
   highlight: true
   description: Motivated by toric geometry, we lift machinery for understanding syzygies of curves in projective space to the setting of products of projective spaces. Using this machinery, we show an analogue of an influential result of Gruson, Peskine, and Lazarsfeld that gives a bound on the regularity of a possibly singular curve given its degree and the dimension of the ambient projective space.
   type: 
-    - Preprint
+    - Journal
   tags: 
     - Virtual Resolutions
     - Toric Varieties
@@ -118,7 +118,7 @@
     - Syzygies
     - Toric Varieties
   type:
-    - Published
+    - Journal
 
 - id: QKdV
   title: "Quarternion-Valued Breather Soliton, Rational, and Periodic QKdV Solutions"
@@ -141,7 +141,7 @@
     - Integrable Systems
     - Mathematical Physics
   type:
-    - Published
+    - Journal
     
 - id: P3HT
   title: "Aggregate Dispersions to Enhance the Intrachain Order in Surfactant-Stabilized Aqueous Colloids of Poly(3-hexylthiophene)"
@@ -163,7 +163,7 @@
   tags:
     - Physical Chemistry
   type:
-    - Published
+    - Journal
   
 - id: bachelor-thesis
   title: "Quaternion-Valued KdV Solutions"
