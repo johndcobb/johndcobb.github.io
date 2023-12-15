@@ -1,9 +1,16 @@
+- title: "MATH 217: Calculus with Algebra & Trig II"
+  role: "Teaching Assistant"
+  year: Spring 2024
+  type: Current
+  professor: Cassie Williams
+  location: University of Wisconsin-Madison
+  description: This page organizes calculus II discussion sections 304 and 305 running in Spring 2024.
+  roledescription: Hold weekly problem solving sessions and office hours.
 - title: "MATH 222: Calculus II"
   role: "Head Teaching Assistant"
-  highlight: 1
   panel: true
   year: Fall 2023
-  type: Current
+  type: Past
   professor: Maurice Fabien
   location: University of Wisconsin-Madison
   url: "/teaching/222Fall2023"
