@@ -10,6 +10,11 @@
   type: Seminar
   date: 2024-03-19
   url: https://www.nist.gov/itl/math/acmd-seminar-series
+- title: "Sheaf Laplacians and Missing Data"
+  location: Center for Computing Sciences
+  city: Bowie, MD
+  type: Seminar
+  date: 2024-01-31
 - title: "Likelihood Correspondence of Statistical Models"
   location: Center for Communications Research
   city: Princeton, NJ
