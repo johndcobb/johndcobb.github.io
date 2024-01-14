@@ -88,7 +88,12 @@
   year: 2023
   authors: 
     - John Cobb
-  venue: To appear in Mathematische Zeitschrift
+  venue: Mathematische Zeitschrift
+  venue_url: https://link.springer.com/journal/209
+  venue_tags:
+    - Math. Z.
+  doi: 10.1007/s00209-023-03422-3
+  short_doi: 10/mcmh
   arxiv: "2301.05979"
   pdf: https://arxiv.org/pdf/2301.05979.pdf
   highlight: true
