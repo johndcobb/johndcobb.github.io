@@ -4,18 +4,23 @@
   type: Conference
   date: 2024-05-04
   url: https://www.ams.org/meetings/sectional/2299_program.html
-- title: "Sheaf Laplacians and Missing Data"
+- title: "Missing Data and Likelihood Geometry"
   location: ACMD Seminar
   city: Boulder, CO
   type: Seminar
   date: 2024-03-12
   url: https://www.nist.gov/itl/math/acmd-seminar-series
 - title: "Sheaf Laplacians and Missing Data"
+  location: UW Madison Graduate Applied Math Seminar
+  city: Madison, WI
+  type: Seminar
+  date: 2024-01-07
+- title: "Missing Data and Likelihood Geometry"
   location: Center for Computing Sciences
   city: Bowie, MD
   type: Seminar
   date: 2024-01-31
-- title: "Likelihood Correspondence of Statistical Models"
+- title: "Toric Varieties, Syzygies, and Missing Data"
   location: Center for Communications Research
   city: Princeton, NJ
   type: Seminar
