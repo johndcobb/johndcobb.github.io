@@ -19,11 +19,9 @@ class: home
 <div class="columns" markdown="1">
 
 <div class="intro" markdown="1">
-I'm a fifth year PhD student in the mathematics department at the [University of Wisconsin-Madison](https://www.math.wisc.edu/) advised by both [Daniel Erman](https://people.math.wisc.edu/~derman/) and [Michael Kemeny](https://people.math.wisc.edu/~kemeny/homepage.html). From 2019 to 2022, I was supported by a [DoD NDSEG Fellowship](https://ndseg.sysplus.com/NDSEG/About/). Details are in my [CV]({{ absolute_url }}/cv).
+I'm currently a fifth year PhD student in the mathematics department at the [University of Wisconsin-Madison](https://www.math.wisc.edu/) advised by both [Daniel Erman](https://people.math.wisc.edu/~derman/) and [Michael Kemeny](https://people.math.wisc.edu/~kemeny/homepage.html). In Fall 2024 I will begin as a NSF postdoctoral fellow with [Hal Schenck](http://webhome.auburn.edu/~hks0015/) at Auburn University. From 2019 to 2022, I was supported by a [DoD NDSEG Fellowship](https://ndseg.sysplus.com/NDSEG/About/). Details are in my [CV]({{ absolute_url }}/cv).
 
 My research interests are primarily within algebraic geometry and commutative algebra. My work involves syzygies, toric varieties, defining equations of curves, and more recently, applications to algebraic statistics.
-
-I am currently on the job market.
 </div>
 
 <div class="me" markdown="1">

@@ -22,6 +22,27 @@ title: CV
     <b>Research Interests:</b> Algebraic geometry, commutative algebra, and their applications to data science.
   </span>
 
+  <div class="line-container">
+    <h2>Employment</h2> 
+    <span class="line"></span>
+  </div>
+
+  {% for em in site.data.employment %}
+  <article>
+    <div class="date-container">
+      <span class="date">{{ em.years | replace: "-", "–" }}</span>
+      <h3>{{ em.university }}<br>
+      <span style="font-variant:small-caps">{{ em.position }}</span>
+      </h3>
+      <span class="right">{{ em.location }}</span>
+    </div>
+    <p>
+      {% for des in em.description %}
+        <span>{{ des | markdownify | remove: '<p>' | remove: '</p>' }}</span>{% unless forloop.last %}<br/>{% endunless %}
+      {% endfor %}
+    </p>
+  </article>
+  {% endfor %}
 
   <div class="line-container">
     <h2>Education</h2> 
