@@ -46,6 +46,7 @@
   venue: Submitted
   pdf: https://arxiv.org/pdf/2312.08501.pdf
   arxiv: "2312.08501"
+  link: /assets/LCCode.m2
   highlight: true
   description: Characteristics of the maximum likelihood estimation problems are reflected in the geometry of a variety called the likelihood correspondence. We construct the ideal of this variety for some popular examples of statistical models.
   tags:
@@ -75,6 +76,7 @@
     - John Cobb
   venue: Submitted
   pdf: https://arxiv.org/pdf/2309.03773.pdf
+  link: https://github.com/tgebhart/sheaf_kg_transind
   arxiv: "2309.03773"
   description: We utilize a sheaf-theoretic technique to optimally extend vector representations of old entities in knowledge graphs to previously unseen entities. This technique also gives an efficient way of predicting facts about these new entities and compares well to other more complicated state-of-the-art inductive reasoning methods.
   type: 
