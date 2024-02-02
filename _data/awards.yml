@@ -91,21 +91,9 @@
   article: http://today.cofc.edu/2017/04/07/goldwater-scholars-chemistry-cofc/
   description: The Goldwater Scholarship is the premier undergraduate award in the fields of mathematics, the natural sciences, and engineering. Trustees awarded 240 scholarships for the 2017-2018 academic year to undergraduate sophomores and juniors from the United States. I recieved it for my research modeling semiconducting polymers in solution.
   short-description: The premier undergraduate award in STEM.
-- name: Top 10%, Virginia Tech Regional Mathematics Contest
-  years: 2017
-  sponsor: Math Department, Virginia Tech
-  sponsor_url: https://intranet.math.vt.edu/people/plinnell/Vtregional/
-  description: 95 schools from 30 states took part in the 39th contest and there were 739 participants.
-  hide: true
 - name: ATD Scholarship in Mathematics
   years: 2017
   sponsor: Honors College of Charleston
   sponsor_url: https://honors.cofc.edu/ZZZdocuments/scholarships.php
   description: This merit scholarship is intended to recruit outstanding students to the Honors College who are interested in studying math or computer science.
-  hide: true
-- name: Palmetto Fellows
-  years: 2015
-  sponsor: South Carolina Commission on Higher Education
-  sponsor_url: https://www.che.sc.gov/Students,FamiliesMilitary/PayingForCollege/FinancialAssistanceAvailable/ScholarshipsGrantsforSCResidents/PalmettoFellowsScholarshipProgram.aspx
-  description: The Palmetto Fellows Scholarship recognizes the most academically talented high school seniors and provides 4 years of funding. 
   hide: true
