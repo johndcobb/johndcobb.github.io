@@ -1,13 +1,25 @@
-- title: Graduate Mentor
-  at: Undergraduate Mentoring Program
+- title: Mentor
+  at: UW Madison Directed Reading Program 
+  url: https://sites.google.com/site/uwmadisondrp/
   location: Madison, WI
-  years: Fall 2022
-  description: Met with a group of undergraduate math majors to give advice about how to navigate their undergrad degree, plan for grad school apps, and think about REUs and other opportunities.
+  years: Spring 2024
+  description: Led a group of students in reading Stillwell's "Mathematics and its History".
+- title: Organizer
+  at: UW Madison Directed Reading Program 
+  url: https://sites.google.com/site/uwmadisondrp/
+  location: Madison, WI
+  years: Fall 2019-Fall 2023
+  description: "The DRP is a math mentoring program that pairs undergraduate students with graduate student mentors, for a semester-long independent study project."
 - title: Graduate Mentor
   at: MXM Experimental Mathematics project
   location: Madison, WI
   years: Fall 2022, Spring 2023
   description: Directed advanced undergraduates on a computationally focused research project concerning identifiable linear compartmental models.
+- title: Graduate Mentor
+  at: Undergraduate Mentoring Program
+  location: Madison, WI
+  years: Fall 2022
+  description: Met with a group of undergraduate math majors to give advice about how to navigate their undergrad degree, plan for grad school apps, and think about REUs and other opportunities.
 - title: Graduate Mentor
   at: UW Madison
   location: Madison, WI
@@ -32,18 +44,6 @@
   location: Madison, WI
   years: Fall 2020-Spring 2021
   description: "FGSS links first-generation college students to first generation graduate and faculty mentors for monthly meetings. "
-- title: Mentor
-  at: UW Madison Directed Reading Program 
-  url: https://sites.google.com/site/uwmadisondrp/
-  location: Madison, WI
-  years: Spring 2024
-  description: Led a group of students in reading Stillwell's "Mathematics and its History".
-- title: Organizer
-  at: UW Madison Directed Reading Program 
-  url: https://sites.google.com/site/uwmadisondrp/
-  location: Madison, WI
-  years: Fall 2019-Spring 2024
-  description: "The DRP is a math mentoring program that pairs undergraduate students with graduate student mentors, for a semester-long independent study project."
 - title: Volunteer
   at: AMS Fall Central Sectional
   years: Sep 2019
