@@ -109,7 +109,7 @@ My research interests are primarily within algebraic geometry and commutative al
   {% include travel.html travel=travel %}
 {% endfor %}
 {% assign sorted_travel = site.data.travel | where_exp:'item','item.start' | sort: 'start' | reverse %}
-{% for travel in sorted_travel limit:8 %}
+{% for travel in sorted_travel limit: 9 %}
   {% include travel.html travel=travel %}
 {% endfor %}
 </tbody>
