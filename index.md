@@ -89,18 +89,19 @@ My research interests are primarily within algebraic geometry and commutative al
 <div class="news-travel" markdown="1">
 
 <div class="news" markdown="1">
-## News
+## Latest News
 
 <ul>
 {% for news in site.data.news limit:5 %}
   {% include news.html news=news %}
 {% endfor %}
 </ul>
+[(see all)]({{ absolute_url }}/news) 
 
 </div>
 
 <div class="travel" markdown="1">
-## Travel
+## Latest Travel
 
 <table>
 <tbody>
@@ -114,6 +115,7 @@ My research interests are primarily within algebraic geometry and commutative al
 {% endfor %}
 </tbody>
 </table>
+[(see all)]({{ absolute_url }}/travel) 
 
 </div>
 
