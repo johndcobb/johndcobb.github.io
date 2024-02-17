@@ -1,7 +1,7 @@
 # Website 
 
 ```
-This website is based heavily of the original designed of Dominik Moritz, 
+This website is based heavily off the original designed by Dominik Moritz, 
 https://github.com/domoritz/domoritz.github.io.
 ```
 
