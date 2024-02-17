@@ -22,5 +22,3 @@ class: home
 </tbody>
 </table>
 </div>
-
-<iframe src="/assets/travelmap.html" width="640" height="480"></iframe>
