@@ -5,6 +5,11 @@ title: Other
 class: projects
 ---
 
+## Travel
+Here's a fun map of all the [math related travel]({{ absolute_url }}/travel) I've done (or have scheduled).
+<iframe src="/assets/travelmap.html" width="100%" height="300"></iframe>
+
+
 ## Notes
 - [Algebraic Geometry II](https://share.goodnotes.com/s/BdvsNRDbPkutU5FEE5z85G)
 - [Algebraic Geometry III](https://share.goodnotes.com/s/JCWmdpWy41cinsbjbxsfHq)
