@@ -8,6 +8,8 @@ class: home
 {:.hidden}
 # Travel
 
+
+<iframe src="/assets/travelmap.html" width="100%" height="300"></iframe>
 <div class="travel" markdown="1">
 <table>
 <tbody>
