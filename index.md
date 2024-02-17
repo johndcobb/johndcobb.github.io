@@ -92,7 +92,7 @@ My research interests are primarily within algebraic geometry and commutative al
 ## Latest News
 
 <ul>
-{% for news in site.data.news limit:5 %}
+{% for news in site.data.news limit:6 %}
   {% include news.html news=news %}
 {% endfor %}
 </ul>
@@ -110,7 +110,7 @@ My research interests are primarily within algebraic geometry and commutative al
   {% include travel.html travel=travel %}
 {% endfor %}
 {% assign sorted_travel = site.data.travel | where_exp:'item','item.start' | sort: 'start' | reverse %}
-{% for travel in sorted_travel limit: 9 %}
+{% for travel in sorted_travel limit: 10 %}
   {% include travel.html travel=travel %}
 {% endfor %}
 </tbody>
