@@ -6,12 +6,13 @@ import yaml
 
 def create_map(locations):
     """ Create a map centered at the first location """ 
-    map_center = [locations[0]['lat'], locations[0]['lon']]
-    my_map = folium.Map(location=map_center, zoom_start=1.5)
+    map_center = [16.383, -5.74]
+    my_map = folium.Map(location=map_center, world_copy_jump=True, zoom_start=1, tiles = "cartodb positron", zoom_control = False)
 
     # Add markers for each location
     for loc in locations:
         folium.Marker(location=[loc['lat'], loc['lon']], popup=loc['name']).add_to(my_map)
+        #icon=folium.Icon(color="gray", icon = 'circle', prefix = 'fa')
 
     return my_map
 
