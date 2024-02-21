@@ -23,6 +23,7 @@
 - name: Early-career AMS-NSF-Simons-ICM Travel Grant ($3,500) 
   years: 2022
   description: Awarded to fund participation in the International Congress of Mathematicians in Saint Petersburg, Russia, in July of 2022. Covers round-trip travel, Congress registration, accommodations, meals, cultural activities, and some ground transportation at the Congress site up to ~$3,500.
+  hide: true
 - name: AMS Graduate Student Travel Grant ($1,430)
   years: 2020
   sponsor: University of Wisconsin-Madison
@@ -47,6 +48,7 @@
   years: 2019
   sponsor: American Chemical Society
   description: The local ACS chapter of the chemistry department of the College of Charleston chooses one graduating senior.
+  hide: true
 - name: Alternate Candidate 
   years: 2019
   sponsor: Fulbright
@@ -57,6 +59,7 @@
   sponsor: MAA-JMM Undergraduate Poster Session
   sponsor_url: https://www.maa.org/sites/default/files/Programs/Outstanding%20Posters%20JMM%202019_0.pdf
   description: Outstanding Poster prize were given to the top 15% student presenters in each topical category of mathematical study at the 2019 Joint Mathematical Meetings in Baltimore.
+  hide: true
 - name: Honorable Mention
   years: 2018
   sponsor: COMAP Mathematical Modeling Competition
