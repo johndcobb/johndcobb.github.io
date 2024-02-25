@@ -131,14 +131,6 @@
         margin-left: 90px;
     }
 
-    article {
-        margin-left: 0 !important;
-    }
-
-    article > * {
-        margin-left: 90px;
-    }
-
     .line {
         display: inline-block;
         color: #666;
@@ -409,6 +401,11 @@
     
         .cv-pub {
             margin-bottom: 1.2em;
+            margin-left: 0 !important;
+
+            & > * {
+            margin-left: 100px;
+            }
         }
     
         .muted, .muted a {
@@ -431,14 +428,6 @@
         }
     
         .container > * {
-            margin-left: 90px;
-        }
-    
-        article {
-            margin-left: 0 !important;
-        }
-    
-        article > * {
             margin-left: 90px;
         }
     
