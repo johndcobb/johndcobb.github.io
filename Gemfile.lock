@@ -31,6 +31,7 @@ GEM
     ffi (1.16.3)
     forwardable-extended (2.6.0)
     google-protobuf (3.25.2)
+    google-protobuf (3.25.2-arm64-darwin)
     html-pipeline (2.14.3)
       activesupport (>= 2)
       nokogiri (>= 1.4)
@@ -121,6 +122,7 @@ PLATFORMS
   arm-linux
   arm-linux-gnueabihf
   arm-linux-musleabihf
+  arm64-darwin-22
   arm64-darwin-23
 
 DEPENDENCIES
