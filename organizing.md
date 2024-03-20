@@ -13,6 +13,8 @@ class: projects
 
 <div class="grid">
   {% for project in site.data.organizing %}
-    {% include project.html project=project %}
+    {% if project.panel==nil %}
+      {% include project.html project=project %}
+    {% endif %}
   {% endfor %}
 </div>
