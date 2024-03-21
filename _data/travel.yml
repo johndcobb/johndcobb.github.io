@@ -1,3 +1,13 @@
+- title: SIAM Applied Algebraic Geometry
+  venue: University of Wisconsin-Madison
+  where: Madison, WI
+  start: 2025-07-07
+  end: 2025-07-11
+- title: Macaulay2 Workshop
+  venue: University of Wisconsin-Madison
+  where: Madison, WI
+  start: 2025-06-30
+  end: 2025-07-04
 - title: Applications of Commutative Algebra
   venue: Fields Institute
   where: Toronto, Canada
@@ -12,6 +22,11 @@
   where: Auckland, New Zealand
   start: 2024-12-09
   end: 2024-12-13
+- title: AMS Fall Southeastern Sectional Meeting 
+  venue: Georgia Southern University
+  where: Savannah, GA
+  start: 2024-10-05
+  end: 2024-10-06
 - title: GAeL XXXI
   where: Turin, Italy
   start: 2024-06-17
