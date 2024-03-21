@@ -3,6 +3,7 @@ from geopy.geocoders import Nominatim
 import yaml 
 
 ## All credit for this code goes to Austin Hunt.
+## Make sure to change the python interpreter in VS code with CNTRL shift P to manim to make it work.
 
 def create_map(locations):
     """ Create a map centered at the first location """ 
@@ -22,7 +23,7 @@ def get_lat_lon(city, state):
     """
     try:
         address = f"{city}, {state}"
-        geolocator = Nominatim(user_agent="OpenStreetMap Parser")
+        geolocator = Nominatim(user_agent="OpenStreetMap Parser", timeout=5)
         location = geolocator.geocode(address)
         return {
             'lat': location.latitude,
@@ -53,9 +54,11 @@ def parse_location(location_str):
     Output: {'name': 'London', 'state': 'UK', 'lat': 51.5073219, 'lon': -0.1276474}
     """
     # Assuming the location_str is in the format {city, state}
+    print(location_str)
     city_state = location_str.strip('{}').split(',')
     city = city_state[0].strip()
     state = city_state[1].strip()
+    print(f"City: {city}, State: {state}")
     # Use a geocoding service to get the lat, lon for the city, state
     lat_lon = get_lat_lon(city, state)
     return {'name': city, 'state': state, 'lat': lat_lon['lat'], 'lon': lat_lon['lon']} 
