@@ -75,18 +75,6 @@
   type: 
     - Preprint
 
-#- id: MultigradedStillman
-#  title: Multigraded Stillman's Conjecture
-#  year: 2024
-#  authors:
-#    - John Cobb
-#    - Nathan Gallup
-#  venue: In progress
-#  tags:
-#    - Syzygies
-#  type:
-#    - In Progress
- 
 
 - id: SheafDiffusion
   title: Extending Transductive Knowledge Graph Embedding Models for Inductive Logical Relational Inference
