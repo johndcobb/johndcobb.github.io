@@ -69,7 +69,6 @@
   tags: 
     - Syzygies
     - Toric Varieties
-    - Logic
   type:
     - Preprint
   
@@ -90,6 +89,7 @@
   tags:
     - Toric Varieties
     - Algebraic Statistics
+    - Commutative Algebra
   type: 
     - Preprint
 
@@ -152,6 +152,7 @@
     - Virtual Resolutions
     - Syzygies
     - Toric Varieties
+    - Commutative Algebra
   type:
     - Journal
 
