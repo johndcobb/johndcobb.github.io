@@ -46,7 +46,7 @@
   venue:
   pdf:
   arxiv:
-  highlight: true 
+  #highlight: true 
   description: A common argument for establishing bounds within commutative algebra is the construction of a "limiting polynomial ring" that allows one to trade asymptotic behavior over many polynomial rings for exact behavior in the limit ring. We define a degree bounded ultraproduct that packages this argument up and establish several strong properties about it using its unique position within logic. We give numerous out-of-the-box algebraic tools to use on such rings.
   tags:
     - Logic
@@ -64,7 +64,7 @@
   venue: 
   pdf:
   arxiv:
-  highlight: true 
+  #highlight: true 
   description: In 2000, Mike Stillman conjectured that the projective dimension of a homogeneous ideal in a standard graded polynomial ring can be bounded just in terms of the number and degrees of the generators. We resolve Stillman's conjecture for families of polynomial rings that are graded by any abelian group under mild conditions. Conversely, we show that these conditions are necessary for the existence of a Stillman bound. 
   tags: 
     - Syzygies
