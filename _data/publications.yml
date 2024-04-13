@@ -47,7 +47,7 @@
   pdf:
   arxiv:
   highlight: true 
-  description: A common argument for establishing bounds within commutative algebra is the construction of a ``limiting polynomial ring'' that allows one to trade asymptotic behavior over many polynomial rings for exact behavior in the limit ring. We define a degree bounded ultraproduct that packages this argument up and establish several strong properties about it using its unique position within logic. We give numerous out-of-the-box algebraic tools to use on such rings.
+  description: A common argument for establishing bounds within commutative algebra is the construction of a "limiting polynomial ring" that allows one to trade asymptotic behavior over many polynomial rings for exact behavior in the limit ring. We define a degree bounded ultraproduct that packages this argument up and establish several strong properties about it using its unique position within logic. We give numerous out-of-the-box algebraic tools to use on such rings.
   tags:
     - Logic
     - Commutative Algebra
