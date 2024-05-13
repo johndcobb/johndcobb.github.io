@@ -2,7 +2,7 @@
 title: John Cobb
 email: jcobb2@math.wisc.edu
 description: > # this means to ignore newlines until "baseurl:"
-  NSF Postdoc at the Mathematics Department at Auburn University. I am interested in algebraic geometry, commutative algebra, and their applications to data science.
+  NSF postdoctoral fellow in the Mathematics Department at Auburn University. I am interested in algebraic geometry, commutative algebra, and their applications to data science. PhD from University of Wisconsin-Madison.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://johndcobb.github.io" # the base hostname & protocol for your site
 production_url: "https://johndcobb.github.io"
