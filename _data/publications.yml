@@ -61,17 +61,17 @@
     - John Cobb
     - Nathaniel Gallup
     - John Spoerl
-  venue: 
-  pdf:
-  arxiv:
-  #highlight: true 
+  venue: Submitted
+  pdf: https://arxiv.org/abs/2406.09593.pdf
+  arxiv: "2406.09593"
+  highlight: true 
   description: In 2000, Mike Stillman conjectured that the projective dimension of a homogeneous ideal in a standard graded polynomial ring can be bounded just in terms of the number and degrees of the generators. We resolve Stillman's conjecture for families of polynomial rings that are graded by any abelian group under mild conditions. Conversely, we show that these conditions are necessary for the existence of a Stillman bound. 
   tags: 
     - Syzygies
     - Toric Varieties
     - Commutative Algebra
   type:
-    - In Progress
+    - Preprint
   
   
 - id: LikelihoodGeometry
