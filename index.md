@@ -19,7 +19,7 @@ class: home
 <div class="columns" markdown="1">
 
 <div class="intro" markdown="1">
-I just graduated with a PhD from the mathematics department at the [University of Wisconsin-Madison](https://www.math.wisc.edu/), where I was advised by both [Daniel Erman](https://math.hawaii.edu/~erman) and [Michael Kemeny](https://people.math.wisc.edu/~kemeny/homepage.html). In Fall 2024 I will begin as a NSF postdoctoral fellow with [Hal Schenck](http://webhome.auburn.edu/~hks0015/) at Auburn University. From 2019 to 2022, I was supported by a [DoD NDSEG Fellowship](https://ndseg.sysplus.com/NDSEG/About/). Details are in my [CV]({{ absolute_url }}/cv).
+I am a NSF postdoctoral fellow with [Hal Schenck](http://webhome.auburn.edu/~hks0015/) at Auburn University. I recieved my PhD from the mathematics department at the [University of Wisconsin-Madison](https://www.math.wisc.edu/), where I was advised by both [Daniel Erman](https://math.hawaii.edu/~erman) and [Michael Kemeny](https://people.math.wisc.edu/~kemeny/homepage.html). From 2019 to 2022, I was supported by a [DoD NDSEG Fellowship](https://ndseg.sysplus.com/NDSEG/About/). Details are in my [CV]({{ absolute_url }}/cv).
 
 My research interests are primarily within algebraic geometry and commutative algebra. My work involves syzygies, toric varieties, defining equations of curves, and more recently, applications to algebraic statistics.
 </div>
@@ -34,7 +34,7 @@ My research interests are primarily within algebraic geometry and commutative al
 
 {:.no-list}
 * <i class="fas fa-envelope-square" aria-hidden="true"></i> <a href="mailto:{{ site.email }}">{{ site.email }}</a>
-* <i class="fas fa-map-marker-alt" aria-hidden="true"></i> <a href="https://www.google.com/maps/dir/?api=1&destination=Van+Vleck+Hall%2C+Madison%2C+WI">Van Vleck</a>, Office 820
+* <i class="fas fa-map-marker-alt" aria-hidden="true"></i> <a href="https://maps.app.goo.gl/xFJtDK4X16odKMfu6">Parker Hall</a>, Office 112
 * he/him/his
 </div>
 </div>
