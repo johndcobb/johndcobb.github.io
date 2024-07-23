@@ -1,14 +1,10 @@
 - university: University of Wisconsin-Madison
-  years: 2019-
-  degree: Ph.D. in Mathematics, Minor in Computer Science
+  years: 2019-2024
+  degree: ph.d. mathematics
   location: Madison, WI
   description: 
-  - "Studying algebraic geometry, advised by Daniel Erman and Michael Kemeny."
+  - "Advisors: [Daniel Erman](https://math.hawaii.edu/~erman/), [Michael Kemeny](https://people.math.wisc.edu/~kemeny/homepage.html)."
 - university: Honors College of Charleston
   years: 2015-2019
-  degree: B.S. Mathematics | B.A. Chemistry | Minor Data Science
+  degree: b.s. mathematics, b.a. chemistry, minor data science
   location: Charleston, SC
-  description:
-    - "Thesis: \"Quaternion-Valued KdV Solutions\". Advised by Alex Kasman."
-    - Goldwater Scholar in 2017 for research in modeling the morphology of semiconducting polymers.
-    - NDSEG Fellowship in 2019 for research on spectral graph theory and ranking algorithms.

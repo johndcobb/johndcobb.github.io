@@ -1,6 +1,6 @@
 ---
 layout: page
-permalink: organization/vakilsummer2021/
+permalink: organizing/vakilsummer2021/
 title: Vakil Summer Reading Group 2021
 class: class
 ---

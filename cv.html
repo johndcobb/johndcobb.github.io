@@ -11,14 +11,36 @@ title: CV
   
   <span><h1><a href="{{ absolute_url }}/">John D. Cobb</a></h1></span>
   <span class="header-columns">
-    <div> PhD Student at University of Wisconsin-Madison </div> 
+    <div hidden> PhD Student at University of Wisconsin-Madison </div> 
     <div>
-        <a href="mailto:jcobb2@math.wisc.edu" style="margin-left:0.6em"><i class="fas fa-envelope" aria-hidden="true"></i> jcobb2@math.wisc.edu</a> 
-        <a href="{{ absolute_url }}/"><i class="fas fa-home" style="margin-left:0.6em" aria-hidden="true"></i> https://www.math.wisc.edu/~jcobb2</a>
+        <a href="mailto:jdcobb3@gmail.com" style="margin-left:0.6em"><i class="fas fa-envelope" aria-hidden="true"></i> jdcobb3@gmail.com</a> 
+        <a href="{{ absolute_url }}/"><i class="fas fa-home" style="margin-left:0.6em" aria-hidden="true"></i>https://github.com/johndcobb</a>
         <a href="https://github.com/johndcobb"><i class="fab fa-github" style="margin-left: 0.6em" aria-hidden="true"></i> johndcobb</a>
     </div> 
   </span>
+  <span class="header-columns">
+    <b>Research Interests:</b> Algebraic geometry, commutative algebra, and their applications to data science.
+  </span>
 
+  <div class="line-container">
+    <h2>Employment</h2> 
+    <span class="line"></span>
+  </div>
+
+  {% for em in site.data.employment %}
+  <div class="date-container">
+    <span class="date">{{ em.years | replace: "-", "–" }}</span>
+    <h3>{{ em.university }}<br>
+    <span style="font-variant:small-caps">{{ em.position }}</span>
+    </h3>
+    <span class="right">{{ em.location }}</span>
+  </div>
+  <p>
+    {% for des in em.description %}
+      <span>{{ des | markdownify | remove: '<p>' | remove: '</p>' }}</span>{% unless forloop.last %}<br/>{% endunless %}
+    {% endfor %}
+  </p>
+  {% endfor %}
 
   <div class="line-container">
     <h2>Education</h2> 
@@ -26,28 +48,59 @@ title: CV
   </div>
 
   {% for ed in site.data.education %}
-  <article>
-    <div class="date-container">
-      <span class="date">{{ ed.years | replace: "-", "–" }}</span>
-      <h3>{{ ed.university }}<br>
-      <span style="font-variant:small-caps">{{ ed.degree }}</span>
-      </h3>
-      <span class="right">{{ ed.location }}</span>
-    </div>
-    <p>
-      {% for des in ed.description %}
-        <span>{{ des | markdownify | remove: '<p>' | remove: '</p>' }}</span>{% unless forloop.last %}<br/>{% endunless %}
-      {% endfor %}
-    </p>
-  </article>
+  <div class="date-container">
+    <span class="date">{{ ed.years | replace: "-", "–" }}</span>
+    <h3>{{ ed.university }}<br>
+    <span style="font-variant:small-caps">{{ ed.degree }}</span>
+    </h3>
+    <span class="right">{{ ed.location }}</span>
+  </div>
+  <p>
+    {% for des in ed.description %}
+      <span>{{ des | markdownify | remove: '<p>' | remove: '</p>' }}</span>{% unless forloop.last %}<br/>{% endunless %}
+    {% endfor %}
+  </p>
   {% endfor %}
 
+  <div class="line-container">
+    <h2>Awards & Grants</h2>
+    <span class="line"></span>
+  </div>
 
+  {% assign awards = site.data.awards | concat: site.data.grants | sort: 'years' | reverse %}
+  {% for award in awards %}{% if award.hide == nil %}
+  <div class="date-container">
+    <span class="date">{{ award.years }}</span>
+    <span class="fill">{{ award.name }}{% if award.sponsor %}, <small class="muted"> <em>{{ award.sponsor }}</em> </small>{% endif %}</span>
+    {% if award.link or award.article %}
+    <div class="extra-links">
+      {% if award.link %}
+        <a href="{{ award.link }}">
+          <i class="fas fa-link" aria-hidden="true"></i> Project
+        </a>
+      {% endif %}
+      {% if award.article %}
+        <a href="{{ award.article }}">
+          <i class="fas fa-newspaper" aria-hidden="true"></i> Article
+        </a>
+      {% endif %}
+    </div>
+  {% endif %} 
+  </div>
+  {% if award.short-description %}
+  <div class="date-container">
+    <span class="date"></span>
+    <span class="fill"> <small> {{ award.short-description }} </small></span>
+  </div>
+  {% endif %}
+  {% endif %}
+  {% endfor %}
+
+  {% comment %}
   <div class="line-container">
     <h2>Honors & Awards</h2>
     <span class="line"></span>
   </div>
-
   {% for award in site.data.awards %}{% if award.hide == nil %}
   <article>
     <div class="date-container">
@@ -77,10 +130,26 @@ title: CV
   </article>
   {% endif %}
   {% endfor %}
+  {% endcomment %}
+
+
+  {% comment %}
+  {% for grant in site.data.grants %}
+  {% if grant.hide==nil %}
+  <h3>{{ grant.name }}</h3>
+  <article>
+    <div class="date-container">
+      <span class="date">{{grant.years | replace: "-", "–" }}</span>
+      <span style="flex: 1">{{ grant.description | markdownify }}</span>
+    </div>
+  </article>
+  {% endif %}
+  {% endfor %}
+  {% endcomment %}
 
 
   <div class="line-container">
-    <h2>Publications <a href="{{ '/publications/' | absolute_url }}">[Interactive Version]</a></h2>
+    <h2>Papers <a href="{{ '/publications/' | absolute_url }}">[Interactive Version]</a></h2>
     <span class="line"></span>
   </div>
 
@@ -92,17 +161,15 @@ title: CV
         {% assign counter = counter | plus: 1 %}
       {% endif %}
     {% endfor %}
-
-    {% if counter != 1 %}
-      <h3 class="pub-type">
-        {{ type }}
-      </h3>
-    {% endif %}
+    
+    <h3 class="pub-type">
+      {{ type }}
+    </h3>
 
     {% for pub in site.data.publications %}
       {% if pub.type[0] == type %}
         {% assign counter = counter | minus: 1 %}
-        <article class="cv-pub">
+        <div class="cv-pub">
           <div class="ref-container">{{ type | slice: 0 }}{{ counter }}</div>
           <h4>{% if pub.pdf %}<a href="{{ pub.pdf }}">{{ pub.title }}</a>{% else %}{{ pub.title }}{%endif%}</h4>
           <div>
@@ -110,7 +177,7 @@ title: CV
             {% if pub.venue %}<i>{{ pub.venue }}</i>,{% endif %} {{ pub.year }}.
             {% for award in pub.awards %}<br/><strong class="award"><i class="fas fa-{% if award == "Best Paper Award" %}trophy{% else %}award{% endif %}" aria-hidden="true"></i> {{ award }}</strong>{% endfor %}
           </div>
-        </article>
+        </div>
       {% endif %}
     {% endfor %}
   {% endfor %}
@@ -121,39 +188,141 @@ title: CV
     <span class="line"></span>
   </div>
 
+  {% assign talktypes = site.data.talks | group_by:"type" %}
+  {% for type in talktypes %}{% if type.items[0].hide == nil %}
+
+  <h3 class="pub-type">{{ type.name }}</h3>
+
+  {% assign sorted_talks = type.items %}
+  {% for talk in sorted_talks %}{% if talk.hide==nil%}
+  <div class="date-container">
+    <time datetime="{{ talk.date }}">{{ talk.date | date: "%b %Y" }}</time>
+    <span class="fill">{{ talk.location }}{% if talk.city %}, <small class="muted">{{ talk.city }}</small>{% endif %}</span>
+  </div>
+  {% endif %}
+  {% endfor %}
+  {% endif %}
+  {% endfor %}
+
   {% comment %}
   {% assign talktitles = site.data.talks | group_by:"title" %}
   {% for title in talktitles %}{% if title.items[0].hide == nil %}
-  <article>
-    <h3 class="cv-talk-title">{{ title.name }}</h3>
+    <h3>{{ title.name }}</h3>
     {% assign sorted_talks = title.items | sort: 'date' | reverse %}
     {% for talk in sorted_talks %}
       <div class="date-container">
         <time datetime="{{ talk.date }}">{{ talk.date | date: "%b %Y" }}</time>
         <span class="fill">{{ talk.location }}{% if talk.city %}, <small class="muted">{{ talk.city }}</small>{% endif %}</span>
       </div>
-    {% endfor %}
-  </article>
+  {% endfor %}
   {% endif %}{% endfor %}
   {% endcomment %}
 
-  <article>
+  {% comment %}
   {% for talk in site.data.talks %}{% if talk.hide == nil %}
     <div class="date-container">
       <time datetime="{{ talk.date }}">{{ talk.date | date: "%b %Y" }}</time>
-      <span class="fill">{{ talk.title }}{% if talk.city %}, <small class="muted">{{ talk.location }}. <em>{{ talk.city }}</em> </small>{% endif %}</span>
+      <span class="fill">{{ talk.location }}{% if talk.city %}, <small class="muted"> <em>{{ talk.city }}</em> </small>{% endif %}</span>
     </div>
   {% endif %}{% endfor %}
-  </article>
+  {% endcomment %}
+
 
   <div class="line-container">
-    <h2>Research Experience</h2> 
+    <h2>Teaching Experience</h2>
+    <span class="line"></span>
+  </div>
+
+  {% assign coursetitles = site.data.teaching | group_by: "title" %} 
+  {% for title in coursetitles %}
+  {% assign recentcourse = title.items[-1] %}
+    <h3>{{ title.name }}</h3> 
+    <div class="date-container">
+      <span class="date"> {% for class in title.items %} {{ class.year | replace: "-", "–"  }} <br> {% endfor %} </span>
+      <span style="flex: 1"> {{ recentcourse.role }}. {{ recentcourse.roledescription}} </span>
+      <span class="right">{{ recentcourse.location }}</span>
+    </div>
+    <br/>
+  {% endfor %}
+
+  <div class="line-container">
+    <h2>Organizing</h2>
+    <span class="line"></span>
+  </div>
+
+  
+  <h3 class="pub-type">Conferences & Seminars</h3>
+
+  {% for meeting in site.data.organizing %}
+    {% if meeting.type=='Conference' or meeting.type=='Seminar' %}
+    {% if meeting.hide==nil %}
+      <div class="date-container">
+        <span class="date">{{meeting.dates | replace: "-", "–" }}</span>
+        <span style="flex: 1">{{ meeting.title}}, <small class="muted"> <em>{{ meeting.location }}</em> </small> </span>
+        {% if meeting.url %}
+      <div class="extra-links">
+        <a href="{{ meeting.url }}"><i class="fas fa-link" aria-hidden="true"></i> Website</a>
+      </div>
+    {% endif %} 
+      </div>
+    {% endif %}
+    {% endif %}
+  {% endfor %}
+
+  <h3 class="pub-type">Reading Groups</h3>
+
+  {% for group in site.data.organizing %}
+    {% if group.type=='Reading Group' %}
+    {% if group.hide==nil %}
+      <div class="date-container">
+        <span class="date">{{group.dates | replace: "-", "–" }}</span>
+        <span style="flex: 1">{{ group.title }}, <small class="muted"> <em>{{ group.location }}</em> </small> </span>
+        {% if group.url %}
+      <div class="extra-links">
+        <a href="https://johndcobb.github.io{{ group.url }}"><i class="fas fa-link" aria-hidden="true"></i> Website</a>
+      </div>
+    {% endif %} 
+      </div>
+    {% endif %}
+    {% endif %}
+  {% endfor %}
+
+
+  <div class="line-container">
+    <h2>Service & Outreach</h2>
+    <span class="line"></span>
+  </div>
+
+
+  {% for service in site.data.service %}
+  {% if service.hide==nil %}
+  <h3>{{ service.title }} {% if service.at %} at {{ service.at }} {% endif %}</h3>
+    <div class="date-container">
+      <span class="date">{{service.years | replace: "-", "–" }}</span>
+      <span style="flex: 1">{{ service.description }}</span>
+      <span class="right">{{ service.location }}</span>
+    </div>
+  <br>
+  {% endif %}
+  {% endfor %}
+
+  <div class="line-container">
+    <h2>Referee Work</h2>
+    <span class="line"></span>
+  </div>
+
+  <div>
+  {% assign counter = 1 %}
+  {% for referee in site.data.referee %}{% if counter != 1 %}, {% endif %}{{ referee.journal }}{% assign counter = counter | plus: 1 %}{% endfor %}
+  </div>
+
+  <div class="line-container">
+    <h2>Work Experience</h2> 
     <span class="line"></span>
   </div>
 
   {% for pos in site.data.positions %}
   <h3>{{ pos.title }}{% if pos.company %} at {{pos.company}}{% endif %}</h3>
-  <article>
     <div class="date-container">
       <span class="date">{{ pos.years | replace: "-", "–"  }}</span>
       <span style="flex: 1">{{ pos.description | markdownify }}</span>
@@ -169,64 +338,7 @@ title: CV
       <small class="muted">[{% for skill in pos.skills %}{{ skill }}{% unless forloop.last %}, {% endunless %}{% endfor %}]</small>
       {% endif %}
     </p>
-  </article>
   {% endfor %}
-
-
-  <div class="line-container">
-    <h2>Teaching Experience</h2>
-    <span class="line"></span>
-  </div>
-
-  {% assign coursetitles = site.data.teaching | group_by: "title" %} 
-  {% for title in coursetitles %}
-  {% assign recentcourse = title.items[-1] %}
-  <article>
-    <h3>{{ title.name }}</h3> 
-    <div class="date-container">
-      <span class="date"> {% for class in title.items %} {{ class.year | replace: "-", "–"  }} <br> {% endfor %} </span>
-      <span style="flex: 1"> {{ recentcourse.role }}. {{ recentcourse.roledescription}} </span>
-      <span class="right">{{ recentcourse.location }}</span>
-    </div>
-    <br/>
-  </article>
-  {% endfor %}
-
-  <div class="line-container">
-    <h2>Service & Organization</h2>
-    <span class="line"></span>
-  </div>
-
-  {% for service in site.data.service %}
-  {% if service.hide==nil %}
-  <h3>{{ service.title }} at {{ service.at }}</h3>
-  <article>
-    <div class="date-container">
-      <span class="date">{{service.years | replace: "-", "–" }}</span>
-      <span style="flex: 1">{{ service.description | markdownify }}</span>
-      <span class="right">{{ service.location }}</span>
-    </div>
-  </article>
-  {% endif %}
-  {% endfor %}
-
-  <div class="line-container">
-    <h2>Grants</h2>
-    <span class="line"></span>
-  </div>
-
-  {% for grant in site.data.grants %}
-  {% if grant.hide==nil %}
-  <h3>{{ grant.name }}</h3>
-  <article>
-    <div class="date-container">
-      <span class="date">{{grant.years | replace: "-", "–" }}</span>
-      <span style="flex: 1">{{ grant.description | markdownify }}</span>
-    </div>
-  </article>
-  {% endif %}
-  {% endfor %}
-
 
   <div class="line-container">
     <h2>Programming</h2>

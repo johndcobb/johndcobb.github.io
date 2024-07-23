@@ -36,18 +36,99 @@
 #    - Conference
 #    - Journal
 
+- id: GradedUltraproducts
+  title: Ultraproducts of Graded Algebras
+  year: 2024
+  authors:
+    - John Cobb
+    - Nathaniel Gallup
+    - John Spoerl
+  venue:
+  pdf:
+  arxiv:
+  #highlight: true 
+  description: A common argument for establishing bounds within commutative algebra is the construction of a "limiting polynomial ring" that allows one to trade asymptotic behavior over many polynomial rings for exact behavior in the limit ring. We define a degree bounded ultraproduct that packages this argument up and establish several strong properties about it using its unique position within logic. We give several out-of-the-box algebraic tools to use on such rings.
+  tags:
+    - Logic
+    - Commutative Algebra
+  type:
+    - In Progress
+
+- id: MultigradedStillman
+  title: Multigraded Stillman's Conjecture
+  year: 2024
+  authors:
+    - John Cobb
+    - Nathaniel Gallup
+    - John Spoerl
+  venue: Submitted
+  pdf: https://arxiv.org/abs/2406.09593.pdf
+  arxiv: "2406.09593"
+  highlight: true 
+  description: In 2000, Mike Stillman conjectured that the projective dimension of a homogeneous ideal in a standard graded polynomial ring can be bounded just in terms of the number and degrees of the generators. We resolve Stillman's conjecture for families of polynomial rings that are graded by any abelian group under mild conditions. Conversely, we show that these conditions are necessary for the existence of a Stillman bound. 
+  tags: 
+    - Syzygies
+    - Toric Varieties
+    - Commutative Algebra
+  type:
+    - Preprint
+  
+  
+- id: LikelihoodGeometry
+  title: Likelihood Correspondence of Statistical Models
+  year: 2023
+  authors:
+    - David Barnhill
+    - John Cobb
+    - Matthew Faust
+  venue: Submitted
+  pdf: https://arxiv.org/pdf/2312.08501.pdf
+  arxiv: "2312.08501"
+  link: https://github.com/johndcobb/LikelihoodGeometry
+  highlight: true
+  description: Characteristics of the maximum likelihood estimation problems are reflected in the geometry of a variety called the likelihood correspondence. We construct the ideal of this variety for some popular examples of statistical models.
+  tags:
+    - Toric Varieties
+    - Algebraic Statistics
+    - Commutative Algebra
+  type: 
+    - Preprint
+
+
+- id: SheafDiffusion
+  title: Extending Transductive Knowledge Graph Embedding Models for Inductive Logical Relational Inference
+  year: 2023
+  authors:
+    - Thomas Gebhart
+    - John Cobb
+  venue: Submitted
+  pdf: https://arxiv.org/pdf/2309.03773.pdf
+  link: https://github.com/tgebhart/sheaf_kg_transind
+  arxiv: "2309.03773"
+  description: We utilize a sheaf-theoretic technique to optimally extend vector representations of old entities in knowledge graphs to previously unseen entities. This technique also gives an efficient way of predicting facts about these new entities and compares well to other more complicated state-of-the-art inductive reasoning methods.
+  type: 
+    - Preprint
+  tags:
+    - Machine Learning
+    - Knowledge Graphs
+
 - id: MultiregularityOfCurves
   title: "Syzygies of Curves in Products of Projective Spaces"
   year: 2023
   authors: 
     - John Cobb
-  venue: arXiv
+  venue: Mathematische Zeitschrift
+  venue_url: https://link.springer.com/journal/209
+  venue_tags:
+    - Math. Z.
+  doi: 10.1007/s00209-023-03422-3
+  short_doi: 10/mcmh
   arxiv: "2301.05979"
   pdf: https://arxiv.org/pdf/2301.05979.pdf
   highlight: true
   description: Motivated by toric geometry, we lift machinery for understanding syzygies of curves in projective space to the setting of products of projective spaces. Using this machinery, we show an analogue of an influential result of Gruson, Peskine, and Lazarsfeld that gives a bound on the regularity of a possibly singular curve given its degree and the dimension of the ambient projective space.
   type: 
-    - Preprint
+    - Journal
   tags: 
     - Virtual Resolutions
     - Toric Varieties
@@ -61,7 +142,6 @@
     - John Cobb
   pdf: https://arxiv.org/pdf/2111.13773.pdf
   arxiv: "2111.13773"
-  highlight: true
   venue: Journal of Pure and Applied Algebra
   venue_url: https://www.journals.elsevier.com/journal-of-pure-and-applied-algebra
   venue_tags: 
@@ -71,7 +151,9 @@
   description: Any matrix gives rise to an associated family of canonical complexes associated to it, including the Eagon-Northcott and Buchsbaum-Rim. Famously, there is a simple criterion for checking the exactness of these complexes. We give generalization of this criterion for these complexes to be *virtual resolutions*, which are "exact enough" to be relevant to the geometry of toric varieties.
   tags:
     - Virtual Resolutions
+    - Syzygies
     - Toric Varieties
+    - Commutative Algebra
   type:
     - Journal
 
@@ -127,5 +209,5 @@
   authors:
     - John Cobb
   pdf: /papers/QKdVSolitons.pdf
-  type:
-    - Thesis
+#  type:
+#    - Thesis

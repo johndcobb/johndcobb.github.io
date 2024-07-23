@@ -19,9 +19,9 @@ class: home
 <div class="columns" markdown="1">
 
 <div class="intro" markdown="1">
-I'm a fourth year PhD student in the mathematics department at the [University of Wisconsin-Madison](https://www.math.wisc.edu/) advised by both [Daniel Erman](https://people.math.wisc.edu/~derman/) and [Michael Kemeny](https://people.math.wisc.edu/~kemeny/homepage.html). From 2019 to 2022, I was supported by a [DoD NDSEG Fellowship](https://ndseg.sysplus.com/NDSEG/About/). Details are in my [CV]({{ absolute_url }}/cv).
+I am a NSF postdoctoral fellow with [Hal Schenck](http://webhome.auburn.edu/~hks0015/) at Auburn University. I recieved my PhD from the mathematics department at the [University of Wisconsin-Madison](https://www.math.wisc.edu/), where I was advised by both [Daniel Erman](https://math.hawaii.edu/~erman) and [Michael Kemeny](https://people.math.wisc.edu/~kemeny/homepage.html). From 2019 to 2022, I was supported by a [DoD NDSEG Fellowship](https://ndseg.sysplus.com/NDSEG/About/). Details are in my [CV]({{ absolute_url }}/cv).
 
-My research interests are within algebraic geometry and commutative algebra. Currently, I am studying things like geometric/homological perspectives on syzygies and lifting classical results to the toric setting.
+My research interests are primarily within algebraic geometry and commutative algebra. My work involves syzygies, toric varieties, defining equations of curves, and more recently, applications to algebraic statistics.
 </div>
 
 <div class="me" markdown="1">
@@ -34,17 +34,17 @@ My research interests are within algebraic geometry and commutative algebra. Cur
 
 {:.no-list}
 * <i class="fas fa-envelope-square" aria-hidden="true"></i> <a href="mailto:{{ site.email }}">{{ site.email }}</a>
-* <i class="fas fa-map-marker-alt" aria-hidden="true"></i> <a href="https://www.google.com/maps/dir/?api=1&destination=Van+Vleck+Hall%2C+Madison%2C+WI">Van Vleck</a>, Office 820
+* <i class="fas fa-map-marker-alt" aria-hidden="true"></i> <a href="https://maps.app.goo.gl/xFJtDK4X16odKMfu6">Parker Hall</a>, Office 112
 * he/him/his
 </div>
 </div>
 <!--- Put stuff here when ready -->
 
-
-## Featured Courses and Organization
+<!---
+## Featured Organizing
 
 <div class="featured-projects">
-  {% assign sorted_projects = site.data.organization | concat: site.data.teaching | sort: 'highlight' %}
+  {% assign sorted_projects = site.data.organizing | concat: site.data.teaching | sort: 'highlight' %}
   {% for project in sorted_projects %}
     {% if project.highlight %}
       {% include project.html project=project %}
@@ -55,6 +55,7 @@ My research interests are within algebraic geometry and commutative algebra. Cur
   <i class="fas fa-chevron-circle-right" aria-hidden="true"></i>
   Show More
 </a>
+-->
 
 ## Featured Publications
 
@@ -89,18 +90,19 @@ My research interests are within algebraic geometry and commutative algebra. Cur
 <div class="news-travel" markdown="1">
 
 <div class="news" markdown="1">
-## News
+## Latest News
 
 <ul>
-{% for news in site.data.news limit:10 %}
+{% for news in site.data.news limit:5 %}
   {% include news.html news=news %}
 {% endfor %}
 </ul>
+[(see all)]({{ absolute_url }}/news) 
 
 </div>
 
 <div class="travel" markdown="1">
-## Travel
+## Latest Travel
 
 <table>
 <tbody>
@@ -109,11 +111,12 @@ My research interests are within algebraic geometry and commutative algebra. Cur
   {% include travel.html travel=travel %}
 {% endfor %}
 {% assign sorted_travel = site.data.travel | where_exp:'item','item.start' | sort: 'start' | reverse %}
-{% for travel in sorted_travel limit:12 %}
+{% for travel in sorted_travel limit: 8 %}
   {% include travel.html travel=travel %}
 {% endfor %}
 </tbody>
 </table>
+[(see all)]({{ absolute_url }}/travel) 
 
 </div>
 

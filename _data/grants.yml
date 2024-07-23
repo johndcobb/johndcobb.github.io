@@ -1,24 +1,8 @@
-- name: ($15,000) NSF conference grant DMS-2309424
+- name: NSF Postdoctoral Research Fellowship ($190,000)
+  years: 2024
+- name: NSF conference grant DMS-2408333 ($16,255)
+  years: 2024
+  short-description: Awarded to fund US participation in the 31st edition of GAeL.
+- name: NSF conference grant DMS-2309424 ($15,833)
   years: 2023
-  sponsor: NSF
-  description: Awarded to fund US participation in the 30th edition of GAeL. 
-- name: ($3,500) Early-career AMS-NSF-Simons-ICM Travel Grant
-  years: 2022
-  sponsor: NSF, Simons Foundation
-  description: Awarded to fund participation in the International Congress of Mathematicians in Saint Petersburg, Russia, in July of 2022. Covers round-trip travel, Congress registration, accommodations, meals, cultural activities, and some ground transportation at the Congress site up to ~$3,500.
-- name: AMS Graduate Student Travel Grant
-  years: 2020
-  sponsor: University of Wisconsin-Madison
-  description: These grants are available to all Graduate Level (Masters, and PhD) students in the Mathematical Sciences. The grant will cover the JMM registration fee at the Graduate Student rate.
-  hide: True
-- name: Summer Research Grant
-  years: 2018
-  hide: True
-  sponsor: College of Charleston School of Science and Math
-  description: The dean of the School of Science and Math reserves special funding for students over the summer, available by request of professors.
-- name: Howard Hughes Medical Institute Mentoring Grant
-  years: 2017
-  hide: True
-  sponsor: Howard Hughes Medical Institute
-  sponsor_url: https://www.hhmi.org/news/47-colleges-participate-50-million-science-education-initiative
-  description: The HHMI mentoring grant funded me as a research mentor to a talented high schooler over the summer. 
+  short-description: Awarded to fund US participation in the 30th edition of GAeL. 

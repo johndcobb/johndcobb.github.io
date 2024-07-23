@@ -1,56 +1,53 @@
+- title: Panelist for Organizing Conferences Aimed at Graduate Students
+  location: Madison, WI
+  description: "Panelist on a discussion about organizing conferences held by the UW Madison math department."
+  years: Spring 2024
+- title: Mentor
+  at: UW Madison Directed Reading Program 
+  url: https://sites.google.com/site/uwmadisondrp/
+  location: Madison, WI
+  years: Spring 2024
+  description: Led a group of students in reading Stillwell's "Mathematics and its History".
+- title: Organizer
+  at: UW Madison Directed Reading Program 
+  url: https://sites.google.com/site/uwmadisondrp/
+  location: Madison, WI
+  years: Fall 2019-Fall 2023
+  description: "The DRP is a math mentoring program that pairs undergraduate students with graduate student mentors, for a semester-long independent study project."
+- title: Graduate Mentor
+  at: MXM Experimental Mathematics project
+  location: Madison, WI
+  years: Fall 2022, Spring 2023
+  description: Directed advanced undergraduates on a computationally focused research project concerning identifiable linear compartmental models.
 - title: Graduate Mentor
   at: Undergraduate Mentoring Program
   location: Madison, WI
   years: Fall 2022
   description: Met with a group of undergraduate math majors to give advice about how to navigate their undergrad degree, plan for grad school apps, and think about REUs and other opportunities.
 - title: Graduate Mentor
-  at: MXM Experimental Mathematics project
-  location: Madison, WI
-  years: Fall 2022, Spring 2023
-  description: Directed advanced undergraduates on a computationally focused research project concerning identifiable linear compartmental models. These models have applications in chemical reaction networks, epidemiology, and pharmacokinetics.
-  hide: true
-- title: Graduate Mentor
   at: UW Madison
   location: Madison, WI
-  years: Fall 2022
+  years: 2022-2023
   description: Helped orient new PhD students into the PhD program at UW Madison.
   hide: true
-- title: Organizer
-  at: GAeL XXX
-  location: Coventry, UK
-  url: "https://sites.google.com/view/gaelxxix/home"
-  years: 2023
-  description: Géométrie Algébrique en Liberté, also known as GAeL, is an annual workshop organized by and for young algebraic geometers. I helped invited speakers and wrote grants for funding participants.
 - title: Math Meet Coordinator
   at: UW Madison
   url: "https://math.wisc.edu/mega-math-meet/"
   location: Madison, WI
   years: Spring 2022
-  description: "Mega math meet is a math competition for over 200 middle schoolers around Wisconsin. I helped coordinate the final stage at UW Madison by writing problems, sending emails, and overseeing the process."
-- title: Organizer
-  at: UW Madison Graduate Algebraic Geometry Seminar
-  url: "https://hilbert.math.wisc.edu/wiki/index.php/Graduate_Algebraic_Geometry_Seminar"
-  location: Madison, WI
-  years: Fall 2021 -
-  description: "The purpose of this seminar is to learn algebraic geometry and commutative algebra by giving and listening to talks in a informal setting."
+  description: "Wrote problems and planned a math competition for over 200 middle schoolers around Wisconsin."
 - title: Public Service Fellow
   at: WISCIENCE
   url: https://wiscience.wisc.edu/program/public-service-fellows
   location: Madison, WI
   years: Jan 2021-Jan 2022
-  description: The 2021 cohort had 3 people in the social entrepreneurship pathway. Over the course of a year, fellows engage in a practicum working directly with a community partner on a chosen project focused on issues of public concern.
+  description: Met and discussed best ways to engage with the public and worked with a community partner on a web project to make arXiv easier to navigate.
 - title: Mentor
   at:  First Generation Student Success
   url: https://firstgensuwmadison.wixsite.com/fgss
   location: Madison, WI
   years: Fall 2020-Spring 2021
-  description: "FGSS is a student organization dedicated to helping students locate resources, connect with peers and faculty, and support them along their college journey. FGSS links first-generation college students to first generation graduate and faculty mentors for monthly meetings. "
-- title: Organizer
-  at: UW Madison Directed Reading Program 
-  url: https://sites.google.com/site/uwmadisondrp/
-  location: Madison, WI
-  years: Fall 2019-Spring 2024
-  description: "The DRP is a math mentoring program that pairs undergraduate students with graduate student mentors, for a semester-long independent study project. The goal of this program is to get students excited about mathematics by giving them an out-of-the-classroom experience, usually in topics that are outside of their coursework."
+  description: "FGSS links first-generation college students to first generation graduate and faculty mentors for monthly meetings. "
 - title: Volunteer
   at: AMS Fall Central Sectional
   years: Sep 2019
@@ -61,12 +58,13 @@
   at: College of Charleston School of Sciences and Mathematics
   years: Sep 2018-May 2019
   location: Charleston, SC
-  description: Select group of 9 students who have demonstrated outstanding academic achievement and exemplar student leadership. Represent the School of Sciences and Mathematics at College of Charleston to incoming students and other interest groups
-- title: Student Vice President & Webmaster
+  description: Select group of 9 students who have demonstrated outstanding academic achievement and exemplar student leadership. Represent the School of Sciences and Mathematics at College of Charleston to incoming students and other interest groups.
+  hide: true
+- title: Student Vice President
   at: Phi Kappa Phi
   years: Apr 2017-May 2019
   location: Charleston, SC
-  description: Met with board to coordinate volunteer opportunities and promote education throughout the College of Charleston campus. Helped organize events on campus for Phi Kappa Phi members. Managed the College of Charleston Chapter Phi Kappa Phi Website.
+  description: Met with board to coordinate volunteer opportunities and promote education throughout the College of Charleston campus. Helped organize events on campus for Phi Kappa Phi members. 
   hide: true
 - title: Volunteer
   at: AMS Spring Southeastern Sectional Meeting
@@ -86,12 +84,11 @@
   years: Oct 2015-Oct 2016
   url: https://tridentlit.org/
   location: Charleston, SC
-  description: "Trident literacy is a nonprofit organization that seeks to reverse the cycle of generational poverty and illiteracy. Helped weekly to prepare nontraditional students for their GED. Primarily taught topics from arithmetic, algebra, and precalculus."
+  description: "Helped weekly to prepare nontraditional students for their GED."
 - title: Cofounder & Board Member
   at: The Cancer Chase
   years: Feb 2015-Oct 2017
   url: https://cancerchase5k.racesonline.com/
   location: Fort Mill, SC
-  description: "Helped direct the founding of The Cancer Chase, whose first project began an annual 5k run benefiting Carolinas HealthCare System’s Levine Cancer Institute. Rallied support from local businesses to raise over $15,000 annually."
-  hide: true
+  description: "Helped direct an annual 5k run benefiting Carolinas HealthCare System's Levine Cancer Institute. Rallied support from local businesses to raise over $15,000 annually."
   

@@ -1,25 +1,46 @@
-- title: GAeL XXX
+- title: NZMS/AusMS/AMS Special Session on Computations and Applications of AG and CA 
   type: Conference
-  highlight: 1
+  dates: December 2024
+  location: Auckland, NZ
+  url: "https://ms-meet-2024.blogs.auckland.ac.nz"
+  panel: false
+  description: "The goal of this meeting is to bring together experts in algebraic ge- ometry and commutative algebra, with an emphasis on computations and applications. Below is a list of potential speakers representing a broad range of research; we have made an effort to include a large number of early career (postdocs or pre-tenure) mathematicians. The list is not exhaustive and we plan to recruit additional speakers."
+- title: GAeL XXXI
+  type: Conference
+  dates: June 2024
+  location: Turin, Italy
+  url: "https://sites.google.com/view/gaelxxxi"
+  highlight: 2
+  image: gaelxxx.jpg
+  description: Géométrie Algébrique en Liberté, also known as GAeL, is an annual workshop organized by and for young algebraic geometers.   
+- title: GAeL XXX
+  dates: July 2023
+  type: Conference
+  location: Coventry, UK
   url: "https://sites.google.com/view/gaelxxx/home"
   image: gaelgroupphoto.jpeg
   description: Géométrie Algébrique en Liberté, also known as GAeL, is an annual workshop organized by and for young algebraic geometers. 
 - title: 3264 and all that
   type: Reading Group
-  highlight: 4
-  url: "/organization/3264"
+  location: Madison, WI
+  dates: Spring 2023
+  url: "/organizing/3264"
   book: "https://scholar.harvard.edu/files/joeharris/files/000-final-3264.pdf"
   image: 3264.jpg
   description: "3264 and all that is a textbook by David Eisenbud and Joe Harris. This page organizes the Spring 2023 reading schedule."
 - title: Positivity in Algebraic Geometry
+  location: Madison, WI
+  dates: Spring 2022
   type: Reading Group
-  url: "/organization/positivity"
+  url: "/organizing/positivity"
   book: "https://cims.nyu.edu/~rodion/lib/R.%20K.%20Lazarsfeld.%20Positivity%20in%20Algebraic%20Geometry,%20I.%20Classical%20Setting:%20Line%20Bundles%20and%20Linear%20Series%20-%202003.pdf"
   image: positivity.jpg
   description: "Positivity in Algebraic Geometry is a textbook by Robert Lazarsfeld. This page organizes the Spring 2022 reading schedule."
 - title: Geometry of Schemes
+  location: Madison, WI
+  dates: Summer 2020
   type: Reading Group
-  url: "/organization/geometryofschemes"
+  url: "/organizing/geometryofschemes"
   book: "https://www.maths.ed.ac.uk/~v1ranick/papers/eisenbudharris.pdf"
   image: geometryofschemes.jpg
   description: "Geometry of Schemes is a textbook by David Eisenbud and Joe Harris. This page organizes the Summer 2020 reading schedule."
@@ -28,16 +49,20 @@
   url: "https://wiki.math.wisc.edu/index.php/Directed_Reading_Program"
   image: drp.jpg
   description: "The DRP is a math mentoring program that pairs undergraduate students with graduate student mentors, for a semester-long independent study project."
-  highlight: 2
-- title: Graduate Algebraic Geometry Seminar (GAGS)
+  highlight: 3
+- title: UW Madison Graduate Algebraic Geometry Seminar
+  location: Madison, WI
+  dates: Fall 2021 - Spring 2024
   type: Seminar
   url: "https://hilbert.math.wisc.edu/wiki/index.php/Graduate_Algebraic_Geometry_Seminar"
   image: grothendieck_devil.jpg
   description: "The purpose of this seminar is to learn algebraic geometry and commutative algebra by giving and listening to talks in a informal setting."
-  highlight: 3
+  highlight: 4
 - title: The Rising Sea
   type: Reading Group
-  url: "/organization/vakilsummer2021"
+  dates: Summer 2021
+  url: "/organizing/vakilsummer2021"
   book: "http://math.stanford.edu/~vakil/216blog/FOAGdec3014public.pdf05"
+  location: Madison, WI
   image: clebsch.jpg
   description: "The Red Rising Sea is a set of notes by Ravi Vakil. This page organizes the Summer 2021 reading schedule."

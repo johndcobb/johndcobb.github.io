@@ -1,4 +1,101 @@
-- title: SIAM Conference on Applied Algebraic Geometry (AG23)
+- title: SIAM Applied Algebraic Geometry
+  venue: University of Wisconsin-Madison
+  where: Madison, WI
+  start: 2025-07-07
+  end: 2025-07-11
+- title: Macaulay2 Workshop
+  venue: University of Wisconsin-Madison
+  where: Madison, WI
+  start: 2025-06-30
+  end: 2025-07-04
+- title: Applications of Commutative Algebra
+  venue: Fields Institute
+  where: Toronto, Canada
+  start: 2025-05-20
+  end: 2025-05-30
+- title: Apprenticeship Program in Commutative Algebra
+  venue: Fields Institute
+  where: Toronto, Canada
+  start: 2025-01-20
+  end: 2025-01-24
+- title: Joint meeting of the NZMS, AustMS and AMS
+  venue: University of Auckland
+  where: Auckland, New Zealand
+  start: 2024-12-09
+  end: 2024-12-13
+- title: Georgia Tech
+  where: Atlanta, GA
+  start: 2024-11-03
+  end: 2024-11-05
+- title: AMS Fall Southeastern Sectional Meeting 
+  venue: Georgia Southern University
+  where: Savannah, GA
+  start: 2024-10-05
+  end: 2024-10-06
+- title: GAeL XXXI
+  where: Turin, Italy
+  start: 2024-06-17
+  end: 2024-06-21
+- title: Macaulay2 Computational AG and String Theory Workshop
+  venue: University of Utah
+  where: Salt Lake City, UT
+  start: 2024-06-01
+  end: 2024-06-05
+- title: URiCA 
+  venue: University of Nebraska-Lincoln
+  where: Lincoln, NE
+  start: 2024-05-11
+  end: 2024-05-12
+- title: AMS Spring Western Sectional Meeting
+  venue: San Francisco State University
+  where: San Francisco, CA
+  start: 2024-05-04
+  end: 2024-05-05
+- title: Recent Developments in Commutative Algebra
+  venue: MSRI
+  where: Berkeley, CA
+  start: 2024-04-15
+  end: 2024-04-19
+- title: Iowa State University
+  where: Ames, IA
+  start: 2024-04-25
+  end: 2024-04-26
+- title: NIST
+  where: Boulder, CO
+  start: 2024-03-25
+  end: 2024-03-28
+- title: CCS
+  where: Bowie, MD
+  start: 2024-01-30
+  end: 2024-01-31
+- title: Commutative Algebra Workshop
+  venue: MSRI
+  where: Berkeley, CA
+  start: 2024-01-22
+  end: 2024-01-26
+- title: CCR
+  where: Princeton, NJ
+  start: 2024-01-15
+  end: 2024-01-17
+- title: Joint Mathematics Meetings
+  where: San Francisco, CA
+  start: 2024-01-03
+  end: 2024-01-09
+- title: Algebra Days
+  venue: Arizona State University
+  where: Tempe, AZ
+  start: 2023-11-03
+  end: 2023-11-05
+- title: University of Hawaii
+  where: Honolulu, HI
+  start: 2023-10-14
+  end: 2023-10-23
+- title: Varieties from Statistics
+  venue: IMSI
+  where: Chicago, IL
+  start: 2023-10-02
+  end: 2023-10-06
+- title: SIAM Applied Algebraic Geometry
   venue: Eindhoven University of Technology
   where: Eindhoven, the Netherlands
   start: 2023-07-10
@@ -8,6 +105,11 @@
   where: Coventry, UK
   start: 2023-07-03
   end: 2023-07-07
+- title: Derived Categories, Hodge theory and Singularities
+  venue: University of Sheffield
+  where: Sheffield, UK
+  start: 2023-06-28
+  end: 2023-06-30
 - title: Syzygies and Regularity
   venue: University of Illinois at Chicago
   where: Chicago, IL
@@ -24,16 +126,16 @@
   start: 2022-12-05
   end: 2022-12-09
 - title: Western Algebraic Geometry Symposium
-  venue: University of California, Riverside
+  venue: University of California-Riverside
   where: Riverside, CA
   start: 2022-11-05
   end: 2022-11-06
 - title: AMS Fall Western Sectional Meeting
   venue: University of Utah
-  where: Salt Lake City, Utah
+  where: Salt Lake City, UT
   start: 2022-10-22
   end: 2022-10-23
-- title: Center for Computing Sciences
+- title: CCS
   where: Bowie, MD
   start: 2022-10-19
   end: 2022-10-19
@@ -48,7 +150,7 @@
   end: 2022-07-28
 - title: GAel XXIX
   venue: Université Paris-Saclay
-  where: Paris, France
+  where: Orsay, France
   start: 2022-05-23
   end: 2022-05-27
 - title: Géometrie Algébrique en l'honneur de Claire Voisin
@@ -63,7 +165,7 @@
   end: 2022-04-24
 - title: CA+ Conference
   venue: Iowa State University
-  where: Ames, Iowa
+  where: Ames, IA
   start: 2022-04-30
   end: 2022-05-01
 - title: CA+ Conference
@@ -71,7 +173,17 @@
   where: Minneapolis, MN
   start: 2021-10-30
   end: 2021-10-30
+- title: AMS Fall Central Sectional Meeting
+  venue: University of Wisconsin-Madison
+  where: Madison, WI
+  start: 2019-09-14
+  end: 2019-09-15
 - title: Joint Mathematical Meetings
-  where: Baltimore, MA
+  where: Baltimore, MD
   start: 2019-01-16
   end: 2019-01-19
+- title: AMS Spring Southeastern Sectional Meeting
+  venue: College of Charleston
+  where: Charleston, SC
+  start: 2017-03-10
+  end: 2017-03-12

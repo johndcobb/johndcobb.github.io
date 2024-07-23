@@ -1,6 +1,6 @@
 ---
 layout: page
-permalink: organization/positivity/
+permalink: organizing/positivity/
 title: Positivity in Algebraic Geometry
 class: class
 ---

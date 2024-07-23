@@ -1,51 +1,74 @@
+- title: "MATH 217: Calculus with Algebra & Trig II"
+  role: "Teaching Assistant"
+  year: Spring 2024
+  type: Past
+  panel: true
+  highlight: 1
+  image: calculus1.jpg
+  url: "/teaching/217Spring2024"
+  professor: Cassie Williams
+  location: UW Madison
+  description: This page organizes calculus I discussion sections 304 and 305 running in Spring 2024.
+  roledescription: Hold weekly problem solving sessions and office hours.
+- title: "MATH 222: Calculus II"
+  role: "Head Teaching Assistant"
+  panel: true
+  year: Fall 2023
+  type: Past
+  professor: Maurice Fabien
+  location: UW Madison
+  url: "/teaching/222Fall2023"
+  image: calculus2.jpg
+  description: This page organizes calculus II discussion sections 306 and 310 running in Fall 2023.
+  roledescription: Hold weekly problem solving sessions and office hours. Create worksheets and quizzes, organize all other TA's teaching the course.
 - title: "Galin Education"
   role: "Academic Tutor"
-  type: Current
-  year: Aug 2022 - Current
+  type: Past
+  year: Aug 2022 - Sep 2023
   location: Madison, WI
   roledescription: Meet with students weekly one on one to help with college level math courses.
-- title: "MATH 234: Calculus Functions of Several Variables"
+- title: "MATH 234: Calculus III"
   panel: false
   type: Past
   role: Teaching Assistant
   professor: Soledad Benguria Andrews
   year: Fall 2022
-  location: University of Wisconsin-Madison
+  location: UW Madison
   url: "/teaching/234Fall2022"
   image: calculus3.jpg
   description: This page organizes calculus III discussion sections 369 and 370 running in Fall 2022.
   roledescription: Hold weekly problem solving sessions and office hours.
-- title: "MATH 234: Calculus Functions of Several Variables"
+- title: "MATH 234: Calculus III"
   panel: true
-  type: Current
+  type: Past
   role: Teaching Assistant
   professor: Cassie Williams
   year: Spring 2023
-  location: University of Wisconsin-Madison
+  location: UW Madison
   url: "/teaching/234Spring2023"
   image: calculus3.jpg
   description: This page organizes calculus III discussion sections 343 and 345 running in Spring 2023.
   roledescription: Hold weekly problem solving sessions and office hours.
-- title: "MATH 221: Calculus and Analytic Geometry I"
+- title: "MATH 221: Calculus I"
   panel: true
   professor: Gabriele Meyer 
   sections: 429, 431
   type: Past
   role: Teaching Assistant
   year: Fall 2020
-  location: University of Wisconsin-Madison
+  location: UW Madison
   url: "/teaching/221Fall2020"
   image: calculus1.jpg
   description: This page organizes calculus discussion sections 429 and 431 running in Fall 2020.
   roledescription: Hold weekly problem solving sessions.
-- title: "MATH 221: Calculus and Analytic Geometry I"
+- title: "MATH 221: Calculus I"
   panel: true
   sections: 341, 344
   professor: Alex Waldron
   type: Past
   role: Teaching Assistant
   year: Fall 2021
-  location: University of Wisconsin-Madison
+  location: UW Madison
   url: "/teaching/221Fall2021"
   image: calculus1.jpg
   description: This page organizes calculus discussion sections running in Fall 2021.
