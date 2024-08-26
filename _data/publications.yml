@@ -36,6 +36,28 @@
 #    - Conference
 #    - Journal
 
+- id: KuramotoOscillator
+  title: "Kuramoto Oscillators: Algebraic and Topological Aspects II"
+  year: 2024
+  authors: 
+    - John Cobb
+    - Jane Coons
+    - Ximena Fernandez
+    - Heather A. Harrington
+    - Hal Schenck
+    - Mike Stillman
+  venue: 
+  pdf:
+  arxiv:
+  #highlight: true
+  description: The Kuramoto model has proven remarkably effective in capturing the behavior of a system of coupled oscillators. We use Kirchoff's theorem to connect the Kuramoto model to the spanning tree polynomial, and also to standard graph operations such as deletion-contraction. We analyze the effect of standard topological operations (such as the Mayer-Vietoris construction) on dynamics of the Kuramoto model.
+  tags: 
+    - Dynamical Systems
+    - Mathematical Physics
+  type:
+    - In Progress
+
+
 - id: GradedUltraproducts
   title: Ultraproducts of Graded Algebras
   year: 2024
