@@ -85,7 +85,6 @@
   pdf: https://arxiv.org/pdf/2312.08501.pdf
   arxiv: "2312.08501"
   link: https://github.com/johndcobb/LikelihoodGeometry
-  highlight: true
   description: Characteristics of the maximum likelihood estimation problems are reflected in the geometry of a variety called the likelihood correspondence. We construct the ideal of this variety for some popular examples of statistical models.
   tags:
     - Toric Varieties
