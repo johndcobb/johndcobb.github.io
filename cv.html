@@ -197,15 +197,15 @@ title: CV
   {% for type in talktypes %}{% if type.items[0].hide == nil %}
   {% assign talkyears = type.items | group_by_exp: "talk", "talk.date | date: '%Y'" %}
   <h3 class="pub-type">{{ type.name }}</h3>
-  {% for year in talkyears %} {% assign counter = 1 %}
+  {% for year in talkyears %}
 
   {% assign sorted_talks = year.items %}
   {% for talk in sorted_talks %}{% if talk.hide==nil%}
   <div class="date-container">
-    {% if counter == 1 %} <time datetime="{{ talk.date }}">{{ talk.date | date: "%Y %b" }}</time> {% else %} <time datetime="{{ talk.date }}">{{ talk.date | date: "%b" }}</time> {% endif %} 
+    {% if forloop.first %} <time datetime="{{ talk.date }}">{{ talk.date | date: "%Y %b" }}</time> {% else %} <time datetime="{{ talk.date }}">{{ talk.date | date: "%b" }}</time> {% endif %} 
     <span class="fill">{{ talk.location }}{% if talk.city %}, <small class="muted">{{ talk.city }}</small>{% endif %}</span>
   </div>
-  {% assign counter = counter | plus: 1 %} {% endif %} {% endfor %}
+  {% endif %} {% endfor %}
   {% endfor %}
   {% endif %}
   {% endfor %}
@@ -312,7 +312,7 @@ title: CV
       <span class="right">{{ service.location }}</span>
     </div>
   </div>
-  <br>
+  <br/>
   {% endif %}
   {% endfor %}
 
@@ -349,7 +349,7 @@ title: CV
       <small class="muted">[{% for skill in pos.skills %}{{ skill }}{% unless forloop.last %}, {% endunless %}{% endfor %}]</small>
       {% endif %}
     </p>
-  </div>
+  </div> <br/>
   {% endfor %}
 
   <div class="line-container">
