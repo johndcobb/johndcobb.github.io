@@ -47,13 +47,12 @@
 - name: Outstanding Student in Computational Chemistry
   years: 2019
   sponsor: American Chemical Society
-  description: The local ACS chapter of the chemistry department of the College of Charleston chooses one graduating senior.
-  hide: true
+  description: The local ACS chapter of the chemistry department of the College of Charleston chooses one graduating senio
+  short-description: To one graduating senior in the Chemistry Department.
 - name: Alternate Candidate 
   years: 2019
   sponsor: Fulbright
   description: I was the follow up candidate for the Fulbright to work at the Aflréd Rényi Institute of Mathematics in Budapest.
-  hide: true
 - name: Outstanding Poster
   years: 2019
   sponsor: MAA-JMM Undergraduate Poster Session
