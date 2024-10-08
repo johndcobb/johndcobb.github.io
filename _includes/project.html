@@ -1,5 +1,9 @@
 <div class="project">
+  {% if project.shorttitle %}
+  <span class="title">{{project.shorttitle}}</span>
+  {% else %}
   <span class="title">{{project.title}}</span>
+  {% endif project.shorttitle %}
   {% if project.url || project.code || project.article || project.paper %}
     <a href="{{ project.url || project.code || project.article || project.paper }}" class="preview-image" style="background-image: url('{{ "/images/projects/" | append: project.image | relative_url }}')"><span class="link-spanner"></span></a>
   {% else %}
