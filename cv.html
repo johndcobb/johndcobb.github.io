@@ -249,8 +249,7 @@ title: CV
       <span style="flex: 1"> {{ recentcourse.role }}. {{ recentcourse.roledescription}} </span>
       <span class="right">{{ recentcourse.location }}</span>
     </div>
-  </div>
-    <br/>
+  </div> {% unless forloop.last %}<br/>{% endunless %}
   {% endfor %}
 
   <div class="line-container">
@@ -312,7 +311,7 @@ title: CV
       <span class="right">{{ service.location }}</span>
     </div>
   </div>
-  <br/>
+  {% unless forloop.last %}<br/>{% endunless %}
   {% endif %}
   {% endfor %}
 
@@ -349,7 +348,7 @@ title: CV
       <small class="muted">[{% for skill in pos.skills %}{{ skill }}{% unless forloop.last %}, {% endunless %}{% endfor %}]</small>
       {% endif %}
     </p>
-  </div> <br/>
+  </div> {% unless forloop.last %}<br/>{% endunless %}
   {% endfor %}
 
   <div class="line-container">
