@@ -4,7 +4,7 @@
   type: Seminar
   date: 2024-11-04
 - title: "Likelihood Correspondence of Statistical Models"
-  location: Baylor University
+  location: TX-LA SIAM Mini-Symposium on Nonlinear Algebra in Applications
   city: Waco, TX
   type: Conference
   date: 2024-10-12
@@ -95,7 +95,7 @@
   date: 2023-10-02
   url: https://www.imsi.institute/activities/apprenticeship-week-varieties-from-statistics
 - title: "Multigraded regularity of curves"
-  location: AG23 Mini-Symposium on Castelnuovo-Mumford Regularity and Applications
+  location: AG23 SIAM Mini-Symposium on Castelnuovo-Mumford Regularity and Applications
   city: Eindhoven, The Netherlands
   type: Conference
   date: 2023-07-11
@@ -213,6 +213,7 @@
   type: Seminar
   city: Charlotte, NC
   date: 2017-08-15
+  hide: true
 - title: "Growth of P3HT-PCBM Nanostructures at Solvent-Solvent Interfaces"
   location: College of Charleston Celebration of Scholars
   city: Charleston, SC
