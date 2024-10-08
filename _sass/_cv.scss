@@ -245,6 +245,9 @@
         opacity: 0.8;
     }
 
+    .button-container {
+        float: right;
+    }
     @media print {
         font-size: 0.8rem;
 
@@ -308,6 +311,17 @@
 
         #print-button {
             display: none;
+            float: right;
+        }
+      }
+
+      @include media-query($on-palm) {      
+        .button-container {
+
+          .button, .dropdown-button {
+            text-align: center;
+            display: inline-block;
+          }
         }
       }
 
