@@ -5,8 +5,8 @@ title: Teaching
 class: projects
 ---
 
-
-## Teaching
+{:.hidden}
+# Teaching {#teaching}
 
 {% assign coursetypes = site.data.teaching | where: "panel", "true" | group_by:"type" %} 
 {% comment %} This tells us if the course is Current or Past {% endcomment %}
@@ -18,22 +18,10 @@ class: projects
 {% for course in coursetitles %} 
 {:.lead}
 {% comment %} Now for each course in course titles, {% endcomment %}
-  {% assign project = course.items[-1] %}  
+  {% assign project = course.items[0] %}  
   {% comment %} Pick the most recent course. {% endcomment %}
   {% include project.html project=project %} 
   {% comment %} I want the link to go to the most recent course, and there to be a button on THAT page that allows people to access previous year pages. {% endcomment %}
 {% endfor %}
 </div>
 {% endfor %}
-
-## Organizing {#organizing}
-
-{:.lead}
-
-<div class="grid">
-  {% for project in site.data.organizing %}
-    {% if project.panel==nil %}
-      {% include project.html project=project %}
-    {% endif %}
-  {% endfor %}
-</div>
