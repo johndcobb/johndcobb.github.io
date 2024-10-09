@@ -17,7 +17,7 @@ This is a special session at the [AMS-AustMS-NZMS joint meeting](https://ms-meet
 There are twelve 25-minute talks by:
 - [Christin Bibby](https://www.math.lsu.edu/~bibby/) (Louisiana State University)
   <details>
-    <summary>Title: A Serre spectral sequence for the moduli space of tropical curves</summary>
+    <summary>A Serre spectral sequence for the moduli space of tropical curves</summary>
     Abstract: The map $M_{g,n} \to M_g$ on moduli spaces of genus $g$ algebraic curves, given by forgetting marked points, is a fibration whose fiber is a configuration space of a surface. One can then "in principle" compute the cohomology of $M_{g,n}$ using the Serre spectral sequence. We present a tropical analogue of this spectral sequence, manifesting as a graph complex and featuring the cohomology of compactified configuration spaces on graphs. We use this to obtain new calculations in the top weight cohomology of the moduli spaces $M_{2,n}$ and $M_{3,n}$.
   </details>
 
