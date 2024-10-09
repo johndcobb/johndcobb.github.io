@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TQY8YHXZNT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TQY8YHXZNT');
+</script>
+
+  {% include head.html %}
+  <body>
+    {% assign base_url = page.permalink | relative_url %}
+    {% assign current = page.url | downcase | split: '/' %}
+    <header class="page-header">
+    <nav class="container">
+        <a href="{{ '#overview' | base_url }}" {% if current[1] == 'overview' %}class="active"{% endif %}>Overview</a>
+        <a href="{{ '#talks' | base_url }}" {% if current[1] == 'talks' %}class="active"{% endif %}>Talks</a>
+        <a href="{{ '#schedule' | base_url }}" {% if current[1] == 'schedule' %}class="active"{% endif %}>Schedule</a>
+        <a></a>
+
+    </nav>
+    </header>
+
+    <div class="container {{ page.class }}">
+    <main class="page-content">
+      {{ content }}
+    </main>
+    </div>
+
+    <footer></footer>
+
+    {% include scripts.html %}
+  </body>
+</html>
