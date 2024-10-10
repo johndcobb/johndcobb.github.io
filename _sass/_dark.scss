@@ -7,7 +7,7 @@
       color: #8ac1ee;
     }
 
-    h1, h2, h3, h4, h5, nav a, nav a:hover, nav .site-title, .home .featured-publications .publication {
+    h1, h2, h3, h4, h5, nav .site-title, .home .featured-publications .publication {
       color: #fff;
     }
 
@@ -19,8 +19,14 @@
       color: #ddd;
     }
 
-    nav a:hover .active {
-      border-bottom-color: #eee;
+    nav a {
+      color: #fff;
+      &.active {
+        border-bottom-color: #eee
+      }
+      &:hover {
+        border-bottom-color: #eee;
+      }
     }
 
     .button, .dropdown-button {
