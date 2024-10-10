@@ -2,7 +2,7 @@
   function trim(str) {
     return str.replace(/^\s+|\s+$/g, '');
   }
-  var headers = document.querySelectorAll("h2, h3, h4, h5, h6");
+  var headers = document.querySelectorAll("h2, h3");
   for (var i=0; i<headers.length; i++) {
     var h = headers[i];
     var name = h.getAttribute("id");
