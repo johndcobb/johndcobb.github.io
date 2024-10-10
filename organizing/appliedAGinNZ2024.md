@@ -3,11 +3,12 @@ layout: conference
 permalink: organizing/appliedAGinNZ2024/
 title: Computations and Applications of Algebraic Geometry and Commutative Algebra
 class: class
+sections: Overview, Talks, Schedule
 ---
 
 # Computations and Applications of Algebraic Geometry and Commutative Algebra
-![Auckland](/images/projects/auckland.jpg "An image of Auckland by Birger Hoppe, January 1, 2010.")
-
+![Auckland](https://d2rjvl4n5h2b61.cloudfront.net/media/images/Auckland_skyline_2.width-800.jpg "An image of Auckland by Birger Hoppe, January 1, 2010.")
+#### December 9-13, 2024
 Organizers: [John Cobb](https://johndcobb.github.io), [Anand Deopurkar](https://ananddeopurkar.org/), [Sione Ma'u](https://profiles.auckland.ac.nz/s-mau/about), and [Hal Schenck](http://webhome.auburn.edu/~hks0015/).
 
 ## Overview
