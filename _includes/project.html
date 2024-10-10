@@ -4,10 +4,11 @@
   {% else %}
   <span class="title">{{project.title}}</span>
   {% endif project.shorttitle %}
+  {% if project.image_url %} {% assign image_path = project.image_url %} {% else %} {% assign image_path = "/images/projects/" | append: project.image | relative_url %} {% endif %}
   {% if project.url || project.code || project.article || project.paper %}
-    <a href="{{ project.url || project.code || project.article || project.paper }}" class="preview-image" style="background-image: url('{{ "/images/projects/" | append: project.image | relative_url }}')"><span class="link-spanner"></span></a>
+    <a href="{{ project.url || project.code || project.article || project.paper }}" class="preview-image" style="background-image: url('{{ image_path }}')"><span class="link-spanner"></span></a>
   {% else %}
-    <span class="preview-image" style="background-image: url('{{ "/images/projects/" | append: project.image | relative_url }}')"><span class="link-spanner"></span></span>
+    <span class="preview-image" style="background-image: url('{{ image_path }}')"><span class="link-spanner"></span></span>
   {% endif %}
   <p>
     {{ project.description | markdownify | remove: '<p>' | remove: '</p>' }}
