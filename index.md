@@ -57,7 +57,6 @@ My research interests are primarily within algebraic geometry and commutative al
 </a>
 -->
 
-<!--
 ## Featured Publications
 
 <div class="featured-publications">
@@ -87,7 +86,6 @@ My research interests are primarily within algebraic geometry and commutative al
   <i class="fas fa-chevron-circle-right" aria-hidden="true"></i>
   Show All Publications
 </a>
--->
 
 <div class="news-travel" markdown="1">
 
