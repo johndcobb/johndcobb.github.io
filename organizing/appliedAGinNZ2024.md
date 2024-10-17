@@ -31,7 +31,7 @@ There are twelve 25-minute talks by:
 - [Anand Deopurkar](https://ananddeopurkar.org/) (Australian National University)
   <details>
     <summary>How twisty is that orbit?</summary>
-    Abstract: Fix a polynomial P.  How complicated is the set of all polynomials obtained from P by changes of coordinates?  This question, and many others, generalise as follows: given a representation an algebraic group, how complicated is the orbit of a given element?  I will describe some answers, featuring toric varieties, Newton polyhedra, and stacks.
+    Abstract: Fix a polynomial $P$.  How complicated is the set of all polynomials obtained from $P$ by changes of coordinates?  This question, and many others, generalise as follows: given a representation an algebraic group, how complicated is the orbit of a given element?  I will describe some answers, featuring toric varieties, Newton polyhedra, and stacks.
   </details>
 
 - [Jörg Frauendiener](https://www.otago.ac.nz/maths-and-stats/people/professor-jorg-frauendiener) (University of Otago)
@@ -49,7 +49,7 @@ There are twelve 25-minute talks by:
 - [Changho Han](https://sites.google.com/view/changho-han) (Korea University)
   <details>
     <summary>Extending the Torelli map to alternative compactifications of the moduli space of curves</summary>
-    Abstract: It is well-known that the Torelli map, that turns a smooth curve of genus g into its Jacobian (a principally polarized abelian variety of dimension g), extends to a map from the Deligne—Mumford moduli of stable curves to the moduli of semi-abelic varieties by Alexeev. Moreover, it is also known that the Torelli map does not extend over the alternative compactifications of the moduli of curves as described by the Hassett—Keel program, including the moduli of pseudostable curves (can have nodes and cusps but not elliptic tails). But it is not yet known whether the Torelli map extends over alternative compactifications of the moduli of curves described by Smyth; what about the moduli of curves of genus g with axis-like singularities? As a joint work with Jesse Kass and Matthew Satriano, I will describe moduli spaces of curves with axis-like singularities and describe how far the Torelli map extends over such spaces into the Alexeev compactifications.
+    Abstract: It is well-known that the Torelli map, that turns a smooth curve of genus g into its Jacobian (a principally polarized abelian variety of dimension $g$), extends to a map from the Deligne—Mumford moduli of stable curves to the moduli of semi-abelic varieties by Alexeev. Moreover, it is also known that the Torelli map does not extend over the alternative compactifications of the moduli of curves as described by the Hassett—Keel program, including the moduli of pseudostable curves (can have nodes and cusps but not elliptic tails). But it is not yet known whether the Torelli map extends over alternative compactifications of the moduli of curves described by Smyth; what about the moduli of curves of genus $g$ with axis-like singularities? As a joint work with Jesse Kass and Matthew Satriano, I will describe moduli spaces of curves with axis-like singularities and describe how far the Torelli map extends over such spaces into the Alexeev compactifications.
   </details>
 
 - [Martin Helmer](http://martin-helmer.com/) (North Carolina State University)
