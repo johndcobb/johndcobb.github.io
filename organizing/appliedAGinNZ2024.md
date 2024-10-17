@@ -15,7 +15,7 @@ Organizers: [John Cobb](https://johndcobb.github.io), [Anand Deopurkar](https://
 This is a special session at the [AMS-AustMS-NZMS joint meeting](https://ms-meet-2024.blogs.auckland.ac.nz/) in Auckland, New Zealand, taking place December 9-13, 2024. The goal of this meeting is to bring together experts in algebraic geometry and commutative algebra, with a emphasis on computations and applications.
 
 ## Talks
-There are twelve 25-minute talks by:
+There are thirteen 25-minute talks by:
 - [Christin Bibby](https://www.math.lsu.edu/~bibby/) (Louisiana State University)
   <details>
     <summary>A Serre spectral sequence for the moduli space of tropical curves</summary>
