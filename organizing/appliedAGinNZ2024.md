@@ -77,6 +77,12 @@ There are twelve 25-minute talks by:
     Abstract: The moduli space of pointed hyperelliptic curves is a seemingly simple object with perhaps unexpectedly interesting geometry. I will report on joint work with Ignacio Barros completing the classification of both the Kodaira dimension and the structure of the effective cone of these moduli spaces.
   </details>
 
+- [Greg Smith](https://mast.queensu.ca/~ggsmith/) (Queen's University)
+  <details>
+    <summary>Cohomology of toric vector bundles</summary>
+    Abstract: A toric vector bundle is a vector bundle on a toric variety $X$ equipped with a torus action that is compatible with the canonical action on $X$. Klyachko proves that toric vector bundles are classified by finite-dimensional vector spaces with a suitable family of filtrations. Building on this equivalence of categories, we construct a complex of modules over the Cox ring of $X$ which simultaneously encodes the cohomology of a toric vector bundle and many of its twists by line bundles. Beyond improved computational efficiency, this approach leads to new insights into virtual resolutions. This talk is based on joint work with Michael Perlman.
+  </details>
+
 - [Frank Sottile](https://franksottile.github.io/) (Texas A&M University)
   <details>
     <summary>The Critical Point Degree of a Bloch Variety</summary>
