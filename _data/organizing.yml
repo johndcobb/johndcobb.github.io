@@ -3,6 +3,7 @@
   dates: Apr 2025
   location: Auburn, AL
   url: "https://johndcobb.github.io/organizing/MAAG2025/"
+  image: auburn.jpg
   image_url: https://auphoto.auburn.edu/_assets/images/index-header-02.jpg
   description: The Meeting on Applied Algebraic Geometry is a regional gathering which attracts participants primarily from the South-East of the United States. 
 - title: NZMS/AusMS/AMS Special Session on Computations and Applications of AG and CA 
@@ -11,6 +12,7 @@
   dates: Dec 2024
   location: Auckland, NZ
   url: "https://johndcobb.github.io/organizing/appliedAGinNZ2024/"
+  image: Auckland.jpg
   image_url: https://d2rjvl4n5h2b61.cloudfront.net/media/images/Auckland_skyline_2.width-800.jpg
   description: "The goal of this meeting is to bring together experts in algebraic geometry and commutative algebra, with an emphasis on computations and applications."
 - title: GAeL XXXI
