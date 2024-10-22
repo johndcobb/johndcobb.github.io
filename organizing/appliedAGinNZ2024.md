@@ -7,7 +7,7 @@ sections: Overview, Talks, Schedule
 ---
 
 # Computations and Applications of Algebraic Geometry and Commutative Algebra
-![Auckland](/images/projects/Auckland.jpg "An image of Auckland by Birger Hoppe, January 1, 2010.")
+![Auckland](/images/projects/auckland.jpg "An image of Auckland by Birger Hoppe, January 1, 2010.")
 #### December 9-13, 2024
 Organizers: [John Cobb](https://johndcobb.github.io), [Anand Deopurkar](https://ananddeopurkar.org/), [Sione Ma'u](https://profiles.auckland.ac.nz/s-mau/about), and [Hal Schenck](http://webhome.auburn.edu/~hks0015/).
 
