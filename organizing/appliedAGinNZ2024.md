@@ -97,4 +97,14 @@ There are thirteen 25-minute talks by:
   </details>
 
 ## Schedule
-TBA
+
+| Time           | Wednesday (Dec 11) | Thursday (Dec 12) | Friday (Dec 13)   |
+| :------------: | :----------------- | :---------------- | :---------------- |
+| 10:30 - 10:55  | Scott Mullane      | *Break*           | *Break*           |
+| 11:00 - 11:25  | Diane Maclagan     | *Break*           | *Break*           |
+| 11:30 - 11:55  | Greg Smith         | Jörg Frauendiener | Michael Brown     |
+| 12:00 - 12:25  | *Break*            | Elizabeth Gross   | Prashanth Sridhar |
+| 12:30 - 2:00   | *Break*            | *Break*           | *Break*           |
+| 2:00 - 2:25    | *Break*            | Christin Bibby    | Frank Sottile     |
+| 2:30 - 2:55    | *Break*            | Martin Helmer     | Changho Han       |
+| 3:00 - 3:25    | *Break*            | Arvind Kumar      | Anand Deopurkar   |
