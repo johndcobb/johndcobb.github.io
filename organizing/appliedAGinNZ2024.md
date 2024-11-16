@@ -52,9 +52,9 @@ There are thirteen 25-minute talks by:
     Abstract: It is well-known that the Torelli map, that turns a smooth curve of genus g into its Jacobian (a principally polarized abelian variety of dimension $g$), extends to a map from the Deligne—Mumford moduli of stable curves to the moduli of semi-abelic varieties by Alexeev. Moreover, it is also known that the Torelli map does not extend over the alternative compactifications of the moduli of curves as described by the Hassett—Keel program, including the moduli of pseudostable curves (can have nodes and cusps but not elliptic tails). But it is not yet known whether the Torelli map extends over alternative compactifications of the moduli of curves described by Smyth; what about the moduli of curves of genus $g$ with axis-like singularities? As a joint work with Jesse Kass and Matthew Satriano, I will describe moduli spaces of curves with axis-like singularities and describe how far the Torelli map extends over such spaces into the Alexeev compactifications.
   </details>
 
-- [Martin Helmer](http://martin-helmer.com/) (North Carolina State University)
+- <s> Martin Helmer (North Carolina State University) </s>
   <details>
-    <summary>Effective Whitney Stratification and Applications</summary>
+    <summary> <s> Effective Whitney Stratification and Applications </s> </summary>
     Abstract: In this talk I will describe two algorithms to compute Whitney stratifications of real and complex algebraic varieties. I will begin with an overview of how the structure of the conormal variety is related to this problem and how we can exploit this to give an algorithm to compute a Whitney stratification. The main computational step in this algorithm involves finding the associated primes of a polynomial ideal. I will then explore how this approach can be made more efficient by using techniques for equidimensional decomposition of varieties rather than computing the full set of associated primes. This modified algorithm will yield a quite significant speedup but may fail to produce a minimal Whitney stratification. Time permitting, I will additionally present an algorithm to coarsen any Whitney stratification of a complex variety to a minimal Whitney stratification. Finally I will illustrate applications of the methods to the study of Feynman integrals in mathematical physics. This talk contains content of three separate joint works, one with Vidit Nanda (Oxford), one with Rafael Mohr (Sorbonne Université), and one with Felix Tellander (Oxford) and Georgios Papathanasiou (City University, London). 
   </details>
 
@@ -106,5 +106,5 @@ There are thirteen 25-minute talks by:
 | 12:00 - 12:25  | *Break*            | Elizabeth Gross   | Prashanth Sridhar |
 | 12:30 - 2:00   | *Break*            | *Break*           | *Break*           |
 | 2:00 - 2:25    | *Break*            | Christin Bibby    | Frank Sottile     |
-| 2:30 - 2:55    | *Break*            | Martin Helmer     | Changho Han       |
+| 2:30 - 2:55    | *Break*            | <s> Martin Helmer </s>    | Changho Han       |
 | 3:00 - 3:25    | *Break*            | Arvind Kumar      | Anand Deopurkar   |
