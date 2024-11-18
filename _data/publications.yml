@@ -36,6 +36,25 @@
 #    - Conference
 #    - Journal
 
+- id: LikelihoodGeometryM2
+  title: "LikelihoodGeometry: Macaulay2 package"
+  year: 2024
+  authors:
+    - David Barnhill
+    - John Cobb
+    - Matthew Faust
+  venue: Submitted
+  pdf:
+  arxiv:
+  description: A Macaulay2 package for computing the likelihood correspondence of statistical models.
+  tags:
+    - Macaulay2
+    - Toric Varieties
+    - Algebraic Statistics
+    - Commutative Algebra
+  type:
+    - Preprint
+    
 - id: GradedUltraproducts
   title: Ultraproducts of Graded Algebras
   year: 2024
@@ -75,7 +94,7 @@
   
   
 - id: LikelihoodGeometry
-  title: Likelihood Correspondence of Statistical Models
+  title: Likelihood Correspondence of Toric Statistical Models
   year: 2023
   authors:
     - David Barnhill
