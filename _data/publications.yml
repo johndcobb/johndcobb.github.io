@@ -81,7 +81,7 @@
     - Nathaniel Gallup
     - John Spoerl
   venue: Submitted
-  pdf: https://arxiv.org/abs/2406.09593.pdf
+  pdf: https://arxiv.org/pdf/2406.09593
   arxiv: "2406.09593"
   highlight: true 
   description: In 2000, Mike Stillman conjectured that the projective dimension of a homogeneous ideal in a standard graded polynomial ring can be bounded just in terms of the number and degrees of the generators. We resolve Stillman's conjecture for families of polynomial rings that are graded by any abelian group under mild conditions. Conversely, we show that these conditions are necessary for the existence of a Stillman bound. 
@@ -101,7 +101,7 @@
     - John Cobb
     - Matthew Faust
   venue: Submitted
-  pdf: https://arxiv.org/pdf/2312.08501.pdf
+  pdf: https://arxiv.org/pdf/2312.08501
   arxiv: "2312.08501"
   link: https://github.com/johndcobb/LikelihoodGeometry
   description: Characteristics of the maximum likelihood estimation problems are reflected in the geometry of a variety called the likelihood correspondence. We construct the ideal of this variety for some popular examples of statistical models.
