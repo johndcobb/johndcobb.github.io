@@ -44,8 +44,8 @@
     - John Cobb
     - Matthew Faust
   venue: Submitted
-  pdf:
-  arxiv:
+  pdf: https://arxiv.org/pdf/2411.11165
+  arxiv: "2411.11165"
   description: A Macaulay2 package for computing the likelihood correspondence of statistical models.
   tags:
     - Macaulay2
