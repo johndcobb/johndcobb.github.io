@@ -36,6 +36,24 @@
 #    - Conference
 #    - Journal
 
+#- id: GradedUltraproducts
+#  title: Ultraproducts of Graded Algebras
+#  year: 2025
+#  authors:
+#    - John Cobb
+#    - Nathaniel Gallup
+#    - John Spoerl
+#  venue:
+#  pdf:
+#  arxiv:
+  #highlight: true 
+#  description: A common argument for establishing bounds within commutative algebra is the construction of a "limiting polynomial ring" that allows one to trade asymptotic behavior over many polynomial rings for exact behavior in the limit ring. We define a degree bounded ultraproduct that packages this argument up and establish several strong properties about it using its unique position within logic. We give several out-of-the-box algebraic tools to use on such rings.
+#  tags:
+#    - Logic
+#    - Commutative Algebra
+#  type:
+#    - In Progress
+  
 - id: LikelihoodGeometryM2
   title: "LikelihoodGeometry: Macaulay2 package"
   year: 2024
@@ -55,24 +73,6 @@
     - Commutative Algebra
   type:
     - Preprint
-    
-- id: GradedUltraproducts
-  title: Ultraproducts of Graded Algebras
-  year: 2024
-  authors:
-    - John Cobb
-    - Nathaniel Gallup
-    - John Spoerl
-  venue:
-  pdf:
-  arxiv:
-  #highlight: true 
-  description: A common argument for establishing bounds within commutative algebra is the construction of a "limiting polynomial ring" that allows one to trade asymptotic behavior over many polynomial rings for exact behavior in the limit ring. We define a degree bounded ultraproduct that packages this argument up and establish several strong properties about it using its unique position within logic. We give several out-of-the-box algebraic tools to use on such rings.
-  tags:
-    - Logic
-    - Commutative Algebra
-  type:
-    - In Progress
 
 - id: MultigradedStillman
   title: Multigraded Stillman's Conjecture
