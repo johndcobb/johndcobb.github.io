@@ -26,9 +26,9 @@ My research interests are primarily within algebraic geometry and commutative al
 
 <div class="me" markdown="1">
 <picture>
-  <source srcset='/images/john_purple.webp' type='image/webp' />
+  <source srcset='/images/john_green.webp' type='image/webp' />
   <img
-    src='/images/john_purple.jpg'
+    src='/images/john_green.jpg'
     alt='John Cobb'/>
 </picture>
 
