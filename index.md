@@ -35,7 +35,6 @@ My research interests are primarily within algebraic geometry and commutative al
 {:.no-list}
 * <i class="fa-solid fa-envelope" aria-hidden="true"></i> <a href="mailto:{{ site.email }}">{{ site.email }}</a>
 * <i class="fas fa-map-marker-alt" aria-hidden="true"></i> <a href="https://maps.app.goo.gl/HKbrYNAp16UTkw4a6">Extension Hall</a>, Office 204A
-* he/him/his
 </div>
 </div>
 <!--- Put stuff here when ready -->
