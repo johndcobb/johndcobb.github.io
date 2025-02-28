@@ -75,13 +75,16 @@
     - Preprint
 
 - id: MultigradedStillman
-  title: Multigraded Stillman's Conjecture
+  title: Semigroup Graded Stillman's Conjecture
   year: 2024
   authors:
     - John Cobb
     - Nathaniel Gallup
     - John Spoerl
-  venue: Submitted
+  venue: Journal of Algebra
+  venue_tags:
+    - J. Algebra
+  venue_url: https://www.sciencedirect.com/journal/journal-of-algebra
   pdf: https://arxiv.org/pdf/2406.09593
   arxiv: "2406.09593"
   highlight: true 
@@ -91,7 +94,7 @@
     - Toric Varieties
     - Commutative Algebra
   type:
-    - Preprint
+    - Journal
   
   
 - id: LikelihoodGeometry
