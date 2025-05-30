@@ -53,26 +53,6 @@
 #    - Commutative Algebra
 #  type:
 #    - In Progress
-  
-- id: LikelihoodGeometryM2
-  title: "LikelihoodGeometry: Macaulay2 package"
-  year: 2024
-  authors:
-    - David Barnhill
-    - John Cobb
-    - Matthew Faust
-  venue: Submitted
-  pdf: https://arxiv.org/pdf/2411.11165
-  arxiv: "2411.11165"
-  description: A Macaulay2 package for computing the likelihood correspondence of statistical models.
-  link: https://github.com/johndcobb/LikelihoodGeometry
-  tags:
-    - Macaulay2
-    - Toric Varieties
-    - Algebraic Statistics
-    - Commutative Algebra
-  type:
-    - Preprint
 
 - id: MultigradedStillman
   title: Semigroup Graded Stillman's Conjecture
@@ -97,6 +77,26 @@
     - Commutative Algebra
   type:
     - Journal
+
+- id: LikelihoodGeometryM2
+  title: "LikelihoodGeometry: Macaulay2 package"
+  year: 2024
+  authors:
+    - David Barnhill
+    - John Cobb
+    - Matthew Faust
+  venue: Submitted
+  pdf: https://arxiv.org/pdf/2411.11165
+  arxiv: "2411.11165"
+  description: A Macaulay2 package for computing the likelihood correspondence of statistical models.
+  link: https://github.com/johndcobb/LikelihoodGeometry
+  tags:
+    - Macaulay2
+    - Toric Varieties
+    - Algebraic Statistics
+    - Commutative Algebra
+  type:
+    - Preprint
   
   
 - id: LikelihoodGeometry
