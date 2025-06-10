@@ -1,6 +1,6 @@
 - level: Experienced
   list: Python, Macaulay2
 - level: Familiar
-  list: Java, MySQL, PyTorch, pandas, numpy
+  list: Java, MySQL, PyTorch, pandas, numpy, julia
 - level: Beginner
   list: Scikit-learn, MATLAB, Mathematica, VHDL/Verilog, Rust
