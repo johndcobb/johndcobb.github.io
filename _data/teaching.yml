@@ -1,9 +1,18 @@
+- title: "MATH 2630: Calculus III"
+  role: "Instructor"
+  year: Fall 2025
+  type: Current
+  panel: true
+  image: calculus3.jpg
+  url: "/teaching/2630Fall2025"
+  location: Auburn University
+  description: This page organizes Calculus III for section 110 running in Fall 2025.
+  roledescription: Responsible for all aspects of the course including lectures, assignments, and exams.
 - title: "MATH 217: Calculus with Algebra & Trig II"
   role: "Teaching Assistant"
   year: Spring 2024
   type: Past
   panel: true
-  highlight: 1
   image: calculus1.jpg
   url: "/teaching/217Spring2024"
   professor: Cassie Williams
