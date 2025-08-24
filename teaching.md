@@ -17,7 +17,7 @@ class: talks
 {% for course in coursetitle.items %}
 <div class ="date-container">
 <span class="date"> {{ course.year }} </span>
-<span class="fill">{{ course.role }} {% if course.url %}
+<span class="fill">{{ course.role }} {% if course.coursenum %}({{course.coursenum}}){% endif%} {% if course.url %}
     <a href="{{ course.url }}" style="font-size: 0.8em; margin-left: 15px">
       <i class="fas fa-link" aria-hidden="true"></i> Website
     </a>
@@ -28,22 +28,8 @@ class: talks
 {% endfor %}</div>
 {% endfor %}
 
+
 {% comment %}
-
-- title: "MATH 2630: Calculus III"
-  role: "Instructor"
-  year: Fall 2025
-  type: Current
-  panel: true
-  image: calculus3.jpg
-  url: "/teaching/2630Fall2025"
-  location: Auburn University
-  description: This page organizes Calculus III for section 110 running in Fall 2025.
-  roledescription: Responsible for all aspects of the course including lectures, assignments, and exams.
-
-  {% endcomment %}
-
-
 {% for title in talktitles %}{% if title.items[0].hide == nil %}
 {:.talk-title}
 ### {{ title.name }}
@@ -65,4 +51,5 @@ class: talks
 {% endfor %}
 </div>
 {% endfor %}
+{% endcomment %}
 {% endcomment %}
