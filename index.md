@@ -3,14 +3,14 @@ layout: page
 title: "Home"
 class: home
 ---
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-145239790-1"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G4DJ38ZF3X"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-145239790-1');
+  gtag('config', 'G-G4DJ38ZF3X');
 </script>
 
 
@@ -21,21 +21,20 @@ class: home
 <div class="intro" markdown="1">
 I am a NSF postdoctoral fellow with [Hal Schenck](http://webhome.auburn.edu/~hks0015/) at Auburn University. I received my PhD from the mathematics department at the [University of Wisconsin-Madison](https://www.math.wisc.edu/) in May 2024, where I was advised by both [Daniel Erman](https://math.hawaii.edu/~erman) and [Michael Kemeny](https://people.math.wisc.edu/~kemeny/homepage.html). From 2019 to 2022, I was supported by a [DoD NDSEG Fellowship](https://ndseg.sysplus.com/NDSEG/About/). Details are in my [CV]({{ absolute_url }}/cv).
 
-My research interests are primarily within algebraic geometry and commutative algebra. My work involves syzygies, toric varieties, defining equations of curves, and more recently, applications to algebraic statistics.
+My research interests are primarily within algebraic geometry and commutative algebra. My work involves syzygies, toric varieties, defining equations of curves, and applications to statistics and data science.
 </div>
 
 <div class="me" markdown="1">
 <picture>
-  <source srcset='/images/john_purple.webp' type='image/webp' />
+  <source srcset='/images/john_green.webp' type='image/webp' />
   <img
-    src='/images/john_purple.jpg'
+    src='/images/john_green.jpg'
     alt='John Cobb'/>
 </picture>
 
 {:.no-list}
-* <i class="fas fa-envelope-square" aria-hidden="true"></i> <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+* <i class="fa-solid fa-envelope" aria-hidden="true"></i> <a href="mailto:{{ site.email }}">{{ site.email }}</a>
 * <i class="fas fa-map-marker-alt" aria-hidden="true"></i> <a href="https://maps.app.goo.gl/HKbrYNAp16UTkw4a6">Extension Hall</a>, Office 204A
-* he/him/his
 </div>
 </div>
 <!--- Put stuff here when ready -->
@@ -57,7 +56,6 @@ My research interests are primarily within algebraic geometry and commutative al
 </a>
 -->
 
-<!--
 ## Featured Publications
 
 <div class="featured-publications">
@@ -87,7 +85,6 @@ My research interests are primarily within algebraic geometry and commutative al
   <i class="fas fa-chevron-circle-right" aria-hidden="true"></i>
   Show All Publications
 </a>
--->
 
 <div class="news-travel" markdown="1">
 
@@ -113,7 +110,7 @@ My research interests are primarily within algebraic geometry and commutative al
   {% include travel.html travel=travel %}
 {% endfor %}
 {% assign sorted_travel = site.data.travel | where_exp:'item','item.start' | sort: 'start' | reverse %}
-{% for travel in sorted_travel limit: 8 %}
+{% for travel in sorted_travel limit: 7 %}
   {% include travel.html travel=travel %}
 {% endfor %}
 </tbody>

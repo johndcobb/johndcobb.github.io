@@ -13,21 +13,26 @@
 
   {% include head.html %}
   <body>
+    {% assign base_url = page.permalink | relative_url %}
     {% assign current = page.url | downcase | split: '/' %}
+    {% assign sections = page.sections | split: ', ' %}
     <header class="page-header">
-      <nav class="container">
-        <a class="site-title">{{ page.title }}</a>
-      </nav>
+    <nav class="container">
+        {% for section in sections %}
+        <a href="{{ section | downcase | replace: ' ', '-' | prepend: '#' | base_url }}">{{ section }}</a> 
+        {% endfor %}
+        <a></a>
+
+    </nav>
     </header>
 
-    <div class="page-content">
-      <div class="container" markdown="1">
-        {{ content }}
-      </div>
+    <div class="container {{ page.class }}">
+    <main class="page-content">
+      {{ content }}
+    </main>
     </div>
 
-    <footer>
-    </footer>
+    <footer></footer>
 
     {% include scripts.html %}
   </body>

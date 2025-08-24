@@ -1,3 +1,11 @@
+- title: "First Year Seminar"
+  location: Auburn University
+  years: Fall 2025
+  description: "Introduce first year graduate students to research in algebraic geometry."
+- title: Macaulay2 Internals
+  location: Online
+  description: "Meet with Macaulay2 dev team to discuss the internals of the software, and the implementation of new features. In particular, I am helping develop the vscode interface."
+  years: Since Fall 2024
 - title: Panelist for Organizing Conferences Aimed at Graduate Students
   location: Madison, WI
   description: "Panelist on a discussion about organizing conferences held by the UW Madison math department."

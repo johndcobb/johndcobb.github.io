@@ -1,23 +1,43 @@
-- title: SIAM Applied Algebraic Geometry
-  venue: University of Wisconsin-Madison
-  where: Madison, WI
-  start: 2025-07-07
-  end: 2025-07-11
-- title: Macaulay2 Workshop
-  venue: University of Wisconsin-Madison
-  where: Madison, WI
-  start: 2025-06-30
-  end: 2025-07-04
-- title: Applications of Commutative Algebra
+- title: AMS Spring Eastern Sectional Meeting
+  venue: Boston College
+  where: Boston, MA
+  start: 2026-03-28
+  end: 2026-03-29
+- title: Regularity in algebra, combinatorics, and geometry
+  venue: Banff International Research Station
+  where: Banff, Canada
+  start: 2026-04-19
+  end: 2026-04-24
+- title: Homological Mirror Symmetry and Multigraded Commutative Algebra Workshop
+  venue: American Institute of Mathematics
+  where: Pasadena, CA
+  start: 2025-08-18
+  end: 2025-08-22
+- title: 2025 AG Summer Research Institute Bootcamp
+  venue: Colorado State University
+  where: Fort Collins, CO
+  start: 2025-07-08
+  end: 2025-07-18
+- title: Program Visitor
   venue: Fields Institute
   where: Toronto, Canada
-  start: 2025-05-20
+  start: 2025-05-12
   end: 2025-05-30
-- title: Apprenticeship Program in Commutative Algebra
-  venue: Fields Institute
-  where: Toronto, Canada
-  start: 2025-01-20
-  end: 2025-01-24
+- title: Macaulay2 Workshop
+  venue: Tulane University
+  where: New Orleans, LA
+  start: 2025-04-14
+  end: 2025-04-18
+- title: Meeting on Applied Algebraic Geometry 2025
+  venue: Auburn University
+  where: Auburn, AL
+  start: 2025-04-19
+  end: 2025-04-20
+- title: AMS Spring Southeastern Sectional Meeting
+  venue: Clemson University
+  where: Clemson, SC
+  start: 2025-03-08
+  end: 2025-03-09
 - title: Joint meeting of the NZMS, AustMS and AMS
   venue: University of Auckland
   where: Auckland, New Zealand

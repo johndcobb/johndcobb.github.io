@@ -7,19 +7,24 @@ title: CV
 <small class="live-link">Last updated in <time datetime="{{ site.time }}">{{ site.time | date: '%B %Y'}}</time>. Get the latest version at <a href="{{ '/cv' | absolute_url }}">johndcobb.github.io/cv/</a>.</small>
 
 <section class="container">
-    
+  <div class="button-container">
+    <span id="print-button" class="button" onclick="window.print()">
+    <i class="fas fa-print" aria-hidden="true"></i>
+    Print
+    </span>
+  </div><br>
   
   <span><h1><a href="{{ absolute_url }}/">John D. Cobb</a></h1></span>
   <span class="header-columns">
     <div hidden> PhD Student at University of Wisconsin-Madison </div> 
     <div>
-        <a href="mailto:jdcobb3@gmail.com" style="margin-left:0.6em"><i class="fas fa-envelope" aria-hidden="true"></i> jdcobb3@gmail.com</a> 
-        <a href="{{ absolute_url }}/"><i class="fas fa-home" style="margin-left:0.6em" aria-hidden="true"></i>https://github.com/johndcobb</a>
+        <a href="mailto:jdcobb3@gmail.com" style="margin-left:0.6em"><i class="fa-solid fa-envelope" aria-hidden="true"></i> jdcobb3@gmail.com</a> 
+        <a href="{{ absolute_url }}/"><i class="fa-solid fa-globe" style="margin-left:0.6em" aria-hidden="true"></i> https://github.com/johndcobb</a>
         <a href="https://github.com/johndcobb"><i class="fab fa-github" style="margin-left: 0.6em" aria-hidden="true"></i> johndcobb</a>
     </div> 
   </span>
   <span class="header-columns">
-    <b>Research Interests:</b> Algebraic geometry, commutative algebra, and their applications to data science.
+    <b>Research Interests:</b> Algebraic geometry, commutative algebra, and their applications.
   </span>
 
   <div class="line-container">
@@ -190,16 +195,17 @@ title: CV
 
   {% assign talktypes = site.data.talks | group_by:"type" %}
   {% for type in talktypes %}{% if type.items[0].hide == nil %}
-
+  {% assign talkyears = type.items | group_by_exp: "talk", "talk.date | date: '%Y'" %}
   <h3 class="pub-type">{{ type.name }}</h3>
+  {% for year in talkyears %}
 
-  {% assign sorted_talks = type.items %}
+  {% assign sorted_talks = year.items %}
   {% for talk in sorted_talks %}{% if talk.hide==nil%}
   <div class="date-container">
-    <time datetime="{{ talk.date }}">{{ talk.date | date: "%b %Y" }}</time>
+    {% if forloop.first %} <time datetime="{{ talk.date }}">{{ talk.date | date: "%Y %b" }}</time> {% else %} <time datetime="{{ talk.date }}">{{ talk.date | date: "%b" }}</time> {% endif %} 
     <span class="fill">{{ talk.location }}{% if talk.city %}, <small class="muted">{{ talk.city }}</small>{% endif %}</span>
   </div>
-  {% endif %}
+  {% endif %} {% endfor %}
   {% endfor %}
   {% endif %}
   {% endfor %}
@@ -211,7 +217,7 @@ title: CV
     {% assign sorted_talks = title.items | sort: 'date' | reverse %}
     {% for talk in sorted_talks %}
       <div class="date-container">
-        <time datetime="{{ talk.date }}">{{ talk.date | date: "%b %Y" }}</time>
+        <time datetime="{{ talk.date }}">{{ talk.date | date: "%Y %b" }}</time>
         <span class="fill">{{ talk.location }}{% if talk.city %}, <small class="muted">{{ talk.city }}</small>{% endif %}</span>
       </div>
   {% endfor %}
@@ -221,7 +227,7 @@ title: CV
   {% comment %}
   {% for talk in site.data.talks %}{% if talk.hide == nil %}
     <div class="date-container">
-      <time datetime="{{ talk.date }}">{{ talk.date | date: "%b %Y" }}</time>
+      <time datetime="{{ talk.date }}">{{ talk.date | date: "%Y %b" }}</time>
       <span class="fill">{{ talk.location }}{% if talk.city %}, <small class="muted"> <em>{{ talk.city }}</em> </small>{% endif %}</span>
     </div>
   {% endif %}{% endfor %}
@@ -229,20 +235,21 @@ title: CV
 
 
   <div class="line-container">
-    <h2>Teaching Experience</h2>
+    <h2>Teaching</h2>
     <span class="line"></span>
   </div>
 
   {% assign coursetitles = site.data.teaching | group_by: "title" %} 
   {% for title in coursetitles %}
   {% assign recentcourse = title.items[-1] %}
-    <h3>{{ title.name }}</h3> 
+  <div class="no-break">
+    <h3 style="margin-left: 90px">{{ title.name }}</h3> 
     <div class="date-container">
       <span class="date"> {% for class in title.items %} {{ class.year | replace: "-", "–"  }} <br> {% endfor %} </span>
       <span style="flex: 1"> {{ recentcourse.role }}. {{ recentcourse.roledescription}} </span>
       <span class="right">{{ recentcourse.location }}</span>
     </div>
-    <br/>
+  </div> {% unless forloop.last %}<br/>{% endunless %}
   {% endfor %}
 
   <div class="line-container">
@@ -296,13 +303,15 @@ title: CV
 
   {% for service in site.data.service %}
   {% if service.hide==nil %}
-  <h3>{{ service.title }} {% if service.at %} at {{ service.at }} {% endif %}</h3>
+  <div class="no-break">
+  <h3 style="margin-left: 90px">{{ service.title }} {% if service.at %} at {{ service.at }} {% endif %}</h3>
     <div class="date-container">
       <span class="date">{{service.years | replace: "-", "–" }}</span>
       <span style="flex: 1">{{ service.description }}</span>
       <span class="right">{{ service.location }}</span>
     </div>
-  <br>
+  </div>
+  {% unless forloop.last %}<br/>{% endunless %}
   {% endif %}
   {% endfor %}
 
@@ -322,13 +331,14 @@ title: CV
   </div>
 
   {% for pos in site.data.positions %}
-  <h3>{{ pos.title }}{% if pos.company %} at {{pos.company}}{% endif %}</h3>
+  <div class="no-break">
+  <h3 style="margin-left: 90px">{{ pos.title }}{% if pos.company %} at {{pos.company}}{% endif %}</h3>
     <div class="date-container">
       <span class="date">{{ pos.years | replace: "-", "–"  }}</span>
       <span style="flex: 1">{{ pos.description | markdownify }}</span>
       <span class="right">{{ pos.location }}</span>
     </div>
-    <p>
+    <p style="margin-left: 90px">
       {% if pos.mentors %}
         Mentor{% if pos.mentors.size > 1 %}s{% endif %}: {% for mentor in pos.mentors %}
           {% include person person=mentor %}{% unless forloop.last %}, {% endunless %}
@@ -338,6 +348,7 @@ title: CV
       <small class="muted">[{% for skill in pos.skills %}{{ skill }}{% unless forloop.last %}, {% endunless %}{% endfor %}]</small>
       {% endif %}
     </p>
+  </div> {% unless forloop.last %}<br/>{% endunless %}
   {% endfor %}
 
   <div class="line-container">

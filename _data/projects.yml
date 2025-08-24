@@ -1,0 +1,15 @@
+- title: ToricStacks
+  type: Software
+  description: A Macaulay2 package for working with toric stacks via their stacky fans.
+  code: "https://github.com/julietteBruce/toricStacks"
+  image: "stackyfans.png"
+- title: LikelihoodGeometry
+  type: Software
+  description: Code for computing likelihood ideals of statistical models.
+  code: "https://github.com/johndcobb/LikelihoodGeometry"
+  image: "likelihoodGeometry.png"
+- title: Macaulay2 VSCode Extension
+  type: Software
+  description: An extension in visual studio code for Macaulay2.
+  code: "https://github.com/Macaulay2/vscode-Macaulay2"
+  image: "m2vscode.png"

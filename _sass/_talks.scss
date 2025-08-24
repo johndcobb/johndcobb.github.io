@@ -10,6 +10,39 @@
     }
   }
 
+  .date-container {
+        width: 100%;
+        margin-left: 0 !important;
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+        justify-content: space-between;
+
+        & > strong {
+            display: block;
+          }
+      
+        .fill, h3 {
+        flex: 1;
+        }
+    }
+  .date-container .date, .date-container time {
+        display: block;
+        width: 90px;
+        text-align: right;
+        padding-right: 20px;
+        flex-shrink: 0;
+        font-size: 0.75rem;
+    }
+
+  .date-container .right {
+      padding-left: 10px;
+      color: #828282;
+      font-size: .9em;
+      font-style: italic;
+  }
+  
+
   .talk {
     clear: both;
 
@@ -20,16 +53,85 @@
     }
 
     .extra-links {
+      margin-top: 0.5em;
       font-weight: 300;
-      font-size: 0.8em;
+      font-size: 0.3em;
 
       a {
-        &:first-child {
-          margin-left: 2em;
-        }
+        margin-right: 1em;
+        white-space: nowrap;
 
-        margin-left: 1em;
+        &:hover {
+          text-decoration: none;
+          border-bottom: 1px solid $link-color;
+        }
       }
     }
   }
+  @media print {
+        font-size: 0.8rem;
+
+        .date-container, .line-container, .cv-pub, .header-columns {
+            break-inside: avoid;
+        }
+
+        a {
+            color: $text-color;
+        }
+    
+        h1 {
+          font-size: 1.7rem;
+          color: $text-color;
+          a {
+              color: $text-color;
+          }
+        }
+    
+        h2 {
+          font-size: 1.4rem;
+        }
+    
+        h2 {
+          font-size: 1.2rem;
+        }
+    
+        .pub-type {
+          font-size: 1.1rem;
+          margin-bottom: 0.3rem;
+        }
+    
+        .live-link {
+            display: block;
+            a {
+                color: $text-color;
+            }
+        }
+    
+        h1, h2 {
+          margin: .4rem 0 .1rem 0;
+          color: $text-color;
+        }
+
+        h3, h4 {
+            color: $text-color;
+            a {
+                color: $text-color;
+            }
+        }
+
+        .header-columns a {
+            color: $text-color;
+        }
+    
+        /* link to interactive talk/publications */
+        h2 a {
+          display: none;
+          color: $text-color;
+        }
+
+        #print-button {
+            display: none;
+            float: right;
+        }
+      }
 }

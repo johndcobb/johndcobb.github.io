@@ -104,6 +104,9 @@ GEM
       ffi (~> 1.0)
     rexml (3.3.7)
     rouge (4.3.0)
+
+    rexml (3.3.9)
+    rouge (4.2.0)
     safe_yaml (1.0.5)
     sass-embedded (1.78.0-arm64-darwin)
       google-protobuf (~> 4.27)
@@ -118,10 +121,11 @@ GEM
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.6.0)
     uri (0.13.0)
-    webrick (1.8.1)
+    webrick (1.8.2)
 
 PLATFORMS
   arm64-darwin-22
+  arm64-darwin-24
   x86_64-linux
 
 DEPENDENCIES
@@ -133,4 +137,4 @@ DEPENDENCIES
   jekyll-sitemap
 
 BUNDLED WITH
-   2.5.4
+   2.5.22

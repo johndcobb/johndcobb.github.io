@@ -1,46 +1,34 @@
-- title: "MATH 217: Calculus with Algebra & Trig II"
+- title: "Calculus III"
+  coursenum: "MATH 2630"
+  role: "Instructor"
+  year: Fall 2025
+  image: calculus3.jpg
+  url: "/teaching/2630Fall2025"
+  location: Auburn University
+  description: This page organizes Calculus III for section 110 running in Fall 2025.
+  roledescription: Responsible for all aspects of the course including lectures, assignments, and exams.
+- title: "Calculus II"
+  coursenum: MATH 217
   role: "Teaching Assistant"
   year: Spring 2024
-  type: Past
-  panel: true
-  highlight: 1
   image: calculus1.jpg
   url: "/teaching/217Spring2024"
   professor: Cassie Williams
   location: UW Madison
   description: This page organizes calculus I discussion sections 304 and 305 running in Spring 2024.
   roledescription: Hold weekly problem solving sessions and office hours.
-- title: "MATH 222: Calculus II"
+- title: "Calculus II"
+  coursenum: MATH 222
   role: "Head Teaching Assistant"
-  panel: true
   year: Fall 2023
-  type: Past
   professor: Maurice Fabien
   location: UW Madison
   url: "/teaching/222Fall2023"
   image: calculus2.jpg
   description: This page organizes calculus II discussion sections 306 and 310 running in Fall 2023.
   roledescription: Hold weekly problem solving sessions and office hours. Create worksheets and quizzes, organize all other TA's teaching the course.
-- title: "Galin Education"
-  role: "Academic Tutor"
-  type: Past
-  year: Aug 2022 - Sep 2023
-  location: Madison, WI
-  roledescription: Meet with students weekly one on one to help with college level math courses.
-- title: "MATH 234: Calculus III"
-  panel: false
-  type: Past
-  role: Teaching Assistant
-  professor: Soledad Benguria Andrews
-  year: Fall 2022
-  location: UW Madison
-  url: "/teaching/234Fall2022"
-  image: calculus3.jpg
-  description: This page organizes calculus III discussion sections 369 and 370 running in Fall 2022.
-  roledescription: Hold weekly problem solving sessions and office hours.
-- title: "MATH 234: Calculus III"
-  panel: true
-  type: Past
+- title: "Calculus III"
+  coursenum: MATH 234
   role: Teaching Assistant
   professor: Cassie Williams
   year: Spring 2023
@@ -49,23 +37,21 @@
   image: calculus3.jpg
   description: This page organizes calculus III discussion sections 343 and 345 running in Spring 2023.
   roledescription: Hold weekly problem solving sessions and office hours.
-- title: "MATH 221: Calculus I"
-  panel: true
-  professor: Gabriele Meyer 
-  sections: 429, 431
-  type: Past
+- title: "Calculus III"
+  coursenum: MATH 234
+  panel: false
   role: Teaching Assistant
-  year: Fall 2020
+  professor: Soledad Benguria Andrews
+  year: Fall 2022
   location: UW Madison
-  url: "/teaching/221Fall2020"
-  image: calculus1.jpg
-  description: This page organizes calculus discussion sections 429 and 431 running in Fall 2020.
-  roledescription: Hold weekly problem solving sessions.
-- title: "MATH 221: Calculus I"
-  panel: true
+  url: "/teaching/234Fall2022"
+  image: calculus3.jpg
+  description: This page organizes calculus III discussion sections 369 and 370 running in Fall 2022.
+  roledescription: Hold weekly problem solving sessions and office hours.
+- title: "Calculus I"
+  coursenum: MATH 221
   sections: 341, 344
   professor: Alex Waldron
-  type: Past
   role: Teaching Assistant
   year: Fall 2021
   location: UW Madison
@@ -73,36 +59,44 @@
   image: calculus1.jpg
   description: This page organizes calculus discussion sections running in Fall 2021.
   roledescription: Hold weekly problem solving sessions and office hours.
-- title: "MATH 229: Vector Calculus with Chemical Applications"
-  panel: true
-  image: 6-armyresearch.jpg
-  type: Past
+- title: "Calculus I"
+  coursenum: MATH 221
+  professor: Gabriele Meyer 
+  sections: 429, 431
   role: Teaching Assistant
-  year: Fall 2017
-  location: College of Charleston
-  roledescription: Presented new content and held problem sessions.
-- title: "MATH 229: Vector Calculus with Chemical Applications"
+  year: Fall 2020
+  location: UW Madison
+  url: "/teaching/221Fall2020"
+  image: calculus1.jpg
+  description: This page organizes calculus discussion sections 429 and 431 running in Fall 2020.
+  roledescription: Hold weekly problem solving sessions.
+- title: "Vector Calculus with Chemical Applications"
+  coursenum: MATH 229
   panel: true
   image: 6-armyresearch.jpg
-  type: Past
-  role: Teaching Assistant
-  year: Spring 2018
-  location: College of Charleston
-  roledescription: Presented new content and held problem sessions.
-- title: "MATH 229: Vector Calculus with Chemical Applications"
-  panel: true
-  image: 6-armyresearch.jpg
-  type: Past
-  role: Teaching Assistant
-  year: Fall 2018
-  location: College of Charleston
-  roledescription: Presented new content and held problem sessions.
-- title: "MATH 229: Vector Calculus with Chemical Applications"
-  panel: true
-  image: 6-armyresearch.jpg
-  type: Past
   role: Teaching Assistant
   year: Spring 2019
   location: College of Charleston
   roledescription: Presented new content and held problem sessions.
-  description: This course is aimed at students preparing for a course in physical chemistry. It combines topics from Calculus I-III, linear algebra, and group theory to explain things like symmetries in molecules and crystal structures.
+  description: This course is aimed at students preparing for a course in physical chemistry. It combines topics from Calculus I-III, linear algebra, and group theory.
+- title: "Vector Calculus with Chemical Applications"
+  coursenum: MATH 229
+  image: 6-armyresearch.jpg
+  role: Teaching Assistant
+  year: Fall 2018
+  location: College of Charleston
+  roledescription: Presented new content and held problem sessions.
+- title: "Vector Calculus with Chemical Applications" 
+  coursenum: MATH 229
+  image: 6-armyresearch.jpg
+  role: Teaching Assistant
+  year: Spring 2018
+  location: College of Charleston
+  roledescription: Presented new content and held problem sessions.
+- title: "Vector Calculus with Chemical Applications"
+  coursenum: MATH 229
+  image: 6-armyresearch.jpg
+  role: Teaching Assistant
+  year: Fall 2017
+  location: College of Charleston
+  roledescription: Presented new content and held problem sessions.

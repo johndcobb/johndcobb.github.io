@@ -36,33 +36,38 @@
 #    - Conference
 #    - Journal
 
-- id: GradedUltraproducts
-  title: Ultraproducts of Graded Algebras
-  year: 2024
-  authors:
-    - John Cobb
-    - Nathaniel Gallup
-    - John Spoerl
-  venue:
-  pdf:
-  arxiv:
+#- id: GradedUltraproducts
+#  title: Ultraproducts of Graded Algebras
+#  year: 2025
+#  authors:
+#    - John Cobb
+#    - Nathaniel Gallup
+#    - John Spoerl
+#  venue:
+#  pdf:
+#  arxiv:
   #highlight: true 
-  description: A common argument for establishing bounds within commutative algebra is the construction of a "limiting polynomial ring" that allows one to trade asymptotic behavior over many polynomial rings for exact behavior in the limit ring. We define a degree bounded ultraproduct that packages this argument up and establish several strong properties about it using its unique position within logic. We give several out-of-the-box algebraic tools to use on such rings.
-  tags:
-    - Logic
-    - Commutative Algebra
-  type:
-    - In Progress
+#  description: A common argument for establishing bounds within commutative algebra is the construction of a "limiting polynomial ring" that allows one to trade asymptotic behavior over many polynomial rings for exact behavior in the limit ring. We define a degree bounded ultraproduct that packages this argument up and establish several strong properties about it using its unique position within logic. We give several out-of-the-box algebraic tools to use on such rings.
+#  tags:
+#    - Logic
+#    - Commutative Algebra
+#  type:
+#    - In Progress
 
 - id: MultigradedStillman
-  title: Multigraded Stillman's Conjecture
-  year: 2024
+  title: Semigroup Graded Stillman's Conjecture
+  year: 2025
   authors:
     - John Cobb
     - Nathaniel Gallup
     - John Spoerl
-  venue: Submitted
-  pdf: https://arxiv.org/abs/2406.09593.pdf
+  venue: Journal of Algebra
+  venue_tags:
+    - J. Algebra
+  doi: 10.1016/j.jalgebra.2025.02.016
+  short_doi: 10/n9nt
+  venue_url: https://www.sciencedirect.com/journal/journal-of-algebra
+  pdf: https://arxiv.org/pdf/2406.09593
   arxiv: "2406.09593"
   highlight: true 
   description: In 2000, Mike Stillman conjectured that the projective dimension of a homogeneous ideal in a standard graded polynomial ring can be bounded just in terms of the number and degrees of the generators. We resolve Stillman's conjecture for families of polynomial rings that are graded by any abelian group under mild conditions. Conversely, we show that these conditions are necessary for the existence of a Stillman bound. 
@@ -71,18 +76,38 @@
     - Toric Varieties
     - Commutative Algebra
   type:
+    - Journal
+
+- id: LikelihoodGeometryM2
+  title: "LikelihoodGeometry: Macaulay2 package"
+  year: 2024
+  authors:
+    - David Barnhill
+    - John Cobb
+    - Matthew Faust
+  venue: Submitted
+  pdf: https://arxiv.org/pdf/2411.11165
+  arxiv: "2411.11165"
+  description: A Macaulay2 package for computing the likelihood correspondence of statistical models.
+  link: https://github.com/johndcobb/LikelihoodGeometry
+  tags:
+    - Macaulay2
+    - Toric Varieties
+    - Algebraic Statistics
+    - Commutative Algebra
+  type:
     - Preprint
   
   
 - id: LikelihoodGeometry
-  title: Likelihood Correspondence of Statistical Models
+  title: Likelihood Correspondence of Toric Statistical Models
   year: 2023
   authors:
     - David Barnhill
     - John Cobb
     - Matthew Faust
   venue: Submitted
-  pdf: https://arxiv.org/pdf/2312.08501.pdf
+  pdf: https://arxiv.org/pdf/2312.08501
   arxiv: "2312.08501"
   link: https://github.com/johndcobb/LikelihoodGeometry
   description: Characteristics of the maximum likelihood estimation problems are reflected in the geometry of a variety called the likelihood correspondence. We construct the ideal of this variety for some popular examples of statistical models.
@@ -96,7 +121,7 @@
 
 - id: SheafDiffusion
   title: Extending Transductive Knowledge Graph Embedding Models for Inductive Logical Relational Inference
-  year: 2023
+  year: 2024
   authors:
     - Thomas Gebhart
     - John Cobb
