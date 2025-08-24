@@ -595,3 +595,35 @@
     
     }
 }
+
+/* Print-specific styles to remove top gap */
+@media print {
+    body {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    #cv {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    .container {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+    
+    .live-link {
+        display: block !important;
+        margin: 0 0 0.5em 0 !important;
+        padding: 0 !important;
+        opacity: 0.7 !important;
+        font-size: 0.7em !important;
+    }
+    
+    /* Ensure the first element (your name) starts right after the live-link */
+    #cv h1:first-of-type {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+}
