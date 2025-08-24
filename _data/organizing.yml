@@ -1,10 +1,9 @@
 - title: AMS Special Session on Moduli and Syzygies of Algebraic Curves
   shorttitle: Moduli and Syzygies AMS 2026
-  type: Conference
+  type: Special Session
   dates: May 2026
   location: Boston, MA
   description: "This special session will focus on the moduli of algebraic curves and their syzygies, bringing together experts in the field."
-  panel: false
 - title: MAAG 2025
   type: Conference
   dates: Apr 2025
@@ -13,9 +12,10 @@
   image: auburn.jpg
   image_url: https://auphoto.auburn.edu/_assets/images/index-header-02.jpg
   description: The Meeting on Applied Algebraic Geometry is a regional gathering which attracts participants primarily from the South-East of the United States. 
+  numparticipants: 40
 - title: NZMS/AusMS/AMS Special Session on Computations and Applications of AG and CA 
   shorttitle: AG-CA Applications NZ 2024
-  type: Conference
+  type: Special Session
   dates: Dec 2024
   location: Auckland, NZ
   url: "/organizing/appliedAGinNZ2024/"
@@ -29,7 +29,8 @@
   url: "https://sites.google.com/view/gaelxxxi"
   highlight: 2
   image: gaelxxx.jpg
-  description: Géométrie Algébrique en Liberté, also known as GAeL, is an annual workshop organized by and for young algebraic geometers.   
+  description: Géométrie Algébrique en Liberté, also known as GAeL, is an annual workshop organized by and for young algebraic geometers.  
+  numparticipants: 100 
 - title: GAeL XXX
   dates: Jul 2023
   type: Conference
@@ -37,6 +38,7 @@
   url: "https://sites.google.com/view/gaelxxx/home"
   image: gaelgroupphoto.jpeg
   description: Géométrie Algébrique en Liberté, also known as GAeL, is an annual workshop organized by and for young algebraic geometers. 
+  numparticipants: 100
 - title: 3264 and all that
   type: Reading Group
   location: Madison, WI
@@ -63,6 +65,8 @@
   description: "Geometry of Schemes is a textbook by David Eisenbud and Joe Harris. This page organizes the Summer 2020 reading schedule."
 - title: Directed Reading Program
   type: Service
+  dates: Fall 2019-Fall 2023
+  location: Madison, WI
   url: "https://wiki.math.wisc.edu/index.php/Directed_Reading_Program"
   image: drp.jpg
   description: "The DRP is a math mentoring program that pairs undergraduate students with graduate student mentors, for a semester-long independent study project."

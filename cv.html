@@ -261,7 +261,7 @@ title: CV
   <h3 class="pub-type">Conferences & Seminars</h3>
 
   {% for meeting in site.data.organizing %}
-    {% if meeting.type=='Conference' or meeting.type=='Seminar' %}
+    {% if meeting.type=='Conference' or meeting.type=='Seminar' or meeting.type=='Special Session' %}
     {% if meeting.hide==nil %}
       <div class="date-container">
         <span class="date">{{meeting.dates | replace: "-", "–" }}</span>

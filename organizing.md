@@ -9,7 +9,7 @@ class: talks
 # Organizing
 
 ## Conferences and Seminars
-{% assign conferences = site.data.organizing | where_exp:"activity", "activity.type == 'Conference' or activity.type == 'Seminar'" %}
+{% assign conferences = site.data.organizing | where_exp:"activity", "activity.type == 'Conference' or activity.type == 'Special Session'" %}
 {% for conference in conferences %}
 
 <div class="no-skip">
@@ -23,15 +23,15 @@ class: talks
 
 <div class ="date-container">
 <span class="date"> {{ conference.dates }}</span>
-<span class="fill" style = "flex:1" >{{ conference.description }}</span>
+<span class="fill" style = "flex:1" >{{ conference.description }}{% if conference.numparticipants %} (~{{ conference.numparticipants }} participants){% endif %}</span>
 <span class="right">{{ conference.location }}</span>
 </div>
 </div>
 
 {% endfor %}
 
-## Reading Groups
-{% assign conferences = site.data.organizing | where_exp:"activity", "activity.type == 'Reading Group'" %}
+## Reading Groups and Special Sessions
+{% assign conferences = site.data.organizing | where_exp:"activity", "activity.type == 'Reading Group' or activity.type == 'Seminar' or activity.type =='Service'" %}
 {% for conference in conferences %}
 
 <div class="no-skip">
