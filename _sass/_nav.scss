@@ -1,3 +1,5 @@
+@use "variables" as *;
+
 .page-header {
   border-top: 6px solid $brand-color;
   padding-top: 6px;
@@ -121,12 +123,12 @@ nav {
 
       &:hover {
         border-color: transparent;
-        background: lighten($brand-color, 55%);
+        background: #f4d6d6; // Previously lighten($brand-color, 55%)
       }
 
       &.active {
         border-color: transparent;
-        background: lighten($brand-color, 50%);
+        background: #f2cccc; // Previously lighten($brand-color, 50%)
         border-radius: 3px;
       }
     }

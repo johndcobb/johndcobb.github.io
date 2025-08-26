@@ -1,3 +1,5 @@
+@use "variables" as *;
+
 .class{
   /* Table */
   table { 
@@ -20,7 +22,7 @@
   td { background: #FAFAFA; text-align: center; }
   
   /* Zebra Stripe Rows */
-  tr:nth-child(even) td { background: darken($grey-color-lightest, 5%); } 
+  tr:nth-child(even) td { background: #f0f0f0; } // Previously darken($grey-color-lightest, 5%)
   tr:nth-child(odd) td { background: $grey-color-lightest; }
   
   /* Add border-radius to specific cells! */

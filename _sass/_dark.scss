@@ -1,3 +1,5 @@
+@use "variables" as *;
+
 @media (prefers-color-scheme: dark) {
   body:not(.cv) {
     background-color: #333;
@@ -30,11 +32,11 @@
     }
 
     .button, .dropdown-button {
-      color: lighten($brand-color, 30%);
+      color: #e85c5c; // Previously lighten($brand-color, 30%)
     }
 
     #facets ul li .bar-full .bar {
-      border-bottom-color: lighten($brand-color, 20%);
+      border-bottom-color: #cc3333; // Previously lighten($brand-color, 20%)
     }
 
     .page-header {
@@ -42,7 +44,7 @@
     }
 
     .pubs .publication .award-icon.fa-award, .pubs .publication .awards, .home .featured-publications .publication .fa-award {
-      color: lighten(firebrick, 20%);
+      color: #dc5858; // Previously lighten(firebrick, 20%)
     }
 
     .projects .grid .project, .home .featured-projects .project {
@@ -70,7 +72,7 @@
 
     .dropdown-content a {
       background-color: #333;
-      color: lighten($brand-color, 30%) !important;
+      color: #e85c5c !important; // Previously lighten($brand-color, 30%)
     }
 
     .dropdown-content {
@@ -83,7 +85,7 @@
         &:hover{
           opacity: 1;
           text-decoration: none;
-          background-color: lighten($brand-color, 50%);
+          background-color: #f2cccc; // Previously lighten($brand-color, 50%)
         }
       }
     }

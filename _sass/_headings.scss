@@ -1,10 +1,12 @@
+@use "variables" as *;
+
 /**
  * Headings
  */
 h1, h2, h3, h4, h5, h6 {
   margin-top: 1.2em;
   margin-bottom: 0.6em;
-  color: darken($text-color, 10%);
+  color: #1a1a1a; // Previously darken($text-color, 10%)
   font-weight: $bold-font-weight;
 }
 
@@ -21,7 +23,7 @@ h1 {
 
 h2 {
   font-size: 1.75em;
-  border-bottom: 1px solid lighten($text-color, 50%);
+  border-bottom: 1px solid #b3b3b3; // Previously lighten($text-color, 50%)
   margin-top: 1.5em;
 }
 
