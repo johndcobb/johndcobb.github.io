@@ -361,5 +361,25 @@ title: CV
   </div>
   {% endfor %}
 
+  <h3 class="pub-type">Projects</h3>
+  {% assign projects = site.data.projects | where_exp: "project", "project.type == 'Software'" %}
+  {% for project in projects %}
+  
+    <div>
+    <strong>{% if project.shorttitle %}{{ project.shorttitle }}{% else %}{{ project.title }}{% endif %}:</strong>
+        {{ project.description }}
+      </div>
+    <div class="extra-links">
+      {% if project.code %}
+        <a href="{{ project.code }}">
+          <i class="fas fa-link" aria-hidden="true"></i> Code
+        </a>
+      {% endif %}
+    </div> <br/>
+  {% endfor %}
+
+  <div>
+    (more on github: <a href="https://github.com/johndcobb"><i class="fab fa-github" aria-hidden="true"></i> johndcobb</a>)
+  </div>
 <br> 
 </section>
