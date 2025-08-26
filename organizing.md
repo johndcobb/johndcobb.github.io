@@ -30,7 +30,7 @@ class: talks
 
 {% endfor %}
 
-## Reading Groups and Special Sessions
+## Reading Groups
 {% assign conferences = site.data.organizing | where_exp:"activity", "activity.type == 'Reading Group' or activity.type == 'Seminar' or activity.type =='Service'" %}
 {% for conference in conferences %}
 
