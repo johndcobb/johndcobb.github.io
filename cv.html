@@ -375,6 +375,9 @@ title: CV
           <i class="fas fa-link" aria-hidden="true"></i> Code
         </a>
       {% endif %}
+      {% if project.paper %}
+      <a href="{{ project.paper }}"><i class="fas fa-newspaper" aria-hidden="true"></i> Paper</a>
+      {% endif %}
     </div> <br/>
   {% endfor %}
 

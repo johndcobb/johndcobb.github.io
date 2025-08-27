@@ -8,6 +8,7 @@
   description: Code for computing likelihood ideals of statistical models.
   code: "https://github.com/johndcobb/LikelihoodGeometry"
   image: "likelihoodGeometry.png"
+  paper: "https://arxiv.org/abs/2411.11165"
 - title: Macaulay2 VSCode Extension
   type: Software
   description: An extension in visual studio code for Macaulay2.
