@@ -26,6 +26,35 @@
     data.push(item);
   });
 
+    // Build maps of most recent year for each aggregation key so we can
+    // break ties (same doc_count) by most-recent-first.
+    var recentByAgg = {
+      venue_tags: {},
+      authors: {},
+      awards: {},
+      tags: {},
+      type: {}
+    };
+
+    data.forEach(function(item) {
+      var y = parseInt(item.year, 10) || 0;
+
+      Object.keys(recentByAgg).forEach(function(agg) {
+        var val = item[agg];
+        if (!val) return;
+
+        if (Array.isArray(val)) {
+          val.forEach(function(k) {
+            if (!k) return;
+            recentByAgg[agg][k] = Math.max(recentByAgg[agg][k] || 0, y);
+          });
+        } else {
+          // single-valued field
+          recentByAgg[agg][val] = Math.max(recentByAgg[agg][val] || 0, y);
+        }
+      });
+    });
+
   var engine = itemsjs(data, {
     aggregations: {
       venue_tags: {
@@ -56,6 +85,15 @@
       var id = facet.getAttribute("id");
 
       var buckets = aggs[id].buckets;
+
+      // Sort buckets: primary by doc_count desc, secondary by most-recent year desc
+      buckets.sort(function(a, b) {
+        var diff = b.doc_count - a.doc_count;
+        if (diff !== 0) return diff;
+        var ra = (recentByAgg[id] && recentByAgg[id][a.key]) || 0;
+        var rb = (recentByAgg[id] && recentByAgg[id][b.key]) || 0;
+        return rb - ra;
+      });
 
       var el = facet.querySelector("ul");
       if (buckets.length === 0) {
