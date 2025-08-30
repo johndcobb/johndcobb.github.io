@@ -16,5 +16,5 @@
   image: "m2vscode.png"
 - title: "ParametricGradients"
   type: Software
-  description: "Julia package for computing complements of real hypersurfaces using pseudowitness sets and homotopy continuation. Link coming soon!"
+  description: "Julia package for computing complements of real hypersurfaces using pseudowitness sets and homotopy continuation."
   image: "parametricgradients.png"
