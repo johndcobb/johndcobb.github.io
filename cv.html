@@ -162,7 +162,7 @@ title: CV
   {% for type in types %}
     {% assign counter = 1 %}
     {% for pub in site.data.publications %}
-      {% if pub.type[0] == type %}
+      {% if pub.type == type %}
         {% assign counter = counter | plus: 1 %}
       {% endif %}
     {% endfor %}
@@ -171,8 +171,8 @@ title: CV
       {{ type }}
     </h3>
 
-    {% for pub in site.data.publications %}
-      {% if pub.type[0] == type %}
+    {% for pub in site.data.publications %}{% if pub.hide == nil %}
+      {% if pub.type == type %}
         {% assign counter = counter | minus: 1 %}
         <div class="cv-pub">
           <div class="ref-container">{{ type | slice: 0 }}{{ counter }}</div>
@@ -184,7 +184,7 @@ title: CV
           </div>
         </div>
       {% endif %}
-    {% endfor %}
+    {% endif %}{% endfor %}
   {% endfor %}
 
 

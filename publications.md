@@ -45,12 +45,12 @@ class: pubs
 
 <!-- <input id="ft-search" type="search" placeholder="Search papers..." /> -->
 
-{% assign pubyears = site.data.publications | group_by:"year" %}
+{% assign pubyears = site.data.publications | where_exp:"paper", "paper.hide == nil" | group_by:"year" %}
 {% for year in pubyears %}
 ## {{ year.name }} 
 {:#y{{ year.name }} .year}
 {% for pub in year.items %}
-  {% include publication.html pub=pub %}
+  {% if pub.type != "In Progress" %}{% include publication.html pub=pub %}{% endif %}
 {% endfor %}
 {% endfor %}
 

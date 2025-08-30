@@ -54,6 +54,39 @@
 #  type:
 #    - In Progress
 
+- id: FloquetIsospectrality
+  title: "Floquet Isospectrality of the Discrete Laplacian"
+  year: 2025
+  authors:
+    - John Cobb
+    - Matthew Faust
+    - Andreas Kretschmer
+  description: We completely characterize the crystals whose discrete Schrödinger equation allows for there to be different electron density functions with identical band structures.
+  tags: 
+    - Mathematical Physics
+    - Algebraic Geometry
+    - Spectral Theory
+  type: In Progress
+
+- id: ParametricGradients
+  title: Computing Complements of Real Hypersurfaces using Pseudo-witness Sets
+  year: 2025
+  authors:
+    - Paul Breiding
+    - John Cobb
+    - Aviva K. Englander
+    - Nayla J. Farnsworth
+    - Jonathon D. Hauenstein
+    - Oskar Henriksson
+    - David K. Johnson
+    - Jordy Lopez Garcia
+    - Deepak Mundayur
+  description: Complements of real hypersurfaces arise naturally in applications -- for example, the complement of the real discriminant of a polynomial system tells you how many real solutions the system has. We develop a new numerical method for computing this complement even without a symbolic representation for the hypersurface.
+  tags:
+    - Numerical Algebraic Geometry
+    - Homotopy Continuation
+  type: In Progress
+
 - id: MultigradedStillman
   title: Semigroup Graded Stillman's Conjecture
   year: 2025
@@ -75,8 +108,7 @@
     - Syzygies
     - Toric Varieties
     - Commutative Algebra
-  type:
-    - Journal
+  type: Journal
 
 - id: LikelihoodGeometryM2
   title: "LikelihoodGeometry: Macaulay2 package"
@@ -95,8 +127,7 @@
     - Toric Varieties
     - Algebraic Statistics
     - Commutative Algebra
-  type:
-    - Preprint
+  type: Preprint
   
   
 - id: LikelihoodGeometry
@@ -115,8 +146,7 @@
     - Toric Varieties
     - Algebraic Statistics
     - Commutative Algebra
-  type: 
-    - Preprint
+  type: Preprint
 
 
 - id: SheafDiffusion
@@ -130,8 +160,7 @@
   link: https://github.com/tgebhart/sheaf_kg_transind
   arxiv: "2309.03773"
   description: We utilize a sheaf-theoretic technique to optimally extend vector representations of old entities in knowledge graphs to previously unseen entities. This technique also gives an efficient way of predicting facts about these new entities and compares well to other more complicated state-of-the-art inductive reasoning methods.
-  type: 
-    - Preprint
+  type: Preprint
   tags:
     - Machine Learning
     - Knowledge Graphs
@@ -151,8 +180,7 @@
   pdf: https://arxiv.org/pdf/2301.05979.pdf
   highlight: true
   description: Motivated by toric geometry, we lift machinery for understanding syzygies of curves in projective space to the setting of products of projective spaces. Using this machinery, we show an analogue of an influential result of Gruson, Peskine, and Lazarsfeld that gives a bound on the regularity of a possibly singular curve given its degree and the dimension of the ambient projective space.
-  type: 
-    - Journal
+  type: Journal
   tags: 
     - Virtual Resolutions
     - Toric Varieties
@@ -178,8 +206,7 @@
     - Syzygies
     - Toric Varieties
     - Commutative Algebra
-  type:
-    - Journal
+  type: Journal
 
 - id: QKdV
   title: "Quarternion-Valued Breather Soliton, Rational, and Periodic QKdV Solutions"
@@ -201,8 +228,7 @@
   tags:
     - Integrable Systems
     - Mathematical Physics
-  type:
-    - Journal
+  type: Journal
     
 - id: P3HT
   title: "Aggregate Dispersions to Enhance the Intrachain Order in Surfactant-Stabilized Aqueous Colloids of Poly(3-hexylthiophene)"
@@ -223,8 +249,7 @@
   pdf: /papers/P3HTpaper.pdf
   tags:
     - Physical Chemistry
-  type:
-    - Journal
+  type: Journal
   
 - id: bachelor-thesis
   title: "Quaternion-Valued KdV Solutions"
