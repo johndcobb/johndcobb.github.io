@@ -14,3 +14,7 @@
   description: An extension in visual studio code for Macaulay2.
   code: "https://github.com/Macaulay2/vscode-Macaulay2"
   image: "m2vscode.png"
+- title: "ParametricGradients"
+  type: Software
+  description: "Julia package for computing complements of real hypersurfaces using pseudowitness sets and homotopy continuation. Link coming soon!"
+  image: "parametricgradients.png"
