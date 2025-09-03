@@ -16,7 +16,6 @@
   years: 2021
   sponsor: Transcend Madison Competition
   sponsor_url: https://www.transcenduw.com/about
-  link: https://arxiva.org
   article: https://www.transcenduw.com/_files/ugd/908254_95a84725bcd8466c90ccce4d39c7f0e3.pdf
   description: Transcend Madison Innovation Competition is the largest student run innovation competition in the US. My friend and I created arxiva over the course of a few months, a prototype website for making academic preprints on arxiv more accessible and searchable. It is built using django, docker, elasticsearch, mySQL and is automatically updated via aws.
   short-description: For a prototype website for making academic preprints on arXiv more accessible and searchable.
