@@ -12,6 +12,8 @@
   image: auburn.jpg
   image_url: https://auphoto.auburn.edu/_assets/images/index-header-02.jpg
   description: The Meeting on Applied Algebraic Geometry is a regional gathering which attracts participants primarily from the South-East of the United States. 
+  grant: DMS-2504328 ($20,767)
+  grant_link: https://www.nsf.gov/awardsearch/showAward?AWD_ID=2504328&HistoricalAwards=false
   numparticipants: 40
 - title: NZMS/AusMS/AMS Special Session on Computations and Applications of AG and CA 
   shorttitle: AG-CA Applications NZ 2024
@@ -29,6 +31,8 @@
   url: "https://sites.google.com/view/gaelxxxi"
   highlight: 2
   image: gaelxxx.jpg
+  grant: DMS-2408333 ($16,255)
+  grant_link: https://www.nsf.gov/awardsearch/showAward?AWD_ID=2408333&HistoricalAwards=false
   description: Géométrie Algébrique en Liberté, also known as GAeL, is an annual workshop organized by and for young algebraic geometers.  
   numparticipants: 100 
 - title: GAeL XXX
@@ -38,6 +42,8 @@
   url: "https://sites.google.com/view/gaelxxx/home"
   image: gaelgroupphoto.jpeg
   description: Géométrie Algébrique en Liberté, also known as GAeL, is an annual workshop organized by and for young algebraic geometers. 
+  grant: DMS-2309424 ($15,833)
+  grant_link: https://www.nsf.gov/awardsearch/showAward?AWD_ID=2309424&HistoricalAwards=false
   numparticipants: 100
 - title: 3264 and all that
   type: Reading Group

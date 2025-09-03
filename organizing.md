@@ -23,7 +23,8 @@ class: talks
 
 <div class ="date-container">
 <span class="date"> {{ conference.dates }}</span>
-<span class="fill" style = "flex:1" >{{ conference.description }}{% if conference.numparticipants %} (~{{ conference.numparticipants }} participants){% endif %}</span>
+<span class="fill" style = "flex:1" >{{ conference.description }}{% if conference.numparticipants %} {% if conference.grant %} Supported by 
+<a href="{{ conference.link }}"> {{ conference.grant }}. </a> {% endif %} (~{{ conference.numparticipants }} participants){% endif %}</span>
 <span class="right">{{ conference.location }}</span>
 </div>
 </div>
