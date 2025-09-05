@@ -193,10 +193,11 @@ title: CV
     <span class="line"></span>
   </div>
 
-  {% assign talktypes = site.data.talks | group_by:"type" %}
-  {% for type in talktypes %}{% if type.items[0].hide == nil %}
-  {% assign talkyears = type.items | group_by_exp: "talk", "talk.date | date: '%Y'" %}
-  <h3 class="pub-type">{{ type.name }}</h3>
+  {% assign talktypes = "Conference|Seminar|Outreach|Poster" | split: "|" %}
+  {% for type in talktypes %}
+  {% assign talks = site.data.talks | where_exp:"talk", "talk.type == type" %}
+  {% assign talkyears = talks | group_by_exp: "talk", "talk.date | date: '%Y'" %}
+  <h3 class="pub-type">{{ type }}</h3>
   {% for year in talkyears %}
 
   {% assign sorted_talks = year.items %}
@@ -207,31 +208,7 @@ title: CV
   </div>
   {% endif %} {% endfor %}
   {% endfor %}
-  {% endif %}
   {% endfor %}
-
-  {% comment %}
-  {% assign talktitles = site.data.talks | group_by:"title" %}
-  {% for title in talktitles %}{% if title.items[0].hide == nil %}
-    <h3>{{ title.name }}</h3>
-    {% assign sorted_talks = title.items | sort: 'date' | reverse %}
-    {% for talk in sorted_talks %}
-      <div class="date-container">
-        <time datetime="{{ talk.date }}">{{ talk.date | date: "%Y %b" }}</time>
-        <span class="fill">{{ talk.location }}{% if talk.city %}, <small class="muted">{{ talk.city }}</small>{% endif %}</span>
-      </div>
-  {% endfor %}
-  {% endif %}{% endfor %}
-  {% endcomment %}
-
-  {% comment %}
-  {% for talk in site.data.talks %}{% if talk.hide == nil %}
-    <div class="date-container">
-      <time datetime="{{ talk.date }}">{{ talk.date | date: "%Y %b" }}</time>
-      <span class="fill">{{ talk.location }}{% if talk.city %}, <small class="muted"> <em>{{ talk.city }}</em> </small>{% endif %}</span>
-    </div>
-  {% endif %}{% endfor %}
-  {% endcomment %}
 
 
   <div class="line-container">
