@@ -3,6 +3,11 @@
   city: Auburn, AL
   type: Seminar
   date: 2025-11-18
+- title: "Applications of Algebraic Geometry"
+  location: Auburn First Year Seminar
+  city: Auburn, AL
+  type: Outreach
+  date: 2025-09-24
 - title: "Multigraded Syzygies"
   location: Fields Institute Seminar
   city: Toronto, Canada
