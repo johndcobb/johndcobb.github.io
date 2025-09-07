@@ -216,6 +216,23 @@ title: CV
     <span class="line"></span>
   </div>
 
+  {% assign coursetitles = site.data.teaching | group_by:"title" %}
+  {% for coursetitle in coursetitles %}
+  <h3 class="pub-type">{{ coursetitle.name }}</h3>
+  {% for course in coursetitle.items %}
+  <div class ="date-container">
+  <span class="date"> {{ course.year }} </span>
+  <span class="fill">{{ course.role }} {% if course.coursenum %}({{course.coursenum}}){% endif%} {% if course.url %}
+      <a href="{{ course.url }}" style="font-size: 0.8em; margin-left: 15px">
+        <i class="fas fa-link" aria-hidden="true"></i> Website
+      </a>
+      {% endif %}</span>
+  <span class="right">{{ course.location }}</span>
+  </div> 
+
+  {% endfor %}
+  {% endfor %}
+  {% comment %}
   {% assign coursetitles = site.data.teaching | group_by: "title" %} 
   {% for title in coursetitles %}
   {% assign recentcourse = title.items[-1] %}
@@ -228,6 +245,7 @@ title: CV
     </div>
   </div> {% unless forloop.last %}<br/>{% endunless %}
   {% endfor %}
+  {% endcomment %}
 
   <div class="line-container">
     <h2>Organizing</h2>
