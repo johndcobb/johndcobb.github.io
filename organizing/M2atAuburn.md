@@ -6,7 +6,7 @@ class: class
 sections: Overview, Talks, Schedule, Participant Information, Funding
 ---
 
-# Meetings in Applied Algebraic Geometry 2025
+# Macaulay2 at Auburn 2026
 ![Auburn](/images/projects/auburn.jpg "An image of Auburn, AL from the Auburn Photographic Services.") 
 #### Date TBA
 Organizers: [John Cobb](https://johndcobb.github.io), [Sean Grate](https://seangrate.com)
@@ -16,7 +16,20 @@ TBA
 
 ## Schedule
 
-TBA
+The following is tentative:
+
+| Time           | Monday  | Tuesday | Wednesday   | Thursday | Friday |
+| :------------: | :----------------- | :---------------- | :--------------- | :-------------- | :------------ |
+| 9:00 - 9:30 | *Coffee Break*     | *Coffee Break*         | *Coffee Break*           | *Coffee Break* | *Coffee Break*
+| 9:30 - 10:30  | Project Introductions     | Group Projects          | Group Projects          | Group Projects | Project Presentations
+| 10:30 - 11:30 | git tutorial         | Group Projects | Group Projects   | Group Projects
+| 11:30 - 1:00  | Lunch           | Group Projects   | Group Projects | Group Projects
+| 1:00 - 1:30   | *Coffee Break*         | *Coffee Break*            | *Coffee Break*      | *Coffee Break*  | 
+| 1:30 - 5:00 | Group Projects | Group Projects | Group Projects | Group Projects | 
+| 5:00 - 5:30 |  | Lightning Talks | | | |
+| Evening | | Group Outing | | | |
+
+
 
 ## Participant Information
 TBA
