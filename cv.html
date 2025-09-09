@@ -12,7 +12,7 @@ title: CV
     <i class="fas fa-print" aria-hidden="true"></i>
     Print
     </span>
-  </div><br>
+  </div>
   
   <span><h1><a href="{{ absolute_url }}/">John D. Cobb</a></h1></span>
   <span class="header-columns">
@@ -210,43 +210,6 @@ title: CV
   {% endfor %}
   {% endfor %}
 
-
-  <div class="line-container">
-    <h2>Teaching</h2>
-    <span class="line"></span>
-  </div>
-
-  {% assign coursetitles = site.data.teaching | group_by:"title" %}
-  {% for coursetitle in coursetitles %}
-  <h3 class="pub-type">{{ coursetitle.name }}</h3>
-  {% for course in coursetitle.items %}
-  <div class ="date-container">
-  <span class="date"> {{ course.year }} </span>
-  <span class="fill">{{ course.role }} {% if course.coursenum %}({{course.coursenum}}){% endif%} {% if course.url %}
-      <a href="{{ course.url }}" style="font-size: 0.8em; margin-left: 15px">
-        <i class="fas fa-link" aria-hidden="true"></i> Website
-      </a>
-      {% endif %}</span>
-  <span class="right">{{ course.location }}</span>
-  </div> 
-
-  {% endfor %}
-  {% endfor %}
-  {% comment %}
-  {% assign coursetitles = site.data.teaching | group_by: "title" %} 
-  {% for title in coursetitles %}
-  {% assign recentcourse = title.items[-1] %}
-  <div class="no-break">
-    <h3 style="margin-left: 90px">{{ title.name }}</h3> 
-    <div class="date-container">
-      <span class="date"> {% for class in title.items %} {{ class.year | replace: "-", "–"  }} <br> {% endfor %} </span>
-      <span style="flex: 1"> {{ recentcourse.role }}. {{ recentcourse.roledescription}} </span>
-      <span class="right">{{ recentcourse.location }}</span>
-    </div>
-  </div> {% unless forloop.last %}<br/>{% endunless %}
-  {% endfor %}
-  {% endcomment %}
-
   <div class="line-container">
     <h2>Organizing</h2>
     <span class="line"></span>
@@ -289,6 +252,42 @@ title: CV
     {% endif %}
   {% endfor %}
 
+
+  <div class="line-container">
+    <h2>Teaching</h2>
+    <span class="line"></span>
+  </div>
+
+  {% assign coursetitles = site.data.teaching | group_by:"title" %}
+  {% for coursetitle in coursetitles %}
+  <h3>{{ coursetitle.name }}</h3>
+  {% for course in coursetitle.items %}
+  <div class ="date-container">
+  <span class="date"> {{ course.year }} </span>
+  <span class="fill">{{ course.role }} {% if course.coursenum %}({{course.coursenum}}){% endif%} {% if course.url %}
+      <a href="{{ course.url }}" style="font-size: 0.8em; margin-left: 15px">
+        <i class="fas fa-link" aria-hidden="true"></i> Website
+      </a>
+      {% endif %}</span>
+  <span class="right">{{ course.location }}</span>
+  </div> 
+
+  {% endfor %}{% unless forloop.last %}<br/>{% endunless %}
+  {% endfor %}
+  {% comment %}
+  {% assign coursetitles = site.data.teaching | group_by: "title" %} 
+  {% for title in coursetitles %}
+  {% assign recentcourse = title.items[-1] %}
+  <div class="no-break">
+    <h3 style="margin-left: 90px">{{ title.name }}</h3> 
+    <div class="date-container">
+      <span class="date"> {% for class in title.items %} {{ class.year | replace: "-", "–"  }} <br> {% endfor %} </span>
+      <span style="flex: 1"> {{ recentcourse.role }}. {{ recentcourse.roledescription}} </span>
+      <span class="right">{{ recentcourse.location }}</span>
+    </div>
+  </div> {% unless forloop.last %}<br/>{% endunless %}
+  {% endfor %}
+  {% endcomment %}
 
   <div class="line-container">
     <h2>Service & Outreach</h2>
@@ -343,7 +342,7 @@ title: CV
       <small class="muted">[{% for skill in pos.skills %}{{ skill }}{% unless forloop.last %}, {% endunless %}{% endfor %}]</small>
       {% endif %}
     </p>
-  </div> {% unless forloop.last %}<br/>{% endunless %}
+  </div> 
   {% endfor %}
 
   <div class="line-container">
@@ -371,7 +370,7 @@ title: CV
       {% if project.paper %}
         <a href="{{ project.paper }}"><i class="fas fa-newspaper" aria-hidden="true"></i> Paper</a>
       {% endif %}
-    </div> <br/>
+    </div> 
   {% endfor %}
 
   <div>
