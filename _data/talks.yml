@@ -8,16 +8,19 @@
   city: Auburn, AL
   type: Outreach
   date: 2025-09-24
+  highlight: true
 - title: "Multigraded Syzygies"
   location: Fields Institute Seminar
   city: Toronto, Canada
   type: Seminar
   date: 2025-05-13
+  highlight: true
 - title: "Multigraded regularity of curves"
   location: AMS Spring Southeastern Sectional Meeting
   city: Clemson, SC
   type: Conference
   date: 2025-03-08
+  highlight: true
 - title: "Multigraded Syzygies"
   location: Auburn Algebra Seminar
   city: Auburn, AL
@@ -28,11 +31,13 @@
   city: Atlanta, GA
   type: Seminar
   date: 2024-11-04
+  highlight: true
 - title: "Likelihood Correspondence of Statistical Models"
   location: TX-LA SIAM Mini-Symposium on Nonlinear Algebra in Applications
   city: Waco, TX
   type: Conference
   date: 2024-10-12
+  highlight: true
 - title: "Multigraded Stillman Conjecture"
   location: AMS Special Session on Topics in Commutative Algebra and Algebraic Geometry (cancelled)
   city: Savannah, GA 
@@ -44,6 +49,7 @@
   city: Lincoln, NE
   type: Conference
   date: 2024-05-11
+  highlight: true
 - title: "Multigraded Stillman Conjecture"
   location: AMS Special Session on Homological Methods in Commutative Algebra and Algebraic Geometry
   city: San Francisco, CA
@@ -67,6 +73,7 @@
   type: Seminar
   date: 2024-03-26
   url: https://www.nist.gov/itl/math/acmd-seminar-series
+  highlight: true
 - title: "Sheaf Laplacians and Missing Data"
   location: UW Madison Graduate Applied Math Seminar
   city: Madison, WI
@@ -96,6 +103,7 @@
   date: 2024-01-03
   url: https://www.jointmathematicsmeetings.org/meetings/national/jmm2024/2300_intro
   abstract: "The Laplacian of a graph is a matrix that encodes the local geometry of the graph. It is a fundamental object in spectral graph theory, and has been used to study a variety of problems in machine learning. In this talk, I will discuss a generalization called the sheaf Laplacian and how this can be used to study problems with missing data in the world of knowledge graphs."
+  highlight: true
 - title: "Likelihood Correspondence of Statistical Models"
   location: UW Madison Graduate Algebraic Geometry Seminar
   city: Madison, WI
@@ -108,17 +116,20 @@
   date: 2023-11-04
   url: https://sites.google.com/view/asu-algebra-days/home
   abstract: "The syzygies of projective curves are fairly well understood — for instance, an influential theorem of Gruson, Lazarsfeld, and Peskine gives optimal bounds on their regularity. There has been a flurry of activity in the past two decades centered around generalizing work on syzygies to the toric setting. I will discuss work that lifts machinery for understanding syzygies of projective curves to obtain a bound on the multigraded regularity of a curve in a product of projective spaces."
+  highlight: true
 - title: "Likelihood Correspondence of Statistical Models"
   location: University of Hawaii-Manoa Seminar
   city: Manoa, HI
   type: Seminar
   date: 2023-10-19
+  highlight: true
 - title: "Likelihood Correspondence of Statistical Models"
   location: Institute of Mathematical and Statistical Innovation
   city: Chicago, IL
   type: Conference
   date: 2023-10-02
   url: https://www.imsi.institute/activities/apprenticeship-week-varieties-from-statistics
+  highlight: true
 - title: "Multigraded regularity of curves"
   location: AG23 SIAM Mini-Symposium on Castelnuovo-Mumford Regularity and Applications
   city: Eindhoven, The Netherlands
@@ -126,6 +137,7 @@
   date: 2023-07-11
   url: https://www.siam.org/conferences/cm/conference/ag23
   abstract: "The syzygies of projective curves are fairly well understood — for instance, an influential theorem of Gruson, Lazarsfeld, and Peskine gives optimal bounds on their regularity. There has been a flurry of activity in the past two decades centered around generalizing work on syzygies to the toric setting. I will discuss work that lifts machinery for understanding syzygies of projective curves to obtain a bound on the multigraded regularity of a curve in a product of projective spaces."
+  highlight: true
 - title: "Virtual Resolutions and Syzygies"
   location: GAeL XXIX
   city: Orsay, France
@@ -152,6 +164,7 @@
   url: https://www.ams.org/meetings/sectional/2295_other.html
   abstract: "Understanding the syzygies among the equations defining a projective variety continues to be instrumental in understanding their properties. Starting from polynomials and proceeding with specific examples, the first part of the talk will motivate the existence of virtual syzygies which work for the larger class of toric varieties. We will then focus on recent work addressing a few questions about these analogues, such as: How can we construct (families of) examples? How complicated do they get (at least in the case of curves)?"
   slides: /talks/Virtual_Resolutions_and_Syzygies_Utah.pdf
+  highlight: true
 - title: "Virtual Resolutions and Syzygies"
   location: Center for Computing Sciences
   type: Seminar
@@ -175,6 +188,7 @@
   date: 2022-04-18
   type: Outreach
   url: https://hilbert.math.wisc.edu/wiki/index.php/Madison_Math_Circle
+  highlight: true
 - title: "Syzygies and Koszul Cohomology"
   location: UW Madison Graduate Algebraic Geometry Seminar
   type: Seminar
@@ -197,6 +211,7 @@
   slides: /talks/DeltaBeerLabtalk.pptx
   abstract: This was a brief talk about the algebraic geometry inspired design that was printed on one of Delta Beer Lab's new beers. It is an extremely low level introduction to higher mathematics, algebraic geometry, and an explanation of various figures on the design.
   date: 2021-05-15
+  highlight: true
 - title: "Introduction to Boij-Söderberg Theory"
   location: UW Madison Graduate Algebraic Geometry Seminar
   type: Seminar

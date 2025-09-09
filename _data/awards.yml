@@ -33,6 +33,7 @@
   sponsor: Air Force Office of Scientific Research
   sponsor_url: https://www.ndsegfellowships.org/2019-awardees
   description: The National Defense Science and Engineering Graduate (NDSEG) Fellowship is a highly competitive, portable fellowship that is awarded to ~120 doctoral students annually. The NDSEG Fellowship lasts for 3 years and pays for full tuition and all mandatory fees; a monthly stipend; a travel budget over the Fellow's tenure for professional development; and health insurance. I was selected for my proposal about using recent results in spectral graph theory to estimate how much confidence we should have in ranking algorithms.
+  highlight: true
 - name: Phi Kappa Phi Fellowship ($8,500)
   years: 2019
   sponsor_url: https://www.PhiKappaPhi.org/Fellowship
@@ -79,7 +80,7 @@
   years: 2018
   sponsor: Math Department, College of Charleston
   sponsor_url: http://math.cofc.edu/student-ops/scholarships.php
-  description: This scholarship is awarded to <5 math majors chosen each spring semester by the Department of Mathematics
+  description: This scholarship is awarded to <5 math majors chosen each spring semester by the Department of Mathematics.
 - name: Gadsden Scholarship
   years: 2018
   sponsor: Math Department, College of Charleston
@@ -92,6 +93,7 @@
   article: http://today.cofc.edu/2017/04/07/goldwater-scholars-chemistry-cofc/
   description: The Goldwater Scholarship is the premier undergraduate award in the fields of mathematics, the natural sciences, and engineering. Trustees awarded 240 scholarships for the 2017-2018 academic year to undergraduate sophomores and juniors from the United States. I recieved it for my research modeling semiconducting polymers in solution.
   short-description: The premier undergraduate award in STEM.
+  highlight: true
 - name: ATD Scholarship in Mathematics
   years: 2017
   sponsor: Honors College of Charleston

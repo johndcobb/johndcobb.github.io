@@ -2,6 +2,7 @@
   location: Online
   description: "Meet with Macaulay2 dev team to discuss the internals of the software, and the implementation of new features. In particular, I am helping develop the vscode interface."
   years: Since Fall 2024
+  highlight: true
 - title: Panelist for Organizing Conferences Aimed at Graduate Students
   location: Madison, WI
   description: "Panelist on a discussion about organizing conferences held by the UW Madison math department."
@@ -18,6 +19,7 @@
   location: Madison, WI
   years: Fall 2019-Fall 2023
   description: "The DRP is a math mentoring program that pairs undergraduate students with graduate student mentors, for a semester-long independent study project."
+  highlight: true
 - title: Graduate Mentor
   at: MXM Experimental Mathematics project
   location: Madison, WI
@@ -52,6 +54,7 @@
   location: Madison, WI
   years: Fall 2020-Spring 2021
   description: "FGSS links first-generation college students to first generation graduate and faculty mentors for monthly meetings. "
+  highlight: true
 - title: Volunteer
   at: AMS Fall Central Sectional
   years: Sep 2019
