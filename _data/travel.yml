@@ -1,19 +1,28 @@
-- title: AMS Spring Eastern Sectional Meeting
-  venue: Boston College
-  where: Boston, MA
-  start: 2026-03-28
-  end: 2026-03-29
 - title: Regularity in algebra, combinatorics, and geometry
   venue: Banff International Research Station
   where: Banff, Canada
   start: 2026-04-19
   end: 2026-04-24
-- title: Homological Mirror Symmetry and Multigraded Commutative Algebra Workshop
+- title: AMS Spring Eastern Sectional Meeting
+  venue: Boston College
+  where: Boston, MA
+  start: 2026-03-28
+  end: 2026-03-29
+- title: Ubiquity of Commutative Algebra
+  venue: CIRM
+  where: Luminy, France
+  start: 2026-03-16
+  end: 2026-03-20
+- title: Macaulay2 Winter School
+  where: Hue, Vietnam
+  start: 2025-12-29
+  end: 2026-01-09
+- title: Homological Mirror Symmetry Workshop
   venue: American Institute of Mathematics
   where: Pasadena, CA
   start: 2025-08-18
   end: 2025-08-22
-- title: 2025 AG Summer Research Institute Bootcamp
+- title: Summer Research Institute Bootcamp
   venue: Colorado State University
   where: Fort Collins, CO
   start: 2025-07-08
@@ -43,7 +52,7 @@
   where: Auckland, New Zealand
   start: 2024-12-09
   end: 2024-12-13
-- title: Georgia Tech
+- title: Georgia Tech Algebra Seminar
   where: Atlanta, GA
   start: 2024-11-03
   end: 2024-11-05
@@ -85,11 +94,11 @@
   where: Ames, IA
   start: 2024-04-25
   end: 2024-04-26
-- title: NIST
+- title: NIST Seminar
   where: Boulder, CO
   start: 2024-03-25
   end: 2024-03-28
-- title: CCS
+- title: CCS Seminar
   where: Bowie, MD
   start: 2024-01-30
   end: 2024-01-31
@@ -98,7 +107,7 @@
   where: Berkeley, CA
   start: 2024-01-22
   end: 2024-01-26
-- title: CCR
+- title: CCR Seminar
   where: Princeton, NJ
   start: 2024-01-15
   end: 2024-01-17
@@ -140,7 +149,7 @@
   where: Chicago, IL
   start: 2023-04-14
   end: 2023-04-16
-- title: CA+
+- title: CA+ Conference
   venue: University of Minnesota
   where: Minneapolis, MN
   start: 2023-04-01
