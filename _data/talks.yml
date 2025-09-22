@@ -3,11 +3,12 @@
   city: Auburn, AL
   type: Seminar
   date: 2025-11-18
-- title: "Applications of Algebraic Geometry"
+- title: "Algebraic Geometry and its Applications"
   location: Auburn First Year Seminar
   city: Auburn, AL
   type: Outreach
-  date: 2025-09-24
+  date: 2025-09-17
+  abstract: I'll give an overview of (some of) the sorts of things people think about in algebraic geometry, focusing on applications to other fields of math and the sciences. I'll give an overview of several different threads of research, highlighting work by your resident Auburn algebraists and geometers. This will be light on details and contain approximately a million pictures. Maybe even an animation.
   highlight: true
 - title: "Multigraded Syzygies"
   location: Fields Institute Seminar
