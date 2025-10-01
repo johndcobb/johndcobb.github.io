@@ -1,5 +1,5 @@
 - title: Regularity in algebra, combinatorics, and geometry
-  venue: Banff International Research Station
+  venue: BIRS
   where: Banff, Canada
   start: 2026-04-19
   end: 2026-04-24
@@ -8,8 +8,13 @@
   where: Boston, MA
   start: 2026-03-28
   end: 2026-03-29
+- title: CAT Seminar 
+  venue: Instituto de Matemáticas de la UNAM
+  where: Oaxaca, Mexico
+  start: 2025-10-30
+  end: 2025-11-04
 - title: Homological Mirror Symmetry Workshop
-  venue: American Institute of Mathematics
+  venue: AIM
   where: Pasadena, CA
   start: 2025-08-18
   end: 2025-08-22
@@ -61,7 +66,7 @@
   where: Turin, Italy
   start: 2024-06-17
   end: 2024-06-21
-- title: Macaulay2 Computational AG and String Theory Workshop
+- title: Macaulay2 String Theory Workshop
   venue: University of Utah
   where: Salt Lake City, UT
   start: 2024-06-01
@@ -81,7 +86,8 @@
   where: Berkeley, CA
   start: 2024-04-15
   end: 2024-04-19
-- title: Iowa State University
+- title: Iowa Algebra Seminar
+  venue: Iowa State University
   where: Ames, IA
   start: 2024-04-25
   end: 2024-04-26
