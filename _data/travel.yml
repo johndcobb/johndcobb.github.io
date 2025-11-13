@@ -4,6 +4,11 @@
   type: Conference
   start: 2026-09-14
   end: 2026-09-18
+- title: Collaborate@ICERM
+  venue: ICERM
+  where: Providence, RI
+  start: 2026-05-4
+  end: 2026-05-8
 - title: Regularity in algebra, combinatorics, and geometry
   venue: BIRS
   where: Banff, Canada
@@ -14,11 +19,6 @@
   where: Boston, MA
   start: 2026-03-28
   end: 2026-03-29
-- title: Collaborate@ICERM
-  venue: ICERM
-  where: Providence, RI
-  start: 2026-01-26
-  end: 2026-01-30
 - title: Macaulay2 Winter School
   where: Hue, Vietnam
   start: 2025-12-29
