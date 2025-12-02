@@ -69,8 +69,9 @@
   type: In Progress
 
 - id: ParametricGradients
-  title: Computing Complements of Real Hypersurfaces using Pseudo-witness Sets
+  title: 'Elimination Without Eliminating: Computing Complements of Real Hypersurfaces Using Pseudo-Witness Sets'
   year: 2025
+  venue: Submitted
   authors:
     - Paul Breiding
     - John Cobb
@@ -81,7 +82,7 @@
     - David K. Johnson
     - Jordy Lopez Garcia
     - Deepak Mundayur
-  description: Complements of real hypersurfaces arise naturally in applications -- for example, the complement of the real discriminant of a polynomial system tells you how many real solutions the system has. We develop a new numerical method for computing this complement even without a symbolic representation for the hypersurface.
+  description: Complements of real hypersurfaces arise naturally in applications -- for example, the complement of the real discriminant of a polynomial system can tell you how many real solutions the system has. We develop a new numerical method for computing this complement even without a symbolic representation for the hypersurface.
   tags:
     - Numerical Algebraic Geometry
     - Homotopy Continuation
@@ -128,6 +129,22 @@
     - Algebraic Statistics
     - Commutative Algebra
   type: Preprint
+
+- id: SheafDiffusion
+  title: Feature Propagation on Knowledge Graphs Using Cellular Sheaves
+  year: 2024
+  authors:
+    - Thomas Gebhart
+    - John Cobb
+  venue: Submitted
+  pdf: https://arxiv.org/pdf/2309.03773.pdf
+  link: https://github.com/tgebhart/sheaf_kg_transind
+  arxiv: "2309.03773"
+  description: We utilize a sheaf-theoretic technique to optimally extend vector representations of old entities in knowledge graphs to previously unseen entities. This technique also gives an efficient way of predicting facts about these new entities and compares well to other more complicated state-of-the-art inductive reasoning methods.
+  type: Preprint
+  tags:
+    - Machine Learning
+    - Knowledge Graphs
   
   
 - id: LikelihoodGeometry
@@ -148,22 +165,6 @@
     - Commutative Algebra
   type: Preprint
 
-
-- id: SheafDiffusion
-  title: Extending Transductive Knowledge Graph Embedding Models for Inductive Logical Relational Inference
-  year: 2024
-  authors:
-    - Thomas Gebhart
-    - John Cobb
-  venue: Submitted
-  pdf: https://arxiv.org/pdf/2309.03773.pdf
-  link: https://github.com/tgebhart/sheaf_kg_transind
-  arxiv: "2309.03773"
-  description: We utilize a sheaf-theoretic technique to optimally extend vector representations of old entities in knowledge graphs to previously unseen entities. This technique also gives an efficient way of predicting facts about these new entities and compares well to other more complicated state-of-the-art inductive reasoning methods.
-  type: Preprint
-  tags:
-    - Machine Learning
-    - Knowledge Graphs
 
 - id: MultiregularityOfCurves
   title: "Syzygies of Curves in Products of Projective Spaces"
