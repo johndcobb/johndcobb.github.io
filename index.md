@@ -61,7 +61,7 @@ My research interests are primarily within algebraic geometry and commutative al
 <div class="featured-publications">
   {% assign sorted_publications = site.data.publications | sort: 'year' | reverse %}
   {% for pub in sorted_publications %}
-    {% if pub.highlight %}
+    {% if pub.highlight and pub.type != 'In Progress' %}
       {% if pub.pdf %}
         <a href="{{ pub.pdf }}" class="publication">
           <strong>{{ pub.title }}</strong>

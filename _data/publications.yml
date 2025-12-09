@@ -54,18 +54,34 @@
 #  type:
 #    - In Progress
 
+- id: NonsimplicialSplines
+  title: "Equivariant Chow and Minkowski Weights for Complete Toric Varieties"
+  year: 2026
+  venue: Submitted
+  authors:
+    - John Cobb
+    - Hal Schenck
+  description: We charactetize the kernel and cokernel of a natural map from the equivariant Chow ring to the usual Chow ring on complete toric varieties in terms of splines and Minkowski weights.
+  tags:
+    - Toric Varieties 
+    - Algebraic Geometry
+  highlight: true
+  type: In Progress
+
 - id: FloquetIsospectrality
-  title: "Floquet Isospectrality of the Discrete Laplacian"
-  year: 2025
+  title: "The Additive Inverse Eigenvalue Problem and Floquet Isospectrality"
+  year: 2026
+  venue: Submitted
   authors:
     - John Cobb
     - Matthew Faust
     - Andreas Kretschmer
-  description: We completely characterize the crystals whose discrete Schrödinger equation allows for there to be different electron density functions with identical band structures.
+  description: 'Let $A$ be an $n\times n$ matrix over an algebraically closed field of characteristic $0$ or $>n$. Using deformation theory, we determine exactly when there exists a nonzero diagonal matrix $D$ such that $A$ and $A+D$ have the same spectrum: this fails if and only if, for each size $k$, all $k\times k$ principal minors of $A$ are equal. This yields a new result about the spectral theory of discrete periodic Schrödinger operators.'
   tags: 
     - Mathematical Physics
     - Algebraic Geometry
     - Spectral Theory
+  highlight: true
   type: In Progress
 
 - id: ParametricGradients
@@ -76,7 +92,7 @@
     - Paul Breiding
     - John Cobb
     - Aviva K. Englander
-    - Nayla J. Farnsworth
+    - Nayda J. Farnsworth
     - Jonathon D. Hauenstein
     - Oskar Henriksson
     - David K. Johnson
