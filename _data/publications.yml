@@ -86,8 +86,10 @@
 
 - id: ParametricGradients
   title: 'Elimination Without Eliminating: Computing Complements of Real Hypersurfaces Using Pseudo-Witness Sets'
-  year: 2025
+  year: 2026
   venue: Submitted
+  pdf: https://arxiv.org/pdf/2601.04383
+  arxiv: 2601.04383
   authors:
     - Paul Breiding
     - John Cobb
@@ -102,7 +104,7 @@
   tags:
     - Numerical Algebraic Geometry
     - Homotopy Continuation
-  type: In Progress
+  type: Preprint
 
 - id: MultigradedStillman
   title: Semigroup Graded Stillman's Conjecture
