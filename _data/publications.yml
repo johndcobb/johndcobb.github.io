@@ -89,7 +89,7 @@
   year: 2026
   venue: Submitted
   pdf: https://arxiv.org/pdf/2601.04383
-  arxiv: 2601.04383
+  arxiv: "2601.04383"
   authors:
     - Paul Breiding
     - John Cobb
