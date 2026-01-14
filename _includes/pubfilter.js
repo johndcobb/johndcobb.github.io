@@ -55,13 +55,16 @@
       });
     });
 
+  // Count unique authors for aggregation size
+  var numAuthors = Object.keys(recentByAgg.authors).length;
+
   var engine = itemsjs(data, {
     aggregations: {
       venue_tags: {
         size: 5
       },
       authors: {
-        size: 6
+        size: numAuthors
       },
       awards: {
         size: 5
@@ -86,14 +89,27 @@
 
       var buckets = aggs[id].buckets;
 
-      // Sort buckets: primary by doc_count desc, secondary by most-recent year desc
+      // Sort buckets: primary by doc_count desc, secondary by most-recent year desc, tertiary alphabetically
       buckets.sort(function(a, b) {
-        var diff = b.doc_count - a.doc_count;
-        if (diff !== 0) return diff;
-        var ra = (recentByAgg[id] && recentByAgg[id][a.key]) || 0;
-        var rb = (recentByAgg[id] && recentByAgg[id][b.key]) || 0;
-        return rb - ra;
+        // Primary: sort by number of papers (doc_count) descending
+        var countDiff = b.doc_count - a.doc_count;
+        if (countDiff !== 0) return countDiff;
+        
+        // Secondary: sort by most recent year descending
+        var yearA = (recentByAgg[id] && recentByAgg[id][a.key]) || 0;
+        var yearB = (recentByAgg[id] && recentByAgg[id][b.key]) || 0;
+        var yearDiff = yearB - yearA;
+        
+        if (yearDiff !== 0) return yearDiff;
+        
+        // Tertiary: alphabetical tiebreaker
+        return a.key.localeCompare(b.key);
       });
+
+      // Limit authors to top 6 after sorting
+      if (id === 'authors') {
+        buckets = buckets.slice(0, 6);
+      }
 
       var el = facet.querySelector("ul");
       if (buckets.length === 0) {
