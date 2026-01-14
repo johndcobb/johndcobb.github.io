@@ -14,7 +14,7 @@ class: pubs
     <ul></ul>
   </div>
   <div class="facet" id="authors">
-    <strong>Author</strong>
+    <strong>Coauthor</strong>
     <ul></ul>
   </div>
   <div class="facet" id="tags">
