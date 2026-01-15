@@ -69,9 +69,11 @@
   type: In Progress
 
 - id: FloquetIsospectrality
-  title: "The Additive Inverse Eigenvalue Problem and Floquet Isospectrality"
+  title: "Inverse Eigenvalue Problems, Floquet Isospectrality and the Hilbert-Chow Morphism"
   year: 2026
   venue: Submitted
+  pdf: "https://arxiv.org/pdf/2601.09604"
+  arxiv: '2601.09604'
   authors:
     - John Cobb
     - Matthew Faust
@@ -82,7 +84,7 @@
     - Algebraic Geometry
     - Spectral Theory
   highlight: true
-  type: In Progress
+  type: Preprint
 
 - id: ParametricGradients
   title: 'Elimination Without Eliminating: Computing Complements of Real Hypersurfaces Using Pseudo-Witness Sets'
