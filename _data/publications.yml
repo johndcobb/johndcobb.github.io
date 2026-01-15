@@ -154,8 +154,8 @@
   title: Feature Propagation on Knowledge Graphs Using Cellular Sheaves
   year: 2024
   authors:
-    - Thomas Gebhart
     - John Cobb
+    - Thomas Gebhart
   venue: Submitted
   pdf: https://arxiv.org/pdf/2309.03773.pdf
   link: https://github.com/tgebhart/sheaf_kg_transind
