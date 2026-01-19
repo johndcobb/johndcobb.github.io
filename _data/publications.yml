@@ -160,7 +160,7 @@
   pdf: https://arxiv.org/pdf/2309.03773.pdf
   link: https://github.com/tgebhart/sheaf_kg_transind
   arxiv: "2309.03773"
-  description: We utilize a sheaf-theoretic technique to optimally extend vector representations of old entities in knowledge graphs to previously unseen entities. This technique also gives an efficient way of predicting facts about these new entities and compares well to other more complicated state-of-the-art inductive reasoning methods.
+  description: We utilize a sheaf-theoretic technique to optimally extend vector representations of old entities in knowledge graphs to previously unseen entities. This technique compares well to other more complicated state-of-the-art inductive reasoning methods.
   type: Preprint
   tags:
     - Machine Learning
