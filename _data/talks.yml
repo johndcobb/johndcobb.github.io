@@ -3,7 +3,7 @@
   city: Boston, MA
   type: Conference
   date: 2026-03-28
-  url: https://webhome.auburn.edu/~mkb0096/Fall2025Seminar.html
+  url: https://www.ams.org/meetings/sectional/2331_program.html
 - title: "Solid State Physics and Algebraic Geometry"
   location: Chiang Mai University Colloquium
   city: Chiang Mai, Thailand
@@ -21,6 +21,7 @@
   city: Auburn, AL
   type: Seminar
   date: 2025-10-28
+  url: https://webhome.auburn.edu/~mkb0096/Fall2025Seminar.html
 - title: "Algebraic Geometry and its Applications"
   location: Auburn First Year Seminar
   city: Auburn, AL
