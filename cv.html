@@ -72,8 +72,10 @@ title: CV
     <h2>Awards & Grants</h2>
     <span class="line"></span>
   </div>
+  
+  <h3 class="pub-type"> Grants </h3>
 
-  {% assign awards = site.data.awards | concat: site.data.grants | sort: 'years' | reverse %}
+  {% assign awards = site.data.grants | sort: 'years' | reverse %}
   {% for award in awards %}{% if award.hide == nil %}
   <div class="date-container">
     <span class="date">{{ award.years }}</span>
@@ -101,6 +103,39 @@ title: CV
   {% endif %}
   {% endif %}
   {% endfor %}
+
+  <h3 class="pub-type">Awards</h3>
+
+  {% assign awards = site.data.awards | sort: 'years' | reverse %}
+  {% for award in awards %}{% if award.hide == nil %}
+  <div class="date-container">
+    <span class="date">{{ award.years }}</span>
+    <span class="fill">{{ award.name }}{% if award.sponsor %}, <small class="muted"> <em>{{ award.sponsor }}</em> </small>{% endif %}</span>
+    {% if award.link or award.article %}
+    <div class="extra-links">
+      {% if award.link %}
+        <a href="{{ award.link }}">
+          <i class="fas fa-link" aria-hidden="true"></i> Link
+        </a>
+      {% endif %}
+      {% if award.article %}
+        <a href="{{ award.article }}">
+          <i class="fas fa-newspaper" aria-hidden="true"></i> Article
+        </a>
+      {% endif %}
+    </div>
+  {% endif %} 
+  </div>
+  {% if award.short-description %}
+  <div class="date-container">
+    <span class="date"></span>
+    <span class="fill"> <small> {{ award.short-description }} </small></span>
+  </div>
+  {% endif %}
+  {% endif %}
+  {% endfor %}
+
+  
 
   {% comment %}
   <div class="line-container">
