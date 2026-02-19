@@ -7,8 +7,12 @@
 
   .grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    /* ensure columns can't grow to fit long content; keep equal widths */
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     grid-template-rows: auto;
+    /* try equal-height using safe auto-rows + allow content to shrink */
+    grid-auto-rows: minmax(0, 1fr);
+    align-items: stretch;
     grid-column-gap: 20px;
     grid-row-gap: 20px;
 
@@ -16,7 +20,12 @@
       display: flex;
       flex-direction: column;
       position: relative;
+      /* allow flex children to shrink inside grid cell when using minmax auto-rows */
+      min-height: 0;
+      align-self: stretch;
 
+      /* allow the grid item to shrink so columns stay equal width */
+      min-width: 0;
       border-radius: 3px;
       padding: 16px;
       border: 1px solid #ddd;
@@ -36,6 +45,8 @@
         font-size: 1.3em;
         font-weight: $bold-font-weight;
         line-height: 1;
+        /* break long titles/words to avoid widening columns */
+        overflow-wrap: anywhere;
       }
 
       p {
@@ -67,7 +78,7 @@
 
         a {
           margin-right: 0.5em;
-          white-space: nowrap;
+          white-space: normal;
           position: relative;
           z-index: 2;
         }
@@ -77,7 +88,7 @@
 
   @include media-query($on-laptop) {
     .grid {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
 
@@ -87,6 +98,7 @@
 
       .project {
         display: block;
+        height: auto;
 
         .preview-image {
           width: 40%;
