@@ -78,7 +78,7 @@
     - John Cobb
     - Matthew Faust
     - Andreas Kretschmer
-  description: 'Let $A$ be an $n\times n$ matrix over an algebraically closed field of characteristic $0$ or $>n$. Using deformation theory, we determine exactly when there exists a nonzero diagonal matrix $D$ such that $A$ and $A+D$ have the same spectrum: this fails if and only if, for each size $k$, all $k\times k$ principal minors of $A$ are equal. This yields a new result about the spectral theory of discrete periodic Schrödinger operators.'
+  description: 'When can you change the diagonal of a matrix without changing its spectrum? Using deformation theory, we determine a square matrix $A$ admits a nonzero diagonal matrix $D$ such that $A$ and $A+D$ have the same spectrum if and only if $A$ has two principal minors of the same size that are not equal. This yields a new result about the spectral theory of discrete periodic Schrödinger operators.'
   tags: 
     - Mathematical Physics
     - Algebraic Geometry
