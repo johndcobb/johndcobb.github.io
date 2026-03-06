@@ -282,9 +282,9 @@ title: CV
 
   
   <h3 class="pub-type">Conferences & Seminars</h3>
-
-  {% for meeting in site.data.organizing %}
-    {% if meeting.type=='Conference' or meeting.type=='Seminar' or meeting.type=='Special Session' %}
+  
+  {% assign meetings = site.data.organizing | where_exp: "item", "item.type == 'Conference' or item.type == 'Seminar' or item.type == 'Special Session'" %}
+  {% for meeting in meetings %}
     {% if meeting.hide==nil %}
       <div class="date-container">
         <span class="date">{{meeting.dates | replace: "-", "–" }}</span>
@@ -296,13 +296,35 @@ title: CV
     {% endif %} 
       </div>
     {% endif %}
+  {% endfor %}
+
+  <h3 class="pub-type">Outreach</h3>
+
+  {% assign outreaches = site.data.organizing | where_exp: "item", "item.type == 'Service'" %}
+  {% for outreach in outreaches %}
+  {% if outreach.hide==nil %}
+    <div class="date-container">
+        <span class="date">{{outreach.dates | replace: "-", "–" }}</span>
+        <span style="flex: 1">{{ outreach.title }}, {{ outreach.role }}, <small class="muted"> <em>{{ outreach.location }}</em> </small> </span>
+        {% if outreach.url %}
+      <div class="extra-links">
+        <a href="https://johndcobb.github.io{{ outreach.url }}"><i class="fas fa-link" aria-hidden="true"></i> Website</a>
+      </div>
+    {% endif %} 
+      </div>
+    {% if outreach.short-description %}
+    <div class="date-container">
+      <span class="date"></span>
+      <span class="fill"> <small> {{ outreach.short-description }} </small></span>
+    </div>
     {% endif %}
+  {% endif %}
   {% endfor %}
 
   <h3 class="pub-type">Reading Groups</h3>
-
-  {% for group in site.data.organizing %}
-    {% if group.type=='Reading Group' %}
+  
+  {% assign groups = site.data.organizing | where_exp: "item", "item.type == 'Reading Group'" %}
+  {% for group in groups %}
     {% if group.hide==nil %}
       <div class="date-container">
         <span class="date">{{group.dates | replace: "-", "–" }}</span>
@@ -313,7 +335,6 @@ title: CV
       </div>
     {% endif %} 
       </div>
-    {% endif %}
     {% endif %}
   {% endfor %}
 
@@ -355,41 +376,61 @@ title: CV
   <span class="right">{{ course.location }}</span>
   </div> 
 
-  {% endfor %}{% unless forloop.last %}<br/>{% endunless %}
+  {% endfor %} {% unless forloop.last %}<p></p>{% endunless %}
   {% endfor %}
-  {% comment %}
-  {% assign coursetitles = site.data.teaching | group_by: "title" %} 
-  {% for title in coursetitles %}
-  {% assign recentcourse = title.items[-1] %}
-  <div class="no-break">
-    <h3 style="margin-left: 90px">{{ title.name }}</h3> 
-    <div class="date-container">
-      <span class="date"> {% for class in title.items %} {{ class.year | replace: "-", "–"  }} <br> {% endfor %} </span>
-      <span style="flex: 1"> {{ recentcourse.role }}. {{ recentcourse.roledescription}} </span>
-      <span class="right">{{ recentcourse.location }}</span>
-    </div>
-  </div> {% unless forloop.last %}<br/>{% endunless %}
-  {% endfor %}
-  {% endcomment %}
 
   <div class="line-container">
     <h2>Service & Outreach</h2>
     <span class="line"></span>
   </div>
 
+  <h3 class="pub-type">Mentorship</h3>
 
-  {% for service in site.data.service %}
-  {% if service.hide==nil %}
-  <div class="no-break">
-  <h3 style="margin-left: 90px">{{ service.title }} {% if service.at %} at {{ service.at }} {% endif %}</h3>
+  {% assign mentorship = site.data.service | where_exp: "item", "item.type == 'Mentor'" %}
+  {% for mentor in mentorship %}
+  {% if mentor.hide==nil %}
+  <div class ="date-container">
+  <span class="date"> {{ mentor.years }} </span>
+  <span class="fill">{{ mentor.title }} </span>
+  <span class="right">{{ mentor.location }}</span>
+  </div> 
+  {% if mentor.short-description %}
     <div class="date-container">
-      <span class="date">{{service.years | replace: "-", "–" }}</span>
-      <span style="flex: 1">{{ service.description }}</span>
-      <span class="right">{{ service.location }}</span>
+      <span class="date"></span>
+      <span class="fill"> <small> {{ mentor.short-description }} </small></span>
     </div>
-  </div>
-  {% unless forloop.last %}<br/>{% endunless %}
   {% endif %}
+  {% endif %}
+  {% endfor %}
+
+  <h3 class="pub-type">Volunteer</h3>
+
+  {% assign volunteering = site.data.service | where_exp: "item", "item.type == 'Volunteer'" %}
+  {% for volunteer in volunteering %}
+  {% if volunteer.hide==nil %}
+  <div class ="date-container">
+  <span class="date"> {{ volunteer.years }} </span>
+  <span class="fill">{{ volunteer.title }} </span>
+  <span class="right">{{ volunteer.location }}</span>
+  </div> 
+  {% if volunteer.short-description %}
+    <div class="date-container">
+      <span class="date"></span>
+      <span class="fill"> <small> {{ volunteer.short-description }} </small></span>
+    </div>
+  {% endif %}
+  {% endif %}
+  {% endfor %}
+
+  <h3 class="pub-type">Panels</h3>
+
+  {% assign panels = site.data.service | where_exp: "item", "item.type == 'Panel'" %}
+  {% for panel in panels %}
+  <div class ="date-container">
+  <span class="date"> {{ panel.years }} </span>
+  <span class="fill">{{ panel.title}}, {{ panel.venue }} </span>
+  <span class="right">{{ panel.location }}</span>
+  </div> 
   {% endfor %}
 
   <div class="line-container">
@@ -397,27 +438,10 @@ title: CV
     <span class="line"></span>
   </div>
 
-  <div>
+  <div style="margin-left: 0em">
   {% assign counter = 1 %}
   {% for referee in site.data.referee %}{% if counter != 1 %}, {% endif %}{{ referee.journal }}{% assign counter = counter | plus: 1 %}{% endfor %}
   </div>
-
-  <div class="line-container">
-    <h2>Work Experience</h2> 
-    <span class="line"></span>
-  </div>
-
-  {% for pos in site.data.positions %}
-  <div class="no-break">
-  <h3 style="margin-left: 90px">{{ pos.title }}{% if pos.company %} at {{pos.company}}{% endif %}</h3>
-    <div class="date-container">
-      <span class="date">{{ pos.years | replace: "-", "–"  }}</span>
-      <span style="flex: 1">{{ pos.description }}</span>
-      <span class="right">{{ pos.location }}</span>
-    </div>
-  </div> 
-  {% unless forloop.last %}<br/>{% endunless %}
-  {% endfor %}
 
   <div class="line-container">
     <h2>Programming</h2>

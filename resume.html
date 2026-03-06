@@ -3,14 +3,18 @@ layout: cv
 permalink: /resume/
 title: resume
 ---
+
+<small class="live-link">Last updated in <time datetime="{{ site.time }}">{{ site.time | date: '%B %Y'}}</time>. Get the latest version at <a href="{{ '/cv' | absolute_url }}">johndcobb.github.io/cv/</a>.</small>
+
 <section class="container">
-<div class="button-container">
+  <div class="button-container">
     <span id="print-button" class="button" onclick="window.print()">
     <i class="fas fa-print" aria-hidden="true"></i>
     Print
     </span>
   </div>
-
+  <br>
+  
   <span><h1><a href="{{ absolute_url }}/">John D. Cobb</a></h1></span>
   <span class="header-columns">
     <div hidden> PhD Student at University of Wisconsin-Madison </div> 
@@ -25,7 +29,7 @@ title: resume
   </span>
 
   <div class="line-container">
-    <h2 style = "font-size: 1.2em">Employment</h2> 
+    <h2>Employment</h2> 
     <span class="line"></span>
   </div>
 
@@ -33,7 +37,7 @@ title: resume
   <div class="date-container">
     <span class="date">{{ em.years | replace: "-", "–" }}</span>
     <h3>{{ em.university }}<br>
-    <span style="font-variant:small-caps">{{ em.position }}</span>
+    <span style="font-variant:small-caps">{{ em.position | downcase }}</span>
     </h3>
     <span class="right">{{ em.location }}</span>
   </div>
@@ -45,7 +49,7 @@ title: resume
   {% endfor %}
 
   <div class="line-container">
-    <h2 style = "font-size: 1.2em">Education</h2> 
+    <h2>Education</h2> 
     <span class="line"></span>
   </div>
 
@@ -53,7 +57,7 @@ title: resume
   <div class="date-container">
     <span class="date">{{ ed.years | replace: "-", "–" }}</span>
     <h3>{{ ed.university }}<br>
-    <span style="font-variant:small-caps">{{ ed.degree }}</span>
+    <span style="font-variant:small-caps">{{ ed.degree | downcase }}</span>
     </h3>
     <span class="right">{{ ed.location }}</span>
   </div>
@@ -65,12 +69,70 @@ title: resume
   {% endfor %}
 
   <div class="line-container">
-    <h2 style = "font-size: 1.2em">Selected Awards & Grants</h2>
+    <h2>Invited Visits</h2> 
     <span class="line"></span>
   </div>
 
-  {% assign awards = site.data.awards | concat: site.data.grants | sort: 'years' | reverse %}
-  {% for award in awards %}{% if award.hide == nil and award.highlight != nil %}
+  {% assign visits = site.data.travel | where_exp: "travel", "travel.type == 'visit' and travel.invited == true" %}
+  {% for visit in visits %}
+  <div class="date-container">
+    <span class="date">
+      {% assign month_start = visit.start | date: "%m" %}
+      {% assign month_end = visit.end | date: "%m" %}
+      {% if month_start == month_end %}
+        {{ visit.start | date: "%b %Y" }}
+      {% else %}
+        {{ visit.start | date: "%b" }}–{{ visit.end | date: "%b %Y" }}
+      {% endif %}
+    </span>
+    <h3>{{ visit.venue }} ({{ visit.position }})<br>
+    <span style="font-variant:small-caps">{{ visit.title | downcase }}</span>
+    </h3>
+    <span class="right">{{ visit.where }}</span>
+  </div>
+  <p>
+    {% for des in visit.description %}
+      <span>{{ des | markdownify | remove: '<p>' | remove: '</p>' }}</span>{% unless forloop.last %}<br/>{% endunless %}
+    {% endfor %}
+  </p>
+  {% endfor %}
+
+  <div class="line-container">
+    <h2>Selected Awards & Grants</h2>
+    <span class="line"></span>
+  </div>
+  
+  {% assign awards = site.data.grants | sort: 'years' | reverse %}
+  {% for award in awards %}{% if award.hide == nil and award.highlight==true %}
+  <div class="date-container">
+    <span class="date">{{ award.years }}</span>
+    <span class="fill">{{ award.name }}{% if award.sponsor %}, <small class="muted"> <em>{{ award.sponsor }}</em> </small>{% endif %}</span>
+    {% if award.link or award.article %}
+    <div class="extra-links">
+      {% if award.link %}
+        <a href="{{ award.link }}">
+          <i class="fas fa-link" aria-hidden="true"></i> Link
+        </a>
+      {% endif %}
+      {% if award.article %}
+        <a href="{{ award.article }}">
+          <i class="fas fa-newspaper" aria-hidden="true"></i> Article
+        </a>
+      {% endif %}
+    </div>
+  {% endif %} 
+  </div>
+  {% if award.short-description %}
+  <div class="date-container">
+    <span class="date"></span>
+    <span class="fill"> <small> {{ award.short-description }} </small></span>
+  </div>
+  {% endif %}
+  {% endif %}
+  {% endfor %}
+
+  {% assign awards = site.data.awards | sort: 'years' | reverse | where_exp: "award", "award.highlight == true" %}
+  {% for award in awards %}{% if award.hide == nil %}
   <div class="date-container">
     <span class="date">{{ award.years }}</span>
     <span class="fill">{{ award.name }}{% if award.sponsor %}, <small class="muted"> <em>{{ award.sponsor }}</em> </small>{% endif %}</span>
@@ -100,7 +162,7 @@ title: resume
 
 
   <div class="line-container">
-    <h2 style = "font-size: 1.2em">Papers <a href="{{ '/publications/' | absolute_url }}">[Interactive Version]</a></h2>
+    <h2>Papers <a href="{{ '/publications/' | absolute_url }}">[Interactive Version]</a></h2>
     <span class="line"></span>
   </div>
 
@@ -122,7 +184,7 @@ title: resume
         {% assign counter = counter | minus: 1 %}
         <div class="cv-pub">
           <div class="ref-container">{{ type | slice: 0 }}{{ counter }}</div>
-          <h4 style = "font-size: 1em">{% if pub.pdf %}<a href="{{ pub.pdf }}">{{ pub.title }}</a>{% else %}{{ pub.title }}{%endif%}</h4>
+          <h4>{% if pub.pdf %}<a href="{{ pub.pdf }}">{{ pub.title }}</a>{% else %}{{ pub.title }}{%endif%}</h4>
           <div>
             {% for author in pub.authors %}{% include person person=author %}{% unless forloop.last %}, {% endunless %}{% endfor %}.
             {% if pub.venue %}<i>{{ pub.venue }}</i>,{% endif %} {{ pub.year }}.
@@ -133,26 +195,26 @@ title: resume
     {% endif %}{% endfor %}
   {% endfor %}
 
-  <strong>Referee Work:</strong> 
-   <div>
+  <div style="margin-left: 0em">
   {% assign counter = 1 %}
-  {% for referee in site.data.referee %}{% if counter != 1 %}, {% endif %}{{ referee.journal }}{% assign counter = counter | plus: 1 %}{% endfor %}
+  <strong>Referee Work: </strong>{% for referee in site.data.referee %}{% if counter != 1 %}, {% endif %}{{ referee.journal }}{% assign counter = counter | plus: 1 %}{% endfor %}
   </div>
 
+
   <div class="line-container">
-    <h2 style = "font-size: 1.2em">Selected Talks  <a href="{{ '/talks/' | absolute_url }}">[Interactive Version]</a></h2>
+    <h2>Selected Talks  <a href="{{ '/talks/' | absolute_url }}">[Interactive Version]</a></h2>
     <span class="line"></span>
   </div>
 
   {% assign talktypes = "Conference|Seminar" | split: "|" %}
   {% for type in talktypes %}
-  {% assign talks = site.data.talks | where_exp:"talk", "talk.type == type" %}
+  {% assign talks = site.data.talks | where_exp:"talk", "talk.type == type and talk.highlight == true" %}
   {% assign talkyears = talks | group_by_exp: "talk", "talk.date | date: '%Y'" %}
   <h3 class="pub-type">{{ type }}</h3>
   {% for year in talkyears %}
 
   {% assign sorted_talks = year.items %}
-  {% for talk in sorted_talks %}{% if talk.hide==nil and talk.highlight != nil %}
+  {% for talk in sorted_talks %}{% if talk.hide==nil%}
   <div class="date-container">
     {% if forloop.first %} <time datetime="{{ talk.date }}">{{ talk.date | date: "%Y %b" }}</time> {% else %} <time datetime="{{ talk.date }}">{{ talk.date | date: "%b" }}</time> {% endif %} 
     <span class="fill">{{ talk.location }}{% if talk.city %}, <small class="muted">{{ talk.city }}</small>{% endif %}</span>
@@ -162,15 +224,12 @@ title: resume
   {% endfor %}
 
   <div class="line-container">
-    <h2 style = "font-size: 1.2em">Organizing</h2>
+    <h2>Conference Organizing</h2>
     <span class="line"></span>
   </div>
-
   
-  <h3 class="pub-type">Conferences</h3>
-
-  {% for meeting in site.data.organizing %}
-    {% if meeting.type=='Conference' or meeting.type=='Special Session' %}
+  {% assign meetings = site.data.organizing | where_exp: "item", "item.type == 'Conference' or item.type == 'Special Session'" %}
+  {% for meeting in meetings %}
     {% if meeting.hide==nil %}
       <div class="date-container">
         <span class="date">{{meeting.dates | replace: "-", "–" }}</span>
@@ -182,41 +241,44 @@ title: resume
     {% endif %} 
       </div>
     {% endif %}
-    {% endif %}
   {% endfor %}
-  
 
   <div class="line-container">
-    <h2 style = "font-size: 1.2em">Selected Service & Outreach</h2>
+    <h2>Selected Service & Outreach</h2>
     <span class="line"></span>
   </div>
 
-  {% for service in site.data.service %}
-  {% if service.hide==nil and service.highlight != nil %}
-  <div class="no-break">
-  <h3 style="margin-left: 90px; font-size: 1.1em">{{ service.title }} {% if service.at %} at {{ service.at }} {% endif %}</h3>
+  {% assign mentorship = site.data.service | where_exp: "item", "item.highlight == true" %}
+  {% for mentor in mentorship %}
+  {% if mentor.hide==nil %}
+  <div class ="date-container">
+  <span class="date"> {{ mentor.years }} </span>
+  <span class="fill">{{ mentor.title }} </span>
+  <span class="right">{{ mentor.location }}</span>
+  </div> 
+  {% if mentor.short-description %}
     <div class="date-container">
-      <span class="date">{{service.years | replace: "-", "–" }}</span>
-      <span style="flex: 1">{{ service.description }}</span>
-      <span class="right">{{ service.location }}</span>
+      <span class="date"></span>
+      <span class="fill"> <small> {{ mentor.short-description }} </small></span>
     </div>
-  </div>
-  {% unless forloop.last %}<br/>{% endunless %}
+  {% endif %}
   {% endif %}
   {% endfor %}
 
-
   <div class="line-container">
-    <h2 style = "font-size: 1.2em">Programming</h2>
+    <h2>Programming</h2>
     <span class="line"></span>
   </div>
+
+  <div style="margin-left: 0em">
   {% for level in site.data.programming %}
   <div>
     <b>{{ level.level }}: </b> {{level.list}}
   </div>
+
   {% endfor %}
 
-  <h3 class="pub-type" style="font-size: 1.1em">Projects</h3>
+  <h3 class="pub-type">Projects</h3>
   {% assign projects = site.data.projects | where_exp: "project", "project.type == 'Software'" %}
   {% for project in projects %}
   
@@ -237,5 +299,6 @@ title: resume
   <div>
     (more on github: <a href="https://github.com/johndcobb"><i class="fab fa-github" aria-hidden="true"></i> johndcobb</a>)
   </div>
+</div>
 <br> 
 </section>

@@ -1,105 +1,90 @@
-- title: Panelist for Postdoctoral Fellowships
+- title: Postdoctoral Fellowships 
+  venue: Auburn's 2026 Research Symposium
   location: Auburn, AL
   description: "Panelist at Auburn's 2026 Research Symposium for graduate students interested in postdoctoral positions."
+  type: Panel
   years: Spring 2026
 - title: Macaulay2 Internals
+  type: Volunteer
   location: Online
-  description: "Work on internals of the M2 software and developing the vscode interface. Assist at Macaulay2 meetings."
-  years: Since Fall 2024
+  description: "Work on internals of the M2 software and developing the vscode interface."
+  years: 2024-
   highlight: true
-- title: Panelist for Organizing Conferences Aimed at Graduate Students
+- title: Organizing Conferences Aimed at Graduate Students
+  venue: UW Madison
   location: Madison, WI
+  type: Panel
   description: "Panelist on a discussion about organizing conferences held by the UW Madison math department."
   years: Spring 2024
-- title: Mentor
-  at: UW Madison Directed Reading Program 
+- title: UW Madison Directed Reading Program 
+  type: Mentor
   url: https://sites.google.com/site/uwmadisondrp/
   location: Madison, WI
   years: Spring 2024
   description: Led a group of students in reading Stillwell's "Mathematics and its History".
-- title: Organizer
-  at: UW Madison Directed Reading Program 
-  url: https://sites.google.com/site/uwmadisondrp/
-  location: Madison, WI
-  years: Fall 2019-Fall 2023
-  description: "The DRP is a math mentoring program that pairs undergraduate students with graduate student mentors, for a semester-long independent study project."
-  highlight: true
-- title: Graduate Mentor
-  at: MXM Experimental Mathematics project
+  short-description: Led a group of students in reading Stillwell's "Mathematics and its History".
+- title: Madison Experimental Mathematics Lab
+  type: Mentor
   location: Madison, WI
   years: Fall 2022, Spring 2023
-  description: Directed advanced undergraduates on a computationally focused research project concerning identifiable linear compartmental models.
-- title: Graduate Mentor
-  at: Undergraduate Mentoring Program
+  description: Directed advanced 4 undergraduates on a computationally focused research project concerning identifiable linear compartmental models.
+  short-description: Directed advanced 4 undergraduates on a computationally focused research project concerning identifiable linear compartmental models.
+- title: Madison Undergraduate Mentoring Program
+  type: Mentor
   location: Madison, WI
   years: Fall 2022
   description: Met with a group of undergraduate math majors to give advice about how to navigate their undergrad degree, plan for grad school apps, and think about REUs and other opportunities.
-- title: Graduate Mentor
-  at: UW Madison
+- title: Madison Graduate Mentoring Program
+  type: Mentor
   location: Madison, WI
   years: 2022-2023
   description: Helped orient new PhD students into the PhD program at UW Madison.
   hide: true
-- title: Math Meet Coordinator
-  at: UW Madison
-  url: "https://math.wisc.edu/mega-math-meet/"
-  location: Madison, WI
-  years: Spring 2022
-  description: "Wrote problems and planned a math competition for over 200 middle schoolers around Wisconsin."
-- title: Public Service Fellow
-  at: WISCIENCE
+- title: WISCIENCE Public Service Fellow
+  type: Volunteer
   url: https://wiscience.wisc.edu/program/public-service-fellows
   location: Madison, WI
-  years: Jan 2021-Jan 2022
+  years: 2021
   description: Met and discussed best ways to engage with the public and worked with a community partner on a web project to make arXiv easier to navigate.
-- title: Mentor
-  at:  First Generation Student Success
+- title: First Generation Student Success
+  type: Mentor
   url: https://firstgensuwmadison.wixsite.com/fgss
   location: Madison, WI
-  years: Fall 2020-Spring 2021
+  years: Fall 2020, Spring 2021
   description: "FGSS links first-generation college students to first generation graduate and faculty mentors for monthly meetings. "
+  short-description: "FGSS links first-generation college students to first generation graduate and faculty mentors for monthly meetings. "
   highlight: true
-- title: Volunteer
-  at: AMS Fall Central Sectional
+- title: AMS Fall Central Sectional
+  type: Volunteer
   years: Sep 2019
   location: Madison, WI
   description: "Signed in attendees to the 3-day AMS Fall central sectional meeting."
-  hide: true
-- title: Student Ambassador
-  at: College of Charleston School of Sciences and Mathematics
-  years: Sep 2018-May 2019
+- title: CofC Student Ambassador
+  type: Volunteer
+  years: 2019
   location: Charleston, SC
   description: Select group of 9 students who have demonstrated outstanding academic achievement and exemplar student leadership. Represent the School of Sciences and Mathematics at College of Charleston to incoming students and other interest groups.
   hide: true
-- title: Student Vice President
-  at: Phi Kappa Phi
-  years: Apr 2017-May 2019
+- title: Student Vice President of Phi Kappa Phi
+  type: Volunteer
+  years: 2017-2019
   location: Charleston, SC
   description: Met with board to coordinate volunteer opportunities and promote education throughout the College of Charleston campus. Helped organize events on campus for Phi Kappa Phi members. 
-  hide: true
-- title: Volunteer
-  at: AMS Spring Southeastern Sectional Meeting
+- title: AMS Spring Southeastern Sectional Meeting
+  type: Volunteer
   years: Mar 2017
   location: Charleston, SC
   description: "Signed in attendees to the 3-day AMS Spring southeastern sectional meeting."
-  hide: true
-- title: Volunteer
-  at: College of Charleston Math Meet
+- title: College of Charleston Math Meet
+  type: Volunteer
   years: 2016-2018
   url: https://mathmeet.cofc.edu/
   location: Charleston, SC
   description: "Volunteered to oversee various parts of the planned activities including judging timed sprints and signing students in."
-  hide: true
-- title: Volunteer Tutor
-  at: Trident Literacy Association
-  years: Oct 2015-Oct 2016
+- title: Trident Literacy Association
+  type: Volunteer
+  years: 2015-2016
   url: https://tridentlit.org/
   location: Charleston, SC
   description: "Helped weekly to prepare nontraditional students for their GED."
-- title: Cofounder & Board Member
-  at: The Cancer Chase
-  years: Feb 2015-Oct 2017
-  url: https://cancerchase5k.racesonline.com/
-  location: Fort Mill, SC
-  description: "Helped direct an annual 5k run benefiting Carolinas HealthCare System's Levine Cancer Institute. Rallied support from local businesses to raise over $15,000 annually."
-  
+  short-description: "Helped weekly to prepare nontraditional students for their GED."

@@ -66,6 +66,14 @@
   book: "https://scholar.harvard.edu/files/joeharris/files/000-final-3264.pdf"
   image: 3264.jpg
   description: "3264 and all that is a textbook by David Eisenbud and Joe Harris. This page organizes the Spring 2023 reading schedule."
+- title: UW Madison Math Meet
+  role: Coordinator
+  type: Service
+  location: Madison, WI
+  url: "https://math.wisc.edu/mega-math-meet/"
+  dates: Spring 2022
+  description: "Wrote problems and planned a math competition for over 200 middle schoolers around Wisconsin."
+  short-description: "Wrote problems and planned a math competition for over 200 middle schoolers around Wisconsin."
 - title: Positivity in Algebraic Geometry
   location: Madison, WI
   dates: Spring 2022
@@ -84,6 +92,7 @@
   description: "Geometry of Schemes is a textbook by David Eisenbud and Joe Harris. This page organizes the Summer 2020 reading schedule."
 - title: Directed Reading Program
   type: Service
+  role: Organizer
   dates: Fall 2019-Fall 2023
   location: Madison, WI
   url: "https://wiki.math.wisc.edu/index.php/Directed_Reading_Program"
@@ -107,3 +116,10 @@
   location: Madison, WI
   image: clebsch.jpg
   description: "The Red Rising Sea is a set of notes by Ravi Vakil. This page organizes the Summer 2021 reading schedule."
+- title: The Cancer Chase
+  type: Service
+  role: Cofounder & Board Member
+  dates: Feb 2015-Oct 2017
+  location: Fort Mill, SC
+  description: "Helped direct an annual 5k run benefiting Carolinas HealthCare System's Levine Cancer Institute. Rallied support from local businesses to raise over $15,000 annually."
+  short-description: "Helped direct an annual 5k run benefiting Carolinas HealthCare System's Levine Cancer Institute."
