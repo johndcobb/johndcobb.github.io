@@ -1,28 +1,28 @@
-- title: "Solid State Physics and Algebraic Geometry"
-  location: AMS Special Session on Recent Advances in Commutative Algebra and Algebraic Geometry
+- title: "Solid State Physics and AG"
+  location: AMS Special Session on Recent Advances in CA and AG
   city: Boston, MA
   type: Conference
   date: 2026-03-28
   url: https://www.ams.org/meetings/sectional/2331_program.html
-- title: "Solid State Physics and Algebraic Geometry"
+- title: "Solid State Physics and AG"
   location: Chiang Mai University Colloquium
   city: Chiang Mai, Thailand
   type: Seminar
   date: 2025-12-16
   url: https://math.science.cmu.ac.th/news-detail.php?id=398
-- title: "Solid State Physics and Algebraic Geometry"
+- title: "Solid State Physics and AG"
   location: Instituto de Matemáticas de la UNAM GATO Seminar
   city: Oaxaca de Juárez, Mexico
   type: Seminar
   date: 2025-10-30
   url: https://oaxaca.matem.unam.mx/actividades/eventodetalle/630/-/solid-state-physics-and-algebraic-geometry
-- title: "Solid State Physics and Algebraic Geometry"
+- title: "Solid State Physics and AG"
   location: Auburn Algebra Seminar
   city: Auburn, AL
   type: Seminar
   date: 2025-10-28
   url: https://webhome.auburn.edu/~mkb0096/Fall2025Seminar.html
-- title: "Algebraic Geometry and its Applications"
+- title: "AG and its Applications"
   location: Auburn First Year Seminar
   city: Auburn, AL
   type: Outreach
@@ -59,25 +59,25 @@
   date: 2024-10-12
   highlight: true
 - title: "Multigraded Stillman Conjecture"
-  location: AMS Special Session on Topics in Commutative Algebra and Algebraic Geometry (cancelled)
+  location: AMS Special Session on Topics in CA and AG (cancelled)
   city: Savannah, GA 
   type: Conference
   date: 2024-10-05
   url: "https://www.ams.org/meetings/sectional/2315_program.html"
 - title: "Multigraded Stillman Conjecture"
-  location: URiCA (Upcoming researchers in Commutative Algebra) 2024
+  location: URiCA (Upcoming researchers in CA) 2024
   city: Lincoln, NE
   type: Conference
   date: 2024-05-11
   highlight: true
 - title: "Multigraded Stillman Conjecture"
-  location: AMS Special Session on Homological Methods in Commutative Algebra and Algebraic Geometry
+  location: AMS Special Session on Homological Methods in CA and AG
   city: San Francisco, CA
   type: Conference
   date: 2024-05-04
   url: https://www.ams.org/meetings/sectional/2299_program.html
 - title: "Multigraded Stillman Conjecture"
-  location: UW Madison Algebra and Algebraic Geometry Seminar
+  location: UW Madison Algebra and AG Seminar
   city: Madison, WI
   type: Seminar
   date: 2024-05-02
@@ -110,14 +110,14 @@
   type: Seminar
   date: 2024-01-16
 - title: "Multigraded regularity of curves"
-  location: JMM Special Session on Recent Developments in Commutative Algebra
+  location: JMM Special Session on Recent Developments in CA
   city: San Francisco, CA
   type: Conference
   date: 2024-01-06
   url: https://www.jointmathematicsmeetings.org/meetings/national/jmm2024/2300_intro
   abstract: "The syzygies of projective curves are fairly well understood — for instance, an influential theorem of Gruson, Lazarsfeld, and Peskine gives optimal bounds on their regularity. There has been a flurry of activity in the past two decades centered around generalizing work on syzygies to the toric setting. I will discuss work that lifts machinery for understanding syzygies of projective curves to obtain a bound on the multigraded regularity of a curve in a product of projective spaces."
 - title: "Sheaf Laplacians and Missing Data"
-  location: JMM Special Session on Commutative Algebra and Algebraic Geometry
+  location: JMM Special Session on CA and AG
   city: San Francisco, CA
   type: Conference
   date: 2024-01-03
@@ -125,7 +125,7 @@
   abstract: "The Laplacian of a graph is a matrix that encodes the local geometry of the graph. It is a fundamental object in spectral graph theory, and has been used to study a variety of problems in machine learning. In this talk, I will discuss a generalization called the sheaf Laplacian and how this can be used to study problems with missing data in the world of knowledge graphs."
   highlight: true
 - title: "Likelihood Correspondence of Statistical Models"
-  location: UW Madison Graduate Algebraic Geometry Seminar
+  location: UW Madison Graduate AG Seminar
   city: Madison, WI
   type: Seminar
   date: 2023-11-08
@@ -165,7 +165,7 @@
   date: 2022-05-23
   url: https://warwick.ac.uk/fac/sci/maths/research/events/2023/gael/
 - title: "Introduction to Intersection Theory"
-  location: UW Madison Graduate Algebraic Geometry Seminar
+  location: UW Madison Graduate AG Seminar
   type: Seminar
   city: Madison, WI
   date: 2022-02-01
@@ -173,11 +173,11 @@
   abstract: "In this talk, I'd like to talk about some methods used in enumerative geometry. I'll define what a Chow ring is, count some things with it, and tell you why you should read '3264 and all that' this semester with me."
 - title: "Multigraded regularity of curves"
   type: Poster
-  location: Western Algebraic Geometry Symposium
+  location: Western AG Symposium
   city: Riverside, CA
   date: 2022-11-05
 - title: "Virtual Resolutions and Syzygies"
-  location: AMS Special Session on Building Bridges Between Commutative Algebra and Nearby Areas 
+  location: AMS Special Session on Building Bridges Between CA and Nearby Areas 
   type: Conference
   city: Salt Lake City, UT
   date: 2022-10-22
@@ -192,14 +192,14 @@
   date: 2022-10-19
   abstract: "Understanding the syzygies among the equations defining a projective variety continues to be instrumental in understanding their properties. Starting from polynomials and proceeding with specific examples, the first part of the talk will motivate the existence of virtual syzygies which work for the larger class of toric varieties. We will then focus on recent work addressing a few questions about these analogues, such as: How can we construct (families of) examples? How complicated do they get (at least in the case of curves)?"
 - title: "Virtual Resolutions and Syzygies"
-  location: UW Madison Graduate Algebraic Geometry Seminar
+  location: UW Madison Graduate AG Seminar
   type: Seminar
   city: Madison, WI
   date: 2022-10-14
   abstract: "Understanding the syzygies among the equations defining a projective variety continues to be instrumental in understanding their properties. Starting from polynomials and proceeding with specific examples, the first part of the talk will motivate the existence of virtual syzygies which work for the larger class of toric varieties. We will then focus on recent work addressing a few questions about these analogues, such as: How can we construct (families of) examples? How complicated do they get (at least in the case of curves)?"
 - title: "Virtual Resolutions and Syzygies"
   type: Poster
-  location: Western Algebraic Geometry Symposium
+  location: Western AG Symposium
   city: Fort Collins, CO
   date: 2022-04-22
 - title: "Chip Firing on Graphs"
@@ -210,7 +210,7 @@
   url: https://hilbert.math.wisc.edu/wiki/index.php/Madison_Math_Circle
   highlight: true
 - title: "Syzygies and Koszul Cohomology"
-  location: UW Madison Graduate Algebraic Geometry Seminar
+  location: UW Madison Graduate AG Seminar
   type: Seminar
   city: Madison, WI
   abstract: Early on in the history of algebraic geometry it was recognized that many properties/invariants of projective varieties could be deduced by looking at their hyperplane sections. Starting in the 1950s, this classical picture was gradually refined into general theory by people like Serre and Kodaira — many hard-earned numbers could now be obtained by more brainless methods. I hope to motivate a few ideas in the 1980’s as a continuation of this story beginning from Serre’s vanishing theorem.
@@ -223,7 +223,7 @@
   url: https://hilbert.math.wisc.edu/wiki/index.php/AMS_Student_Chapter_Seminar
   abstract: A classic combinatorial lemma becomes very simple to state and prove when on the surface of a sphere, leading to easy constructive proofs of some other well known theorems.
   date: 2021-09-29
-- title: "Algebraic Geometry Beer Label"
+- title: "AG Beer Label"
   location: Delta Beer Lab
   type: Outreach
   city: Madison, WI
@@ -233,7 +233,7 @@
   date: 2021-05-15
   highlight: true
 - title: "Introduction to Boij-Söderberg Theory"
-  location: UW Madison Graduate Algebraic Geometry Seminar
+  location: UW Madison Graduate AG Seminar
   type: Seminar
   city: Madison, WI
   url: https://www.math.wisc.edu/wiki/index.php/Graduate_Algebraic_Geometry_Seminar
