@@ -327,7 +327,7 @@ title: CV
   {% for workshop in workshops %}
         <div class="date-container">
           <span class="date"> {{ workshop.start | date: "%b %Y" }}</span>
-          <span style="flex: 1">{{ workshop.title }}, <small class="muted"> <em>{{ workshop.where }}</em> </small> </span>
+          <span style="flex: 1">{{ workshop.title }}, {{ workshop.venue}}, <small class="muted"> <em>{{ workshop.where }}</em> </small> </span>
           {% if workshop.url %}
         <div class="extra-links">
           <a href="https://johndcobb.github.io{{ workshop.url }}"><i class="fas fa-link" aria-hidden="true"></i> Website</a>
