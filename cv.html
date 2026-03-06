@@ -326,15 +326,7 @@ title: CV
 
   {% for workshop in workshops %}
         <div class="date-container">
-          <span class="date">
-            {% assign month_start = workshop.start | date: "%m" %}
-            {% assign month_end = workshop.end | date: "%m" %}
-            {% if month_start == month_end %}
-              {{ workshop.start | date: "%b %Y" }}
-            {% else %}
-              {{ workshop.start | date: "%b" }}–{{ workshop.end | date: "%b %Y" }}
-            {% endif %}
-          </span>
+          <span class="date"> {{ workshop.start | date: "%b %Y" }}</span>
           <span style="flex: 1">{{ workshop.title }}, <small class="muted"> <em>{{ workshop.where }}</em> </small> </span>
           {% if workshop.url %}
         <div class="extra-links">
