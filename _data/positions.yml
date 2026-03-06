@@ -10,11 +10,3 @@
   mentors: 
     - Tim Chartier
   description: "Invited by Chief Analyst Dr. Tim Chartier to rewrite prospective rankability measures (primarily using Apache spark) to fit the memory partitioning schemes of computer clusters."
-- title: Student Researcher
-  years: Dec 2016-May 2019
-  company: Institute on Graph Analytics and Research in Data Science
-  location: Charleston, SC
-  mentors:
-    - Paul Anderson
-    - Amy Langville
-  description: "Designed algorithms to calculate suspected indicators of how ”rankable” a dataset is by virtue of its spectral properties."
