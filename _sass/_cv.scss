@@ -38,7 +38,7 @@
 
     h2 {
         font-family: 'Source Sans Pro', Georgia, serif;
-        font-size: 1.5em;
+        font-size: 1.6em !important;
         font-weight: 900;
     }
 
@@ -160,7 +160,8 @@
         flex-direction: row;
         align-items: baseline;
         white-space: nowrap;
-        break-after: avoid;
+        break-after: avoid !important;
+        break-inside: avoid !important;
     }
 
     .ref-container {
@@ -252,6 +253,35 @@
     }
     @media print {
         font-size: 0.8rem;
+        margin: 0 !important;
+        padding: 0 !important;
+
+        body {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        
+        .container {
+            margin-top: 0 !important;
+            padding-top: 0 !important;
+        }
+        
+        .live-link {
+            display: block !important;
+            margin: 0 0 0.5em 0 !important;
+            padding: 0 !important;
+            opacity: 0.7 !important;
+            font-size: 0.7em !important;
+            a {
+                color: $text-color;
+            }
+        }
+        
+        /* Ensure the first element (your name) starts right after the live-link */
+        h1:first-of-type {
+            margin-top: 0 !important;
+            padding-top: 0 !important;
+        }
 
         .date-container, .line-container, .cv-pub, .header-columns {
             break-inside: avoid;
@@ -260,35 +290,11 @@
         a {
             color: $text-color;
         }
-    
-        h1 {
-          font-size: 1.7rem;
-          color: $text-color;
-          a {
-              color: $text-color;
-          }
+
+        p {
+            font-size: 0.9em !important;
         }
-    
-        h2 {
-          font-size: 1.4rem;
-        }
-    
-        h2 {
-          font-size: 1.2rem;
-        }
-    
-        .pub-type {
-          font-size: 1.1rem;
-          margin-bottom: 0.3rem;
-        }
-    
-        .live-link {
-            display: block;
-            a {
-                color: $text-color;
-            }
-        }
-    
+
         h1, h2 {
           margin: .4rem 0 .1rem 0;
           color: $text-color;
@@ -296,20 +302,38 @@
 
         h3, h4 {
             color: $text-color;
-            a {
-                color: $text-color;
-            }
+        }
+    
+        h1 {
+          font-size: 1.7rem;
         }
 
-        .header-columns a {
-            color: $text-color;
+    
+        h2 {
+          font-size: 1.0rem;
+          a {
+          display: none;
+          }
+        }
+
+        h3 {
+            font-size: 1.1em !important;
+        }
+
+        h4 {
+            font-size: 1.0em !important;
+        }
+
+        .cv-pub {
+            margin-bottom: 0.4em !important;
+        }
+    
+        .pub-type {
+          font-size: 0.9rem;
+          margin-bottom: 0.2rem !important;
         }
     
         /* link to interactive talk/publications */
-        h2 a {
-          display: none;
-          color: $text-color;
-        }
 
         #print-button {
             display: none;
@@ -537,95 +561,5 @@
             opacity: 0.8;
         }
     
-        @media print {
-            font-size: 0.9rem;
-
-            div, .date-container, .line-container, .cv-pub, .header-columns {
-                break-inside: avoid;
-            }
-
-            a {
-                color: $text-color;
-            }
-        
-            h1 {
-              font-size: 1.7rem;
-              color: $text-color;
-              a {
-                  color: $text-color;
-              }
-            }
-        
-            h2 {
-              font-size: 1.2rem;
-            }
-        
-            .pub-type {
-              font-size: 1.1rem;
-              margin-bottom: 0.3rem;
-            }
-        
-            .live-link {
-                display: block;
-                a {
-                    color: $text-color;
-                }
-            }
-        
-            h1, h2 {
-              margin: .4rem 0 .1rem 0;
-              color: $text-color;
-            }
-    
-            h3, h4 {
-                color: $text-color;
-                a {
-                    color: $text-color;
-                }
-            }
-    
-            .header-columns a {
-                color: $text-color;
-            }
-        
-            /* link to interactive talk/publications */
-            h2 a {
-              display: none;
-              color: $text-color;
-            }
-          }
-    
-    }
-}
-
-/* Print-specific styles to remove top gap */
-@media print {
-    body {
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-    
-    #cv {
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-    
-    .container {
-        margin-top: 0 !important;
-        padding-top: 0 !important;
-    }
-    
-    .live-link {
-        display: block !important;
-        margin: 0 0 0.5em 0 !important;
-        padding: 0 !important;
-        opacity: 0.7 !important;
-        font-size: 0.7em !important;
-    }
-    
-    /* Ensure the first element (your name) starts right after the live-link */
-    #cv h1:first-of-type {
-        margin-top: 0 !important;
-        padding-top: 0 !important;
     }
 }

@@ -1,34 +1,54 @@
+- title: Semester Program in Metric AG
+  venue: ICERM
+  where: Providence, RI
+  position: long-term visitor
+  invited: true
+  type: visit
+  start: 2027-01-20
+  end: 2027-04-23
 - title: Macaulay2 Workshop
   venue: Auburn University
   where: Auburn, AL
+  type: workshop
   start: 2026-09-14
   end: 2026-09-18
 - title: Future of Macaulay2
+  type: workshop
   venue: Georgia Tech
   where: Atlanta, GA
+  invited: true
   start: 2026-05-13
   end: 2026-05-21
-- title: Collaborate@ICERM
+- title: 'Collaborate@ICERM: AG in Spectral Theory'
   venue: ICERM
   where: Providence, RI
+  type: visit
+  invited: true
+  position: short-term visitor
   start: 2026-05-04
   end: 2026-05-08
 - title: Regularity in algebra, combinatorics, and geometry
   venue: BIRS
+  invited: true
+  type: workshop
   where: Banff, Canada
   start: 2026-04-19
   end: 2026-04-24
 - title: MAAG 2026
   venue: Clemson University
+  type: conference
   where: Clemson, SC
   start: 2026-04-18
   end: 2026-04-19
 - title: AMS Spring Eastern Sectional Meeting
   venue: Boston College
+  type: conference
   where: Boston, MA
   start: 2026-03-28
   end: 2026-03-29
 - title: Macaulay2 Winter School
+  type: workshop
+  invited: true
   where: Hue, Vietnam
   start: 2025-12-29
   end: 2026-01-09
@@ -37,217 +57,272 @@
   start: 2025-12-23
   end: 2025-12-25
 - title: Colloquium
+  type: seminar
   venue: Chiang Mai University
   where: Chiang Mai, Thailand
   start: 2025-12-16
   end: 2025-12-20
 - title: GATO Seminar 
+  type: seminar
   venue: Instituto de Matemáticas de la UNAM
   where: Oaxaca de Juárez, Mexico
   start: 2025-10-30
   end: 2025-11-04
 - title: Homological Mirror Symmetry Workshop
+  type: workshop
+  invited: true
   venue: AIM
   where: Pasadena, CA
   start: 2025-08-18
   end: 2025-08-22
 - title: Summer Research Institute Bootcamp
+  type: workshop
+  invited: true
   venue: Colorado State University
   where: Fort Collins, CO
   start: 2025-07-08
   end: 2025-07-18
-- title: Program Visitor
+- title: Semester Program in AG and Combinatorics
   venue: Fields Institute
   where: Toronto, Canada
+  position: short-term visitor
+  invited: true
+  type: visit
   start: 2025-05-12
   end: 2025-05-30
 - title: Macaulay2 Workshop
+  type: workshop
+  invited: true
   venue: Tulane University
   where: New Orleans, LA
   start: 2025-04-14
   end: 2025-04-18
 - title: Meeting on Applied Algebraic Geometry 2025
+  type: conference
   venue: Auburn University
   where: Auburn, AL
   start: 2025-04-19
   end: 2025-04-20
 - title: AMS Spring Southeastern Sectional Meeting
+  type: conference
   venue: Clemson University
   where: Clemson, SC
   start: 2025-03-08
   end: 2025-03-09
 - title: Joint meeting of the NZMS, AustMS and AMS
+  type: conference
   venue: University of Auckland
   where: Auckland, New Zealand
   start: 2024-12-09
   end: 2024-12-13
 - title: Georgia Tech Algebra Seminar
+  type: seminar
   where: Atlanta, GA
   start: 2024-11-03
   end: 2024-11-05
 - title: SIAM Conference Texas-Louisiana Section
+  type: conference
   venue: Baylor University
   where: Waco, TX
   start: 2024-10-11
   end: 2024-10-13
 - title: AMS Fall Southeastern Sectional Meeting 
+  type: conference
   venue: Georgia Southern University
   where: Savannah, GA
   start: 2024-10-05
   end: 2024-10-06
 - title: GAeL XXXI
+  type: conference
   where: Turin, Italy
   start: 2024-06-17
   end: 2024-06-21
 - title: Macaulay2 String Theory Workshop
+  type: workshop
+  invited: true
   venue: University of Utah
   where: Salt Lake City, UT
   start: 2024-06-01
   end: 2024-06-05
 - title: URiCA 
+  type: conference
   venue: University of Nebraska-Lincoln
   where: Lincoln, NE
   start: 2024-05-11
   end: 2024-05-12
 - title: AMS Spring Western Sectional Meeting
+  type: conference
   venue: San Francisco State University
   where: San Francisco, CA
   start: 2024-05-04
   end: 2024-05-05
 - title: Recent Developments in Commutative Algebra
+  type: workshop
+  invited: true
   venue: MSRI
   where: Berkeley, CA
   start: 2024-04-15
   end: 2024-04-19
 - title: Iowa Algebra Seminar
+  type: seminar
   venue: Iowa State University
   where: Ames, IA
   start: 2024-04-25
   end: 2024-04-26
 - title: NIST Seminar
+  type: seminar
   where: Boulder, CO
   start: 2024-03-25
   end: 2024-03-28
 - title: CCS Seminar
+  type: seminar
   where: Bowie, MD
   start: 2024-01-30
   end: 2024-01-31
 - title: Commutative Algebra Workshop
+  type: workshop
+  invited: true
   venue: MSRI
   where: Berkeley, CA
   start: 2024-01-22
   end: 2024-01-26
 - title: CCR Seminar
+  type:  seminar
   where: Princeton, NJ
   start: 2024-01-15
   end: 2024-01-17
 - title: Joint Mathematics Meetings
+  type: conference
   where: San Francisco, CA
   start: 2024-01-03
   end: 2024-01-09
 - title: Algebra Days
+  type: conference
   venue: Arizona State University
   where: Tempe, AZ
   start: 2023-11-03
   end: 2023-11-05
-- title: University of Hawaii
+- title: Hawaii Algebra Seminar
+  venue: University of Hawaii-Manoa
+  type: seminar
   where: Honolulu, HI
   start: 2023-10-14
   end: 2023-10-23
 - title: Varieties from Statistics
+  type: conference
   venue: IMSI
   where: Chicago, IL
   start: 2023-10-02
   end: 2023-10-06
 - title: SIAM Applied Algebraic Geometry
+  type: conference
   venue: Eindhoven University of Technology
   where: Eindhoven, the Netherlands
   start: 2023-07-10
   end: 2023-07-14
 - title: GAeL XXX
+  type: conference
   venue: University of Warwick
   where: Coventry, UK
   start: 2023-07-03
   end: 2023-07-07
 - title: Derived Categories, Hodge theory and Singularities
+  type: conference
   venue: University of Sheffield
   where: Sheffield, UK
   start: 2023-06-28
   end: 2023-06-30
 - title: Syzygies and Regularity
+  type: conference
   venue: University of Illinois at Chicago
   where: Chicago, IL
   start: 2023-04-14
   end: 2023-04-16
-- title: CA+ Conference
+- title: CA+
+  type: conference
   venue: University of Minnesota
   where: Minneapolis, MN
   start: 2023-04-01
   end: 2023-04-01
 - title: Birational Complexity of Algebraic Varieties
+  invited: true
+  type: workshop
   venue: Simons Center for Geometry and Physics
   where: Stony Brook, NY
   start: 2022-12-05
   end: 2022-12-09
 - title: Western Algebraic Geometry Symposium
+  type:  conference
   venue: University of California-Riverside
   where: Riverside, CA
   start: 2022-11-05
   end: 2022-11-06
 - title: AMS Fall Western Sectional Meeting
+  type: conference
   venue: University of Utah
   where: Salt Lake City, UT
   start: 2022-10-22
   end: 2022-10-23
 - title: CCS
+  type: seminar
   where: Bowie, MD
   start: 2022-10-19
   end: 2022-10-19
 - title: MAGGC 2022
+  type: conference
   venue: University of Illinois at Chicago
   where: Chicago, IL
   start: 2022-08-10
   end: 2022-08-11
 - title: NDSEG Fellows Conference
+  type: conference
   where: Boston, MA
   start: 2022-07-24
   end: 2022-07-28
 - title: GAel XXIX
+  type: conference
   venue: Université Paris-Saclay
   where: Orsay, France
   start: 2022-05-23
   end: 2022-05-27
 - title: Géometrie Algébrique en l'honneur de Claire Voisin
+  type: conference
   venue: Institut Henri Poincare
   where: Paris, France
   start: 2022-05-16
   end: 2022-05-20
 - title: Western Algebraic Geometry Symposium
+  type: conference
   venue: Colorado State University
   where: Fort Collins, CO
   start: 2022-04-22
   end: 2022-04-24
-- title: CA+ Conference
+- title: CA+
+  type: conference
   venue: Iowa State University
   where: Ames, IA
   start: 2022-04-30
   end: 2022-05-01
-- title: CA+ Conference
+- title: CA+
+  type: conference
   venue: University of Minnesota
   where: Minneapolis, MN
   start: 2021-10-30
   end: 2021-10-30
 - title: AMS Fall Central Sectional Meeting
   venue: University of Wisconsin-Madison
+  type: conference
   where: Madison, WI
   start: 2019-09-14
   end: 2019-09-15
 - title: Joint Mathematical Meetings
   where: Baltimore, MD
+  type: conference
   start: 2019-01-16
   end: 2019-01-19
 - title: AMS Spring Southeastern Sectional Meeting
   venue: College of Charleston
+  type: conference
   where: Charleston, SC
   start: 2017-03-10
   end: 2017-03-12

@@ -37,7 +37,7 @@ title: CV
   <div class="date-container">
     <span class="date">{{ em.years | replace: "-", "–" }}</span>
     <h3>{{ em.university }}<br>
-    <span style="font-variant:small-caps">{{ em.position }}</span>
+    <span style="font-variant:small-caps">{{ em.position | downcase }}</span>
     </h3>
     <span class="right">{{ em.location }}</span>
   </div>
@@ -57,12 +57,41 @@ title: CV
   <div class="date-container">
     <span class="date">{{ ed.years | replace: "-", "–" }}</span>
     <h3>{{ ed.university }}<br>
-    <span style="font-variant:small-caps">{{ ed.degree }}</span>
+    <span style="font-variant:small-caps">{{ ed.degree | downcase }}</span>
     </h3>
     <span class="right">{{ ed.location }}</span>
   </div>
   <p>
     {% for des in ed.description %}
+      <span>{{ des | markdownify | remove: '<p>' | remove: '</p>' }}</span>{% unless forloop.last %}<br/>{% endunless %}
+    {% endfor %}
+  </p>
+  {% endfor %}
+
+  <div class="line-container">
+    <h2>Invited Visits</h2> 
+    <span class="line"></span>
+  </div>
+
+  {% assign visits = site.data.travel | where_exp: "travel", "travel.type == 'visit' and travel.invited == true" %}
+  {% for visit in visits %}
+  <div class="date-container">
+    <span class="date">
+      {% assign month_start = visit.start | date: "%m" %}
+      {% assign month_end = visit.end | date: "%m" %}
+      {% if month_start == month_end %}
+        {{ visit.start | date: "%b %Y" }}
+      {% else %}
+        {{ visit.start | date: "%b" }}–{{ visit.end | date: "%b %Y" }}
+      {% endif %}
+    </span>
+    <h3>{{ visit.venue }} ({{ visit.position }})<br>
+    <span style="font-variant:small-caps">{{ visit.title | downcase }}</span>
+    </h3>
+    <span class="right">{{ visit.where }}</span>
+  </div>
+  <p>
+    {% for des in visit.description %}
       <span>{{ des | markdownify | remove: '<p>' | remove: '</p>' }}</span>{% unless forloop.last %}<br/>{% endunless %}
     {% endfor %}
   </p>
@@ -288,6 +317,32 @@ title: CV
     {% endif %}
   {% endfor %}
 
+  <div class="line-container">
+    <h2>Invited Workshops</h2>
+    <span class="line"></span>
+  </div>
+
+  {% assign workshops = site.data.travel | where_exp:"workshop", "workshop.type == 'workshop' and workshop.invited == true" %}
+
+  {% for workshop in workshops %}
+        <div class="date-container">
+          <span class="date">
+            {% assign month_start = workshop.start | date: "%m" %}
+            {% assign month_end = workshop.end | date: "%m" %}
+            {% if month_start == month_end %}
+              {{ workshop.start | date: "%b %Y" }}
+            {% else %}
+              {{ workshop.start | date: "%b" }}–{{ workshop.end | date: "%b %Y" }}
+            {% endif %}
+          </span>
+          <span style="flex: 1">{{ workshop.title }}, <small class="muted"> <em>{{ workshop.where }}</em> </small> </span>
+          {% if workshop.url %}
+        <div class="extra-links">
+          <a href="https://johndcobb.github.io{{ workshop.url }}"><i class="fas fa-link" aria-hidden="true"></i> Website</a>
+        </div>
+        {% endif %} 
+        </div>
+    {% endfor %}
 
   <div class="line-container">
     <h2>Teaching</h2>
@@ -365,30 +420,24 @@ title: CV
   <h3 style="margin-left: 90px">{{ pos.title }}{% if pos.company %} at {{pos.company}}{% endif %}</h3>
     <div class="date-container">
       <span class="date">{{ pos.years | replace: "-", "–"  }}</span>
-      <span style="flex: 1">{{ pos.description | markdownify }}</span>
+      <span style="flex: 1">{{ pos.description }}</span>
       <span class="right">{{ pos.location }}</span>
     </div>
-    <p style="margin-left: 90px">
-      {% if pos.mentors %}
-        Mentor{% if pos.mentors.size > 1 %}s{% endif %}: {% for mentor in pos.mentors %}
-          {% include person person=mentor %}{% unless forloop.last %}, {% endunless %}
-        {% endfor %}<br/>
-      {% endif %}
-      {% if pos.skills %}
-      <small class="muted">[{% for skill in pos.skills %}{{ skill }}{% unless forloop.last %}, {% endunless %}{% endfor %}]</small>
-      {% endif %}
-    </p>
   </div> 
+  {% unless forloop.last %}<br/>{% endunless %}
   {% endfor %}
 
   <div class="line-container">
     <h2>Programming</h2>
     <span class="line"></span>
   </div>
+
+  <div style="margin-left: 0em">
   {% for level in site.data.programming %}
   <div>
     <b>{{ level.level }}: </b> {{level.list}}
   </div>
+
   {% endfor %}
 
   <h3 class="pub-type">Projects</h3>
@@ -412,5 +461,6 @@ title: CV
   <div>
     (more on github: <a href="https://github.com/johndcobb"><i class="fab fa-github" aria-hidden="true"></i> johndcobb</a>)
   </div>
+</div>
 <br> 
 </section>
