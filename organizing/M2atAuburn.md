@@ -8,7 +8,7 @@ sections: Overview, Talks, Schedule, Participant Information, Funding
 
 # Macaulay2 at Auburn 2027
 ![Auburn](/images/projects/auburn.jpg "An image of Auburn, AL from the Auburn Photographic Services.") 
-#### Feburary 22-26th, 2027
+#### February 22-26th, 2027
 Organizers: [John Cobb](https://johndcobb.github.io), [Sean Grate](https://seangrate.com), [Michael Brown](https://webhome.auburn.edu/~mkb0096/)
 
 ## Overview
