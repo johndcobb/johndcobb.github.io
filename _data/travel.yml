@@ -1,3 +1,9 @@
+- title: Macaulay2 Workshop
+  venue: Auburn University
+  where: Auburn, AL
+  type: workshop
+  start: 2027-02-22
+  end: 2027-02-26
 - title: Semester Program in Metric AG
   venue: ICERM
   where: Providence, RI
@@ -6,12 +12,6 @@
   type: visit
   start: 2027-01-20
   end: 2027-04-23
-- title: Macaulay2 Workshop
-  venue: Auburn University
-  where: Auburn, AL
-  type: workshop
-  start: 2026-09-14
-  end: 2026-09-18
 - title: Future of Macaulay2
   type: workshop
   venue: Georgia Tech
