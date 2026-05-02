@@ -169,12 +169,12 @@
   
 - id: LikelihoodGeometry
   title: Likelihood Correspondence of Toric Statistical Models
-  year: 2023
+  year: 2026
   authors:
     - David Barnhill
     - John Cobb
     - Matthew Faust
-  venue: Submitted
+  venue: To Appear in ISSAC 
   pdf: https://arxiv.org/pdf/2312.08501
   arxiv: "2312.08501"
   link: https://github.com/johndcobb/LikelihoodGeometry
@@ -183,7 +183,7 @@
     - Toric Varieties
     - Algebraic Statistics
     - Commutative Algebra
-  type: Preprint
+  type: Conference
 
 
 - id: MultiregularityOfCurves
