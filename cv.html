@@ -223,7 +223,7 @@ title: CV
     <span class="line"></span>
   </div>
 
-  {% assign types = "Journal|Preprint" | split: "|" %}
+  {% assign types = "Journal|Conference|Preprint" | split: "|" %}
   {% for type in types %}
     {% assign counter = 1 %}
     {% for pub in site.data.publications %}
@@ -355,6 +355,12 @@ title: CV
         </div>
         {% endif %} 
         </div>
+        {% if workshop.role %}
+          <div class="date-container">
+            <span class="date"></span>
+            <span class="fill"> <small> {{ workshop.role }} </small></span>
+          </div>
+        {% endif %}
     {% endfor %}
 
   <div class="line-container">
