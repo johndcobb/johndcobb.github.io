@@ -69,10 +69,6 @@
       <a href="https://doi2bib.org/bib/{{ pub.doi }}">
         <i class="fas fa-book" aria-hidden="true"></i> Bibtex
       </a>
-    {% elsif pub.arxiv %}
-      <a href="https://arxiv2bibtex.org/?q={{ pub.arxiv | cgi_escape }}">
-        <i class="fas fa-book" aria-hidden="true"></i> Bibtex
-      </a>
     {% endif %}
     {% if pub.short_doi %}
       <a href="http://doi.org/{{ pub.short_doi }}">
