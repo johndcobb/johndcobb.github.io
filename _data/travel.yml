@@ -12,6 +12,11 @@
   type: visit
   start: 2027-01-20
   end: 2027-04-23
+- title: Joint Mathematics Meetings
+  type: conference
+  where: Chicago, IL
+  start: 2027-01-12
+  end: 2027-01-15
 - title: Future of Macaulay2
   type: workshop
   venue: Georgia Tech
