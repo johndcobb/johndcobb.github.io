@@ -5,6 +5,8 @@ title: Other
 class: projects
 ---
 
+# Other
+
 ## Travel
 Here's a fun map of all the [math related travel]({{ absolute_url }}/travel) I've done (or have scheduled).
 <iframe src="/assets/travelmap.html" width="100%" height="300"></iframe>

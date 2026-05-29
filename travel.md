@@ -5,7 +5,6 @@ title: Travel
 class: home
 ---
 
-{:.hidden}
 # Travel
 
 

@@ -1,19 +1,25 @@
 {% assign current = page.url | downcase | split: '/' %}
 <header class="page-header">
-  <nav class="container">
+  <nav class="container" aria-label="Main navigation">
     <a class="site-title" href="{{ absolute_url }}/">{{ site.title }}</a>
-    
-    <a href="{{ '/publications/' | relative_url }}" {% if current[1] == 'publications' %}class="active"{% endif %}>Research</a>
-    <a href="{{ '/organizing/' | relative_url }}" {% if current[1] == 'organizing' %}class="active"{% endif %}>Organizing</a> 
-    <a href="{{ '/teaching/' | relative_url }}" {% if current[1] == 'teaching' %}class="active"{% endif %}>Teaching</a>
-    <a href="{{ '/talks/' | relative_url }}" {% if current[1] == 'talks' %}class="active"{% endif %}>Talks</a>
-    <a href="{{ '/projects/' | relative_url }}" {% if current[1] == 'projects' %}class="active"{% endif %}>Projects</a>
-    <a href="{{ '/other/' | relative_url }}" {% if current[1] == 'other' %}class="active"{% endif %}>Other</a>
-    <a href="{{ '/cv/' | relative_url}}" {% if current[1] == 'cv' %}class="active"{% endif %}>CV</a>
 
-    <span class="external">
-      <a href="https://github.com/johndcobb"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
-    </span>
+    <button class="nav-toggle" type="button" aria-controls="site-navigation" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fas fa-bars" aria-hidden="true"></i>
+    </button>
+
+    <div id="site-navigation" class="nav-links">
+      <a href="{{ '/publications/' | relative_url }}" {% if current[1] == 'publications' %}class="active"{% endif %}>Research</a>
+      <a href="{{ '/organizing/' | relative_url }}" {% if current[1] == 'organizing' %}class="active"{% endif %}>Organizing</a> 
+      <a href="{{ '/teaching/' | relative_url }}" {% if current[1] == 'teaching' %}class="active"{% endif %}>Teaching</a>
+      <a href="{{ '/talks/' | relative_url }}" {% if current[1] == 'talks' %}class="active"{% endif %}>Talks</a>
+      <a href="{{ '/projects/' | relative_url }}" {% if current[1] == 'projects' %}class="active"{% endif %}>Projects</a>
+      <a href="{{ '/other/' | relative_url }}" {% if current[1] == 'other' %}class="active"{% endif %}>Other</a>
+      <a href="{{ '/cv/' | relative_url}}" {% if current[1] == 'cv' %}class="active"{% endif %}>CV</a>
+
+      <span class="external">
+        <a href="https://github.com/johndcobb"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
+      </span>
+    </div>
 
   </nav>
 </header>

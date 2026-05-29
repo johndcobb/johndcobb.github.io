@@ -5,7 +5,6 @@ title: News
 class: home
 ---
 
-{:.hidden}
 # News
 
 <div class="news" markdown="1">

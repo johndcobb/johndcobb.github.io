@@ -5,7 +5,6 @@ title: Projects
 class: projects
 ---
 
-{:.hidden}
 # Projects
 
 {:.lead}

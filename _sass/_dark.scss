@@ -31,6 +31,10 @@
       }
     }
 
+    nav .nav-toggle {
+      color: #fff;
+    }
+
     .button, .dropdown-button {
       color: #e85c5c; // Previously lighten($brand-color, 30%)
     }
@@ -45,6 +49,26 @@
 
     .pubs .publication .award-icon.fa-award, .pubs .publication .awards, .home .featured-publications .publication .fa-award {
       color: #dc5858; // Previously lighten(firebrick, 20%)
+    }
+
+    .pubs .publications-intro, .pubs .publication-filters .filter-summary {
+      color: #ddd;
+    }
+
+    #clear-filters {
+      color: #ddd;
+
+      &:hover {
+        color: #fff;
+      }
+    }
+
+    .pubs .publication-filters {
+      border-color: #555;
+
+      .filter-body {
+        border-top-color: #555;
+      }
     }
 
     .projects .grid .project, .home .featured-projects .project {
@@ -80,6 +104,10 @@
     }
 
     @include media-query($on-palm) {
+      html.js-enabled nav .nav-links {
+        border-top-color: #555;
+      }
+
       .button, .dropdown-button {   
         background-color: transparent;
         &:hover{

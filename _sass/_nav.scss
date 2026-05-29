@@ -9,12 +9,36 @@
 nav {
   display: flex;
   align-items: center;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
   line-height: 36px;
-  justify-content: space-between;
+  justify-content: flex-start;
 
-  & > *:last-child {
-    margin-left: auto;
+  .nav-links {
+    display: flex;
+    align-items: center;
+    flex: 1 1 auto;
+    flex-wrap: wrap;
+    min-width: 0;
+  }
+
+  .nav-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 2.4rem;
+    height: 2.4rem;
+    padding: 0;
+    margin: 0;
+    color: #333;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    cursor: pointer;
+
+    &:focus-visible {
+      outline: 2px solid $brand-color;
+      outline-offset: 2px;
+    }
   }
 
   a {
@@ -52,6 +76,7 @@ nav {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    margin-left: auto;
   }
 
   .site-title {
@@ -76,11 +101,16 @@ nav {
 @include media-query($on-laptop) {
   nav {
     line-height: 42px;
+    flex-wrap: wrap;
 
-    a {
+    .nav-links {
+      flex: 0 1 100%;
+    }
+
+    .nav-links > a {
       padding: 0 9px;
 
-      &:nth-child(2) {
+      &:first-child {
         margin-left: -8px;
       }
     }
@@ -94,26 +124,59 @@ nav {
 }
 
 @include media-query($on-palm) {
-  .site-title {
-    margin-top: 0.5em;
-  }
-
   nav {
-    justify-content: space-around;
+    justify-content: space-between;
+    line-height: 40px;
 
-    & > *:last-child {
-      margin-left: initial;
+    html.js-enabled & {
+      .nav-toggle {
+        display: inline-flex;
+      }
+
+      .nav-links {
+        display: none;
+        margin-top: 0.5em;
+        padding-top: 0.55em;
+        border-top: 1px solid #ddd;
+      }
+
+      &.nav-open .nav-links {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 4px 8px;
+        align-items: stretch;
+      }
+
+      .nav-links > a {
+        width: 100%;
+      }
+
+      .external {
+        grid-column: 1 / -1;
+      }
+    }
+
+    .nav-links {
+      flex: 0 1 100%;
+      justify-content: space-around;
     }
 
     .external {
       flex: 0 1 100%;
+      margin-left: initial;
       justify-content: space-around;
     }
+
     .site-title {
-      text-align: center;
+      flex: 0 1 auto;
+      margin-top: 0;
+      margin-right: 0;
+      text-align: left;
+      font-size: 1.35em;
     }
+
     // hide icons from internal links
-    & > a .fas {
+    .nav-links > a .fas {
       display: none;
     }
 

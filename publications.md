@@ -5,43 +5,55 @@ title: Publications
 class: pubs
 ---
 
-{:.hidden}
 # Publications
 
-<div id="facets" class="hidden">
-  <div class="facet" id="venue_tags">
-    <strong>Venue</strong>
-    <ul></ul>
-  </div>
-  <div class="facet" id="authors">
-    <strong>Coauthor</strong>
-    <ul></ul>
-  </div>
-  <div class="facet" id="tags">
-    <strong>Tag</strong>
-    <ul></ul>
-  </div>
-  <div class="facet" id="type">
-    <strong>Type</strong>
-    <ul></ul>
-  </div>
-  <!--
-  <div class="facet" id="awards">
-    <strong>Award</strong>
-    <ul></ul>
-  </div>
-  -->
-
-</div>
-
-<label id="only-highlight" class="hidden">
-  <input type="checkbox" id="highlight">
-  Show only highlights
-</label>
-
-<p id="clear-filters" class="hidden">
-  <i class="fas fa-times-circle" aria-hidden="true"></i> Clear all filters. <span id="count_hidden">X</span> of <span id="count_total">X</span> publications are hidden by the filters.
+<p class="publications-intro">
+  Browse papers by year, or filter by venue, coauthor, tag, and type.
 </p>
+
+<details class="publication-filters" open>
+  <summary>
+    <span>Filters</span>
+    <span class="filter-summary">Venue, coauthor, tag, type, and highlights</span>
+  </summary>
+
+  <div class="filter-body">
+    <div id="facets" class="hidden">
+      <div class="facet" id="venue_tags">
+        <strong>Venue</strong>
+        <ul></ul>
+      </div>
+      <div class="facet" id="authors">
+        <strong>Coauthor</strong>
+        <ul></ul>
+      </div>
+      <div class="facet" id="tags">
+        <strong>Tag</strong>
+        <ul></ul>
+      </div>
+      <div class="facet" id="type">
+        <strong>Type</strong>
+        <ul></ul>
+      </div>
+      <!--
+      <div class="facet" id="awards">
+        <strong>Award</strong>
+        <ul></ul>
+      </div>
+      -->
+
+    </div>
+
+    <label id="only-highlight" class="hidden">
+      <input type="checkbox" id="highlight">
+      Show only highlights
+    </label>
+
+    <p id="clear-filters" class="hidden">
+      <i class="fas fa-times-circle" aria-hidden="true"></i> Clear all filters. <span id="count_hidden">X</span> of <span id="count_total">X</span> publications are hidden by the filters.
+    </p>
+  </div>
+</details>
 
 <!-- <input id="ft-search" type="search" placeholder="Search papers..." /> -->
 

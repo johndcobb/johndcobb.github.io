@@ -5,7 +5,6 @@ title: Organizing
 class: talks
 ---
 
-{:.hidden}
 # Organizing
 
 ## Conferences and Seminars
@@ -74,4 +73,3 @@ class: talks
 </div>
 
 {% endfor %}
-

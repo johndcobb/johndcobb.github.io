@@ -5,7 +5,6 @@ title: Teaching
 class: talks
 ---
 
-{:.hidden}
 # Teaching {#teaching}
 
 
