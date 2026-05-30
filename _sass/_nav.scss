@@ -25,8 +25,8 @@ nav {
     display: none;
     align-items: center;
     justify-content: center;
-    width: 2.4rem;
-    height: 2.4rem;
+    width: 2.75rem;
+    height: 2.75rem;
     padding: 0;
     margin: 0;
     color: #333;
@@ -34,6 +34,8 @@ nav {
     border: 1px solid transparent;
     border-radius: 3px;
     cursor: pointer;
+    line-height: 1;
+    touch-action: manipulation;
 
     &:focus-visible {
       outline: 2px solid $brand-color;
@@ -150,6 +152,10 @@ nav {
       .nav-links > a {
         justify-self: start;
         width: auto;
+      }
+
+      .nav-links > a:first-child {
+        margin-left: 0;
       }
 
       .external {

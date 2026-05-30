@@ -13,37 +13,6 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", function() {
-    var nav = document.querySelector(".page-header nav");
-    var toggle = nav ? nav.querySelector(".nav-toggle") : null;
-    var links = document.getElementById("site-navigation");
-
-    if (nav && toggle && links) {
-      function setNavOpen(open) {
-        nav.classList.toggle("nav-open", open);
-        toggle.setAttribute("aria-expanded", open ? "true" : "false");
-      }
-
-      setNavOpen(false);
-
-      toggle.addEventListener("click", function() {
-        setNavOpen(!nav.classList.contains("nav-open"));
-      });
-
-      nav.addEventListener("keydown", function(event) {
-        if (event.key === "Escape" && nav.classList.contains("nav-open")) {
-          setNavOpen(false);
-          toggle.focus();
-        }
-      });
-
-      links.addEventListener("click", function(event) {
-        var clickedLink = event.target.closest ? event.target.closest("a") : null;
-        if (clickedLink && window.matchMedia && window.matchMedia("(max-width: 600px)").matches) {
-          setNavOpen(false);
-        }
-      });
-    }
-
     var publicationFilters = document.querySelector(".publication-filters");
     if (publicationFilters && window.matchMedia) {
       var filterBreakpoint = window.matchMedia("(max-width: 600px)");
