@@ -3,6 +3,13 @@ name: Not Found Bot
 on:
   schedule:
     - cron: "0 5 1 * *"
+  workflow_dispatch:
+
+permissions:
+  actions: write
+  contents: write
+  issues: write
+  pull-requests: write
 
 jobs:
   check:
@@ -10,6 +17,8 @@ jobs:
     steps:
       - uses: actions/checkout@v5
       - name: Fix links
-        uses: tmcw/notfoundbot@v2.3.1
+        uses: tmcw/notfoundbot@v3.0.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          content-folder: .
