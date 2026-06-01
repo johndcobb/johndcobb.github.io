@@ -29,7 +29,7 @@ nav {
     height: 2.75rem;
     padding: 0;
     margin: 0;
-    color: #333;
+    color: $nav-color;
     background: transparent;
     border: 1px solid transparent;
     border-radius: 3px;
@@ -44,7 +44,7 @@ nav {
   }
 
   a {
-    color: #333;
+    color: $nav-color;
     padding: 12px 0.3em 0 0.3em;
     margin: 0 0.3em;
     display: inline-block;
@@ -60,15 +60,15 @@ nav {
       padding-right: 0;
     }
     &.active {
-      border-bottom-color: #333;
+      border-bottom-color: $nav-active-border-color;
       opacity: 1;
     }
     &:hover {
-      color: #333;
+      color: $nav-color;
       text-decoration: none;
 
       opacity: 1;
-      border-bottom-color: #333;
+      border-bottom-color: $nav-active-border-color;
 
       transition: opacity 0.25s ease-in-out, border 0.25s ease-in-out;
     }
@@ -91,7 +91,7 @@ nav {
     font-size: 1.5em;
     border: none;
 
-    color: #333;
+    color: $nav-color;
     opacity: 1;
 
     &:hover {
@@ -139,7 +139,7 @@ nav {
         display: none;
         margin-top: 0.5em;
         padding-top: 0.55em;
-        border-top: 1px solid #ddd;
+        border-top: 1px solid $nav-mobile-border-color;
       }
 
       &.nav-open .nav-links {
@@ -194,12 +194,12 @@ nav {
 
       &:hover {
         background: transparent;
-        border-bottom-color: #333;
+        border-bottom-color: $nav-active-border-color;
       }
 
       &.active {
         background: transparent;
-        border-bottom-color: #333;
+        border-bottom-color: $nav-active-border-color;
         border-radius: 0;
         opacity: 1;
       }

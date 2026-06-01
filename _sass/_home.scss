@@ -54,7 +54,7 @@
 
       border-radius: 3px;
       padding: 16px;
-      border: 1px solid #ddd;
+      border: 1px solid $card-border-color;
 
       transition: box-shadow 0.2s ease;
 
@@ -63,7 +63,7 @@
       }
 
       &:hover {
-        box-shadow: #aaa 2px 2px 11px;
+        box-shadow: $card-shadow-color 2px 2px 11px;
       }
 
       .spacer {
@@ -88,7 +88,7 @@
         width: 100%;
         height: 0;
         padding-top: 60%;
-        border: 1px solid #f1f1f1;
+        border: 1px solid $card-preview-border-color;
         background-size: cover;
         background-position: top left;
         transition: background 1.5s;
@@ -125,11 +125,11 @@
       }
 
       .fa-trophy {
-        color: #ffc000;
+        color: $trophy-color;
       }
 
       .fa-award {
-        color: firebrick;
+        color: $award-color;
       }
 
       .authors {

@@ -7,6 +7,7 @@
 @forward "variables";
 
 // Use partials from `sass_dir` (defaults to `_sass`) 
+@use "theme";
 @use "base";
 @use "layout"; 
 @use "nav";
@@ -20,4 +21,3 @@
 @use "syntax-highlighting";
 @use "cv";
 @use "dark";
-

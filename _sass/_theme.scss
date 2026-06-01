@@ -1,0 +1,77 @@
+@use "variables" as *;
+
+:root {
+  --color-text: #{$color-text-light};
+  --color-background: #{$color-background-light};
+  --color-heading: #{$color-heading-light};
+  --color-heading-border: #{$color-border-strong-light};
+  --color-link: #{$color-link-light};
+  --color-header-background: #{$color-header-background-light};
+  --color-footer-background: #{$color-footer-background-light};
+  --color-footer-text: #{$color-footer-text-light};
+  --color-muted: #{$color-muted-light-theme};
+  --color-muted-strong: #{$color-muted-strong-light};
+  --color-muted-light: #{$color-muted-light};
+  --color-surface: #{$color-background-light};
+  --color-surface-muted: #{$color-surface-muted-light};
+  --color-border: #{$color-border-light};
+  --color-code: #{$color-code};
+  --color-focus-ring: rgba(52, 119, 173, 0.35);
+  --color-brand: #{$color-brand};
+  --color-button: #{$color-brand};
+  --color-button-border: #{$color-brand-strong};
+  --color-button-hover-background: #{$color-brand-soft};
+  --color-button-mobile-background: #{$color-brand-softest};
+  --color-dropdown-link: #{$color-brand-strong};
+  --color-nav: #{$color-text-light};
+  --color-nav-active-border: #{$color-text-light};
+  --color-nav-mobile-border: #{$color-border-light};
+  --color-card-border: #{$color-border-light};
+  --color-card-preview-border: #f1f1f1;
+  --color-card-shadow: #{$color-card-shadow-light};
+  --color-publication-bar: #{$color-brand};
+  --color-checkbox-border: #{$color-muted-light};
+  --color-checkbox-background: #{$color-background-light};
+  --color-checkbox-active: #{$color-brand};
+  --color-checkbox-check: #{$color-background-light};
+  --color-award: #{$color-award-light};
+  --color-trophy: #{$color-trophy};
+  --color-table-text: #{$color-text-light};
+  --color-table-header-background: #{$color-footer-background-light};
+  --color-table-header-text: #{$color-background-light};
+  --color-table-cell-background: #fafafa;
+  --color-table-cell-background-alt: #f0f0f0;
+}
+
+@media (prefers-color-scheme: dark) {
+  body:not(.cv) {
+    --color-text: #{$color-background-light};
+    --color-background: #{$color-text-light};
+    --color-heading: #{$color-background-light};
+    --color-heading-border: #555;
+    --color-link: #{$color-link-dark};
+    --color-footer-background: #{$color-footer-background-dark};
+    --color-footer-text: #{$color-background-light};
+    --color-muted: #ddd;
+    --color-muted-strong: #ddd;
+    --color-muted-light: #aaa;
+    --color-surface: #{$color-text-light};
+    --color-surface-muted: #{$color-text-light};
+    --color-border: #555;
+    --color-button: #{$color-brand-interactive-dark};
+    --color-button-mobile-background: transparent;
+    --color-dropdown-link: #{$color-brand-interactive-dark};
+    --color-nav: #{$color-background-light};
+    --color-nav-active-border: #eee;
+    --color-nav-mobile-border: #555;
+    --color-card-border: #bbb;
+    --color-card-preview-border: #bbb;
+    --color-card-shadow: #000;
+    --color-publication-bar: #{$color-brand-strong};
+    --color-checkbox-border: #aaa;
+    --color-checkbox-background: #{$color-text-light};
+    --color-checkbox-active: #{$color-brand-interactive-dark};
+    --color-award: #{$color-award-dark};
+    --color-table-header-background: #{$color-footer-background-dark};
+  }
+}

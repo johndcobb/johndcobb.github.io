@@ -3,7 +3,7 @@
 .class{
   /* Table */
   table { 
-    color: #333;
+    color: $table-text-color;
     font-family: Helvetica, Arial, sans-serif;
     width: 100%;
     /* Table reset stuff */
@@ -13,17 +13,17 @@
   td, th {  border: 0 none; height: 30px; padding:0 5px 0 5px;}
               
   th {
-      background: $footer-background;
+      background: $table-header-background;
       text-align: center;
-      color: #FFF; font-weight: bold;
+      color: $table-header-text; font-weight: bold;
       height: 40px;
   }
           
-  td { background: #FAFAFA; text-align: center; }
+  td { background: $table-cell-background; text-align: center; }
   
   /* Zebra Stripe Rows */
-  tr:nth-child(even) td { background: #f0f0f0; } // Previously darken($grey-color-lightest, 5%)
-  tr:nth-child(odd) td { background: $grey-color-lightest; }
+  tr:nth-child(even) td { background: $table-cell-background-alt; }
+  tr:nth-child(odd) td { background: $surface-muted-color; }
   
   /* Add border-radius to specific cells! */
   tr:first-child th:first-child { 

@@ -9,18 +9,77 @@ $base-line-height: 1.64;
 $spacing-unit:     32px;
 $content-width:    850px;
 
-$text-color:        #333;
-$background-color:  #fff;
-$brand-color:       #b00;
-$link-color:        #3477ad;
-$header-background: #ececec;
-$footer-background: #234;
-$footer-text:       #e6e6e6; // Previously darken(#fff, 10%)
+// Raw palette tokens. Theme-specific CSS custom properties are emitted in
+// _theme.scss; component partials should use the semantic aliases below.
+$color-text-light: #333;
+$color-background-light: #fff;
+$color-heading-light: #1a1a1a;
+$color-brand: #b00;
+$color-brand-strong: #cc3333;
+$color-brand-interactive-dark: #e85c5c;
+$color-brand-soft: #f2cccc;
+$color-brand-softest: #f5d9d9;
+$color-link-light: #3477ad;
+$color-link-dark: #8ac1ee;
+$color-header-background-light: #ececec;
+$color-footer-background-light: #234;
+$color-footer-background-dark: #2d4964;
+$color-footer-text-light: #e6e6e6;
+$color-muted-light-theme: #828282;
+$color-muted-strong-light: #6f6f6f;
+$color-muted-light: #969696;
+$color-surface-muted-light: #f8f8f8;
+$color-border-light: #ddd;
+$color-border-strong-light: #b3b3b3;
+$color-card-shadow-light: #aaa;
+$color-code: #c35;
+$color-award-light: firebrick;
+$color-award-dark: #dc5858;
+$color-trophy: #ffc000;
 
-$grey-color:       #828282;
-$grey-color-lightest: #f8f8f8;
-$grey-color-dark:  #6f6f6f; // Previously darken($grey-color, 15%)
-$grey-color-light:  #969696; // Previously lighten($grey-color, 15%)
+$text-color: var(--color-text);
+$background-color: var(--color-background);
+$brand-color: var(--color-brand);
+$link-color: var(--color-link);
+$header-background: var(--color-header-background);
+$footer-background: var(--color-footer-background);
+$footer-text: var(--color-footer-text);
+
+$grey-color: var(--color-muted);
+$grey-color-lightest: var(--color-surface-muted);
+$grey-color-dark: var(--color-muted-strong);
+$grey-color-light: var(--color-muted-light);
+
+$heading-color: var(--color-heading);
+$heading-border-color: var(--color-heading-border);
+$border-color: var(--color-border);
+$surface-color: var(--color-surface);
+$surface-muted-color: var(--color-surface-muted);
+$code-color: var(--color-code);
+$focus-ring-color: var(--color-focus-ring);
+$button-color: var(--color-button);
+$button-border-color: var(--color-button-border);
+$button-hover-background: var(--color-button-hover-background);
+$button-mobile-background: var(--color-button-mobile-background);
+$dropdown-link-color: var(--color-dropdown-link);
+$nav-color: var(--color-nav);
+$nav-active-border-color: var(--color-nav-active-border);
+$nav-mobile-border-color: var(--color-nav-mobile-border);
+$card-border-color: var(--color-card-border);
+$card-preview-border-color: var(--color-card-preview-border);
+$card-shadow-color: var(--color-card-shadow);
+$publication-bar-color: var(--color-publication-bar);
+$checkbox-border-color: var(--color-checkbox-border);
+$checkbox-background-color: var(--color-checkbox-background);
+$checkbox-active-color: var(--color-checkbox-active);
+$checkbox-check-color: var(--color-checkbox-check);
+$award-color: var(--color-award);
+$trophy-color: var(--color-trophy);
+$table-text-color: var(--color-table-text);
+$table-header-background: var(--color-table-header-background);
+$table-header-text: var(--color-table-header-text);
+$table-cell-background: var(--color-table-cell-background);
+$table-cell-background-alt: var(--color-table-cell-background-alt);
 
 $on-palm:          600px;
 $on-laptop:        800px;
