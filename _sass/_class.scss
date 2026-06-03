@@ -23,7 +23,7 @@
   
   /* Zebra Stripe Rows */
   tr:nth-child(even) td { background: $table-cell-background-alt; }
-  tr:nth-child(odd) td { background: $surface-muted-color; }
+  tr:nth-child(odd) td { background: $table-cell-background; }
   
   /* Add border-radius to specific cells! */
   tr:first-child th:first-child { 
