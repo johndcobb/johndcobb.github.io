@@ -35,29 +35,36 @@
 #  type:
 #    - Conference
 #    - Journal
-
-#- id: GradedUltraproducts
-#  title: Ultraproducts of Graded Algebras
-#  year: 2025
-#  authors:
-#    - John Cobb
-#    - Nathaniel Gallup
-#    - John Spoerl
-#  venue:
-#  pdf:
-#  arxiv:
-  #highlight: true 
-#  description: A common argument for establishing bounds within commutative algebra is the construction of a "limiting polynomial ring" that allows one to trade asymptotic behavior over many polynomial rings for exact behavior in the limit ring. We define a degree bounded ultraproduct that packages this argument up and establish several strong properties about it using its unique position within logic. We give several out-of-the-box algebraic tools to use on such rings.
-#  tags:
-#    - Logic
-#    - Commutative Algebra
-#  type:
-#    - In Progress
-
-- id: NonsimplicialSplines
-  title: "Equivariant Chow and Minkowski Weights for Complete Toric Varieties"
+- id: StillmanPrimalityBound
+  title: "Stillman Bound for Primality"
   year: 2026
-  venue: Submitted
+  venue: In Preparation
+  authors:
+    - John Cobb
+    - Nathaniel Gallup
+    - Charlotte Keisling
+    - John Spoerl
+  description: 'We give an ultraproduct approach to bounded primality for homogeneous ideals in polynomial rings over algebraically closed fields.'
+  tags: 
+    - Commutative Algebra
+  type: In Progress
+- id: WeightedPointedCurves
+  title: "Weighted Syzygies of Pointed Curves"
+  year: 2026
+  venue: In Preparation
+  authors:
+    - Maya Banks
+    - John Cobb
+    - Mahrud Sayrafi
+  description: 'Let $C$ be a smooth curve and $P\in C$ a point. We give precise and combinatorial descriptions of the betti tables for the section ring $R_d = R(C,\mathcal{O}_C(dP))$ in terms of the Weierstrass semigroup of $P$.'
+  tags: 
+    - Syzygies
+    - Algebraic Geometry
+  type: In Progress
+- id: NonsimplicialSplines
+  title: "The Katz-Payne Map in Codimension Two"
+  year: 2026
+  venue: In Preparation
   authors:
     - John Cobb
     - Hal Schenck
@@ -65,9 +72,7 @@
   tags:
     - Toric Varieties 
     - Algebraic Geometry
-  highlight: true
   type: In Progress
-
 - id: FloquetIsospectrality
   title: "Inverse Eigenvalue Problems, Floquet Isospectrality and the Hilbert-Chow Morphism"
   year: 2026

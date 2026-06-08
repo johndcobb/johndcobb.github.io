@@ -252,6 +252,20 @@ title: CV
     {% endif %}{% endfor %}
   {% endfor %}
 
+  {% for pub in site.data.publications %}{% if pub.hide == nil %}
+    {% if pub.type == 'In Progress'%}
+      <div class="cv-pub">
+        <div class="ref-container">&#10033</div>
+        <h4>{% if pub.pdf %}<a href="{{ pub.pdf }}">{{ pub.title }}</a>{% else %}{{ pub.title }}{%endif%}</h4>
+        <div>
+          {% for author in pub.authors %}{% include person person=author %}{% unless forloop.last %}, {% endunless %}{% endfor %}.
+          {% if pub.venue %}<i>{{ pub.venue }}</i>,{% endif %} {{ pub.year }}.
+          {% for award in pub.awards %}<br/><strong class="award"><i class="fas fa-{% if award == "Best Paper Award" %}trophy{% else %}award{% endif %}" aria-hidden="true"></i> {{ award }}</strong>{% endfor %}
+        </div>
+      </div>
+    {% endif %}
+  {% endif %}{% endfor %}
+
 
   <div class="line-container">
     <h2>Talks  <a href="{{ '/talks/' | absolute_url }}">[Interactive Version]</a></h2>
