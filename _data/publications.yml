@@ -35,19 +35,6 @@
 #  type:
 #    - Conference
 #    - Journal
-- id: StillmanPrimalityBound
-  title: "Stillman Bound for Primality"
-  year: 2026
-  venue: In Preparation
-  authors:
-    - John Cobb
-    - Nathaniel Gallup
-    - Charlotte Keisling
-    - John Spoerl
-  description: 'We give an ultraproduct approach to bounded primality for homogeneous ideals in polynomial rings over algebraically closed fields.'
-  tags: 
-    - Commutative Algebra
-  type: In Progress
 - id: WeightedPointedCurves
   title: "Weighted Syzygies of Pointed Curves"
   year: 2026
