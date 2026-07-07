@@ -1,0 +1,23 @@
+@use "variables" as *;
+
+.not-found {
+  h1 {
+    margin-top: 0;
+  }
+
+  .not-found-figure {
+    display: block;
+    margin: 0 0 $spacing-unit;
+  }
+
+  .not-found-figure img {
+    display: block;
+    width: 100%;
+    border: 1px solid $card-border-color;
+    border-radius: 3px;
+  }
+
+  h3 {
+    margin-top: 0;
+  }
+}
