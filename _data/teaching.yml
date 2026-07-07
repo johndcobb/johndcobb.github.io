@@ -3,6 +3,7 @@
   role: "Instructor"
   year: Fall 2026 
   location: Auburn University
+  url: "/teaching/AlgebraFall2026"
   roledescription: Responsible for all aspects of the course including lectures, assignments, and exams.
 - title: "Calculus III"
   coursenum: "MATH 2630"
