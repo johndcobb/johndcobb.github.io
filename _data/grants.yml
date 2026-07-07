@@ -1,3 +1,8 @@
+- name: NSF conference grant DMS-2625606 ($35,000)
+  years: 2026
+  short-description: Awarded to fund a Macaulay2 workshop in Auburn.
+  link: https://www.nsf.gov/awardsearch/showAward?AWD_ID=2625606&HistoricalAwards=false
+  highlight: true
 - name: NSF conference grant DMS-2504328 ($20,767)
   years: 2025
   short-description: Awarded to fund MAAG 2025 in Auburn.
