@@ -12,7 +12,7 @@ class: class
 
 ## Essential Information
 
-The central location for all course-related in1formation (schedule, homework, syllabus, etc) is [Canvas](https://auburn.instructure.com/courses/1739625/). All solutions to quizzes, tests, and worksheets will be posted to Canvas. The times and dates for all examples are listed below in the table.
+The central location for all course-related information (schedule, homework, syllabus, etc) is [Canvas](https://auburn.instructure.com/courses/1739625/). All solutions to quizzes, tests, and worksheets will be posted to Canvas. The times and dates for all examples are listed below in the table.
 
 When you have a question, of course feel free to [email me](mailto:{{ site.email }}) but also please consider posting it to [Piazza](https://piazza.com/class/me9zr3grihh5be) (which you can do anonymously!) so that everyone can benefit from the discussion. It is incredibly likely that someone else is struggling with a similar issue. 
 
