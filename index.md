@@ -35,7 +35,7 @@ I received my PhD from the mathematics department at the [University of Wisconsi
 
 {:.no-list}
 * <i class="fa-solid fa-envelope" aria-hidden="true"></i> <a href="mailto:{{ site.email }}">{{ site.email }}</a>
-* Stem+Ag Complex, Building A, Office 1150
+* <i class="fas fa-map-marker-alt" aria-hidden="true"></i> Stem+Ag Complex, Building A, Office 1150
 </div>
 </div>
 <!--- Put stuff here when ready -->
