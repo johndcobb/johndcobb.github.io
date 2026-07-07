@@ -17,7 +17,12 @@ Organizers: [John Cobb](https://johndcobb.github.io), [Sean Grate](https://seang
 - To bring together members of diverse mathematical communities and begin new collaborations.
 - To provide students with hands-on learning and coding experiences
 
-Application for funding coming soon!
+For funding, please apply by January 6th, 2027.
+<div class="button-container" style="text-align: center">
+    <a href="https://forms.gle/32TyHhfz3mJRywK9A" class="button" style="margin:5px">
+    Register
+    </a>
+</div>
 
 ## Schedule
 
@@ -41,7 +46,7 @@ Lodging: We will be housing all participants at the [The Hotel at Auburn Univers
 Airport: We recommend flying to ATL and then taking the [Groome Shuttle](https://groometransportation.com/?&sd_client_id=b9e0e5cc-7c56-4a88-bf69-84da218a0388).
 
 ## Local Information
-We will have a reception at Ariccia from 5:45-7:45 PM on Monday, September 14th. Here are some more recommendations nearby the hotel:
+Here are some more recommendations nearby the hotel:
 
 - The Plains Taproom is a self-pour taproom nearby
 - The Hound does elevated southern food, although pricier
@@ -60,4 +65,4 @@ The University has general policies prohibiting harassment and discrimination on
 Any person may report incidents of sexual violence, sexual harassment, relationship violence, stalking, or other forms of prohibited behavior to the campus Title IX office. [aub.ie/TitleIX](aub.ie/TitleIX) has links to report an incident and additional information is available on this site.
 
 ## Funding
-We are applying to the NSF to cover participation.
+This conference is supported all or in part by the National Science Foundation under DMS Award No. 2625606.
