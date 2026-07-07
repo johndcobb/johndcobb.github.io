@@ -82,6 +82,10 @@ I will be lecturing off of my own notes, which you can see below. These notes we
 
 ### Exercises, Assessment, and Grading
 
+#### Gradescope
+
+All assignments will be given on gradescope, which you can access via the menu on Canvas. You will be responsible for uploading pictures or pdfs of your homework to gradescope. You may do this however you wish, but it appears easiest to use the gradescope app. You can use it to scan pages of your homework and then assign those pages to the particular questions that are being graded.
+
 #### Grading
 
 Course grades will be computing using the following weights:
