@@ -1,9 +1,17 @@
+- title: TX-LA SIAM Minisymposium on Applied AG
+  type: Special Session
+  dates: Oct 2026
+  location: Dallas, TX
+  url: https://sites.google.com/view/siam-txla-2026
+  description: "This minisymposium will focus on applications of algebraic geometry to other areas of mathematics and science."
 - title: Macaulay2 at Auburn
   type: Conference
   dates: Feb 2027
   location: Auburn, AL
   url: /organizing/M2atAuburn/
   description: A one week Macaulay2 workshop at Auburn University expand the capabilities and functionality of Macaulay2 and its accompanying packages.
+  grant: DMS-2625606 ($35,000)
+  grant_link: https://www.nsf.gov/awardsearch/showAward?AWD_ID=2625606&HistoricalAwards=false
 - title: JMM Special Session on Applied AG
   type: Special Session
   dates: Jan 2027

@@ -46,6 +46,9 @@ clemson, sc:
 coventry, uk:
   lat: 52.4081812
   lon: -1.510477
+dallas, tx:
+  lat: 32.7762719
+  lon: -96.7968559
 eindhoven, the netherlands:
   lat: 51.4392648
   lon: 5.478633

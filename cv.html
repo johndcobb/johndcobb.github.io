@@ -303,11 +303,16 @@ title: CV
       <div class="date-container">
         <span class="date">{{meeting.dates | replace: "-", "–" }}</span>
         <span style="flex: 1">{{ meeting.title}}, <small class="muted"> <em>{{ meeting.location }}</em> </small> </span>
-        {% if meeting.url %}
-      <div class="extra-links">
-        <a href="{{ meeting.url }}"><i class="fas fa-link" aria-hidden="true"></i> Website</a>
-      </div>
-    {% endif %} 
+        {% if meeting.url or meeting.grant_link %}
+          <div class="extra-links">
+            {% if meeting.url %}
+              <a href="{{ meeting.url }}"><i class="fas fa-link" aria-hidden="true"></i> Website</a>
+            {% endif %}
+            {% if meeting.grant_link %}
+              <a href="{{ meeting.grant_link }}"><i class="fas fa-award" aria-hidden="true"></i> Grant</a>
+            {% endif %}
+          </div>
+        {% endif %}
       </div>
     {% endif %}
   {% endfor %}

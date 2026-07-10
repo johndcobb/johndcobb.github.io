@@ -17,6 +17,12 @@
   where: Chicago, IL
   start: 2027-01-12
   end: 2027-01-15
+- title: TX-LA SIAM Sectional Meeting
+  venue: Southern Methodist University
+  where: Dallas, TX
+  type: conference
+  start: 2026-10-30
+  end: 2026-11-01
 - title: Future of Macaulay2
   type: workshop
   venue: Georgia Tech

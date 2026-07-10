@@ -17,14 +17,18 @@ class: talks organizing
     <a href="{{ conference.url }}" class="organizing-link">
       <i class="fas fa-link" aria-hidden="true"></i> Website
     </a>
+    {% endif %}{% if conference.grant_link %}
+    <a href="{{ conference.grant_link }}" class="organizing-link">
+      <i class="fas fa-award" aria-hidden="true"></i> Grant
+    </a>
     {% endif %} </h5>
 </div>
 
 <div class ="date-container">
 <span class="date"> {{ conference.dates }}</span>
 <span class="right">{{ conference.location }}</span>
-<span class="fill">{{ conference.description }}{% if conference.numparticipants %} {% if conference.grant %} Supported by 
-<a href="{{ conference.link }}"> {{ conference.grant }}. </a> {% endif %} (~{{ conference.numparticipants }} participants){% endif %}</span>
+<span class="fill">{{ conference.description }}{% if conference.grant %} Supported by
+{% if conference.grant_link %}<a href="{{ conference.grant_link }}">{{ conference.grant }}</a>{% else %}{{ conference.grant }}{% endif %}.{% endif %}{% if conference.numparticipants %} (~{{ conference.numparticipants }} participants){% endif %}</span>
 </div>
 </div>
 
