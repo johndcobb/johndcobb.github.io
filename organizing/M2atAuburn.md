@@ -17,12 +17,13 @@ Organizers: [John Cobb](https://johndcobb.github.io), [Sean Grate](https://seang
 - To bring together members of diverse mathematical communities and begin new collaborations.
 - To provide students with hands-on learning and coding experiences
 
-For funding, please apply by January 6th, 2027.
+<!-- For funding, please apply by January 6th, 2027.
 <div class="button-container" style="text-align: center">
     <a href="https://forms.gle/32TyHhfz3mJRywK9A" class="button" style="margin:5px">
     Register
     </a>
 </div>
+-->
 
 ## Schedule
 
