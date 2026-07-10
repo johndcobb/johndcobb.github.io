@@ -166,9 +166,14 @@
     - David Barnhill
     - John Cobb
     - Matthew Faust
-  venue: To Appear in ISSAC 
+  venue: "ISSAC 26': Proceedings of the 2026 International Symposium on Symbolic and Algebraic Computation"
+  venue_url: https://dl.acm.org/conference/issac/proceedings
+  venue_tags:
+    - ISSAC
   pdf: https://arxiv.org/pdf/2312.08501
   arxiv: "2312.08501"
+  doi: 10.1145/3815436.3815479
+  short_doi: 10/rfct
   link: https://github.com/johndcobb/LikelihoodGeometry
   description: Characteristics of the maximum likelihood estimation problems are reflected in the geometry of a variety called the likelihood correspondence. We construct the ideal of this variety for some popular examples of statistical models.
   tags:
