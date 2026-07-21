@@ -49,6 +49,7 @@ Airport: We recommend flying to ATL and then taking the [Groome Shuttle](https:/
 ## Local Information
 Here are some more recommendations nearby the hotel:
 
+- Beyond the Wok is nearby with a large menu of Chinese dishes and sushi
 - The Plains Taproom is a self-pour taproom nearby
 - The Hound does elevated southern food, although pricier
 - Hey Day Market is an upscale food court with many options
