@@ -3,6 +3,11 @@
   city: Chicago, IL
   type: Conference
   date: 2027-01-14
+- title: "The Katz-Payne Map in Codimension Two"
+  location: Auburn Algebra Seminar
+  city: Auburn, AL
+  type: Seminar
+  date: 2026-10-27
 - title: "The Cox Category: Fourier-Mukai transforms"
   location: "Arbeitsgemeinschaft: New Homological Methods in Toric Geometry"
   city: Oberwolfach, Germany
