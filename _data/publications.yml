@@ -48,6 +48,7 @@
     - Syzygies
     - Algebraic Geometry
   type: In Progress
+
 - id: NonsimplicialSplines
   title: "The Katz-Payne Map in Codimension Two"
   year: 2026
@@ -60,6 +61,7 @@
     - Toric Varieties 
     - Algebraic Geometry
   type: In Progress
+
 - id: FloquetIsospectrality
   title: "Inverse Eigenvalue Problems, Floquet Isospectrality and the Hilbert-Chow Morphism"
   year: 2026

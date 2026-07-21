@@ -4,6 +4,12 @@
   type: workshop
   start: 2027-02-22
   end: 2027-02-26
+- title: Commutative Algebra, Representation Theory, and Other Interactions
+  venue: SLMath
+  where: Berkeley, CA
+  type: conference
+  start: 2027-02-08
+  end: 2027-02-12
 - title: Semester Program in Metric AG
   venue: ICERM
   where: Providence, RI
