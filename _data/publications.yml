@@ -56,7 +56,7 @@
   authors:
     - John Cobb
     - Hal Schenck
-  description: We charactetize the kernel and cokernel of a natural map from the equivariant Chow ring to the usual Chow ring on complete toric varieties in terms of splines and Minkowski weights.
+  description: We characterize the kernel and cokernel of a natural map from the equivariant Chow ring to the usual Chow ring on complete toric varieties in terms of splines and Minkowski weights.
   tags:
     - Toric Varieties 
     - Algebraic Geometry
