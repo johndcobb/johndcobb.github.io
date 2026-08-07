@@ -52,7 +52,7 @@
 - id: WeightedPointedCurves
   title: "Weighted Syzygies of Pointed Curves"
   year: 2026
-  venue: In Preparation
+  venue: Submitted
   authors:
     - Maya Banks
     - John Cobb
@@ -61,7 +61,7 @@
   tags: 
     - Syzygies
     - Algebraic Geometry
-  type: In Progress
+  type: Preprint
 
 - id: NonsimplicialSplines
   title: "Homological Defects of the Forgetful Map in Toric Chow Cohomology"
