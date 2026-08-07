@@ -35,6 +35,20 @@
 #  type:
 #    - Conference
 #    - Journal
+- id: StillmanNormalization
+  title: "Serre Conditions and Stillman Bounds via Graded Ultraproducts"
+  year: 2026
+  venue: In Preparation
+  authors:
+    - John Cobb
+    - Nathaniel Gallup
+    - John Spoerl
+  description: We show that several basic properties of polynomial equations are controlled by the number and degrees of the equations, no matter how many variables are involved. Using graded ultraproducts, we obtain uniform tests for primality and Serre conditions, as well as uniform bounds on normalization.
+  tags:
+    - Syzygies
+    - Commutative Algebra
+  type: In Progress
+
 - id: WeightedPointedCurves
   title: "Weighted Syzygies of Pointed Curves"
   year: 2026
@@ -50,17 +64,18 @@
   type: In Progress
 
 - id: NonsimplicialSplines
-  title: "Forgetting Equivariance in Toric Chow Rings"
+  title: "Homological Defects of the Forgetful Map in Toric Chow Cohomology"
   year: 2026
-  venue: In Preparation
+  venue: Submitted
   authors:
     - John Cobb
     - Hal Schenck
-  description: We characterize the kernel and cokernel of a natural map from the equivariant Chow ring to the usual Chow ring on complete toric varieties in terms of splines and Minkowski weights.
+  description: This paper studies how the chow ring of a toric variety change when we forget its torus action. It develops a way to measure the resulting discrepancies and proves that, in degree two, no unexpected information is lost.
   tags:
     - Toric Varieties 
     - Algebraic Geometry
-  type: In Progress
+    - Syzygies
+  type: Preprint
 
 - id: FloquetIsospectrality
   title: "Inverse Eigenvalue Problems, Floquet Isospectrality and the Hilbert-Chow Morphism"
