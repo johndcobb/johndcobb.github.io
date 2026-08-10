@@ -68,8 +68,8 @@ I will be lecturing off of my own notes, which you can see below. These notes we
 | **Week 6**: September 21-25 | 2.1 Definitions and examples; 2.2 Generators and relations |
 | **Week 7**: September 28-October 2 | 2.3 Cyclic groups in detail; 3.1 Cosets and Lagrange's theorem |
 | **Week 8**: October 5-9 | 3.1 Cosets and Lagrange's theorem; 3.2 Normal subgroups; Fall break |
-| **Week 9**: October 12-16 | 3.3 Quotient groups; review and catch-up; Quiz 2 |
-| **Week 10**: October 19-23 | 3.4 Isomorphism theorems; 3.5 Composition series and the Holder program |
+| **Week 9**: October 12-16 | 3.3 Quotient groups; review and catch-up; |
+| **Week 10**: October 19-23 | 3.4 Isomorphism theorems; 3.5 Composition series and the Holder program;  Quiz 2 |
 | **Week 11**: October 26-30 | 4.1 Orbits and stabilizers |
 | **Week 12**: November 2-6 | 4.2 The class equation; 4.3 Other group actions with applications |
 | **Week 13**: November 9-13 | Review and catch-up; Test 2 |
