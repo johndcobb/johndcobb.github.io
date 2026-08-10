@@ -47,7 +47,7 @@ I will be lecturing off of my own notes, which you can see below. These notes we
 | **Monday, September 7th**                   | Labor day - No classes                                   |
 | **Friday, September 18th**                  | Test 1                                                   |
 | **October 8-9th**                           | Fall break - No classes                                  |
-| **Friday, October 16th**                    | Quiz 2                                                   |
+| **Wednesday, October 21th**                    | Quiz 2                                                   |
 | **Friday, November 13th**                   | Test 2                                                   |
 | **Friday, November 20th**                   | Last day to withdraw with a grade of 'W'                 |
 | **November 23-27th**                        | Thanksgiving break - No classes                          |
