@@ -53,7 +53,7 @@ I will be lecturing off of my own notes, which you can see below. These notes we
 | **November 23-27th**                        | Thanksgiving break - No classes                          |
 | **Wednesday, December 2nd**                 | Quiz 3                                                   |
 | **Friday, December 4th**                    | Last day of classes                                      |
-| **Friday, December 12th, 1:30-3:30 PM**     | Final Exam                                               |
+| **Friday, December 11th, 1:30-3:30 PM**     | Final Exam                                               |
 | **Monday, December 14th, 9:30 PM**          | Final grades are submitted                               |
 
 ### Rough Class Schedule

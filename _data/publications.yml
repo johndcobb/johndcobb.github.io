@@ -57,7 +57,7 @@
     - Maya Banks
     - John Cobb
     - Mahrud Sayrafi
-  description: 'Let $C$ be a smooth curve and $P\in C$ a point. We give precise and combinatorial descriptions of the betti tables for the section ring $R_d = R(C,\mathcal{O}_C(dP))$ in terms of the Weierstrass semigroup of $P$.'
+  description: 'Let $C$ be a smooth curve and $P\in C$ a point. We give precise and combinatorial descriptions of the betti tables for the section ring $R(C,\mathcal{O}_C(dP))$ in terms of the Weierstrass semigroup of $P$.'
   tags: 
     - Syzygies
     - Algebraic Geometry
