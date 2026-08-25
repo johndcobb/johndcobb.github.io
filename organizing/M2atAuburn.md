@@ -8,7 +8,7 @@ sections: Overview, Talks, Schedule, Participant Information, Funding
 
 # Macaulay2 at Auburn 2027
 ![Auburn](/images/projects/auburn.jpg "An image of Auburn, AL from the Auburn Photographic Services.") 
-#### February 22-26th, 2027
+#### February 22-25th, 2027
 Organizers: [John Cobb](https://johndcobb.github.io), [Sean Grate](https://seangrate.com), [Michael Brown](https://webhome.auburn.edu/~mkb0096/)
 
 ## Overview
@@ -29,14 +29,14 @@ Organizers: [John Cobb](https://johndcobb.github.io), [Sean Grate](https://seang
 
 The following is tentative:
 
-| Time           | Monday  | Tuesday | Wednesday   | Thursday | Friday |
-| :------------: | :----------------- | :---------------- | :--------------- | :-------------- | :------------ |
-| 9:00 - 9:30 | *Coffee Break*     | *Coffee Break*         | *Coffee Break*           | *Coffee Break* | *Coffee Break*
-| 9:30 - 10:30  | Project Introductions     | Group Projects          | Group Projects          | Group Projects | Project Presentations
-| 10:30 - 11:30 | git tutorial         | Group Projects | Group Projects   | Group Projects
-| 11:30 - 1:00  | Lunch           | Lunch   | Lunch | Lunch
-| 1:00 - 1:30   | *Coffee Break*         | *Coffee Break*            | *Coffee Break*      | *Coffee Break*  | 
-| 1:30 - 5:00 | Group Projects | Group Projects | Group Projects | Group Projects | 
+| Time           | Monday  | Tuesday | Wednesday   | Thursday |
+| :------------: | :----------------- | :---------------- | :--------------- | :------------ |
+| 9:00 - 9:30 | *Coffee Break*     | *Coffee Break*         | *Coffee Break*         | *Coffee Break*
+| 9:30 - 10:30  | Project Introductions     | Group Projects          | Group Projects      | Project Presentations
+| 10:30 - 11:30 | git tutorial         | Group Projects | Group Projects   
+| 11:30 - 1:00  | Lunch           | Lunch   | Lunch 
+| 1:00 - 1:30   | *Coffee Break*         | *Coffee Break*            | *Coffee Break*      
+| 1:30 - 5:00 | Group Projects | Group Projects | Group Projects 
 | 5:00 - 5:30 |  | Lightning Talks | | | |
 | Evening | | Group Outing | | | |
 
