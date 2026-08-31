@@ -1,4 +1,7 @@
 import folium
+from folium.elements import JSCSSMixin
+from folium.map import Layer
+from folium.template import Template
 from geopy.geocoders import Nominatim
 from geopy.exc import GeocoderRateLimited, GeocoderServiceError
 from geopy.extra.rate_limiter import RateLimiter
@@ -19,6 +22,78 @@ GEOCODE = RateLimiter(
 CACHE_PATH = Path("_data/travel_geocode_cache.yml")
 MAX_GEOCODE_ATTEMPTS = 5
 BASE_RETRY_DELAY_SECONDS = 5.0
+POSITRON_STYLE_URL = "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json"
+POSITRON_ATTRIBUTION = (
+    '&copy; <a href="https://carto.com/about-carto/">CARTO</a>, '
+    '&copy; <a href="https://www.openstreetmap.org/copyright">'
+    "OpenStreetMap</a> contributors"
+)
+
+
+class EnglishPositron(JSCSSMixin, Layer):
+    """Render CARTO Positron vector tiles with English or Latin labels."""
+
+    _template = Template(
+        """
+        {% macro script(this, kwargs) %}
+            var {{ this.get_name() }} = L.maplibreGL({
+                style: {{ this.style_url|tojson }},
+                attribution: {{ this.attribution|tojson }}
+            }).addTo({{ this._parent.get_name() }});
+            var {{ this.get_name() }}_map = {{ this.get_name() }}.getMaplibreMap();
+            {{ this.get_name() }}_map.on("load", function() {
+                var english_name = [
+                    "coalesce",
+                    ["get", "name:en"],
+                    ["get", "name:latin"],
+                    ["get", "name_int"]
+                ];
+                {{ this.get_name() }}_map.getStyle().layers.forEach(function(layer) {
+                    var text_field = layer.layout && layer.layout["text-field"];
+                    if (
+                        layer.type === "symbol" &&
+                        text_field &&
+                        JSON.stringify(text_field).indexOf("name") !== -1
+                    ) {
+                        {{ this.get_name() }}_map.setLayoutProperty(
+                            layer.id,
+                            "text-field",
+                            english_name
+                        );
+                    }
+                });
+            });
+        {% endmacro %}
+        """
+    )
+
+    default_js = [
+        (
+            "maplibre-gl-js",
+            "https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.js",
+        ),
+        (
+            "maplibre-gl-leaflet-js",
+            "https://unpkg.com/@maplibre/maplibre-gl-leaflet@0.1.4/leaflet-maplibre-gl.js",
+        ),
+    ]
+    default_css = [
+        (
+            "maplibre-gl-css",
+            "https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.css",
+        )
+    ]
+
+    def __init__(self):
+        super().__init__(
+            name="CARTO Positron",
+            overlay=False,
+            control=False,
+            show=False,
+        )
+        self._name = "EnglishPositron"
+        self.style_url = POSITRON_STYLE_URL
+        self.attribution = POSITRON_ATTRIBUTION
 
 
 def normalize_address(city, state):
@@ -52,7 +127,15 @@ def save_geocode_cache(cache):
 def create_map(locations):
     """ Create a map centered at the first location """ 
     map_center = [16.383, -5.74]
-    my_map = folium.Map(location=map_center, world_copy_jump=True, zoom_start=1, tiles = "cartodb positron", zoom_control = False)
+    my_map = folium.Map(
+        location=map_center,
+        world_copy_jump=True,
+        zoom_start=1,
+        min_zoom=1,
+        tiles=None,
+        zoom_control=False,
+    )
+    EnglishPositron().add_to(my_map)
 
     # Add markers for each location
     for loc in locations:

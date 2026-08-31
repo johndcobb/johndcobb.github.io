@@ -43,6 +43,9 @@ chicago, il:
 clemson, sc:
   lat: 34.6850749
   lon: -82.8364111
+cortona, italy:
+  lat: 43.2752976
+  lon: 11.9850623
 coventry, uk:
   lat: 52.4081812
   lon: -1.510477
