@@ -85,6 +85,12 @@ We will form groups to work on various Macaulay2 projects throughout the week. H
 </details>
 
 <details class="project">
+    <summary>$p$-adic numbers</summary>
+    <p>The recently added <code>Padic</code> package provides basic arithmetic with p-adic numbers using the FLINT library and Macaulay2's foreign function interface. However, this arithmetic is not yet available for matrices and polynomials, which requires integration with Macaulay2's C++ engine.</p>
+    <p>Since FLINT already implements p-adic arithmetic, this is primarily a matter of gluing that implementation into Macaulay2's engine as a new coefficient ring. Once that ring is in place, matrix and polynomial operations become available through Macaulay2's existing generic machinery, enabling computations such as Hensel lifting and p-adic point counting. Group members will learn how to build Macaulay2 from source, write code in the D language used by the Macaulay2 interpreter, add a new coefficient ring type in the engine, and write top-level Macaulay2 code to bring everything together.</p>
+</details>
+
+<details class="project">
     <summary>ToricStacks</summary>
     <p>Toric stacks extend toric varieties by allowing stack structure while retaining a combinatorial description in terms of stacky fans. The developing <a href="https://github.com/julietteBruce/toricStacks">ToricStacks package</a> provides tools for constructing and studying these objects in Macaulay2, including diagonalizable and Cox groups, weighted projective stacks, morphisms, canonical stacks, and fantastacks.</p>
     <p>This project will strengthen the package by expanding its tests, documentation, and examples, including examples of canonical stacks and fantastacks from the work of Geraschenko and Satriano. Further goals may include supporting the alternative stacky-fan description of Borisov, Chen, and Smith; testing smoothness of toric stacks and determining whether toric morphisms are isomorphisms; and computing invariants such as Picard and class groups, nef and effective cones, and Cox rings. Participants can contribute through examples and documentation or work on new mathematical functionality, depending on their background.</p>
