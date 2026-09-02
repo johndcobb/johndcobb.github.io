@@ -42,7 +42,6 @@
   authors:
     - John Cobb
     - Nathaniel Gallup
-    - John Spoerl
   description: We show that several basic properties of polynomial equations are controlled by the number and degrees of the equations, no matter how many variables are involved. Using graded ultraproducts, we obtain uniform tests for primality and Serre conditions, as well as uniform bounds on normalization.
   tags:
     - Syzygies
@@ -57,11 +56,15 @@
     - Maya Banks
     - John Cobb
     - Mahrud Sayrafi
-  description: 'Let $C$ be a smooth curve and $P\in C$ a point. We give precise and combinatorial descriptions of the betti tables for the section ring $R(C,\mathcal{O}_C(dP))$ in terms of the Weierstrass semigroup of $P$.'
+  description: 'We study the syzygies of pointed curves embedded in weighted projective space by line bundles $\mathcal O_C(dP)$ that need not be very ample. Using the Weierstrass semigroup of $P$, we bound the ambient weights and syzygy degrees, compute weighted regularity, and establish weighted $N_p$ results.'
   tags: 
     - Syzygies
     - Algebraic Geometry
   type: Preprint
+  link: https://mahrud.github.io/WeightedSyzygies/
+  pdf: "https://arxiv.org/pdf/2609.00312"
+  arxiv: '2609.00312'
+  highlight: true
 
 - id: NonsimplicialSplines
   title: "Homological Defects of the Forgetful Map in Toric Chow Cohomology"
@@ -70,7 +73,7 @@
   authors:
     - John Cobb
     - Hal Schenck
-  description: This paper studies how the chow ring of a toric variety change when we forget its torus action. It develops a way to measure the resulting discrepancies and proves that, in degree two, no unexpected information is lost.
+  description: This paper studies how the Chow ring of a toric variety changes when we forget its torus action. It develops a new homological way to measure the resulting discrepancies and proves that, in degree two, no unexpected information is lost.
   tags:
     - Toric Varieties 
     - Algebraic Geometry
@@ -132,7 +135,6 @@
   venue_url: https://www.sciencedirect.com/journal/journal-of-algebra
   pdf: https://arxiv.org/pdf/2406.09593
   arxiv: "2406.09593"
-  highlight: true 
   description: In 2000, Mike Stillman conjectured that the projective dimension of a homogeneous ideal in a standard graded polynomial ring can be bounded just in terms of the number and degrees of the generators. We resolve Stillman's conjecture for families of polynomial rings that are graded by any abelian group under mild conditions. Conversely, we show that these conditions are necessary for the existence of a Stillman bound. 
   tags: 
     - Syzygies
