@@ -41,5 +41,37 @@
   tr:last-child td:first-child { 
     border-radius: 0 0 0 6px; 
   }
+
+  details.project {
+    margin: 1.25rem 0;
+    padding: 0.85rem 1rem;
+    border: 1px solid $border-color;
+    border-radius: 6px;
+    background: $surface-muted-color;
+
+    summary {
+      cursor: pointer;
+      color: $heading-color;
+      font-weight: $bold-font-weight;
+    }
+
+    &[open] summary {
+      margin-bottom: 0.75rem;
+    }
+
+    p {
+      margin: 0 0 0.9rem;
+    }
+
+    p:last-child,
+    ul:last-child,
+    ol:last-child {
+      margin-bottom: 0;
+    }
+
+    li + li {
+      margin-top: 0.35rem;
+    }
+  }
   
 }
