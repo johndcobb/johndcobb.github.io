@@ -21,7 +21,10 @@ class: home
 <div class="intro" markdown="1">
 I am a NSF postdoctoral fellow with [Hal Schenck](http://webhome.auburn.edu/~hks0015/) at Auburn University. My research interests are primarily within algebraic geometry and commutative algebra, as well as their applications to data science and physics. 
 
-I received my PhD from the mathematics department at the [University of Wisconsin-Madison](https://www.math.wisc.edu/) in May 2024, where I was advised by both [Daniel Erman](https://math.hawaii.edu/~erman) and [Michael Kemeny](https://people.math.wisc.edu/~kemeny/homepage.html). From 2019 to 2022, I was supported by a [DoD NDSEG Fellowship](https://ndseg.sysplus.com/NDSEG/About/). Details are in my [CV]({{ absolute_url }}/cv).
+I received my PhD from the mathematics department at the [University of Wisconsin-Madison](https://www.math.wisc.edu/) in May 2024, where I was advised by both [Daniel Erman](https://math.hawaii.edu/~erman) and [Michael Kemeny](https://people.math.wisc.edu/~kemeny/homepage.html). From 2019 to 2022, I was supported by a [DoD NDSEG Fellowship](https://ndseg.sysplus.com/NDSEG/About/). Details are in my [CV]({{ absolute_url }}/cv). 
+
+I am currently on the job market for Fall 2027.
+
 
 </div>
 
