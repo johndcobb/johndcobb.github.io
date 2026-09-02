@@ -11,6 +11,13 @@
   dates: Jan 2027
   location: Chicago, IL
   description: "This special session will focus on applications of algebraic geometry to other areas of mathematics and science."
+- title: Auburn-Regions Data Hackathon
+  type: Service
+  dates: Oct 2026
+  url: "https://cosam.auburn.edu/math/students/regions-hackathon.php"
+  location: Auburn, AL
+  description: "Coorganized a hackathon wherein teams analyze a consumer-lending dataset, develop predictive and business-focused solutions, and present their recommendations to a panel of Auburn and Regions Bank judges."
+  role: Coorganizer
 - title: TX-LA SIAM Minisymposium on Applied AG
   type: Special Session
   dates: Oct 2026
