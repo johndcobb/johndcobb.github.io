@@ -44,7 +44,7 @@ The following is tentative:
 We will form groups to work on various Macaulay2 projects throughout the week. Here are their descriptions:
 
 <details class="project">
-    <summary>Varieties</summary>
+    <summary>Varieties — <a href="https://sites.google.com/view/kellervandebogert/home">Keller VandeBogert</a></summary>
     <p>This project aims to make Macaulay2's Varieties package, the core interface for projective varieties and coherent sheaves, a robust foundation for the many geometrically motivated packages that could build on it. Goals include:</p>
     <ul>
         <li>A rigorous treatment of morphisms of projective varieties, with pullback and (derived) pushforward of sheaves;</li>
@@ -56,7 +56,7 @@ We will form groups to work on various Macaulay2 projects throughout the week. H
 </details>
 
 <details class="project">
-    <summary>Constructing resolutions of toric subvarieties</summary>
+    <summary>Constructing resolutions of toric subvarieties — <a href="https://jkyang92.github.io/">Jay Yang</a></summary>
     <p>Recently, Hanlon, Hicks, and Lazerev constructed resolutions of toric subvarieties. More recently, Berkesch, Cranton Heller, Smith, and I gave a combinatorial construction of these resolutions along with a more general framework for similar resolutions.</p>
     <p>The HHL resolution is implemented in the <a href="https://github.com/jkyang92/HHLResolutions">HHLResolutions package</a>. Before the package can be included in Macaulay2, we hope to address several areas:</p>
     <ol>
@@ -68,30 +68,30 @@ We will form groups to work on various Macaulay2 projects throughout the week. H
 </details>
 
 <details class="project">
-    <summary>Symbolic computation in Grothendieck-Witt rings over the integers</summary>
+    <summary>Symbolic computation in Grothendieck-Witt rings over the integers — <a href="https://tbrazel.github.io/">Thomas Brazelton</a></summary>
     <p>In many fields of mathematics—including quadratic forms, Hermitian K-theory, motivic homotopy theory, and enumerative geometry—the Grothendieck-Witt ring emerges as a central object of study. Roughly speaking, it is the collection of nondegenerate symmetric bilinear forms over a base field or ring. In favorable cases, such as finite fields, the rationals, the reals, or the complex numbers, the <a href="https://macaulay2.com/doc/Macaulay2/share/doc/Macaulay2/A1BrouwerDegrees/html/index.html"><code>A1BrouwerDegrees</code> package</a> provides software for simplifying and comparing such forms.</p>
     <p>In this project, we will work with quadratic forms involving indeterminate variables and examine examples in which they arise naturally. We will develop and implement a package that simplifies and handles these cases. Time permitting, we will extend the package to perform symbolic computation with Milnor-Witt K-theory more generally. Background in the theory of quadratic forms is preferred, but comfort with linear algebra and field theory is sufficient.</p>
 </details>
 
 <details class="project">
-    <summary>Computing quadratically enriched tropical intersections</summary>
+    <summary>Computing quadratically enriched tropical intersections — <a href="https://jordylopez27.github.io/">Jordy Lopez-Garcia</a></summary>
     <p>In classical tropical intersection theory, intersection points carry integer multiplicities. Jaramillo Puentes and Pauli introduced enriched versions of these multiplicities taking values in the Grothendieck-Witt ring of the base field. These enriched multiplicities incorporate arithmetic information beyond the classical integer-valued multiplicities.</p>
     <p>In this project, we will implement the formulas of Jaramillo Puentes and Pauli for local quadratically enriched multiplicities at tropically transverse intersections of enriched tropical hypersurfaces. We will also implement the quadratically enriched Bernstein–Khovanskii–Kushnirenko mixed volume formula and its associated combinatorial orientability criterion. Background in tropical geometry will be helpful, but is not required.</p>
 </details>
 
 <details class="project">
-    <summary>Matroids</summary>
+    <summary>Matroids — <a href="https://seangrate.com/">Sean Grate</a></summary>
     <p>The Matroids package serves as the backbone for computations with matroids in Macaulay2. We will add constructors for common classes of matroids such as lattice path matroids, transversal matroids, and combinatorial designs and, depending on time and complexity, Dowling geometries and frame matroids.</p>
 </details>
 
 <details class="project">
-    <summary>$p$-adic numbers</summary>
+    <summary>$p$-adic numbers — <a href="https://d-torrance.github.io/">Douglas Torrance</a></summary>
     <p>The recently added <code>Padic</code> package provides basic arithmetic with p-adic numbers using the FLINT library and Macaulay2's foreign function interface. However, this arithmetic is not yet available for matrices and polynomials, which requires integration with Macaulay2's C++ engine.</p>
     <p>Since FLINT already implements p-adic arithmetic, this is primarily a matter of gluing that implementation into Macaulay2's engine as a new coefficient ring. Once that ring is in place, matrix and polynomial operations become available through Macaulay2's existing generic machinery, enabling computations such as Hensel lifting and p-adic point counting. Group members will learn how to build Macaulay2 from source, write code in the D language used by the Macaulay2 interpreter, add a new coefficient ring type in the engine, and write top-level Macaulay2 code to bring everything together.</p>
 </details>
 
 <details class="project">
-    <summary>ToricStacks</summary>
+    <summary>ToricStacks — <a href="https://www.juliettebruce.xyz/">Juliette Bruce</a> and <a href="https://johndcobb.github.io/">John Cobb</a></summary>
     <p>Toric stacks extend toric varieties by allowing stack structure while retaining a combinatorial description in terms of stacky fans. The developing <a href="https://github.com/julietteBruce/toricStacks">ToricStacks package</a> provides tools for constructing and studying these objects in Macaulay2, including diagonalizable and Cox groups, weighted projective stacks, morphisms, canonical stacks, and fantastacks.</p>
     <p>This project will strengthen the package by expanding its tests, documentation, and examples, including examples of canonical stacks and fantastacks from the work of Geraschenko and Satriano. Further goals may include supporting the alternative stacky-fan description of Borisov, Chen, and Smith; testing smoothness of toric stacks and determining whether toric morphisms are isomorphisms; and computing invariants such as Picard and class groups, nef and effective cones, and Cox rings. Participants can contribute through examples and documentation or work on new mathematical functionality, depending on their background.</p>
 </details>
