@@ -29,16 +29,16 @@ For funding, please apply by January 6th, 2027.
 
 The following is tentative:
 
-| Time           | Monday  | Tuesday | Wednesday   | Thursday |
-| :------------: | :----------------- | :---------------- | :--------------- | :------------ |
-| 9:00 - 9:30 | *Coffee Break*     | *Coffee Break*         | *Coffee Break*         | *Coffee Break*
-| 9:30 - 10:30  | Project Introductions     | Group Projects          | Group Projects      | Project Presentations
-| 10:30 - 11:30 | git tutorial         | Group Projects | Group Projects   
-| 11:30 - 1:00  | Lunch           | Lunch   | Lunch 
-| 1:00 - 1:30   | *Coffee Break*         | *Coffee Break*            | *Coffee Break*      
-| 1:30 - 5:00 | Group Projects | Group Projects | Group Projects 
-| 5:00 - 5:30 |  | Lightning Talks | | | |
-| Evening | | Group Outing | | | |
+| Time | Monday | Tuesday | Wednesday | Thursday |
+| :---: | :--- | :--- | :--- | :--- |
+| 9:00 - 9:30 | *Coffee Break* | *Coffee Break* | *Coffee Break* | *Coffee Break* |
+| 9:30 - 10:30 | Project Introductions | Group Projects | Group Projects | Project Presentations |
+| 10:30 - 11:30 | git tutorial | Group Projects | Group Projects |  |
+| 11:30 - 1:00 | Lunch | Lunch | Lunch |  |
+| 1:00 - 1:30 | *Coffee Break* | *Coffee Break* | *Coffee Break* |  |
+| 1:30 - 5:00 | Group Projects | Group Projects | Group Projects |  |
+| 5:00 - 5:30 |  | Lightning Talks |  |  |
+| Evening |  | Group Outing |  |  |
 
 ## Projects
 We will form groups to work on various Macaulay2 projects throughout the week. Here are their descriptions:
