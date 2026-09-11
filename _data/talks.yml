@@ -8,6 +8,11 @@
   city: Chicago, IL
   type: Conference
   date: 2027-01-13
+- title: "Rooms on a Sphere"
+  location: Auburn Math Club
+  city: Auburn, AL
+  type: Outreach
+  date: 2026-11-05
 - title: "Inverse Eigenvalue Problems, Floquet Isospectrality and the Hilbert-Chow Morphism"
   location: TX-LA SIAM Mini-Symposium on Spectral Theory
   city: Dallas, TX

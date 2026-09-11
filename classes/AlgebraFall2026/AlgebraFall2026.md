@@ -58,24 +58,26 @@ I will be lecturing off of my own notes, which you can see below. These notes we
 
 ### Rough Class Schedule
 
+Updated using homework release dates as section completion dates through September 2. Dates in parentheses record when those sections were completed; the remaining topic schedule is tentative and includes time for examples, review, and catch-up.
+
 | **Date**                                    | **Topics**                                                |
 | :------------------------------------------ | :------------------------------------------------------- |
-| **Week 1**: August 17-21 | 1.1 Definitions and first examples; 1.2 Basic algebra in a group |
-| **Week 2**: August 24-28 | 1.3 A first gallery of examples; 1.4 Subgroups: first pass |
-| **Week 3**: August 31-September 4 | 1.5 Symmetric groups; 1.6 Dihedral groups; Quiz 1 |
-| **Week 4**: September 7-11 | Labor Day; 1.7 Homomorphisms and isomorphisms: first pass; 1.8 Group actions: first pass |
+| **Week 1**: August 17-21 | 1.1 Definitions and first examples; 1.2 Basic algebra in a group (August 17); 1.3 A first gallery of examples (August 20) |
+| **Week 2**: August 24-28 | 1.4 Subgroups: first pass (August 25); 1.5 Symmetric groups and 1.6 Dihedral groups (August 26); 1.7 Homomorphisms and isomorphisms: first pass and 1.8 Group actions: first pass (August 28) |
+| **Week 3**: August 31-September 4 | 2.1 Definitions and examples and 2.2 Generators and relations (August 31); 2.3 Cyclic groups in detail (September 2); Quiz 1 |
+| **Week 4**: September 7-11 | Labor Day; 3.1 Cosets and Lagrange's theorem |
 | **Week 5**: September 14-18 | Review and catch-up; Test 1 |
-| **Week 6**: September 21-25 | 2.1 Definitions and examples; 2.2 Generators and relations |
-| **Week 7**: September 28-October 2 | 2.3 Cyclic groups in detail; 3.1 Cosets and Lagrange's theorem |
-| **Week 8**: October 5-9 | 3.1 Cosets and Lagrange's theorem; 3.2 Normal subgroups; Fall break |
-| **Week 9**: October 12-16 | 3.3 Quotient groups; review and catch-up; |
-| **Week 10**: October 19-23 | 3.4 Isomorphism theorems; 3.5 Composition series and the Holder program;  Quiz 2 |
-| **Week 11**: October 26-30 | 4.1 Orbits and stabilizers |
-| **Week 12**: November 2-6 | 4.2 The class equation; 4.3 Other group actions with applications |
+| **Week 6**: September 21-25 | 3.2 Normal subgroups; 3.3 Quotient groups |
+| **Week 7**: September 28-October 2 | Quotient group examples; 3.4 Isomorphism theorems |
+| **Week 8**: October 5-9 | 3.5 Composition series and the Holder program; Fall break |
+| **Week 9**: October 12-16 | Composition series examples and catch-up; 4.1 Orbits and stabilizers |
+| **Week 10**: October 19-23 | 4.2 The class equation; Quiz 2 |
+| **Week 11**: October 26-30 | 4.3 Other group actions with applications |
+| **Week 12**: November 2-6 | 5.1 Definitions and examples; 5.2 Subrepresentations and irreducibility |
 | **Week 13**: November 9-13 | Review and catch-up; Test 2 |
-| **Week 14**: November 16-20 | 5.1 Definitions and examples; 5.2 Subrepresentations and irreducibility |
+| **Week 14**: November 16-20 | 5.3 Schur's lemma and Maschke's theorem; representation examples |
 | **Week 15**: November 23-27 | 🦃 Thanksgiving Break! 🦃  |
-| **Week 16**: November 30-December 4 | 5.3 Schur's lemma and Maschke's theorem; 5.4 Characters; Quiz 3; wrap-up and review |
+| **Week 16**: November 30-December 4 | 5.4 Characters; Quiz 3; wrap-up and review |
 
 
 ## Class Policies
