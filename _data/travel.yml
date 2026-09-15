@@ -2,6 +2,7 @@
   venue: Palazzone
   where: Cortona, Italy
   type: Conference
+  invited: true
   start: 2027-05-03
   end: 2027-05-07
 - title: Macaulay2 Workshop
