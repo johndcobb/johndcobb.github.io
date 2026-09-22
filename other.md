@@ -20,4 +20,6 @@ Here's a fun map of all the [math related travel]({{ absolute_url }}/travel) I'v
 - [Some notes I made about local cohomology](/talks/LocalCohomology.pdf)
 
 ## Miscellaneous
+
+- An interactive [Abelian sandpile](/assets/sandpile/)
 - My [math genealogy](/assets/cobb_genealogy.pdf)

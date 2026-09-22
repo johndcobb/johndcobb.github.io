@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="An interactive isometric Abelian sandpile. Drop a grain and watch a chain reaction unfold.">
+  <meta name="theme-color" content="#f8f7f3">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Sandpile">
+  <title>Sandpile</title>
+  <link rel="icon" type="image/svg+xml" href="icon.svg">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="sandpile.css?v=tutorial-3">
+  <script defer src="sandpile-model.js"></script>
+  <script defer src="sandpile-view.js?v=versus-1"></script>
+  <script defer src="sandpile-game.js?v=tutorial-3"></script>
+  <script defer src="sandpile-versus.js?v=versus-1"></script>
+  <script defer src="sandpile.js?v=tutorial-3"></script>
+</head>
+<body>
+  <main class="app landing-active" id="app">
+    <button id="welcome" class="welcome" aria-label="Sandpiles. A game about toppling sand. Tap anywhere to begin the tutorial"><span class="welcome-copy"><span class="welcome-title">Sandpiles</span><span class="welcome-subtitle">A game about toppling sand</span><span class="welcome-prompt">Tap anywhere to begin</span></span></button>
+    <header class="app-bar" id="app-bar" inert>
+      <div id="level-header" class="level-header" hidden><button id="level-menu-open" aria-label="Back to level menu" aria-haspopup="dialog">← <span>Levels</span></button><h1 id="game-title">Tutorial</h1></div>
+      <div class="brand"><img src="icon.svg" alt="" width="40" height="40"><div><h1>Sandpile</h1><p id="board-subtitle">Abelian · 19 × 19 · open edges</p></div></div>
+      <div class="mode-switch" role="group" aria-label="Play mode"><button id="mode-game" aria-pressed="true">Play levels</button><button id="mode-versus" aria-pressed="false">Versus</button><button id="mode-sandbox" aria-pressed="false">Sandbox</button></div>
+      <div class="header-actions"><span class="legend"><i></i> Toppling</span><button id="help-open" class="help-button" aria-haspopup="dialog" aria-label="How to play"><span aria-hidden="true">?</span></button></div>
+    </header>
+    <section class="workspace" id="workspace" inert aria-label="Interactive sandpile">
+      <section id="versus-panel" class="versus-panel" aria-labelledby="versus-title" hidden>
+        <div class="versus-heading"><div><p class="eyebrow">Versus · Two players</p><h2 id="versus-title" aria-live="polite">Red’s turn</h2></div><div class="versus-scores" aria-label="Grains by player"><span class="red-player">Red <output id="versus-red">0</output></span><span class="blue-player">Blue <output id="versus-blue">0</output></span></div><button id="versus-new">New match</button></div>
+        <p id="versus-message" role="status">Drop one grain on an empty square or your own color. Capture every enemy pile to win.</p>
+      </section>
+      <div class="scene">
+        <div class="scene-top">
+          <div class="stats" aria-label="Board statistics">
+            <div><output id="grains" aria-live="off">0</output><span>Grains</span></div>
+            <div><output id="topplings" aria-live="off">0</output><span>Topplings</span></div>
+            <div><output id="escaped" aria-live="off">0</output><span>Escaped</span></div>
+          </div>
+          <div class="view-controls"><span id="state" class="state">Ready</span><div class="camera-controls"><div class="view-switch" role="group" aria-label="Camera presets"><button id="view-isometric" aria-pressed="true">Isometric</button><button id="view-top" aria-pressed="false">Top down</button></div><div class="rotation-controls" role="group" aria-label="Rotate board"><button id="rotate-left" aria-label="Rotate board left 90 degrees" title="Rotate left (Q)"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 10a8 8 0 1 1 1 7M4 4v6h6"/></svg></button><button id="view-home" aria-label="Reset camera to original orientation" title="Reset camera"><output id="view-angle" aria-live="off">0°</output></button><button id="rotate-right" aria-label="Rotate board right 90 degrees" title="Rotate right (E)"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20 10a8 8 0 1 0-1 7M20 4v6h-6"/></svg></button></div><div class="zoom-controls" role="group" aria-label="Zoom board"><button id="zoom-out" aria-label="Zoom out">−</button><button id="zoom-reset" aria-label="Reset zoom"><output id="zoom-level">100%</output></button><button id="zoom-in" aria-label="Zoom in">+</button></div></div></div>
+        </div>
+        <canvas id="sandpile" tabindex="0" aria-label="Sandpile. Tap to drop; drag in any direction to orbit. Arrow keys select a square; Space or Enter drops a grain; Q and E rotate; W and S tilt." aria-describedby="canvas-help">Your browser needs canvas support to display this sandpile.</canvas>
+        <aside id="target-panel" class="target-panel" aria-labelledby="target-title" hidden><h2 id="target-title">Target</h2><div id="target-grid" class="target-grid" role="img"></div></aside>
+        <div class="scene-bottom"><div id="height-legend" class="height-legend" aria-label="Grain count colors" hidden><span>Grains</span><span><i style="background:#f0eadc"></i>0</span><span><i style="background:#e9c28c"></i>1</span><span><i style="background:#bd8546"></i>2</span><span><i style="background:#704a2d"></i>3</span><span><i style="background:rgb(184,67,48)"></i>4+</span></div><p id="canvas-help">Tap to add · Drag any direction to orbit</p><p id="queue" aria-live="polite"></p></div>
+      </div>
+      <section id="game-panel" class="game-panel" aria-label="Level instructions" hidden>
+        <p id="game-prompt" class="game-prompt"></p>
+        <div class="challenge-feedback"><p id="game-message" role="status" aria-live="polite"></p></div>
+      </section>
+      <section class="toolbar" aria-label="Sandpile controls">
+        <div class="grain-control">
+          <div class="selected-square"><span class="selection-icon" aria-hidden="true">◇</span><div><h2 id="square">Square 10, 10</h2><p><span id="height">3</span> <span id="grain-label">grains</span> <span class="capacity">· 4 to topple</span></p></div></div>
+          <div class="drop-controls"><label class="drop-size-control" for="drop-size">Drop size<select id="drop-size"><option value="1">1 grain</option><option value="5">5 grains</option><option value="10">10 grains</option><option value="25">25 grains</option><option value="50">50 grains</option><option value="100">100 grains</option></select></label><button id="drop" class="primary" title="Tap to drop; hold to keep pouring"><span aria-hidden="true">+</span> <span id="drop-label">Drop 1</span></button></div>
+        </div>
+        <div class="speed-control"><label for="speed">Speed <output id="speed-value" aria-live="off">1×</output></label><input id="speed" type="range" min="0.5" max="3" step="0.5" value="1" aria-label="Animation speed"></div>
+        <div class="reset-controls"><button id="pattern" title="Restore the starting pattern and reset counters"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 10a8 8 0 1 1 1 7M4 4v6h6"/></svg><span>Reset</span></button><button id="clear" title="Empty the board and reset counters"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m12 3 9 6-9 6-9-6 9-6Zm-9 12 9 6 9-6"/></svg><span>Clear</span></button></div>
+        <div id="game-actions" class="game-actions" hidden><span id="game-budget"></span><span id="game-best"></span><button id="game-stop" hidden>Stop here</button><button id="game-retry">Start over</button><button id="game-next" class="primary" hidden>Next level →</button></div>
+      </section>
+    </section>
+    <p id="announcement" class="sr-only" role="status" aria-live="polite"></p>
+    <noscript><p>Please enable JavaScript to interact with the sandpile.</p></noscript>
+  </main>
+  <dialog id="level-menu" aria-labelledby="level-menu-title">
+    <div class="dialog-heading"><h2 id="level-menu-title">Play levels</h2><button id="level-menu-close" aria-label="Return to current level" autofocus>×</button></div>
+        <nav id="level-library" class="level-library" aria-label="Game categories"><button id="category-tutorial" aria-pressed="true">Tutorial</button><button id="category-match" aria-pressed="false" disabled>Match the Pattern</button><button id="category-avalanche" aria-pressed="false" disabled>Avalanche</button><button id="category-mountain" aria-pressed="false" disabled>Mountain</button></nav>
+    <p id="game-eyebrow" class="eyebrow">Tutorial</p>
+    <nav class="level-progress" aria-label="Choose a level"><button id="level-1" aria-label="Level 1">1</button><button id="level-2" aria-label="Level 2" disabled>2</button><button id="level-3" aria-label="Level 3" disabled>3</button></nav>
+    <div class="level-menu-footer"><button id="level-menu-resume">Continue level</button><div><button id="menu-versus">Versus</button><button id="menu-sandbox">Sandbox</button></div></div>
+  </dialog>
+  <dialog id="help" aria-labelledby="help-title">
+    <div class="dialog-heading"><div><p class="eyebrow">Abelian sandpile</p><h2 id="help-title">A little grain. A big reaction.</h2></div><button id="help-close" aria-label="Close help" autofocus>×</button></div>
+    <div class="rule"><span>01</span><div><h3>Pour some sand.</h3><p>Choose a drop size in the toolbar, then tap a square or the Drop button. Hold the button to keep pouring onto the highlighted square. New drops arrive while the pile is toppling.</p></div></div>
+    <div class="rule"><span>02</span><div><h3>Four is the tipping point.</h3><p>A stack with four or more grains turns red and gives one grain to each of its four neighbors per topple. Large stacks topple in batches. Tall stacks are drawn shorter, with a label showing their exact grain count.</p></div></div>
+    <div class="rule"><span>03</span><div><h3>Watch it settle.</h3><p>The reaction continues until every stack has fewer than four grains. Escaping grains arc over the edge and fall away. Turn the board to see the other sides.</p></div></div>
+    <div class="rule"><span>04</span><div><h3>Turn it around.</h3><p>Drag to turn around the board and tilt from a low angle to straight overhead. The table always stays upright. The curved arrows make a quarter turn; tap the angle between them to reset the camera. Isometric and Top down move the camera to those positions. Turning the camera never changes the pile.</p></div></div>
+    <div class="rule"><span>05</span><div><h3>See every square.</h3><p>As you look down from above, grain-count colors and numbers fade in automatically. Tilt away and the sand-colored blocks return. Shades distinguish 0, 1, 2, and 3 grains; unstable cells use red shades that darken as the count grows. Bright red borders mark the current toppling wave. Top down locks the camera overhead while still letting you rotate. Choose Isometric to unlock the tilt. Scroll over the board to zoom, or use the − and + buttons.</p></div></div>
+    <div class="abelian-note"><h3>Why “abelian”?</h3><p>For the same starting pile and added grains, every legal toppling order reaches the same stable configuration. Here, topplings happen in simultaneous waves.</p></div>
+    <p class="help-footnote">Play levels starts with a three-step tutorial. Complete it to unlock Match the Pattern, Avalanche, and Mountain. Match a target in as few one-grain moves as possible; trigger the biggest avalanche with a limited supply; or add only at the center and stop at the biggest mountain with no spills. Retry any challenge. Tutorial completion, completed levels, and best scores are remembered on this device when browser storage is available. Sandbox keeps your pile, counters, settings, and view when you switch modes; unfinished reactions pause until you return. Reset restores the sandbox’s starting pattern; Clear empties it. Both reset the counters. With a keyboard, use arrow keys to choose a square, Space or Enter to drop, Q or E to rotate, and W or S to tilt.</p>
+    <div class="abelian-note"><h3>Versus: red against blue.</h3><p>Start with an empty 4 × 4 board. Red goes first, then take turns adding one grain to an empty square or your own pile. Four grains topple as usual. A grain arriving from a toppling pile captures the whole neighboring pile, and any chain reaction keeps the mover’s color. Gold outlines mark toppling piles. Grains still fall off the edges. Once both players have played, the first player to leave all the sand their color wins after the cascade settles. New match starts again; switching modes pauses your match.</p></div>
+    <div class="facilitator"><p class="eyebrow">For the facilitator</p><button id="participant-open">Next participant…</button></div>
+  </dialog>
+  <dialog id="participant-dialog" aria-labelledby="participant-title" aria-describedby="participant-description">
+    <div class="dialog-heading"><div><p class="eyebrow">For the facilitator</p><h2 id="participant-title">Ready for someone new?</h2></div></div>
+    <p id="participant-description">This clears all level progress, best scores, and the current boards, then returns to the welcome screen.</p>
+    <div class="participant-actions"><button id="participant-cancel" autofocus>Keep playing</button><button id="participant-reset" aria-label="Hold for three seconds to clear progress and return to the welcome screen"><span id="participant-label">Hold 3 seconds to reset</span></button></div>
+  </dialog>
+</body>
+</html>
