@@ -15,7 +15,7 @@ function play(game, index) {
 }
 
 test('Versus alternates single grains, protects enemy piles, and permits both opening moves', () => {
-  const game = new Versus(new Sandpile(4));
+  const game = new Versus(new Sandpile(3));
   assert.equal(game.begin(0), true);
   assert.equal(game.begin(1), false);
   assert.equal(game.finish(), false);
@@ -25,18 +25,18 @@ test('Versus alternates single grains, protects enemy piles, and permits both op
   assert.equal(game.begin(0), false);
   assert.equal(game.moves, 1);
   assert.equal(game.model.cells[0], 1);
-  for (const invalid of [-1, 16, 1.5, NaN]) assert.equal(game.begin(invalid), false);
-  play(game, 15);
+  for (const invalid of [-1, 9, 1.5, NaN]) assert.equal(game.begin(invalid), false);
+  play(game, 8);
   assert.equal(game.winner, 0);
   assert.equal(game.turn, 1);
   play(game, 0);
   assert.equal(game.model.cells[0], 2);
   assert.equal(game.owners[0], 1);
-  assert.equal(game.owners[15], 2);
+  assert.equal(game.owners[8], 2);
 });
 
 test('capture adds a grain, converts an enemy pile, and propagates its color through the next topple', () => {
-  const game = new Versus(new Sandpile(4));
+  const game = new Versus(new Sandpile(3));
   for (const index of [0,1,0,1,0,1]) play(game, index);
   assert.equal(game.begin(0), true); game.land();
   game.step([0], [1]);
@@ -53,12 +53,12 @@ test('capture adds a grain, converts an enemy pile, and propagates its color thr
   assert.equal(game.model.grains + game.model.escaped, game.moves);
   assert.equal(game.owners[1], 0);
   assert.ok(game.owners.every(owner => owner === 0 || owner === 1));
-  assert.equal(game.begin(15), false);
+  assert.equal(game.begin(8), false);
 });
 
 test('Blue can win by capturing every red pile and empty cells lose their owner', () => {
-  const game = new Versus(new Sandpile(4));
-  for (const index of [1,0,1,0,1,0,4,0]) play(game, index);
+  const game = new Versus(new Sandpile(3));
+  for (const index of [1,0,1,0,1,0,3,0]) play(game, index);
   assert.equal(game.winner, 2);
   assert.ok(game.owners.every(owner => owner === 0 || owner === 2));
   game.model.cells.forEach((count, index) => assert.equal(game.owners[index] === 0, count === 0));
@@ -68,9 +68,9 @@ test('legal randomized matches preserve ordinary sandpile math and ownership inv
   let seed = 837;
   function random() { seed = (Math.imul(seed, 1664525) + 1013904223) >>> 0; return seed / 2 ** 32; }
   for (let match = 0; match < 20; match++) {
-    const game = new Versus(new Sandpile(4)), reference = new Sandpile(4);
+    const game = new Versus(new Sandpile(3)), reference = new Sandpile(3);
     for (let move = 0; move < 100 && !game.winner; move++) {
-      const allowed = Array.from({length: 16}, (_, index) => index).filter(index => game.canDrop(index));
+      const allowed = Array.from({length: 9}, (_, index) => index).filter(index => game.canDrop(index));
       assert.ok(allowed.length);
       const index = allowed[Math.floor(random() * allowed.length)];
       reference.add(index); reference.stabilize(); play(game, index);

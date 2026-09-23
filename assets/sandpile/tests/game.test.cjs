@@ -90,23 +90,27 @@ test('Avalanche uses exactly one grain and the supplied board has a maximum loss
   assert.equal(maximum, 13); assert.equal(wins, 4); assert.equal(game.best[5], 13);
 });
 
-test('Mountain requires the maximum center-only pile, retries early stops and spills', () => {
+test('Mountain accepts one center batch and evaluates only its stable result', () => {
   const game = new Game({completed: [0,1,2]});
   for (const index of [6,7]) {
-    game.load(index); let model = board(game);
-    assert.equal(game.drop(0), false);
-    for (let i = 0; i < game.level.maxSafe - 1; i++) add(game, model, game.level.selected);
-    assert.equal(game.status, 'playing'); game.finish(model, true);
-    assert.equal(game.status, 'retry'); assert.equal(game.completed.has(index), false);
-    game.load(index); model = board(game);
-    for (let i = 0; i < game.level.maxSafe; i++) add(game, model, game.level.selected);
-    assert.equal(model.escaped, 0); assert.equal(game.status, 'playing');
-    game.finish(model, true); assert.equal(game.status, 'won');
-    assert.equal(game.best[index], game.level.maxSafe);
-    game.load(index); model = board(game);
-    for (let i = 0; i <= game.level.maxSafe; i++) add(game, model, game.level.selected);
-    assert.ok(model.escaped > 0); assert.equal(game.status, 'retry');
-    assert.equal(game.best[index], game.level.maxSafe);
+    for (const delta of [-1, 0, 1]) {
+      game.load(index); const model = board(game), count = game.level.maxSafe + delta;
+      assert.equal(game.finish(model), false);
+      assert.equal(game.drop(0), false);
+      assert.equal(game.drop(game.level.selected), false);
+      for (const invalid of [0, -1, 1.5, NaN, Infinity, 10001]) assert.equal(game.submitMountain(invalid), false);
+      assert.equal(game.used, 0);
+      assert.equal(game.submitMountain(count), true);
+      assert.equal(game.submitMountain(count), false);
+      assert.equal(game.finish(model), false, 'incoming batch has not landed');
+      model.add(game.level.selected, count);
+      assert.equal(game.finish(model), false, 'pile is still unstable');
+      model.stabilize(); assert.equal(game.finish(model), true);
+      assert.equal(model.grains + model.escaped, count);
+      assert.equal(game.status, delta === 0 ? 'won' : 'retry');
+      assert.equal(model.escaped > 0, delta > 0);
+      assert.equal(game.best[index], game.level.maxSafe + Math.min(delta, 0));
+    }
   }
 });
 
@@ -117,6 +121,10 @@ test('tutorial completion and best scores round trip through saved progress', ()
   const restored = new Game(JSON.parse(JSON.stringify(game.progress)));
   assert.equal(restored.tutorialComplete, true); assert.equal(restored.completed.has(3), true);
   assert.equal(restored.best[3], 2); assert.equal(restored.canLoad(7), true);
+  assert.equal(restored.level.kind, 'avalanche');
+  for (const [index, next] of [[2,5], [5,3], [3,4], [4,6], [6,7], [7,undefined]]) {
+    restored.load(index); assert.equal(restored.nextIndex, next);
+  }
 });
 
 

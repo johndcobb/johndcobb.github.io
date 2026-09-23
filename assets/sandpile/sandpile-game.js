@@ -49,19 +49,21 @@
     ...[3, 5].map(size => ({
       kind: 'mountain', size, title: `${size} × ${size} mountain`, selected: Math.floor(size * size / 2),
       seeds: [], marked: [Math.floor(size * size / 2)], allowed: [Math.floor(size * size / 2)],
-      prompt: 'Add sand only in the middle. Keep as much as possible without spilling, then choose “Stop here.”',
+      prompt: 'How much sand can the middle hold? Enter a number, drop it all at once, and watch for spills. Try to find the biggest mountain with no spills.',
       maxSafe: size === 3 ? 15 : 43
     }))
   );
   const tutorialCount = levels.filter(level => level.kind === 'tutorial').length;
-  const categories = { tutorial: 'Tutorial', match: 'Match the Pattern', avalanche: 'Avalanche', mountain: 'Mountain' };
+  const categories = { tutorial: 'Tutorial', avalanche: 'Avalanche', match: 'Match the Pattern', mountain: 'Mountain' };
+  // Keep stored level indices stable while ordering the player-facing progression.
+  const levelOrder = Object.keys(categories).flatMap(kind => levels.flatMap((level, index) => level.kind === kind ? [index] : []));
 
   class SandpileGame {
     constructor(progress = {}) {
       this.completed = new Set(Array.isArray(progress.completed) ? progress.completed.filter(i => Number.isInteger(i) && i >= 0 && i < levels.length) : []);
       this.best = {};
       for (const [index, score] of Object.entries(progress.best || {})) if (levels[index] && Number.isSafeInteger(score) && score >= 0) this.best[index] = score;
-      this.load(this.tutorialComplete ? tutorialCount : Array.from({length: tutorialCount}, (_, i) => i).find(i => !this.completed.has(i)));
+      this.load(this.tutorialComplete ? levelOrder[tutorialCount] : Array.from({length: tutorialCount}, (_, i) => i).find(i => !this.completed.has(i)));
     }
     static migrateProgress(progress) {
       if (progress.version === 3) return progress;
@@ -76,6 +78,7 @@
     get level() { return levels[this.index]; }
     get tutorialComplete() { return Array.from({length: tutorialCount}, (_, i) => i).every(i => this.completed.has(i)); }
     get allComplete() { return this.completed.size === levels.length; }
+    get nextIndex() { return levelOrder[levelOrder.indexOf(this.index) + 1]; }
     get visibleLevels() { return levels.flatMap((level, i) => level.kind === this.level.kind ? [i] : []); }
     get remaining() { return this.level.budget === undefined ? Infinity : this.level.budget - this.used; }
     get progress() { return { version: 3, completed: [...this.completed], best: this.best }; }
@@ -86,11 +89,11 @@
     load(index) {
       if (!this.canLoad(index)) return false;
       this.index = index; this.used = 0; this.toppled = new Set();
-      this.status = 'playing'; this.hint = ''; this.result = ''; this.scored = false;
+      this.status = 'playing'; this.hint = ''; this.result = ''; this.scored = false; this.mountainInput = '';
       return true;
     }
     canDrop(index) {
-      return this.status === 'playing' && this.remaining > 0 && Number.isInteger(index) && index >= 0 && index < this.level.size ** 2 && (!this.level.allowed || this.level.allowed.includes(index)) && (this.level.kind !== 'mountain' || this.used <= this.level.maxSafe);
+      return this.status === 'playing' && this.remaining > 0 && Number.isInteger(index) && index >= 0 && index < this.level.size ** 2 && (!this.level.allowed || this.level.allowed.includes(index)) && this.level.kind !== 'mountain';
     }
     drop(index) {
       if (!this.canDrop(index)) {
@@ -99,8 +102,15 @@
       }
       this.used++; this.hint = ''; return true;
     }
+    submitMountain(count) {
+      if (this.level.kind !== 'mountain' || this.status !== 'playing' || this.used) return false;
+      if (!Number.isSafeInteger(count) || count < 1 || count > 10000) {
+        this.hint = 'Enter a whole number from 1 to 10,000.'; return false;
+      }
+      this.used = count; this.hint = ''; return true;
+    }
     recordTopplings(sites) { sites.forEach(index => this.toppled.add(index)); }
-    finish(model, stop = false) {
+    finish(model) {
       if (this.status !== 'playing') return false;
       const level = this.level;
       let won;
@@ -119,10 +129,10 @@
         won = model.grains <= level.maxRemaining;
         this.result = `${model.escaped} grains escaped; ${model.grains} remain. ${won ? 'That is the biggest avalanche possible with one grain!' : 'Try again: aim for 44 grains or fewer left.'}`;
       } else {
-        if (!stop && !model.escaped) return false;
+        if (!this.used || model.grains + model.escaped !== this.used || model.unstable().length) return false;
         won = !model.escaped && this.used === level.maxSafe;
         if (!model.escaped) this.best[this.index] = Math.max(this.best[this.index] ?? 0, this.used);
-        this.result = model.escaped ? `Sand spilled after ${this.used} grains. Try again and stop sooner.` : won ? `${this.used} grains, no spills! One more would fall off. You built the biggest mountain.` : `${this.used} grains saved. There is room for more! Try again for the biggest mountain.`;
+        this.result = model.escaped ? `You dropped ${this.used} grains. ${model.escaped} fell off; ${model.grains} stayed. Try a smaller number.` : won ? `${this.used} grains, no spills! One more would fall off. You built the biggest mountain.` : `${this.used} grains, none fell off! There is room for more. Try a bigger number.`;
       }
       this.status = won ? 'won' : 'retry';
       if (won) this.completed.add(this.index);
@@ -131,7 +141,7 @@
     get message() {
       if (this.status !== 'playing') return this.result;
       if (this.hint) return this.hint;
-      if (this.level.kind === 'mountain') return `${this.used} grains added. You decide when to stop.`;
+      if (this.level.kind === 'mountain') return this.used ? `Dropping ${this.used} grains in the middle. Watch until the sand settles…` : 'Choose your number, then drop it in the middle.';
       if (this.level.kind === 'match') return `${this.used} moves so far. Compare the numbers with the target.`;
       if (!this.remaining) return 'Watch what happens…';
       return this.remaining === 1 ? 'One grain. Choose your square!' : `${this.remaining} grains left. Tap to add one at a time.`;

@@ -33,9 +33,11 @@
     }
 
     get cellSize() {
-      const heading = this.angle + Math.PI / 4;
-      const extent = this.size * (Math.abs(Math.cos(heading)) + Math.abs(Math.sin(heading)));
-      return this.zoom * Math.max(1, Math.min((this.width - 80) / extent, (this.height - 190) / (extent * Math.max(.58, Math.abs(Math.sin(this.pitch))))));
+      if (this.fixedCellSize !== undefined) return this.fixedCellSize;
+      // Fit the board's full diagonal once for every orientation. Camera angles
+      // change projection only; they must never act as an automatic zoom.
+      const extent = this.size * Math.SQRT2;
+      return this.zoom * Math.max(1, Math.min(this.width - 80, this.height - 190) / extent);
     }
 
     get halfW() { return this.cellSize / Math.SQRT2; }
@@ -54,7 +56,13 @@
     point(row, col, z = 0) {
       const p = this.rotate(row, col);
       const sin = Math.sin(this.pitch), cos = Math.cos(this.pitch);
-      return { x: this.width / 2 + (p.x - p.y) / Math.SQRT2 * this.cellSize, y: this.height / 2 - 12 + 47 * this.topBlend + ((p.x + p.y) / Math.SQRT2 * sin - z * .52 * cos) * this.cellSize };
+      return { x: (this.origin?.x ?? this.width / 2) + (p.x - p.y) / Math.SQRT2 * this.cellSize, y: (this.origin?.y ?? this.height / 2 - 12 + 47 * this.topBlend) + ((p.x + p.y) / Math.SQRT2 * sin - z * .52 * cos) * this.cellSize };
+    }
+
+    static forBoard(source, size, x, y, cellSize) {
+      const camera = Object.create(SandpileView.prototype);
+      Object.assign(camera, { size, angle: source.angle, pitch: source.pitch, origin: { x, y }, fixedCellSize: cellSize });
+      return camera;
     }
 
     static cellStyle(grains) {

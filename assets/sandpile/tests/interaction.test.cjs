@@ -7,12 +7,13 @@ const Sandpile = require('../sandpile-model.js');
 const View = require('../sandpile-view.js');
 const SandpileGame = require('../sandpile-game.js');
 const SandpileVersus = require('../sandpile-versus.js');
+const SandpileGraph = require('../sandpile-graph.js');
 
 // Deterministic animation clock and minimal DOM. Exercise the real controller,
 // including pointer picking and particle lifetime, without a browser dependency.
 function app(reduced = false, progress = null, start = 'sandbox') {
   const storage = new Map(progress ? [["sandpile-progress-v2", JSON.stringify({version: 3, ...progress})]] : []);
-  let clock = 0, callback, view, versus;
+  let clock = 0, callback, view, versus, graph;
   const models = [];
   const currentModel = () => [...models].reverse().find(model => model.size === view.size);
   const poses = [], elements = new Map(), paintedColors = new Set(), strokedColors = new Set();
@@ -33,6 +34,7 @@ function app(reduced = false, progress = null, start = 'sandbox') {
     requestAnimationFrame(fn) { callback = fn; return 1; },
     ResizeObserver: class { observe() {} },
     SandpileGame,
+    SandpileGraph: class extends SandpileGraph { constructor(...args) { super(...args); graph = this; } },
     SandpileVersus: class extends SandpileVersus { constructor(model) { super(model); versus = this; } },
     Sandpile: class extends Sandpile { constructor(n) { super(n); models.push(this); } },
     SandpileView: class extends View {
@@ -45,7 +47,8 @@ function app(reduced = false, progress = null, start = 'sandbox') {
   function event(id, type, data = {}) { element(id).events[type]({ pointerId: 1, pointerType: 'touch', button: 0, clientX: 300, clientY: 300, preventDefault() {}, ...data }); }
   function tap(row, col) {
     const model = currentModel();
-    const p = view.point(row + .5, col + .5, Math.sin(view.pitch) >= 0 ? Math.min(8, model.cells[row * model.size + col]) : -.85);
+    const camera = graph && element('board-stats').hidden === true ? graph.boardCamera(view, graph.pending || graph.current, 984, 590) : view;
+    const p = camera.point(row + .5, col + .5, Math.sin(view.pitch) >= 0 ? Math.min(8, model.cells[row * model.size + col]) : -.85);
     event('sandpile', 'pointerdown', { clientX: p.x, clientY: p.y });
     event('sandpile', 'pointerup', { clientX: p.x, clientY: p.y });
   }
@@ -54,7 +57,7 @@ function app(reduced = false, progress = null, start = 'sandbox') {
     if (start === 'sandbox') event('mode-sandbox', 'click');
   }
   advance(32);
-  return { element, event, advance, tap, poses, paintedColors, strokedColors, get progress() { return JSON.parse(storage.get("sandpile-progress-v2") || "{}"); }, get model() { return currentModel(); }, get view() { return view; }, get versus() { return versus; }, get running() { return !!callback; } };
+  return { element, event, advance, tap, poses, paintedColors, strokedColors, get progress() { return JSON.parse(storage.get("sandpile-progress-v2") || "{}"); }, get model() { return currentModel(); }, get view() { return view; }, get versus() { return versus; }, get graph() { return graph; }, get running() { return !!callback; } };
 }
 
 test('tap picking follows the same world square through a full orbit', () => {
@@ -195,7 +198,7 @@ test('three tutorial steps clear chain highlights and demonstrate falling sand w
   assert.equal(a.element('game-eyebrow').textContent, 'Tutorial complete!');
   assert.equal(a.element('category-match').disabled, false);
   assert.equal(a.element('category-tutorial').textContent, 'Tutorial ✓');
-  assert.equal(a.element('game-next').textContent, 'Match the Pattern →');
+  assert.equal(a.element('game-next').textContent, 'Avalanche →');
   a.event('mode-sandbox', 'click'); a.advance(32);
   assert.equal(a.model, sandbox); assert.deepEqual([...sandbox.cells], original);
   a.event('mode-game', 'click'); a.advance(32);
@@ -216,7 +219,7 @@ test('switching modes pauses and restores incoming drops, reactions, selection, 
   a.event('mode-sandbox', 'click');
   assert.equal(a.element('drop-size').value, '25'); assert.equal(a.element('speed').value, '2');
   assert.equal(a.element('square').textContent, 'Square 19, 19');
-  assert.equal(a.element('view-angle').textContent, '90°'); assert.equal(a.view.topBlend, 1);
+  assert.equal(a.element('view-angle').textContent, '45°'); assert.equal(a.view.topBlend, 1);
   a.advance(160);
   assert.equal(sandbox.grains + sandbox.escaped, 25);
   assert.equal(game.grains, 2);
@@ -248,7 +251,7 @@ test('two-axis drags stay within tilt limits without dropping; picking follows t
   const a = app();
   for (const degrees of [-30, 15, 35, 65, 80, 90, 100, 145, 200, 270, 395]) {
     a.event('clear', 'click'); a.advance(32);
-    const pitch = degrees * Math.PI / 180, dy = (a.view.pitch - pitch) / .008;
+    const pitch = degrees * Math.PI / 180, dy = (pitch - a.view.pitch) / .008;
     a.event('sandpile', 'pointerdown');
     a.event('sandpile', 'pointermove', { clientX: 350, clientY: 300 + dy }); a.advance(32);
     a.event('sandpile', 'pointerup', { clientX: 350, clientY: 300 + dy });
@@ -300,15 +303,15 @@ test('camera motion resumes across mode changes and reduced motion snaps presets
 test('reversing a drag at either tilt limit responds immediately', () => {
   const a = app(); const original = [...a.model.cells];
   a.event('sandpile', 'pointerdown');
-  a.event('sandpile', 'pointermove', { clientY: -700 });
-  assert.equal(a.view.pitch, Math.PI / 2);
-  a.event('sandpile', 'pointermove', { clientY: -690 });
-  assert.ok(a.view.pitch < Math.PI / 2);
   a.event('sandpile', 'pointermove', { clientY: 1300 });
-  assert.equal(a.view.pitch, View.minPitch);
+  assert.equal(a.view.pitch, Math.PI / 2);
   a.event('sandpile', 'pointermove', { clientY: 1290 });
+  assert.ok(a.view.pitch < Math.PI / 2);
+  a.event('sandpile', 'pointermove', { clientY: -700 });
+  assert.equal(a.view.pitch, View.minPitch);
+  a.event('sandpile', 'pointermove', { clientY: -690 });
   assert.ok(a.view.pitch > View.minPitch);
-  a.event('sandpile', 'pointerup', { clientY: 1290 }); a.advance(32);
+  a.event('sandpile', 'pointerup', { clientY: -690 }); a.advance(32);
   assert.deepEqual([...a.model.cells], original);
 });
 
@@ -344,9 +347,10 @@ test('category selection loads the pictured boards, shows targets, and saves sco
   a.event('mode-game', 'click'); a.event('level-menu-open', 'click'); a.event('category-match', 'click'); a.event('level-1', 'click'); a.advance(32);
   assert.equal(a.model.size, 3); assert.equal(a.element('category-tutorial').textContent, 'Tutorial ✓');
   assert.equal(a.element('target-panel').hidden, false);
-  a.event('drop', 'click'); a.event('drop', 'click'); a.advance(1200);
+  a.event('drop', 'click'); a.advance(600); a.event('drop', 'click'); a.advance(1200);
   assert.equal(a.element('game-best').textContent, 'Best: 2 moves');
   assert.ok(a.progress.completed.includes(3));
+  assert.equal(a.element('game-next').textContent, 'Next level →');
   a.event('level-menu-open', 'click'); a.event('level-2', 'click'); a.advance(32);
   assert.equal(a.model.grains, 57);
   assert.ok(a.element('target-grid')['aria-label'].includes('1, 2, 2, 3, 0'));
@@ -356,24 +360,61 @@ test('category selection loads the pictured boards, shows targets, and saves sco
   assert.equal(a.element('target-panel').hidden, true); assert.equal(a.model.grains, 56);
   a.tap(4,4); a.advance(6000);
   assert.equal(a.model.grains, 44); assert.equal(a.element('game-next').hidden, false);
+  assert.equal(a.element('game-next').textContent, 'Match the Pattern →');
+  a.event('game-next', 'click'); a.advance(32);
+  assert.equal(a.element('game-title').textContent, 'Match the Pattern 1');
 });
 
-test('Mountain waits for settling before Stop here and offers retry for a small pile', () => {
+test('Mountain submits one center batch, prevents choosing squares, and scores after settling', () => {
   const a = app(false, {completed: [0,1,2]});
   a.event('mode-game', 'click'); a.event('level-menu-open', 'click'); a.event('category-mountain', 'click'); a.event('level-1', 'click'); a.advance(32);
-  assert.equal(a.model.size, 3); assert.equal(a.element('game-stop').hidden, false);
-  a.event('drop', 'click'); a.event('game-stop', 'click');
-  assert.equal(a.element('game-stop').hidden, false);
-  a.advance(500); a.event('game-stop', 'click');
+  assert.equal(a.model.size, 3); assert.equal(a.element('mountain-form').hidden, false);
+  assert.equal(a.element('grain-control').hidden, true);
+  const square = a.element('square').textContent;
+  a.tap(0, 0); a.tap(1, 1); a.event('drop', 'click');
+  a.event('sandpile', 'keydown', {key: 'ArrowLeft'}); a.event('sandpile', 'keydown', {key: 'Enter'});
+  a.event('sandpile', 'pointermove', {pointerType: 'mouse'}); a.advance(1000);
+  assert.equal(a.model.grains, 0); assert.equal(a.element('square').textContent, square);
+  for (const value of ['', '0', '-1', '1.5', '10001']) {
+    a.element('mountain-count').value = value; a.event('mountain-form', 'submit');
+    assert.equal(a.element('mountain-drop').disabled, false);
+    assert.match(a.element('game-message').textContent, /whole number/);
+  }
+  a.element('mountain-count').value = '14'; a.event('mountain-form', 'submit');
+  assert.equal(a.element('mountain-drop').disabled, true);
+  assert.equal(a.element('mountain-count').disabled, true);
+  a.event('mountain-form', 'submit'); a.advance(300);
+  assert.equal(a.model.grains, 0); assert.equal(a.element('game-retry').textContent, 'Start over');
+  a.advance(8000);
+  assert.equal(a.model.grains, 14); assert.equal(a.model.escaped, 0);
   assert.equal(a.element('game-retry').textContent, 'Try again');
+  assert.match(a.element('game-message').textContent, /none fell off/);
   a.event('game-retry', 'click');
-  for (let i = 0; i < 15; i++) a.event('drop', 'click');
-  a.advance(5000); a.event('game-stop', 'click');
+  a.element('mountain-count').value = '15'; a.event('mountain-form', 'submit'); a.advance(8000);
   assert.equal(a.model.escaped, 0); assert.equal(a.element('game-next').hidden, false);
   assert.ok(a.progress.completed.includes(6));
   a.event('game-next', 'click'); a.advance(32); assert.equal(a.model.size, 5);
+  a.element('mountain-count').value = '44'; a.event('mountain-form', 'submit'); a.advance(12000);
+  assert.ok(a.model.escaped > 0); assert.match(a.element('game-message').textContent, /fell off/);
+  assert.equal(a.element('game-next').hidden, true);
 });
 
+test('Mountain preserves its input and pending batch across modes; retry clears the attempt', () => {
+  const a = app(false, {completed: [0,1,2]});
+  a.event('mode-game', 'click'); a.event('level-menu-open', 'click'); a.event('category-mountain', 'click'); a.event('level-2', 'click'); a.advance(32);
+  a.element('mountain-count').value = '43'; a.event('mountain-count', 'input');
+  a.event('mode-sandbox', 'click'); a.advance(32);
+  assert.equal(a.element('mountain-form').hidden, true); assert.equal(a.element('grain-control').hidden, false);
+  a.event('mode-game', 'click'); a.advance(32); assert.equal(a.element('mountain-count').value, '43');
+  a.event('mountain-form', 'submit'); a.advance(80); const model = a.model;
+  a.event('mode-sandbox', 'click'); a.advance(2000); assert.equal(model.grains, 0);
+  a.event('mode-game', 'click'); a.advance(12000);
+  assert.equal(model.grains, 43); assert.equal(model.escaped, 0); assert.ok(a.progress.completed.includes(7));
+  a.event('game-retry', 'click'); a.advance(32);
+  assert.equal(a.model.grains, 0); assert.equal(a.element('mountain-count').value, ''); assert.equal(a.element('mountain-drop').disabled, false);
+  a.element('mountain-count').value = '100'; a.event('mountain-form', 'submit');
+  a.event('game-retry', 'click'); a.advance(12000); assert.equal(a.model.grains, 0);
+});
 
 test('welcome rotates a real cascading pile, then a tap starts a clean tutorial without dropping', () => {
   const a = app(false, null, 'welcome');
@@ -458,7 +499,7 @@ test('reset cancellation and keyboard release cannot erase progress', () => {
 
 test('Versus starts empty, enforces ownership, and ignores extra taps and batch sizes', () => {
   const a = app(); a.event('mode-versus', 'click'); a.advance(32);
-  assert.equal(a.model.size, 4); assert.equal(a.model.grains, 0);
+  assert.equal(a.model.size, 3); assert.equal(a.model.grains, 0);
   assert.equal(a.element('versus-title').textContent, 'Red’s turn');
   assert.equal(a.element('height-legend').hidden, true);
   a.tap(0,0); a.tap(0,1); a.advance(400);
@@ -487,7 +528,7 @@ test('Versus waits for captured cascades and escaped grains before announcing a 
   assert.equal(a.versus.resolving, true);
   assert.equal(a.versus.winner, 0);
   const moves = a.versus.moves;
-  a.tap(3,3); a.advance(1800);
+  a.tap(2,2); a.advance(1800);
   assert.equal(a.versus.moves, moves);
   assert.equal(a.element('versus-title').textContent, 'Red wins!');
   assert.equal(a.model.grains, 4); assert.equal(a.model.escaped, 3);
@@ -559,10 +600,149 @@ test('level menu respects tutorial locks and provides routes to other modes', ()
   a.event('menu-versus', 'click'); a.advance(32);
   assert.equal(a.element('level-menu').open, false);
   assert.equal(a.element('level-header').hidden, true);
-  assert.equal(a.model.size, 4);
+  assert.equal(a.model.size, 3);
   a.event('mode-game', 'click'); a.event('level-menu-open', 'click');
   a.event('menu-sandbox', 'click'); a.advance(32);
   assert.equal(a.element('level-menu').open, false);
   assert.equal(a.element('level-header').hidden, true);
   assert.equal(a.model.size, 19);
+});
+
+function matchMap(a) {
+  a.event('mode-game', 'click'); a.event('level-menu-open', 'click');
+  a.event('category-match', 'click'); a.event('level-1', 'click'); a.advance(32);
+  a.event('view-top', 'click'); a.advance(400);
+}
+function focusState(a, id) {
+  while (a.graph.activeId !== id) a.event('sandpile', 'keydown', { key: ']' });
+  a.advance(32);
+}
+function tapState(a, id, row, col) {
+  const node = a.graph.nodes[id], camera = a.graph.boardCamera(a.view, node, 984, 590);
+  const p = camera.point(row + .5, col + .5, node.cells[row * node.size + col]);
+  a.event('sandpile', 'pointerdown', {clientX: p.x, clientY: p.y});
+  a.event('sandpile', 'pointerup', {clientX: p.x, clientY: p.y});
+}
+
+test('map clicks branch on old and new boards, merge repeated states, and keep exploring after a win', () => {
+  const a = app(false, {completed: [0,1,2]}); matchMap(a);
+  assert.equal(a.element('board-stats').hidden, true);
+  const start = [...a.graph.nodes[0].cells];
+  tapState(a, 0, 1, 1);
+  assert.equal(a.graph.nodes.length, 1); assert.ok(a.graph.pending);
+  a.advance(700);
+  assert.equal(a.graph.nodes.length, 2); assert.equal(a.graph.current.cells[4], 3);
+  assert.deepEqual(a.graph.nodes[0].cells, start);
+  // The previous board is still directly clickable, even when it is not selected.
+  tapState(a, 0, 1, 1); a.advance(700);
+  assert.equal(a.graph.nodes.length, 2); assert.equal(a.graph.edges.length, 1);
+  assert.match(a.element('game-message').textContent, /paths join/);
+  tapState(a, 1, 1, 1); a.advance(1500);
+  assert.equal(a.graph.nodes.length, 3); assert.equal(a.graph.targetNode.moves, 2);
+  assert.equal(a.element('game-best').textContent, 'Best: 2 moves');
+  assert.equal(a.element('drop').disabled, false);
+  focusState(a, 0); tapState(a, 0, 0, 0); a.advance(700);
+  assert.equal(a.graph.nodes.length, 4);
+  assert.equal(a.graph.current.moves, 1);
+  assert.equal(a.element('game-next').hidden, false);
+  assert.deepEqual(a.graph.nodes[0].cells, start);
+});
+
+test('map pan, pinch, cancelled gestures, and orbit do not create drops', () => {
+  const a = app(false, {completed: [0,1,2]}); matchMap(a);
+  const camera = {...a.graph.camera}, angle = a.view.angle;
+  a.event('sandpile', 'pointerdown', {clientX: 100, clientY: 300});
+  a.event('sandpile', 'pointermove', {clientX: 200, clientY: 340});
+  a.event('sandpile', 'pointerup', {clientX: 200, clientY: 340}); a.advance(32);
+  assert.ok(a.graph.camera.x < camera.x); assert.equal(a.view.angle, angle);
+  const zoom = a.graph.camera.zoom;
+  a.event('sandpile', 'pointerdown', {pointerId: 1, clientX: 400, clientY: 300});
+  a.event('sandpile', 'pointerdown', {pointerId: 2, clientX: 500, clientY: 300});
+  a.event('sandpile', 'pointermove', {pointerId: 2, clientX: 600, clientY: 300});
+  a.event('sandpile', 'pointerup', {pointerId: 2, clientX: 600, clientY: 300});
+  a.event('sandpile', 'pointerup', {pointerId: 1, clientX: 400, clientY: 300}); a.advance(32);
+  assert.ok(a.graph.camera.zoom > zoom); assert.equal(a.graph.pending, null);
+  a.event('zoom-reset', 'click'); a.advance(32);
+  const centered = {...a.graph.camera}, p = a.graph.toScreen(a.graph.current, 984, 590);
+  a.event('sandpile', 'pointerdown', {clientX: p.x, clientY: p.y});
+  a.event('sandpile', 'pointermove', {clientX: p.x + 100, clientY: p.y + 30});
+  a.event('sandpile', 'pointerup', {clientX: p.x + 100, clientY: p.y + 30}); a.advance(32);
+  assert.deepEqual(a.graph.camera, centered);
+  assert.ok(a.view.angle < angle); assert.equal(a.view.pitch, Math.PI / 2);
+  a.event('sandpile', 'pointerdown'); a.event('sandpile', 'pointercancel'); a.advance(32);
+  assert.equal(a.graph.nodes.length, 1); assert.equal(a.model.grains, 2);
+  a.event('zoom-reset', 'click'); a.advance(32);
+  assert.ok(a.graph.camera.zoom <= 1.25);
+});
+
+test('an overview tap focuses a board, and map state pauses and resumes through other modes', () => {
+  const a = app(false, {completed: [0,1,2]}); matchMap(a);
+  for (let i = 0; i < 6; i++) a.event('zoom-out', 'click');
+  a.advance(32); assert.ok(a.graph.camera.zoom < .65);
+  tapState(a, 0, 1, 1); a.advance(32);
+  assert.equal(a.graph.pending, null); assert.equal(a.graph.camera.zoom, 1.25);
+  tapState(a, 0, 1, 1); a.advance(80);
+  const graph = a.graph, pending = graph.pending, pile = a.model;
+  a.event('mode-sandbox', 'click'); a.advance(1800);
+  assert.equal(a.element('board-stats').hidden, false);
+  assert.equal(pile.grains, 2); assert.equal(graph.pending, pending);
+  a.event('mode-game', 'click'); a.advance(1200);
+  assert.equal(graph.pending, null); assert.equal(graph.nodes.length, 2);
+  assert.equal(graph.current.cells[4], 3);
+  a.event('game-retry', 'click'); a.advance(32);
+  assert.notEqual(a.graph, graph); assert.equal(a.graph.nodes.length, 1);
+});
+
+
+test('Top down aligns the board sides, preserves grains, and still allows rotation', () => {
+  const a = app(), cells = [...a.model.cells];
+  a.event('rotate-right', 'click'); a.advance(400);
+  a.event('view-top', 'click'); a.advance(400);
+  assert.equal(a.view.pitch, Math.PI / 2);
+  const corners = a.view.diamond(0, 0, 0, a.model.size);
+  for (let i = 0; i < 4; i++) {
+    const p = corners[i], q = corners[(i + 1) % 4];
+    assert.ok(Math.abs(p.x - q.x) < 1e-8 || Math.abs(p.y - q.y) < 1e-8);
+  }
+  assert.deepEqual([...a.model.cells], cells);
+  const angle = a.view.angle;
+  a.event('sandpile', 'pointerdown');
+  a.event('sandpile', 'pointermove', {clientX: 400, clientY: 400});
+  a.event('sandpile', 'pointerup', {clientX: 400, clientY: 400}); a.advance(32);
+  assert.ok(a.view.angle < angle);
+  assert.equal(a.view.pitch, Math.PI / 2);
+  assert.deepEqual([...a.model.cells], cells);
+});
+
+
+test('graph boards remain visible and tappable near the top and bottom of the canvas', () => {
+  for (const y of [60, 565]) {
+    const a = app(false, {completed: [0,1,2]}); matchMap(a);
+    const p = a.graph.toScreen(a.graph.current, 984, 590);
+    a.event('sandpile', 'pointerdown', {clientX: 10, clientY: 300});
+    a.event('sandpile', 'pointermove', {clientX: 10, clientY: 300 + y - p.y});
+    a.event('sandpile', 'pointerup', {clientX: 10, clientY: 300 + y - p.y}); a.advance(32);
+    tapState(a, 0, 1, 1);
+    assert.ok(a.graph.pending, `board near y=${y} should accept a drop`);
+    a.advance(700); assert.equal(a.graph.nodes.length, 2);
+  }
+});
+
+
+test('dragging down tilts toward overhead on regular boards and graph boards', () => {
+  for (const graphMode of [false, true]) {
+    const a = app(false, {completed: [0,1,2]});
+    if (graphMode) matchMap(a);
+    a.event('view-isometric', 'click'); a.advance(400);
+    const p = graphMode ? a.graph.toScreen(a.graph.current, 984, 590) : {x: 492, y: 300};
+    const pitch = a.view.pitch, angle = a.view.angle;
+    a.event('sandpile', 'pointerdown', {clientX: p.x, clientY: p.y});
+    a.event('sandpile', 'pointermove', {clientX: p.x, clientY: p.y + 30});
+    assert.ok(a.view.pitch > pitch);
+    a.event('sandpile', 'pointermove', {clientX: p.x, clientY: p.y - 30});
+    assert.ok(a.view.pitch < pitch);
+    a.event('sandpile', 'pointerup', {clientX: p.x, clientY: p.y - 30}); a.advance(32);
+    assert.equal(a.view.angle, angle);
+    if (graphMode) assert.equal(a.graph.pending, null);
+  }
 });

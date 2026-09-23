@@ -207,7 +207,6 @@ button:disabled { opacity: .4; cursor: default; transform: none; }
 .target-panel h2 { font-size: 11px; color: var(--muted); margin-bottom: 7px; }
 .target-grid { display: grid; gap: 2px; }
 .target-grid span { display: grid; place-items: center; aspect-ratio: 1; font-size: 12px; border-radius: 2px; }
-.scene:has(#target-panel:not([hidden])) canvas { left: 160px; width: calc(100% - 160px); }
 @media (max-width: 800px) {
   .game-active .toolbar { grid-template-columns: 1fr; gap: 10px; }
   .game-actions { justify-content: flex-end; }
@@ -224,7 +223,6 @@ button:disabled { opacity: .4; cursor: default; transform: none; }
   .scene .view-switch button { padding: 0 9px; }
   .target-panel { width: 112px; top: 84px; left: 8px; padding: 8px; }
   .target-grid span { font-size: 10px; }
-  .scene:has(#target-panel:not([hidden])) canvas { left: 126px; width: calc(100% - 126px); }
   .game-actions { flex-wrap: wrap; }
 }
 
@@ -308,3 +306,20 @@ button:disabled { opacity: .4; cursor: default; transform: none; }
 @media (pointer: coarse) {
   .scene .view-switch button, .rotation-controls button, .zoom-controls button { min-height: 44px; min-width: 44px; }
 }
+
+/* The target shares the board camera; Match the Pattern has a map of states. */
+#target-grid { position: static; display: block; width: 100%; height: auto; aspect-ratio: 1; cursor: default; pointer-events: none; }
+.graph-active .target-panel { width: 176px; top: 88px; padding: 10px; pointer-events: auto; }
+.graph-active .scene { min-height: 440px; }
+.graph-active #sandpile { cursor: grab; }
+.graph-active #sandpile.rotating { cursor: grabbing; }
+@media (max-width: 700px) {
+  .graph-active .target-panel { width: 130px; left: 6px; padding: 8px; }
+}
+.graph-active .scene-top { justify-content: flex-end; }
+
+.mountain-form { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 12px; }
+.mountain-form label { display: grid; gap: 6px; font-size: 12px; color: var(--muted); }
+.mountain-form input { width: 180px; min-height: 44px; padding: 8px 12px; border: 1px solid var(--line); border-radius: 10px; background: #fffefa; color: var(--ink); font: inherit; font-size: 16px; }
+.mountain-form button { min-height: 44px; }
+.mountain-form input:focus-visible { outline: 2px solid var(--green); outline-offset: 3px; }

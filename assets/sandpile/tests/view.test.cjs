@@ -76,3 +76,20 @@ test('tilt is clamped above the table, with continuous projection at both limits
   }
   view.pitch = Math.PI / 2; assert.equal(view.visibleEdges().length, 0);
 });
+
+
+test('rotation and tilt preserve scale while explicit zoom and resizing still work', () => {
+  const view = new View(13); view.zoom = .88;
+  const scale = view.cellSize;
+  for (const pitch of [View.minPitch, View.isometricPitch, Math.PI / 2]) {
+    view.pitch = pitch;
+    for (let i = 0; i <= 32; i++) {
+      view.angle = i * Math.PI / 16;
+      assert.equal(view.cellSize, scale);
+    }
+  }
+  view.zoom *= 2;
+  assert.equal(view.cellSize, scale * 2);
+  view.resize(1200, 900);
+  assert.ok(view.cellSize > scale * 2);
+});

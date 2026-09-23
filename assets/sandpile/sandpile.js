@@ -22,7 +22,11 @@
   let mode = 'sandbox';
   let landing = false, demoElapsed = 0, demoDrops = 0, resetHold = null;
   const saved = { sandbox: null, game: null, versus: null };
-  let versus = null;
+  let versus = null, graph = null;
+  let graphHits = [], graphGesture = null;
+  const graphTouches = new Map();
+  function isMountain() { return mode === 'game' && game.level.kind === 'mountain'; }
+  function isGraph() { return mode === 'game' && game.level.kind === 'match' && graph !== null; }
   let menuKind = 'tutorial';
   const progressKey = 'sandpile-progress-v2';
   function readProgress() {
@@ -49,7 +53,7 @@
     model.cells[center] = 3;
     model.topplings = 0; model.escaped = 0;
     selected = -1; phase = null; drops = []; active = new Set(); particles = []; rotation = null;
-    view.angle = -.25; view.pitch = SandpileView.isometricPitch; view.topLocked = false; view.zoom = .88;
+    view.angle = -.25; view.pitch = SandpileView.isometricPitch; view.topLocked = false; view.zoom = 1.4;
     $('speed').value = '1';
     $('welcome').focus({ preventScroll: true });
     resize();
@@ -79,7 +83,7 @@
     if ($('help').open) $('help').close();
     game = new SandpileGame();
     saveProgress();
-    saved.game = null; saved.sandbox = null; saved.versus = null; versus = null;
+    saved.game = null; saved.sandbox = null; saved.versus = null; versus = null; graph = null; graphGesture = null; graphTouches.clear();
     mode = 'sandbox'; size = 19; center = Math.floor(size * size / 2); view.size = size;
     view.angle = 0; view.pitch = SandpileView.isometricPitch; view.topLocked = false; view.zoom = 1;
     rotation = null; gesture = null; pointers.clear(); hitAreas = [];
@@ -102,11 +106,11 @@
   // Inactive modes own their entire simulation, including unfinished animations.
   // No grains are added, stabilized, or lost while that mode is paused.
   function captureState() {
-    return { model, versus, selected, phase, drops, active, particles, rotation, avalancheStart, angle: view.angle, pitch: view.pitch, topLocked: view.topLocked, zoom: view.zoom, speed: $('speed').value, dropSize: $('drop-size').value };
+    return { model, versus, graph, selected, phase, drops, active, particles, rotation, avalancheStart, angle: view.angle, pitch: view.pitch, topLocked: view.topLocked, zoom: view.zoom, speed: $('speed').value, dropSize: $('drop-size').value };
   }
 
   function restoreState(state) {
-    ({ model, versus, selected, phase, drops, active, particles, rotation, avalancheStart } = state);
+    ({ model, versus, graph, selected, phase, drops, active, particles, rotation, avalancheStart } = state);
     size = model.size; center = Math.floor(size * size / 2); view.size = size;
     view.angle = state.angle; view.pitch = state.pitch; view.topLocked = state.topLocked; view.zoom = state.zoom;
     $('speed').value = state.speed; $('speed-value').textContent = `${state.speed}×`;
@@ -120,7 +124,7 @@
     stopPouring();
     saved[mode] = captureState();
     mode = next;
-    gesture = null; pointers.clear(); hitAreas = []; canvas.classList.remove('rotating');
+    gesture = null; graphGesture = null; graphTouches.clear(); pointers.clear(); hitAreas = []; canvas.classList.remove('rotating');
     $('app').classList.toggle('game-active', mode === 'game');
     $('level-header').hidden = mode !== 'game';
     $('app').classList.toggle('versus-active', mode === 'versus');
@@ -129,7 +133,7 @@
     $('mode-game').setAttribute('aria-pressed', String(mode === 'game'));
     $('mode-sandbox').setAttribute('aria-pressed', String(mode === 'sandbox'));
     $('game-panel').hidden = $('game-actions').hidden = mode !== 'game';
-    $('board-subtitle').textContent = mode === 'game' ? `${SandpileGame.categories[game.level.kind]} · ${game.level.size} × ${game.level.size}` : mode === 'versus' ? 'Versus · 4 × 4 · open edges' : 'Abelian · 19 × 19 · open edges';
+    $('board-subtitle').textContent = mode === 'game' ? `${SandpileGame.categories[game.level.kind]} · ${game.level.size} × ${game.level.size}` : mode === 'versus' ? 'Versus · 3 × 3 · open edges' : 'Abelian · 19 × 19 · open edges';
     $('canvas-help').textContent = mode === 'game' ? 'Blue outlines mark the challenge · Drag to orbit' : mode === 'versus' ? 'Tap an empty square or your color · Drag to orbit' : 'Tap to add · Drag any direction to orbit';
     $('drop').title = mode !== 'sandbox' ? 'Add one grain to the selected square' : 'Tap to drop; hold to keep pouring';
     if (saved[mode]) restoreState(saved[mode]);
@@ -144,9 +148,9 @@
   }
 
   function newMatch() {
-    hold = null; gesture = null; pointers.clear(); hitAreas = [];
+    hold = null; gesture = null; graphGesture = null; graphTouches.clear(); pointers.clear(); hitAreas = [];
     phase = null; drops = []; particles = []; active = new Set(); rotation = null; avalancheStart = 0;
-    size = 4; center = 5; selected = center; view.size = size;
+    size = 3; center = Math.floor(size * size / 2); selected = center; view.size = size;
     model = new Sandpile(size); versus = new SandpileVersus(model);
     $('drop-size').value = '1'; $('speed').value = '1'; $('speed-value').textContent = '1×';
     canvas.classList.remove('rotating');
@@ -175,28 +179,35 @@
     if (!game.load(index)) return;
     menuKind = game.level.kind;
     if ($('level-menu').open) { $('level-menu').close(); canvas.focus({ preventScroll: true }); }
-    hold = null; gesture = null; pointers.clear(); hitAreas = [];
+    hold = null; gesture = null; graphGesture = null; graphTouches.clear(); pointers.clear(); hitAreas = [];
     phase = null; drops = []; particles = []; active = new Set(); rotation = null; avalancheStart = 0;
     size = game.level.size; center = Math.floor(size * size / 2); view.size = size;
     model = new Sandpile(size);
     if (game.level.start) model.cells.set(game.level.start);
     else game.level.seeds.forEach(([index, count]) => model.add(index, count));
+    graph = game.level.kind === 'match' ? new SandpileGraph(size, model.cells, game.level.target) : null;
     selected = game.level.selected;
     if (index === 0) { view.angle = 0; view.pitch = SandpileView.isometricPitch; view.topLocked = false; view.zoom = 1; }
     $('drop-size').value = '1'; $('speed').value = '1'; $('speed-value').textContent = '1×';
     updateTarget(); updateReadout(); updateAngle(); resize();
+    if (isGraph()) { graph.fit(width, height); updateAngle(); redraw(); }
     $('announcement').textContent = `Level ${index + 1}. ${game.level.title}. ${game.level.prompt}`;
   }
 
   function updateTarget() {
     const target = mode === 'game' ? game.level.target : null;
     $('target-panel').hidden = !target;
+    $('app').classList.toggle('graph-active', !!isGraph());
+    $('board-stats').hidden = !!isGraph();
+    $('zoom-reset').setAttribute('aria-label', isGraph() ? 'Fit all boards' : 'Reset zoom');
+    canvas.setAttribute('aria-label', isGraph() ? 'Sandpile state map. Tap a square to branch. Drag inside a board box to rotate, or outside to pan. Pinch or scroll to zoom. Bracket keys select a board; arrow keys select a square; Space or Enter drops. Q and E rotate all boards.' : 'Sandpile. Tap to drop; drag to orbit. Arrow keys select a square; Space or Enter drops a grain; Q and E rotate; W and S tilt.');
+    if (isGraph()) $('canvas-help').textContent = 'Drag a board to rotate · Drag outside to pan';
+    else if (isMountain()) {
+      $('canvas-help').textContent = 'All sand drops in the middle · Drag to orbit';
+      canvas.setAttribute('aria-label', 'Mountain board. Enter a grain count below to drop sand in the middle. Drag to orbit; Q and E rotate; W and S tilt.');
+    }
+    else if (mode === 'game') $('canvas-help').textContent = 'Blue outlines mark the challenge · Drag to orbit';
     if (!target) return;
-    $('target-grid').style.gridTemplateColumns = `repeat(${size}, 1fr)`;
-    $('target-grid').innerHTML = target.map(count => {
-      const style = SandpileView.cellStyle(count);
-      return `<span style="background:${style.fill};color:${style.ink}" aria-hidden="true">${count}</span>`;
-    }).join('');
     $('target-grid').setAttribute('aria-label', `Target, ${size} by ${size}. Rows: ${Array.from({length: size}, (_, row) => target.slice(row * size, (row + 1) * size).join(', ')).join('; ')}.`);
   }
 
@@ -212,11 +223,15 @@
     $('game-best').textContent = game.best[game.index] === undefined ? '' : `Best: ${game.best[game.index]} ${level.kind === 'match' ? 'moves' : level.kind === 'avalanche' ? 'escaped' : 'saved'}`;
     $('game-retry').textContent = game.status === 'retry' ? 'Try again' : 'Start over';
     $('game-next').hidden = !won;
-    const nextLevel = SandpileGame.levels[game.index + 1];
+    const nextLevel = SandpileGame.levels[game.nextIndex];
     $('game-next').textContent = !nextLevel ? 'Sandbox →' : nextLevel.kind !== level.kind ? `${SandpileGame.categories[nextLevel.kind]} →` : 'Next level →';
-    $('game-stop').hidden = level.kind !== 'mountain' || game.status !== 'playing';
-    $('game-stop').disabled = !!phase || drops.length > 0 || particles.length > 0;
+    if (isMountain()) {
+      $('mountain-count').value = game.mountainInput;
+      $('mountain-count').disabled = game.used > 0;
+      $('mountain-drop').disabled = game.used > 0;
+    }
     $('drop').disabled = !game.canDrop(selected);
+    if (isGraph()) updateGraphReadout();
     updateLevelMenu();
   }
 
@@ -247,53 +262,69 @@
     }
   }
 
-  function drawGameMarker(index, row, col, z) {
-    if (mode !== 'game' || game.hideHighlights || !game.level.marked.includes(index)) return;
-    const face = view.diamond(row + .1, col + .1, z, .8);
-    polygon(face, null, '#fffef5', 5);
-    polygon(face, null, '#397698', 2.5);
-  }
-
   const visualHeight = grains => Math.min(grains, 8);
-  const point = (row, col, z = 0) => view.point(row, col, z);
-  const diamond = (row, col, z) => view.diamond(row, col, z);
-
-  function sideColor(edge, red, owner = 0) {
-    const normals = [[0, -1], [1, 0], [0, 1], [-1, 0]];
-    const [x, y] = normals[edge];
-    const c = Math.cos(view.angle), s = Math.sin(view.angle);
-    const light = ((x * c - y * s - x * s - y * c) / Math.SQRT2 + 1) / 2;
-    const dark = owner ? playerColors[owner].dark : red ? [175, 54, 45] : [167, 96, 51];
-    const bright = owner ? playerColors[owner].bright : red ? [224, 88, 68] : [223, 151, 83];
-    return `rgb(${dark.map((v, i) => Math.round(v + (bright[i] - v) * light)).join(',')})`;
-  }
-
-  function polygon(points, fill, stroke = null, lineWidth = 1) {
-    ctx.beginPath();
-    points.forEach((p, i) => i ? ctx.lineTo(p.x, p.y) : ctx.moveTo(p.x, p.y));
-    ctx.closePath();
-    if (fill) { ctx.fillStyle = fill; ctx.fill(); }
-    if (stroke) { ctx.strokeStyle = stroke; ctx.lineWidth = lineWidth; ctx.stroke(); }
-  }
-
-  function countLabel(row, col, z, text) {
-    const p = point(row + .5, col + .5, z);
-    ctx.save(); ctx.font = '600 12px -apple-system, sans-serif'; ctx.textAlign = 'center';
-    ctx.lineWidth = 4; ctx.strokeStyle = '#fffff8'; ctx.strokeText(String(text), p.x, p.y - 8);
-    ctx.fillStyle = colors.green; ctx.fillText(String(text), p.x, p.y - 8); ctx.restore();
-  }
 
   function setView(preset) {
     view.topLocked = preset === 'top';
     const pitch = preset === 'top' ? Math.PI / 2 : SandpileView.isometricPitch;
-    moveCamera(view.angle, pitch);
+    moveCamera(preset === 'top' ? nearestAngle(view.angle, -Math.PI / 4) : view.angle, pitch);
     gesture = null; pointers.clear(); canvas.classList.remove('rotating');
     $('announcement').textContent = preset === 'top' ? 'Top down locked. Drag to rotate; choose Isometric to tilt again.' : 'Isometric camera position. Drag in any direction to orbit.';
   }
 
   function render() {
     ctx.clearRect(0, 0, width, height);
-    hitAreas = [];
+    if (isGraph()) renderGraph();
+    else hitAreas = renderPile(ctx, view, model, { selected, phase, drops, active, particles, markers: mode === 'game', teams: mode === 'versus', hideSelection: mode === 'game' && game.hideHighlights });
+    renderTarget();
+  }
+
+  function renderTarget() {
+    if (mode !== 'game' || !game.level.target) return;
+    const targetCanvas = $('target-grid'), targetCtx = targetCanvas.getContext('2d');
+    const ratio = Math.min(window.devicePixelRatio || 1, 2);
+    if (targetCanvas.width !== 160 * ratio || targetCanvas.height !== 160 * ratio) { targetCanvas.width = 160 * ratio; targetCanvas.height = 160 * ratio; }
+    targetCtx.setTransform(ratio, 0, 0, ratio, 0, 0); targetCtx.clearRect(0, 0, 160, 160);
+    const camera = SandpileView.forBoard(view, size, 80, 94, 144 / (size * Math.SQRT2 + 2.5));
+    renderPile(targetCtx, camera, { size, cells: game.level.target });
+  }
+
+  function renderPile(ctx, view, model, { selected = -1, phase = null, drops = [], active = new Set(), particles = [], markers = false, teams = false, hideSelection = false } = {}) {
+    const size = model.size, hitAreas = [];
+    function drawGameMarker(index, row, col, z) {
+      if (!markers || game.hideHighlights || !game.level.marked.includes(index)) return;
+      const face = view.diamond(row + .1, col + .1, z, .8);
+      polygon(face, null, '#fffef5', 5);
+      polygon(face, null, '#397698', 2.5);
+    }
+
+    const point = (row, col, z = 0) => view.point(row, col, z);
+
+    function sideColor(edge, red, owner = 0) {
+      const normals = [[0, -1], [1, 0], [0, 1], [-1, 0]];
+      const [x, y] = normals[edge];
+      const c = Math.cos(view.angle), s = Math.sin(view.angle);
+      const light = ((x * c - y * s - x * s - y * c) / Math.SQRT2 + 1) / 2;
+      const dark = owner ? playerColors[owner].dark : red ? [175, 54, 45] : [167, 96, 51];
+      const bright = owner ? playerColors[owner].bright : red ? [224, 88, 68] : [223, 151, 83];
+      return `rgb(${dark.map((v, i) => Math.round(v + (bright[i] - v) * light)).join(',')})`;
+    }
+
+    function polygon(points, fill, stroke = null, lineWidth = 1) {
+      ctx.beginPath();
+      points.forEach((p, i) => i ? ctx.lineTo(p.x, p.y) : ctx.moveTo(p.x, p.y));
+      ctx.closePath();
+      if (fill) { ctx.fillStyle = fill; ctx.fill(); }
+      if (stroke) { ctx.strokeStyle = stroke; ctx.lineWidth = lineWidth; ctx.stroke(); }
+    }
+
+    function countLabel(row, col, z, text) {
+      const p = point(row + .5, col + .5, z);
+      ctx.save(); ctx.font = '600 12px -apple-system, sans-serif'; ctx.textAlign = 'center';
+      ctx.lineWidth = 4; ctx.strokeStyle = '#fffff8'; ctx.strokeText(String(text), p.x, p.y - 8);
+      ctx.fillStyle = colors.green; ctx.fillText(String(text), p.x, p.y - 8); ctx.restore();
+    }
+
     const faces = [], blend = view.topBlend, above = Math.sin(view.pitch) >= 0;
     ctx.save(); ctx.shadowColor = '#65523920'; ctx.shadowBlur = 20; ctx.shadowOffsetY = 10;
     polygon(view.diamond(0, 0, -.85, size), '#b17e4d'); ctx.restore();
@@ -314,14 +345,14 @@
       }
     }
     function grain(row, col, z, span, red, opacity = 1, label = null) {
-      const owner = mode === 'versus' ? versus.turn : 0;
+      const owner = teams ? versus.turn : 0;
       sides(row, col, z, z + span, red, null, span, opacity, edges, owner);
       face(corners(row, col, above ? z + span : z, span), owner ? playerColors[owner].top : red ? colors.redTop : colors.top, { opacity, label: label ? { row, col, z: z + span, text: label } : null });
     }
     for (let index = 0; index < model.cells.length; index++) {
       const row = Math.floor(index / size), col = index % size;
       const grains = model.cells[index], stack = visualHeight(grains), red = active.has(index);
-      const owner = mode === 'versus' ? versus.owners[index] : 0;
+      const owner = teams ? versus.owners[index] : 0;
       const border = edges.filter(edge => [row === 0, col === size - 1, row === size - 1, col === 0][edge]);
       sides(row, col, -.85, 0, false, index, 1, 1, border);
       if (grains) sides(row, col, 0, stack, red, index, 1, 1, edges, owner);
@@ -364,7 +395,7 @@
       if (f.index !== null && f.index !== undefined) hitAreas.push({ index: f.index, faces: [f.points] });
       if (f.cell) {
         const { row, col, z, grains } = f.cell;
-        const owner = mode === 'versus' ? versus.owners[f.index] : 0;
+        const owner = teams ? versus.owners[f.index] : 0;
         const style = owner ? { fill: playerColors[owner].shades[Math.min(2, grains - 1)], ink: grains === 1 ? '#263340' : '#fffdf5' } : SandpileView.cellStyle(grains);
         if (blend > 0 && !f.underside) {
           ctx.globalAlpha = blend;
@@ -372,8 +403,8 @@
           ctx.globalAlpha = 1;
         }
         drawGameMarker(f.index, row, col, z);
-        if (active.has(f.index) && !f.underside) polygon(view.diamond(row + .06, col + .06, z, .88), null, mode === 'versus' ? '#ffe07d' : '#ffb2a1', Math.max(1.5, view.cellSize * .08));
-        if (f.index === selected && !(mode === 'game' && game.hideHighlights)) {
+        if (active.has(f.index) && !f.underside) polygon(view.diamond(row + .06, col + .06, z, .88), null, teams ? '#ffe07d' : '#ffb2a1', Math.max(1.5, view.cellSize * .08));
+        if (f.index === selected && !hideSelection) {
           const selectedFace = view.diamond(row + .04, col + .04, z, .92);
           polygon(selectedFace, '#35624e15', '#fffef3', 4);
           polygon(selectedFace, null, colors.green, 2);
@@ -401,6 +432,104 @@
       polygon(view.diamond(Math.floor(packet.index / size) + inset, packet.index % size + inset, visualHeight(model.cells[packet.index]), span), null, colors.green, 2);
       ctx.restore();
     }
+    return hitAreas;
+  }
+
+  function graphModel(node) {
+    const pile = new Sandpile(size);
+    pile.cells.set(node.cells); pile.topplings = node.topplings; pile.escaped = node.escaped;
+    return pile;
+  }
+
+  function updateGraphReadout() {
+    const node = graph.current, target = graph.targetNode;
+    $('drop').disabled = !!graph.pending;
+    $('game-budget').textContent = `${graph.pending ? graph.nodes[graph.pending.sourceId].moves + 1 : node.moves} moves from start`;
+    $('game-message').textContent = `${target ? `Target found in ${target.moves} moves! ` : ''}${graph.notice || 'Every drop makes a new board. You can branch from any earlier board.'}`;
+    $('game-prompt').textContent = 'Build a path to the target. Tap a square on any board to add one grain to a copy.';
+    $('canvas-help').textContent = 'Drag a board to rotate · Drag outside to pan';
+    $('square').textContent = `Square ${Math.floor(selected / size) + 1}, ${selected % size + 1}`;
+  }
+
+  function selectGraphNode(id, focus = false) {
+    if (!isGraph() || graph.pending || !graph.nodes[id]) return;
+    graph.activeId = id; model = graphModel(graph.current); game.used = graph.current.moves;
+    if (focus) graph.focus();
+    updateReadout(); updateAngle(); redraw();
+  }
+
+  function branchGraph(index, sourceId = graph.activeId) {
+    const source = graph.begin(sourceId, index);
+    if (!source) return;
+    model = graphModel(source); selected = index;
+    phase = null; active = new Set(); particles = []; avalancheStart = model.topplings;
+    drops = [{ index, count: 1, elapsed: 0, duration: reducedMotion.matches ? 32 : 360 }];
+    graph.fit(width, height, [source, graph.pending]);
+    game.used = source.moves + 1;
+    updateReadout(); updateAngle(); redraw();
+  }
+
+  function finishGraphBranch() {
+    const result = graph.finish(model);
+    if (!result) return;
+    model = graphModel(result.node); game.used = result.node.moves;
+    if (result.merged) graph.fit(width, height, [result.source, result.node]);
+    const target = graph.targetNode;
+    if (target) {
+      game.status = 'won'; game.completed.add(game.index);
+      game.best[game.index] = Math.min(game.best[game.index] ?? Infinity, target.moves);
+      game.result = `Target found in ${target.moves} moves! Keep exploring or choose the next level.`;
+      saveProgress();
+    }
+    updateReadout(); updateAngle(); dirty = true;
+    $('announcement').textContent = $('game-message').textContent;
+  }
+
+  function renderGraph() {
+    graphHits = []; hitAreas = [];
+    const zoom = graph.camera.zoom;
+    const position = node => graph.toScreen(node, width, height);
+    ctx.save();
+    const groups = new Map();
+    for (const edge of graph.edges) {
+      const key = `${edge.from}:${edge.to}`;
+      if (!groups.has(key)) groups.set(key, { from: graph.nodes[edge.from], to: graph.nodes[edge.to], indices: [] });
+      groups.get(key).indices.push(edge.index);
+    }
+    if (graph.pending) groups.set('pending', { from: graph.nodes[graph.pending.sourceId], to: graph.pending, indices: [graph.pending.index], pending: true });
+    for (const edge of groups.values()) {
+      const a = position(edge.from), b = position(edge.to), forward = b.x > a.x;
+      const sx = a.x + 171 * zoom, sy = a.y, tx = b.x - 171 * zoom, ty = b.y;
+      ctx.beginPath(); ctx.strokeStyle = edge.pending ? '#ba864c' : '#8faaa0'; ctx.lineWidth = Math.max(1, 1.7 * zoom);
+      ctx.setLineDash(edge.pending ? [5, 4] : []);
+      ctx.moveTo(sx, sy);
+      if (forward) ctx.bezierCurveTo((sx + tx) / 2, sy, (sx + tx) / 2, ty, tx, ty);
+      else ctx.bezierCurveTo(sx + 100 * zoom, sy - 230 * zoom, tx - 100 * zoom, ty - 230 * zoom, tx, ty);
+      ctx.stroke(); ctx.setLineDash([]);
+      ctx.beginPath(); ctx.moveTo(tx - 7 * zoom, ty - 5 * zoom); ctx.lineTo(tx, ty); ctx.lineTo(tx - 7 * zoom, ty + 5 * zoom); ctx.stroke();
+      if (zoom > .45) {
+        const label = edge.indices.length > 2 ? `+1 · ${edge.indices.length} squares` : edge.indices.map(index => `+1 (${Math.floor(index / size) + 1},${index % size + 1})`).join(' / ');
+        ctx.font = `${Math.max(9, 10 * zoom)}px -apple-system, sans-serif`; ctx.textAlign = 'center'; ctx.textBaseline = 'bottom';
+        ctx.strokeStyle = '#f8f7f3'; ctx.lineWidth = 5; ctx.strokeText(label, (sx + tx) / 2, (sy + ty) / 2 - (forward ? 8 : 172 * zoom));
+        ctx.fillStyle = '#61776b'; ctx.fillText(label, (sx + tx) / 2, (sy + ty) / 2 - (forward ? 8 : 172 * zoom));
+      }
+    }
+    const items = graph.pending ? [...graph.nodes, { ...graph.pending, id: null }] : graph.nodes;
+    for (const node of items) {
+      const p = position(node), x = p.x - 170 * zoom, y = p.y - 140 * zoom, w = 340 * zoom, h = 280 * zoom;
+      if (x + w < 0 || x > width || y + h < 0 || y > height) continue;
+      const pending = node.id === null, selectedNode = !graph.pending && node.id === graph.activeId;
+      ctx.beginPath(); ctx.roundRect(x, y, w, h, 14 * zoom);
+      ctx.fillStyle = node.target ? '#f0f6e9' : '#fffefa'; ctx.fill();
+      ctx.strokeStyle = pending ? '#c99b61' : node.target || selectedNode ? '#668e70' : '#d9ded1'; ctx.lineWidth = selectedNode ? 2 : 1; ctx.stroke();
+      const camera = graph.boardCamera(view, node, width, height);
+      const hits = renderPile(ctx, camera, pending ? model : node, pending ? { selected, phase, drops, active, particles } : { selected: selectedNode ? selected : -1 });
+      graphHits.push({ nodeId: node.id, index: null, faces: [[{x,y},{x:x+w,y},{x:x+w,y:y+h},{x,y:y+h}]] });
+      if (!pending) {
+        graphHits.push(...hits.map(hit => ({ ...hit, nodeId: node.id })));
+      }
+    }
+    ctx.restore();
   }
 
   function emitEscapingGrains() {
@@ -417,7 +546,8 @@
   function updateAngle() {
     const degrees = ((Math.round(view.angle * 180 / Math.PI) % 360) + 360) % 360;
     $('view-angle').textContent = `${degrees}°`;
-    $('zoom-level').textContent = `${Math.round(view.zoom * 100)}%`;
+    $('zoom-level').textContent = `${Math.round((isGraph() ? graph.camera.zoom : view.zoom) * 100)}%`;
+    if (isGraph()) $('canvas-help').textContent = `${graph.camera.zoom < .65 ? 'Tap a board to zoom in' : 'Tap a square to branch'} · Drag a board to rotate · Drag outside to pan`;
     $('view-isometric').setAttribute('aria-pressed', String(!view.topLocked));
     $('view-top').setAttribute('aria-pressed', String(view.topLocked));
     $('height-legend').hidden = mode === 'versus' || view.topBlend < .01;
@@ -440,6 +570,8 @@
 
   function updateReadout() {
     if (landing) return;
+    $('mountain-form').hidden = !isMountain();
+    $('grain-control').hidden = isMountain();
     $('square').textContent = `Square ${Math.floor(selected / size) + 1}, ${selected % size + 1}`;
     $('height').textContent = model.cells[selected];
     $('grain-label').textContent = model.cells[selected] === 1 ? 'grain' : 'grains';
@@ -537,7 +669,8 @@
       }
       dirty = true;
     }
-    if (mode === 'game' && !phase && !drops.length && !particles.length && game.finish(model)) {
+    if (isGraph() && graph.pending && !phase && !drops.length && !particles.length) finishGraphBranch();
+    if (mode === 'game' && !isGraph() && !phase && !drops.length && !particles.length && game.finish(model)) {
       saveProgress(); updateReadout(); dirty = true;
       $('announcement').textContent = `${game.status === 'won' ? 'Level complete! ' : ''}${game.message}`;
     }
@@ -556,7 +689,8 @@
   }
 
   function drop(index = selected, count = Number($('drop-size').value)) {
-    if (landing) return;
+    if (landing || isMountain()) return;
+    if (isGraph()) { branchGraph(index); return; }
     if (mode === 'versus') {
       count = 1;
       if (!versus.begin(index)) { updateReadout(); redraw(); return; }
@@ -620,7 +754,74 @@
     return null;
   }
 
+  function graphPoint(event) {
+    const rect = canvas.getBoundingClientRect();
+    return { x: event.clientX - rect.left, y: event.clientY - rect.top };
+  }
+  function graphPick(event) {
+    const point = graphPoint(event);
+    if (point.x < 0 || point.x > width || point.y < 0 || point.y > height) return null;
+    for (let i = graphHits.length - 1; i >= 0; i--) if (graphHits[i].faces.some(face => inside(point, face))) return graphHits[i];
+    return null;
+  }
+  function graphPointerDown(event) {
+    if (event.button !== 0) return;
+    const point = graphPoint(event);
+    graphTouches.set(event.pointerId, point); canvas.setPointerCapture(event.pointerId);
+    if (graphTouches.size === 2) {
+      const [a, b] = [...graphTouches.values()], mid = { x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 };
+      graphGesture = { type: 'pinch', distance: Math.max(1, Math.hypot(a.x - b.x, a.y - b.y)), zoom: graph.camera.zoom, anchor: graph.fromScreen(mid, width, height) };
+    } else if (graphTouches.size === 1) {
+      rotation = null;
+      graphGesture = { type: graphPick(event) ? 'orbit' : 'pan', id: event.pointerId, point, camera: { ...graph.camera }, angle: view.angle, lastY: point.y, moved: false };
+    } else graphGesture = null;
+  }
+  function graphPointerMove(event) {
+    const point = graphPoint(event);
+    if (graphTouches.has(event.pointerId)) graphTouches.set(event.pointerId, point);
+    const gesture = graphGesture;
+    if (!gesture) return;
+    if (gesture.type === 'pinch') {
+      if (graphTouches.size !== 2) return;
+      const [a, b] = [...graphTouches.values()], mid = { x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 };
+      graph.camera.zoom = Math.max(.08, Math.min(3, gesture.zoom * Math.hypot(a.x - b.x, a.y - b.y) / gesture.distance));
+      const after = graph.fromScreen(mid, width, height);
+      graph.camera.x += gesture.anchor.x - after.x; graph.camera.y += gesture.anchor.y - after.y;
+    } else {
+      if (gesture.id !== event.pointerId) return;
+      const dx = point.x - gesture.point.x, dy = point.y - gesture.point.y;
+      if (Math.hypot(dx, dy) > 8) gesture.moved = true;
+      if (!gesture.moved) return;
+      if (gesture.type === 'pan') {
+        graph.camera.x = gesture.camera.x - dx / graph.camera.zoom;
+        graph.camera.y = gesture.camera.y - dy / graph.camera.zoom;
+      } else {
+        view.angle = gesture.angle - dx * .008;
+        if (!view.topLocked) view.pitch += (point.y - gesture.lastY) * .008;
+        gesture.lastY = point.y;
+      }
+    }
+    canvas.classList.add('rotating'); updateAngle(); redraw();
+  }
+  function graphPointerUp(event, cancelled) {
+    const gesture = graphGesture;
+    graphTouches.delete(event.pointerId);
+    if (!gesture) return;
+    if (gesture.type === 'pinch' || cancelled) { graphGesture = null; canvas.classList.remove('rotating'); return; }
+    if (gesture.id !== event.pointerId) return;
+    graphGesture = null; canvas.classList.remove('rotating');
+    const point = graphPoint(event);
+    if (!gesture.moved && Math.hypot(point.x - gesture.point.x, point.y - gesture.point.y) <= 8) {
+      const hit = graphPick(event);
+      if (!hit || hit.nodeId === null || graph.pending) return;
+      if (hit.index === null || graph.camera.zoom < .65) selectGraphNode(hit.nodeId, true);
+      else branchGraph(hit.index, hit.nodeId);
+      canvas.focus({ preventScroll: true });
+    }
+  }
+
   canvas.addEventListener('pointerdown', event => {
+    if (isGraph()) { graphPointerDown(event); return; }
     if (event.button !== 0) return;
     pointers.add(event.pointerId);
     canvas.setPointerCapture(event.pointerId);
@@ -630,28 +831,30 @@
     gesture = { id: event.pointerId, x: event.clientX, y: event.clientY, lastY: event.clientY, angle: view.angle, moved: false, cancelled: false };
   });
   canvas.addEventListener('pointermove', event => {
+    if (isGraph()) { graphPointerMove(event); return; }
     if (gesture) {
       if (gesture.id !== event.pointerId || gesture.cancelled) return;
       const dx = event.clientX - gesture.x, dy = event.clientY - gesture.y;
       if (Math.hypot(dx, dy) > 8) gesture.moved = true;
       if (gesture.moved) {
         view.angle = gesture.angle - dx * .008;
-        if (!view.topLocked) view.pitch -= (event.clientY - gesture.lastY) * .008;
+        if (!view.topLocked) view.pitch += (event.clientY - gesture.lastY) * .008;
         gesture.lastY = event.clientY;
         canvas.classList.add('rotating'); updateAngle(); redraw();
       }
       return;
     }
-    if (event.pointerType === 'touch' || pointers.size) return;
+    if (isMountain() || event.pointerType === 'touch' || pointers.size) return;
     const index = pick(event);
     if (index !== null && index !== selected) { selected = index; updateReadout(); redraw(); }
   });
   function finishPointer(event, cancelled = false) {
+    if (isGraph()) { graphPointerUp(event, cancelled); return; }
     pointers.delete(event.pointerId);
     if (gesture?.id !== event.pointerId) return;
     const tap = !cancelled && !gesture.cancelled && !gesture.moved && Math.hypot(event.clientX - gesture.x, event.clientY - gesture.y) <= 8;
     gesture = null; canvas.classList.remove('rotating');
-    if (tap) {
+    if (tap && !isMountain()) {
       const index = pick(event);
       if (index !== null) { selected = index; drop(index); canvas.focus({ preventScroll: true }); }
     }
@@ -660,6 +863,10 @@
   canvas.addEventListener('pointercancel', event => finishPointer(event, true));
   canvas.addEventListener('lostpointercapture', event => finishPointer(event, true));
   canvas.addEventListener('keydown', event => {
+    if (isMountain() && ['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', ' ', 'Enter'].includes(event.key)) { event.preventDefault(); return; }
+    if (isGraph() && (event.key === '[' || event.key === ']')) {
+      event.preventDefault(); selectGraphNode((graph.activeId + (event.key === '[' ? -1 : 1) + graph.nodes.length) % graph.nodes.length, true); return;
+    }
     let row = Math.floor(selected / size), col = selected % size;
     switch (event.key) {
       case 'q': case 'Q': event.preventDefault(); turn(-Math.PI / 2); return;
@@ -677,17 +884,19 @@
     selected = row * size + col; updateReadout(); redraw();
     $('announcement').textContent = `Square ${row + 1}, ${col + 1}, ${model.cells[selected]} grains.`;
   });
-  function zoomBy(factor) {
-    view.zoom *= factor; hitAreas = []; updateAngle(); redraw();
+  function zoomBy(factor, point = { x: width / 2, y: height / 2 + 43 }) {
+    if (isGraph()) graph.zoomAt(factor, point, width, height);
+    else view.zoom *= factor;
+    hitAreas = []; graphHits = []; updateAngle(); redraw();
   }
   canvas.addEventListener('wheel', event => {
     event.preventDefault();
     const unit = event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? height : 1;
-    zoomBy(Math.exp(-Math.max(-500, Math.min(500, event.deltaY * unit)) * .0015));
+    zoomBy(Math.exp(-Math.max(-500, Math.min(500, event.deltaY * unit)) * .0015), graphPoint(event));
   }, { passive: false });
   $('zoom-in').addEventListener('click', () => zoomBy(1.2));
   $('zoom-out').addEventListener('click', () => zoomBy(1 / 1.2));
-  $('zoom-reset').addEventListener('click', () => { view.zoom = 1; updateAngle(); redraw(); });
+  $('zoom-reset').addEventListener('click', () => { if (isGraph()) graph.fit(width, height, graph.pending ? [...graph.nodes, graph.pending] : graph.nodes); else view.zoom = 1; updateAngle(); redraw(); });
   $('view-isometric').addEventListener('click', () => setView('isometric'));
   $('view-top').addEventListener('click', () => setView('top'));
   $('rotate-left').addEventListener('click', () => turn(-Math.PI / 2));
@@ -724,12 +933,22 @@
   $('game-retry').addEventListener('click', () => { if (mode === 'game') loadLevel(game.index); });
   $('game-next').addEventListener('click', () => {
     if (mode !== 'game' || game.status !== 'won') return;
-    if (game.index === SandpileGame.levels.length - 1) switchMode('sandbox');
-    else loadLevel(game.index + 1);
+    if (game.nextIndex === undefined) switchMode('sandbox');
+    else loadLevel(game.nextIndex);
   });
-  $('game-stop').addEventListener('click', () => {
-    if (mode !== 'game' || game.level.kind !== 'mountain' || phase || drops.length || particles.length) return;
-    if (game.finish(model, true)) { saveProgress(); updateReadout(); redraw(); }
+  $('mountain-count').addEventListener('input', () => {
+    if (isMountain() && !game.used) game.mountainInput = $('mountain-count').value;
+  });
+  $('mountain-form').addEventListener('submit', event => {
+    event.preventDefault();
+    if (!isMountain()) return;
+    game.mountainInput = $('mountain-count').value;
+    const count = Number(game.mountainInput);
+    if (game.submitMountain(count)) {
+      selected = center; avalancheStart = model.topplings;
+      drops.push({ index: center, count, elapsed: 0, duration: reducedMotion.matches ? 32 : 360 });
+    }
+    updateReadout(); redraw();
   });
   for (let i = 0; i < 3; i++) $(`level-${i + 1}`).addEventListener('click', () => { if (mode === 'game') loadLevel(menuLevels()[i]); });
   for (const kind of Object.keys(SandpileGame.categories)) $(`category-${kind}`).addEventListener('click', () => {
