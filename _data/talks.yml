@@ -191,7 +191,7 @@
   city: Eindhoven, The Netherlands
   type: Conference
   date: 2023-07-11
-  url: https://www.siam.org/conferences/cm/conference/ag23
+  url: https://www.siam.org/conferences-events/past-event-archive/ag23/
   abstract: "The syzygies of projective curves are fairly well understood — for instance, an influential theorem of Gruson, Lazarsfeld, and Peskine gives optimal bounds on their regularity. There has been a flurry of activity in the past two decades centered around generalizing work on syzygies to the toric setting. I will discuss work that lifts machinery for understanding syzygies of projective curves to obtain a bound on the multigraded regularity of a curve in a product of projective spaces."
   highlight: true
 - title: "Virtual Resolutions and Syzygies"
@@ -199,7 +199,7 @@
   city: Orsay, France
   type: Poster
   date: 2022-05-23
-  url: https://warwick.ac.uk/fac/sci/maths/research/events/2023/gael/
+  url: https://web.archive.org/web/20240519053429/https://sites.google.com/view/gaelxxix
 - title: "Introduction to Intersection Theory"
   location: UW Madison Graduate AG Seminar
   type: Seminar
@@ -263,7 +263,7 @@
   location: Delta Beer Lab
   type: Outreach
   city: Madison, WI
-  url: https://casp.wisc.edu/delta-beer-lab-competition/
+  url: https://web.archive.org/web/20221207113602/https://casp.wisc.edu/delta-beer-lab-competition/
   slides: /talks/DeltaBeerLabtalk.pptx
   abstract: This was a brief talk about the algebraic geometry inspired design that was printed on one of Delta Beer Lab's new beers. It is an extremely low level introduction to higher mathematics, algebraic geometry, and an explanation of various figures on the design.
   date: 2021-05-15
@@ -280,7 +280,7 @@
   location: AMS Contributed Paper Session on Partial Differential Equations
   type: Conference
   city: Baltimore, MD
-  url: http://jointmathematicsmeetings.org/amsmtgs/2217_abstracts/1145-35-453.pdf
+  url: https://jointmathematicsmeetings.org/amsmtgs/2217_abstracts/1145-35-453.pdf
   date: 2019-01-16
 - title: "Quaternion-Valued Solutions to the KdV"
   location: JMM Undergraduate Poster Session

@@ -83,7 +83,7 @@
   location: Madison, WI
   dates: Spring 2023
   url: "/organizing/3264"
-  book: "https://scholar.harvard.edu/files/joeharris/files/000-final-3264.pdf"
+  book: "https://doi.org/10.1017/CBO9781139062046"
   image: 3264.jpg
   description: "3264 and all that is a textbook by David Eisenbud and Joe Harris. This page organizes the Spring 2023 reading schedule."
 - title: UW Madison Math Meet
@@ -99,7 +99,7 @@
   dates: Spring 2022
   type: Reading Group
   url: "/organizing/positivity"
-  book: "https://cims.nyu.edu/~rodion/lib/R.%20K.%20Lazarsfeld.%20Positivity%20in%20Algebraic%20Geometry,%20I.%20Classical%20Setting:%20Line%20Bundles%20and%20Linear%20Series%20-%202003.pdf"
+  book: "https://link.springer.com/book/10.1007/978-3-642-18808-4"
   image: positivity.jpg
   description: "Positivity in Algebraic Geometry is a textbook by Robert Lazarsfeld. This page organizes the Spring 2022 reading schedule."
 - title: Geometry of Schemes
@@ -132,7 +132,7 @@
   type: Reading Group
   dates: Summer 2021
   url: "/organizing/vakilsummer2021"
-  book: "http://math.stanford.edu/~vakil/216blog/FOAGdec3014public.pdf05"
+  book: "https://math.stanford.edu/~vakil/216blog/"
   location: Madison, WI
   image: clebsch.jpg
   description: "The Red Rising Sea is a set of notes by Ravi Vakil. This page organizes the Summer 2021 reading schedule."

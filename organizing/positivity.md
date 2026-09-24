@@ -13,7 +13,7 @@ class: class
 We are reading Positivity in Algebraic Geometry I by Robert Lazarsfeld. The current plan is to cover Chapter 1 (Ample and Nef Bundles) and Chapter 2 (Linear Series) very thoroughly, and then use this foundation to cover some important consequences: the Lefschetz hyperplane theorem and the Kodaira vanishing theorem. If you'd like to be kept updated, please [join the mailing list](https://groups.google.com/a/g-groups.wisc.edu/g/positivity).
 
 <div class="button-container" style="text-align: center">
-    <a href="https://cims.nyu.edu/~rodion/lib/R.%20K.%20Lazarsfeld.%20Positivity%20in%20Algebraic%20Geometry,%20I.%20Classical%20Setting:%20Line%20Bundles%20and%20Linear%20Series%20-%202003.pdf" class="button" style="margin:5px">
+    <a href="https://link.springer.com/book/10.1007/978-3-642-18808-4" class="button" style="margin:5px">
     <i class="fas fa-book" aria-hidden="true"></i>
     Book
     </a>
@@ -25,14 +25,12 @@ We are reading Positivity in Algebraic Geometry I by Robert Lazarsfeld. The curr
     <i class="fas fa-envelope" aria-hidden="true"></i>
     Email List
     </a>
-    <a href="https://forms.gle/jx78ZbB4qj98h1v29" class="button" style="margin:5px">
-    <i class="fas fa-chalkboard-teacher" aria-hidden="true"></i>
-    Sign up for a talk
-    </a>
     
     
 </div>
 
+
+The talk sign-up form has been decommissioned; the seminar schedule is preserved below.
 
 ## Schedule 
 

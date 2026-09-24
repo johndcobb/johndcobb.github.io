@@ -28,7 +28,7 @@
 
     {% if talk.url %}
     <a href="{{ talk.url }}">
-      <i class="fas fa-link" aria-hidden="true"></i> Website
+      <i class="fas fa-link" aria-hidden="true"></i> {% if talk.url contains 'web.archive.org/web/' %}Archived website{% else %}Website{% endif %}
     </a>
     {% endif %}
   </span>

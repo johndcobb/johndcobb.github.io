@@ -128,7 +128,7 @@ Students enrolled for graduate credit will attend the same lectures, complete th
 - Second, students enrolled for graduate credit will complete a short paper exploring some additional suggested topics in the course. This paper will be factored into their homework grade. This may also be turned into an extra credit students for other non-graduate students.
 
 ### Academic Honesty
-All portions of the [Auburn University student academic honesty code](https://sites.auburn.edu/admin/universitypolicies/Policies/AcademicHonestyCode.pdf) will apply to this class. All academic honesty violations or alleged violations of the SGA Code of Laws will be reported to the Office of the Provost, which will then refer the case to the Academic Honesty Committee. Tiger Cards will be checked for all exams.
+All portions of the [Auburn University student academic honesty code](https://auburn.edu/academic/provost/academic-integrity/) will apply to this class. All academic honesty violations or alleged violations of the SGA Code of Laws will be reported to the Office of the Provost, which will then refer the case to the Academic Honesty Committee. Tiger Cards will be checked for all exams.
 
 ### Disabilities
 Students who need accommodations are asked to electronically submit their approved accommodations through AU Access and to arrange a meeting with their TA during office hours the first week of classes, or as soon as possible if accommodations are needed immediately. If you have not established accommodations through the Office of Accessibility, but need accommodations, make an appointment with the Office of Accessibility, 1228 Haley Center, 844-2096.

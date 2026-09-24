@@ -1,0 +1,16 @@
+# Check generated HTML so links from Liquid, YAML data, and navigation are included.
+# The workflow supplies the absolute site root for local links; HTTP(S) links
+# are checked online, including links to separately deployed GitHub Pages sites.
+max_concurrency = 8
+timeout = 20
+max_retries = 2
+retry_wait_time = 2
+index_files = ["index.html"]
+fallback_extensions = ["html"]
+
+# Email delivery and fragment validation are outside the missing-page check.
+include_mail = false
+
+# This root-relative path is served by a separate GitHub Pages repository.
+# Check it online rather than incorrectly reporting its files as missing here.
+remap = ['^file://.*/intro-abstract-algebra-notes(?:/|$)(.*) https://johndcobb.github.io/intro-abstract-algebra-notes/$1']

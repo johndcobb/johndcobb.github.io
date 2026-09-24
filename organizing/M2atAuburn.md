@@ -119,7 +119,7 @@ Auburn University is committed to creating and maintaining a community dedicated
 
 The University has general policies prohibiting harassment and discrimination on the basis of protected categories, including the Auburn University Policies Related to the Workplace; AA/EEO Policies and Procedures; and Code of Student Conduct.
 
-Any person may report incidents of sexual violence, sexual harassment, relationship violence, stalking, or other forms of prohibited behavior to the campus Title IX office. [aub.ie/TitleIX](aub.ie/TitleIX) has links to report an incident and additional information is available on this site.
+Any person may report incidents of sexual violence, sexual harassment, relationship violence, stalking, or other forms of prohibited behavior to the campus Title IX office. [aub.ie/TitleIX](https://aub.ie/TitleIX) has links to report an incident and additional information is available on this site.
 
 ## Funding
 This conference is supported all or in part by the National Science Foundation under DMS Award No. 2625606.

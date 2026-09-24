@@ -11,7 +11,7 @@ class: class
 ## Resources
 We intend to cover parts I-IV of Vakil's notes, focusing on problems [he suggested](https://math216.wordpress.com/category/agittoc-2020/). 
 <div class="button-container" style="text-align: center">
-    <a href="http://math.stanford.edu/~vakil/216blog/FOAGdec3014public.pdf05" class="button" style="margin:5px">
+    <a href="https://math.stanford.edu/~vakil/216blog/" class="button" style="margin:5px">
     <i class="fas fa-book" aria-hidden="true"></i>
     Book
     </a>

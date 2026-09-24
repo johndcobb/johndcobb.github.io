@@ -327,7 +327,7 @@ title: CV
         <span style="flex: 1">{{ outreach.title }}, {{ outreach.role }}, <small class="muted"> <em>{{ outreach.location }}</em> </small> </span>
         {% if outreach.url %}
       <div class="extra-links">
-        <a href="https://johndcobb.github.io{{ outreach.url }}"><i class="fas fa-link" aria-hidden="true"></i> Website</a>
+        <a href="{{ outreach.url | absolute_url }}"><i class="fas fa-link" aria-hidden="true"></i> Website</a>
       </div>
     {% endif %} 
       </div>

@@ -66,7 +66,7 @@
       </a>
     {% endif %}
     {% if pub.doi %}
-      <a href="https://doi2bib.org/bib/{{ pub.doi }}">
+      <a href="https://api.crossref.org/works/{{ pub.doi }}/transform/application/x-bibtex">
         <i class="fas fa-book" aria-hidden="true"></i> Bibtex
       </a>
     {% endif %}

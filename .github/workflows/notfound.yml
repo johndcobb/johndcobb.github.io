@@ -1,23 +1,85 @@
 name: Not Found Bot
 
 on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
   schedule:
     - cron: "0 5 1 * *"
   workflow_dispatch:
 
 permissions:
-  actions: write
-  contents: write
-  issues: write
-  pull-requests: write
+  contents: read
+
+concurrency:
+  group: notfound-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
   check:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v5
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+      - name: Build Jekyll
+        run: bundle exec jekyll build
+      - name: Check links in the built website
+        uses: lycheeverse/lychee-action@v2
+        with:
+          lycheeVersion: v0.24.2
+          args: >-
+            --config .lychee.toml
+            --root-dir '${{ github.workspace }}/_site'
+            --no-progress
+            './_site/**/*.html'
+          output: /tmp/link-check-report.md
+          fail: true
+      - name: Save link report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: link-check-report
+          path: /tmp/link-check-report.md
+          if-no-files-found: ignore
+
+  suggest-fixes:
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v5
+      - name: Check for pending bot fixes
+        id: pending
+        uses: actions/github-script@v8
+        with:
+          script: |
+            const issues = await github.paginate(github.rest.issues.listForRepo, {
+              ...context.repo,
+              state: 'open',
+              labels: 'notfoundbot',
+              per_page: 100,
+            });
+            const pending = issues.find(issue => issue.pull_request);
+            core.setOutput('exists', Boolean(pending));
+            if (pending) {
+              await core.summary
+                .addHeading('Suggested link fixes are awaiting review')
+                .addLink(`Review pull request #${pending.number}`, pending.html_url)
+                .addRaw('\n\nThe website link check runs independently. New automatic fixes will resume after this pull request is merged or closed.\n')
+                .write();
+            }
       - name: Fix links
-        uses: tmcw/notfoundbot@v3.0.0
+        if: steps.pending.outputs.exists != 'true'
+        uses: tmcw/notfoundbot@v3.1.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
