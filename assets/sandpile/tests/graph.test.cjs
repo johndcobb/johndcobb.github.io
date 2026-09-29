@@ -13,6 +13,36 @@ function drop(graph, source, index) {
   return graph.finish(pile);
 }
 
+test('move limits stop new branches at the cap while earlier boards remain playable', () => {
+  const graph = new Graph(3, [0,0,0,0,2,0,0,0,0], [0,1,0,1,0,1,0,1,0], 2);
+  const first = drop(graph, 0, 0).node;
+  const deadEnd = drop(graph, first.id, 1).node;
+  assert.equal(deadEnd.moves, 2);
+  assert.equal(graph.canBranch(), false);
+  assert.equal(graph.begin(deadEnd.id, 4), null);
+  assert.equal(graph.pending, null);
+  assert.equal(graph.nodes.length, 3);
+  assert.equal(graph.canBranch(0), true);
+  const middle = drop(graph, 0, 4).node;
+  const target = drop(graph, middle.id, 4).node;
+  assert.equal(target.target, true);
+  assert.equal(graph.targetMoves, 2);
+  assert.equal(graph.begin(target.id, 0), null);
+  assert.equal(graph.canBranch(first.id), true);
+});
+
+test('a shorter discovered route reopens a board that was at the move limit', () => {
+  const graph = new Graph(1, [0], [3], 3);
+  // A supplied graph makes the distance update independent of toppling rules.
+  for (const value of [1,2,3]) graph.addNode([value], {x: 0, y: 0, layer: value}, {topplings: 0, escaped: 0});
+  graph.edges = [{from: 0, to: 1}, {from: 1, to: 2}, {from: 2, to: 3}];
+  graph.distances();
+  assert.equal(graph.canBranch(3), false);
+  graph.edges.push({from: 0, to: 3}); graph.distances();
+  assert.equal(graph.nodes[3].moves, 1);
+  assert.equal(graph.canBranch(3), true);
+});
+
 test('graph branches preserve stable source boards and record labeled directed edges', () => {
   const initial = [0,0,0,0,3,0,0,0,0], target = [0,1,0,1,0,1,0,1,0];
   const graph = new Graph(3, initial, target);
@@ -110,4 +140,18 @@ test('a newly discovered shortcut updates an existing target and its descendants
   assert.equal(graph.targetNode.id, targetId);
   assert.equal(graph.targetNode.moves, 1);
   assert.ok(descendant.moves <= 2);
+});
+
+test('a target equal to Start requires the shortest nonempty return path', () => {
+  const graph = new Graph(2, [2,2,2,2], [2,2,2,2]);
+  assert.equal(graph.targetMoves, Infinity);
+  // Breadth-first exploration proves there is no shorter return than eight drops.
+  for (let i = 0; i < graph.nodes.length && !Number.isFinite(graph.targetMoves); i++) {
+    for (let cell = 0; cell < 4; cell++) drop(graph, i, cell);
+  }
+  assert.equal(graph.targetMoves, 8);
+  assert.equal(graph.nodes[0].moves, 0);
+  const moves = graph.targetMoves;
+  drop(graph, 0, 0);
+  assert.equal(graph.targetMoves, moves);
 });

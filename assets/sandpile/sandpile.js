@@ -5,6 +5,8 @@
   const canvas = $('sandpile');
   const ctx = canvas.getContext('2d');
   let size = 19;
+  const sandboxSizes = [3, 5, 9, 19, 31, 51, 101];
+  let sandboxStart = 'pattern';
   let center = Math.floor(size * size / 2);
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const colors = { top: '#efac69', seam: '#af693732', redTop: '#f07861', green: '#35624e' };
@@ -25,7 +27,6 @@
   let versus = null, graph = null;
   let graphHits = [], graphGesture = null;
   const graphTouches = new Map();
-  function isMountain() { return mode === 'game' && game.level.kind === 'mountain'; }
   function isGraph() { return mode === 'game' && game.level.kind === 'match' && graph !== null; }
   let menuKind = 'tutorial';
   const progressKey = 'sandpile-progress-v2';
@@ -33,8 +34,47 @@
     try { const data = JSON.parse(window.localStorage.getItem(progressKey)); return data && typeof data === 'object' ? SandpileGame.migrateProgress(data) : {}; } catch { return {}; }
   }
   let game = new SandpileGame(readProgress());
+  const levelButtonCount = Math.max(...Object.keys(SandpileGame.categories).map(kind => SandpileGame.levels.filter(level => level.kind === kind).length));
+  const levelButtons = Array.from({ length: levelButtonCount }, (_, i) => {
+    const button = document.createElement('button');
+    button.id = `level-${i + 1}`;
+    $('level-progress').appendChild(button);
+    return button;
+  });
   function saveProgress() {
     try { window.localStorage.setItem(progressKey, JSON.stringify(game.progress)); } catch { /* Private browsing can disable storage. */ }
+  }
+
+  const introKey = 'sandpile-intros-v1';
+  const introductions = {
+    avalanche: { title: 'Avalanche', lead: 'Choose a square to start an avalanche.', copy: 'Your goal is make as much sand fall off the edge as possible.' },
+    match: { title: 'Match the Pattern', lead: 'Your goal is to match the target board by adding sand.', copy: 'Your previous board states will be remembered, and you can play on those too. Use as few grains as possible.' },
+    versus: { title: 'Versus', lead: 'Make all the sand your color.', copy: 'Red and blue take turns adding one grain to an empty square or their own pile. Toppling sand captures neighboring piles. After both players have taken a turn, leaving only your color on the board wins.' },
+    sandbox: { title: 'Sandbox', lead: 'Add sand. See what happens.', copy: 'Tap a square to drop sand, or hold Drop to keep pouring. There is no goal. Change the drop size or start a different board with Board setup. Drag to turn the board; Top down shows the grain counts.' }
+  };
+  function readIntroductions() {
+    try {
+      const stored = JSON.parse(window.localStorage.getItem(introKey));
+      return new Set(Array.isArray(stored) ? stored.filter(kind => Object.hasOwn(introductions, kind)) : []);
+    } catch { return new Set(); }
+  }
+  const seenIntroductions = readIntroductions();
+  let introKind = null;
+  function saveIntroductions() {
+    try { window.localStorage.setItem(introKey, JSON.stringify([...seenIntroductions])); } catch { /* Remember for this session when storage is unavailable. */ }
+  }
+  function currentKind() { return mode === 'game' ? game.level.kind : mode; }
+  function focusBoard() { if (!$('mode-intro').open) canvas.focus({ preventScroll: true }); }
+  function showIntroduction(force = false) {
+    const kind = currentKind(), intro = introductions[kind];
+    if (!intro || landing || $('mode-intro').open || (!force && seenIntroductions.has(kind))) return;
+    stopPouring();
+    introKind = kind;
+    $('intro-title').textContent = intro.title;
+    $('intro-lead').textContent = intro.lead;
+    $('intro-copy').textContent = intro.copy;
+    $('mode-intro').showModal();
+    $('intro-dismiss').focus({ preventScroll: true });
   }
 
   function showWelcome() {
@@ -68,7 +108,7 @@
     restoreState(saved.sandbox);
     game.load(0);
     switchMode('game');
-    canvas.focus({ preventScroll: true });
+    focusBoard();
   }
 
   function cancelParticipantReset() {
@@ -81,10 +121,15 @@
     cancelParticipantReset(); stopPouring();
     $('participant-dialog').close();
     if ($('help').open) $('help').close();
+    introKind = null;
+    if ($('mode-intro').open) $('mode-intro').close();
+    seenIntroductions.clear(); saveIntroductions();
     game = new SandpileGame();
     saveProgress();
     saved.game = null; saved.sandbox = null; saved.versus = null; versus = null; graph = null; graphGesture = null; graphTouches.clear();
     mode = 'sandbox'; size = 19; center = Math.floor(size * size / 2); view.size = size;
+    sandboxStart = 'pattern';
+    if ($('sandbox-dialog').open) $('sandbox-dialog').close();
     view.angle = 0; view.pitch = SandpileView.isometricPitch; view.topLocked = false; view.zoom = 1;
     rotation = null; gesture = null; pointers.clear(); hitAreas = [];
     canvas.classList.remove('rotating');
@@ -120,6 +165,7 @@
 
   function switchMode(next) {
     if (mode === next) return;
+    if ($('sandbox-dialog').open) $('sandbox-dialog').close();
     if ($('level-menu').open) $('level-menu').close();
     stopPouring();
     saved[mode] = captureState();
@@ -143,8 +189,10 @@
       else loadLevel(game.index);
     }
     previousTime = performance.now();
+    if (mode === 'sandbox') $('board-subtitle').textContent = `Abelian · ${size} × ${size} · open edges`;
     updateTarget(); updateReadout(); resize();
-    $('announcement').textContent = mode === 'game' ? `Level ${game.index + 1}. ${game.level.title}. ${game.level.prompt}` : mode === 'versus' ? `${$('versus-title').textContent}. ${versus.message}` : 'Sandbox resumed. Your pile and settings are restored.';
+    $('announcement').textContent = mode === 'game' ? `${SandpileGame.categories[game.level.kind]} ${game.visibleLevels.indexOf(game.index) + 1}. ${game.level.title}. ${game.level.prompt}` : mode === 'versus' ? `${$('versus-title').textContent}. ${versus.message}` : 'Sandbox resumed. Your pile and settings are restored.';
+    showIntroduction();
   }
 
   function newMatch() {
@@ -164,6 +212,7 @@
     $('versus-title').textContent = versus.winner ? `${name} wins!` : versus.resolving ? `${name}’s cascade` : `${name}’s turn`;
     $('versus-panel').setAttribute('data-player', String(player));
     $('versus-message').textContent = versus.message;
+    $('versus-message').hidden = !versus.hint && !versus.winner;
     for (const [owner, id] of [[1, 'versus-red'], [2, 'versus-blue']]) {
       $(id).textContent = model.cells.reduce((sum, count, index) => sum + (versus.owners[index] === owner ? count : 0), 0);
     }
@@ -183,15 +232,15 @@
     phase = null; drops = []; particles = []; active = new Set(); rotation = null; avalancheStart = 0;
     size = game.level.size; center = Math.floor(size * size / 2); view.size = size;
     model = new Sandpile(size);
-    if (game.level.start) model.cells.set(game.level.start);
-    else game.level.seeds.forEach(([index, count]) => model.add(index, count));
-    graph = game.level.kind === 'match' ? new SandpileGraph(size, model.cells, game.level.target) : null;
+    model.cells.set(game.start);
+    graph = game.level.kind === 'match' ? new SandpileGraph(size, model.cells, game.level.target, game.moveLimit) : null;
     selected = game.level.selected;
     if (index === 0) { view.angle = 0; view.pitch = SandpileView.isometricPitch; view.topLocked = false; view.zoom = 1; }
     $('drop-size').value = '1'; $('speed').value = '1'; $('speed-value').textContent = '1×';
     updateTarget(); updateReadout(); updateAngle(); resize();
     if (isGraph()) { graph.fit(width, height); updateAngle(); redraw(); }
-    $('announcement').textContent = `Level ${index + 1}. ${game.level.title}. ${game.level.prompt}`;
+    $('announcement').textContent = `${SandpileGame.categories[game.level.kind]} ${game.visibleLevels.indexOf(index) + 1}. ${game.level.title}. ${game.level.prompt}`;
+    showIntroduction();
   }
 
   function updateTarget() {
@@ -202,10 +251,6 @@
     $('zoom-reset').setAttribute('aria-label', isGraph() ? 'Fit all boards' : 'Reset zoom');
     canvas.setAttribute('aria-label', isGraph() ? 'Sandpile state map. Tap a square to branch. Drag inside a board box to rotate, or outside to pan. Pinch or scroll to zoom. Bracket keys select a board; arrow keys select a square; Space or Enter drops. Q and E rotate all boards.' : 'Sandpile. Tap to drop; drag to orbit. Arrow keys select a square; Space or Enter drops a grain; Q and E rotate; W and S tilt.');
     if (isGraph()) $('canvas-help').textContent = 'Drag a board to rotate · Drag outside to pan';
-    else if (isMountain()) {
-      $('canvas-help').textContent = 'All sand drops in the middle · Drag to orbit';
-      canvas.setAttribute('aria-label', 'Mountain board. Enter a grain count below to drop sand in the middle. Drag to orbit; Q and E rotate; W and S tilt.');
-    }
     else if (mode === 'game') $('canvas-help').textContent = 'Blue outlines mark the challenge · Drag to orbit';
     if (!target) return;
     $('target-grid').setAttribute('aria-label', `Target, ${size} by ${size}. Rows: ${Array.from({length: size}, (_, row) => target.slice(row * size, (row + 1) * size).join(', ')).join('; ')}.`);
@@ -216,27 +261,25 @@
     const won = game.status === 'won', level = game.level, visible = game.visibleLevels;
     $('board-subtitle').textContent = `${SandpileGame.categories[level.kind]} · ${size} × ${size}`;
     $('game-title').textContent = level.kind === 'tutorial' ? 'Tutorial' : `${SandpileGame.categories[level.kind]} ${visible.indexOf(game.index) + 1}`;
-    $('game-prompt').textContent = level.prompt;
+    $('game-prompt').textContent = level.kind === 'avalanche' ? `Make ${level.bestEscape} grains fall off` : level.kind === 'match' ? (level.start?.every((count, i) => count === level.target[i]) ? 'Return to the starting pattern' : 'Match the target') : level.prompt;
     if ($('game-message').textContent !== game.message) $('game-message').textContent = game.message;
+    $('game-feedback').hidden = game.status === 'playing' && !game.hint;
     $('game-panel').setAttribute('data-status', game.status);
     $('game-budget').textContent = Number.isFinite(game.remaining) ? `${game.remaining} ${game.remaining === 1 ? 'grain' : 'grains'} left` : `${game.used} ${level.kind === 'match' ? 'moves' : 'grains added'}`;
+    $('game-budget').hidden = level.kind !== 'avalanche';
+    $('match-budget').hidden = level.kind !== 'match';
     $('game-best').textContent = game.best[game.index] === undefined ? '' : `Best: ${game.best[game.index]} ${level.kind === 'match' ? 'moves' : level.kind === 'avalanche' ? 'escaped' : 'saved'}`;
-    $('game-retry').textContent = game.status === 'retry' ? 'Try again' : 'Start over';
+    $('game-retry').textContent = level.randomStart ? 'New board' : game.status === 'retry' ? 'Try again' : 'Start over';
     $('game-next').hidden = !won;
     const nextLevel = SandpileGame.levels[game.nextIndex];
     $('game-next').textContent = !nextLevel ? 'Sandbox →' : nextLevel.kind !== level.kind ? `${SandpileGame.categories[nextLevel.kind]} →` : 'Next level →';
-    if (isMountain()) {
-      $('mountain-count').value = game.mountainInput;
-      $('mountain-count').disabled = game.used > 0;
-      $('mountain-drop').disabled = game.used > 0;
-    }
     $('drop').disabled = !game.canDrop(selected);
     if (isGraph()) updateGraphReadout();
     updateLevelMenu();
   }
 
   function menuLevels() {
-    return SandpileGame.levels.flatMap((level, index) => level.kind === menuKind ? [index] : []);
+    return SandpileGame.levelsForCategory(menuKind);
   }
 
   function updateLevelMenu() {
@@ -250,8 +293,8 @@
       button.setAttribute('aria-pressed', String(menuKind === kind));
       button.setAttribute('aria-label', `${label}${complete ? ', complete' : ''}${button.disabled ? ', finish the tutorial to unlock' : ''}`);
     }
-    for (let i = 0; i < 3; i++) {
-      const button = $(`level-${i + 1}`), index = visible[i];
+    for (let i = 0; i < levelButtons.length; i++) {
+      const button = levelButtons[i], index = visible[i];
       button.hidden = index === undefined;
       if (index === undefined) continue;
       button.disabled = !game.canLoad(index);
@@ -442,11 +485,14 @@
   }
 
   function updateGraphReadout() {
-    const node = graph.current, target = graph.targetNode;
-    $('drop').disabled = !!graph.pending;
-    $('game-budget').textContent = `${graph.pending ? graph.nodes[graph.pending.sourceId].moves + 1 : node.moves} moves from start`;
-    $('game-message').textContent = `${target ? `Target found in ${target.moves} moves! ` : ''}${graph.notice || 'Every drop makes a new board. You can branch from any earlier board.'}`;
-    $('game-prompt').textContent = 'Build a path to the target. Tap a square on any board to add one grain to a copy.';
+    const node = graph.current, target = graph.targetMoves;
+    const used = graph.pending ? graph.nodes[graph.pending.sourceId].moves + 1 : node.moves;
+    const remaining = Math.max(0, graph.moveLimit - used), atLimit = !graph.pending && remaining === 0;
+    $('drop').disabled = !graph.canBranch();
+    $('match-budget').textContent = `${remaining} of ${graph.moveLimit} ${graph.moveLimit === 1 ? 'move' : 'moves'} left`;
+    $('match-budget').setAttribute('data-exhausted', String(remaining === 0));
+    $('game-message').textContent = Number.isFinite(target) ? `Target found in ${target} ${target === 1 ? 'move' : 'moves'}!` : atLimit ? 'No moves left on this board. Choose an earlier board to try another path.' : graph.notice;
+    $('game-feedback').hidden = !Number.isFinite(target) && !atLimit;
     $('canvas-help').textContent = 'Drag a board to rotate · Drag outside to pan';
     $('square').textContent = `Square ${Math.floor(selected / size) + 1}, ${selected % size + 1}`;
   }
@@ -459,8 +505,12 @@
   }
 
   function branchGraph(index, sourceId = graph.activeId) {
+    if ($('mode-intro').open) return;
     const source = graph.begin(sourceId, index);
-    if (!source) return;
+    if (!source) {
+      if (!graph.pending && graph.nodes[sourceId]) selectGraphNode(sourceId);
+      return;
+    }
     model = graphModel(source); selected = index;
     phase = null; active = new Set(); particles = []; avalancheStart = model.topplings;
     drops = [{ index, count: 1, elapsed: 0, duration: reducedMotion.matches ? 32 : 360 }];
@@ -474,11 +524,11 @@
     if (!result) return;
     model = graphModel(result.node); game.used = result.node.moves;
     if (result.merged) graph.fit(width, height, [result.source, result.node]);
-    const target = graph.targetNode;
-    if (target) {
+    const target = graph.targetMoves;
+    if (Number.isFinite(target)) {
       game.status = 'won'; game.completed.add(game.index);
-      game.best[game.index] = Math.min(game.best[game.index] ?? Infinity, target.moves);
-      game.result = `Target found in ${target.moves} moves! Keep exploring or choose the next level.`;
+      game.best[game.index] = Math.min(game.best[game.index] ?? Infinity, target);
+      game.result = `Target found in ${target} ${target === 1 ? 'move' : 'moves'}! Keep exploring or choose the next level.`;
       saveProgress();
     }
     updateReadout(); updateAngle(); dirty = true;
@@ -570,8 +620,6 @@
 
   function updateReadout() {
     if (landing) return;
-    $('mountain-form').hidden = !isMountain();
-    $('grain-control').hidden = isMountain();
     $('square').textContent = `Square ${Math.floor(selected / size) + 1}, ${selected % size + 1}`;
     $('height').textContent = model.cells[selected];
     $('grain-label').textContent = model.cells[selected] === 1 ? 'grain' : 'grains';
@@ -689,7 +737,7 @@
   }
 
   function drop(index = selected, count = Number($('drop-size').value)) {
-    if (landing || isMountain()) return;
+    if (landing || $('mode-intro').open) return;
     if (isGraph()) { branchGraph(index); return; }
     if (mode === 'versus') {
       count = 1;
@@ -712,9 +760,12 @@
 
   function reset(pattern) {
     if (mode !== 'sandbox') return;
+    gesture = null; pointers.clear(); hitAreas = []; canvas.classList.remove('rotating');
     phase = null; drops = []; particles = []; hold = null; $('drop').classList.remove('pouring'); active.clear(); selected = center;
     model = new Sandpile(size);
-    if (pattern) {
+    if (pattern && sandboxStart === 'random') {
+      model.cells.set(Array.from({ length: size * size }, () => Math.floor(Math.random() * 4)));
+    } else if (pattern && sandboxStart === 'pattern') {
       model.add(center, 1800);
       model.stabilize();
       // A center with three grains invites a first-click demonstration.
@@ -722,8 +773,29 @@
     }
     model.topplings = 0; model.escaped = 0; avalancheStart = 0;
     updateReadout();
-    $('announcement').textContent = pattern ? 'Starting pattern restored. Center square selected.' : 'Board cleared. Center square selected.';
+    $('board-subtitle').textContent = `Abelian · ${size} × ${size} · open edges`;
+    $('announcement').textContent = `${size} by ${size}. ${pattern && sandboxStart === 'random' ? 'New random board.' : pattern && sandboxStart === 'pattern' ? 'Starting pattern restored.' : 'Board cleared.'} Center square selected.`;
     redraw();
+  }
+
+  function openSandboxSetup() {
+    if (mode !== 'sandbox' || landing) return;
+    stopPouring();
+    $('sandbox-size').value = String(size);
+    $('sandbox-start').value = sandboxStart;
+    $('sandbox-dialog').showModal();
+  }
+
+  function applySandboxSetup() {
+    if (mode !== 'sandbox' || landing || !$('sandbox-dialog').open) return;
+    const nextSize = Number($('sandbox-size').value), start = $('sandbox-start').value;
+    if (!sandboxSizes.includes(nextSize) || !['random', 'blank', 'pattern'].includes(start)) return;
+    size = nextSize; center = Math.floor(size * size / 2); view.size = size;
+    sandboxStart = start;
+    view.zoom = 1; rotation = null;
+    reset(true); updateAngle(); resize();
+    $('sandbox-dialog').close();
+    canvas.focus({ preventScroll: true });
   }
 
   function resize() {
@@ -844,7 +916,7 @@
       }
       return;
     }
-    if (isMountain() || event.pointerType === 'touch' || pointers.size) return;
+    if (event.pointerType === 'touch' || pointers.size) return;
     const index = pick(event);
     if (index !== null && index !== selected) { selected = index; updateReadout(); redraw(); }
   });
@@ -854,7 +926,7 @@
     if (gesture?.id !== event.pointerId) return;
     const tap = !cancelled && !gesture.cancelled && !gesture.moved && Math.hypot(event.clientX - gesture.x, event.clientY - gesture.y) <= 8;
     gesture = null; canvas.classList.remove('rotating');
-    if (tap && !isMountain()) {
+    if (tap) {
       const index = pick(event);
       if (index !== null) { selected = index; drop(index); canvas.focus({ preventScroll: true }); }
     }
@@ -863,7 +935,6 @@
   canvas.addEventListener('pointercancel', event => finishPointer(event, true));
   canvas.addEventListener('lostpointercapture', event => finishPointer(event, true));
   canvas.addEventListener('keydown', event => {
-    if (isMountain() && ['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', ' ', 'Enter'].includes(event.key)) { event.preventDefault(); return; }
     if (isGraph() && (event.key === '[' || event.key === ']')) {
       event.preventDefault(); selectGraphNode((graph.activeId + (event.key === '[' ? -1 : 1) + graph.nodes.length) % graph.nodes.length, true); return;
     }
@@ -926,6 +997,9 @@
   });
   $('clear').addEventListener('click', () => reset(false));
   $('pattern').addEventListener('click', () => reset(true));
+  $('sandbox-setup').addEventListener('click', openSandboxSetup);
+  $('sandbox-apply').addEventListener('click', applySandboxSetup);
+  for (const id of ['sandbox-close', 'sandbox-cancel']) $(id).addEventListener('click', () => $('sandbox-dialog').close());
   $('mode-game').addEventListener('click', () => switchMode('game'));
   $('mode-sandbox').addEventListener('click', () => switchMode('sandbox'));
   $('mode-versus').addEventListener('click', () => switchMode('versus'));
@@ -936,27 +1010,30 @@
     if (game.nextIndex === undefined) switchMode('sandbox');
     else loadLevel(game.nextIndex);
   });
-  $('mountain-count').addEventListener('input', () => {
-    if (isMountain() && !game.used) game.mountainInput = $('mountain-count').value;
-  });
-  $('mountain-form').addEventListener('submit', event => {
-    event.preventDefault();
-    if (!isMountain()) return;
-    game.mountainInput = $('mountain-count').value;
-    const count = Number(game.mountainInput);
-    if (game.submitMountain(count)) {
-      selected = center; avalancheStart = model.topplings;
-      drops.push({ index: center, count, elapsed: 0, duration: reducedMotion.matches ? 32 : 360 });
-    }
-    updateReadout(); redraw();
-  });
-  for (let i = 0; i < 3; i++) $(`level-${i + 1}`).addEventListener('click', () => { if (mode === 'game') loadLevel(menuLevels()[i]); });
+  for (let i = 0; i < levelButtons.length; i++) levelButtons[i].addEventListener('click', () => { if (mode === 'game') loadLevel(menuLevels()[i]); });
   for (const kind of Object.keys(SandpileGame.categories)) $(`category-${kind}`).addEventListener('click', () => {
     if (mode !== 'game' || (kind !== 'tutorial' && !game.tutorialComplete)) return;
     menuKind = kind; updateLevelMenu();
   });
   $('speed').addEventListener('input', () => { $('speed-value').textContent = `${$('speed').value}×`; });
-  $('help-open').addEventListener('click', () => { stopPouring(); $('help').showModal(); });
+  $('help-open').addEventListener('click', () => {
+    stopPouring();
+    const intro = introductions[currentKind()];
+    $('intro-reopen').hidden = !intro;
+    $('intro-reopen').textContent = intro ? `Show ${intro.title} introduction` : '';
+    $('help').showModal();
+  });
+  $('intro-reopen').addEventListener('click', () => { $('help').close(); showIntroduction(true); });
+  for (const id of ['intro-close', 'intro-dismiss']) $(id).addEventListener('click', () => $('mode-intro').close());
+  $('mode-intro').addEventListener('cancel', event => { event.preventDefault(); $('mode-intro').close(); });
+  $('mode-intro').addEventListener('close', () => {
+    if (introKind) { seenIntroductions.add(introKind); introKind = null; saveIntroductions(); }
+    focusBoard();
+  });
+  $('mode-intro').addEventListener('click', event => {
+    const rect = $('mode-intro').getBoundingClientRect();
+    if (event.target === $('mode-intro') && (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom)) $('mode-intro').close();
+  });
   $('help-close').addEventListener('click', () => $('help').close());
   $('help').addEventListener('click', event => {
     const rect = $('help').getBoundingClientRect();
@@ -969,8 +1046,8 @@
   function closeLevelMenu() { $('level-menu').close(); canvas.focus({ preventScroll: true }); }
   $('level-menu-close').addEventListener('click', closeLevelMenu);
   $('level-menu-resume').addEventListener('click', closeLevelMenu);
-  $('menu-versus').addEventListener('click', () => { switchMode('versus'); canvas.focus({ preventScroll: true }); });
-  $('menu-sandbox').addEventListener('click', () => { switchMode('sandbox'); canvas.focus({ preventScroll: true }); });
+  $('menu-versus').addEventListener('click', () => { switchMode('versus'); focusBoard(); });
+  $('menu-sandbox').addEventListener('click', () => { switchMode('sandbox'); focusBoard(); });
   $('welcome').addEventListener('click', startParticipant);
   $('participant-open').addEventListener('click', () => {
     $('help').close(); cancelParticipantReset(); $('participant-dialog').showModal();

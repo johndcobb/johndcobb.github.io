@@ -3,8 +3,9 @@
   'use strict';
   const View = typeof module !== 'undefined' && module.exports ? require('./sandpile-view.js') : root.SandpileView;
   class SandpileGraph {
-    constructor(size, cells, target) {
+    constructor(size, cells, target, moveLimit = Infinity) {
       this.size = size;
+      this.moveLimit = moveLimit;
       this.targetKey = this.key(target);
       this.nodes = []; this.edges = []; this.byState = new Map();
       this.activeId = 0; this.pending = null;
@@ -16,6 +17,13 @@
     key(cells) { return Array.from(cells).join(','); }
     get current() { return this.nodes[this.activeId]; }
     get targetNode() { return this.byState.get(this.targetKey); }
+    get targetMoves() {
+      const target = this.targetNode;
+      if (!target) return Infinity;
+      if (target.id !== 0) return target.moves;
+      // A target equal to Start requires a nonempty cycle, not its zero-length path.
+      return this.edges.reduce((best, edge) => edge.to === 0 ? Math.min(best, this.nodes[edge.from].moves + 1) : best, Infinity);
+    }
     addNode(cells, position, stats) {
       if (cells.length !== this.size ** 2 || Array.from(cells).some(n => !Number.isInteger(n) || n < 0 || n >= 4)) throw new Error('A graph node must be a stable sandpile.');
       const key = this.key(cells);
@@ -23,9 +31,12 @@
       this.nodes.push(node); this.byState.set(key, node);
       return node;
     }
+    canBranch(sourceId = this.activeId) {
+      return !this.pending && !!this.nodes[sourceId] && this.nodes[sourceId].moves < this.moveLimit;
+    }
     begin(sourceId, index) {
       const source = this.nodes[sourceId];
-      if (this.pending || !source || !Number.isInteger(index) || index < 0 || index >= this.size ** 2) return null;
+      if (!this.canBranch(sourceId) || !Number.isInteger(index) || index < 0 || index >= this.size ** 2) return null;
       const layer = source.layer + 1;
       const count = this.nodes.filter(node => node.layer === layer).length;
       const row = count === 0 ? 0 : (count % 2 ? 1 : -1) * Math.ceil(count / 2);

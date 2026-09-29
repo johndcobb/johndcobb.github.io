@@ -8,12 +8,14 @@ const View = require('../sandpile-view.js');
 const SandpileGame = require('../sandpile-game.js');
 const SandpileVersus = require('../sandpile-versus.js');
 const SandpileGraph = require('../sandpile-graph.js');
+const Solver = require('../sandpile-solver.js');
 
 // Deterministic animation clock and minimal DOM. Exercise the real controller,
 // including pointer picking and particle lifetime, without a browser dependency.
-function app(reduced = false, progress = null, start = 'sandbox') {
+function app(reduced = false, progress = null, start = 'sandbox', {intros = ['avalanche', 'match', 'versus', 'sandbox'], storageAvailable = true, random = Math.random} = {}) {
   const storage = new Map(progress ? [["sandpile-progress-v2", JSON.stringify({version: 3, ...progress})]] : []);
-  let clock = 0, callback, view, versus, graph;
+  storage.set('sandpile-intros-v1', JSON.stringify(intros));
+  let clock = 0, callback, view, versus, graph, focused;
   const models = [];
   const currentModel = () => [...models].reverse().find(model => model.size === view.size);
   const poses = [], elements = new Map(), paintedColors = new Set(), strokedColors = new Set();
@@ -22,18 +24,19 @@ function app(reduced = false, progress = null, start = 'sandbox') {
     if (!elements.has(id)) elements.set(id, {
       value: '1', textContent: '', events: {}, style: { setProperty(key, value) { this[key] = value; } }, classList: { add() {}, remove() {}, toggle() {} },
       addEventListener(name, fn) { this.events[name] = fn; },
+      appendChild(child) { elements.set(child.id, child); },
       getContext() { return ctx; }, getBoundingClientRect() { return { left: 0, top: 0, right: 984, bottom: 590, width: 984, height: 590 }; },
-      setAttribute(name, value) { this[name] = value; }, setPointerCapture() {}, focus() {}, showModal() { this.open = true; }, close() { this.open = false; this.events.close?.(); }
+      setAttribute(name, value) { this[name] = value; }, setPointerCapture() {}, focus() { focused = id; }, showModal() { this.open = true; }, close() { this.open = false; this.events.close?.(); }
     });
     return elements.get(id);
   }
   const sandbox = {
-    document: { getElementById: element, addEventListener() {} },
-    window: { localStorage: { getItem(key) { return storage.get(key) ?? null; }, setItem(key, value) { storage.set(key, value); } }, matchMedia: () => ({ matches: reduced }), devicePixelRatio: 1, addEventListener() {} },
+    document: { createElement: () => element(Symbol()), getElementById: element, addEventListener() {} },
+    window: { localStorage: { getItem(key) { if (!storageAvailable) throw new Error('Storage unavailable'); return storage.get(key) ?? null; }, setItem(key, value) { if (!storageAvailable) throw new Error('Storage unavailable'); storage.set(key, value); } }, matchMedia: () => ({ matches: reduced }), devicePixelRatio: 1, addEventListener() {} },
     performance: { now: () => clock },
     requestAnimationFrame(fn) { callback = fn; return 1; },
     ResizeObserver: class { observe() {} },
-    SandpileGame,
+    SandpileGame: class extends SandpileGame { load(index) { return super.load(index, random); } },
     SandpileGraph: class extends SandpileGraph { constructor(...args) { super(...args); graph = this; } },
     SandpileVersus: class extends SandpileVersus { constructor(model) { super(model); versus = this; } },
     Sandpile: class extends Sandpile { constructor(n) { super(n); models.push(this); } },
@@ -57,7 +60,7 @@ function app(reduced = false, progress = null, start = 'sandbox') {
     if (start === 'sandbox') event('mode-sandbox', 'click');
   }
   advance(32);
-  return { element, event, advance, tap, poses, paintedColors, strokedColors, get progress() { return JSON.parse(storage.get("sandpile-progress-v2") || "{}"); }, get model() { return currentModel(); }, get view() { return view; }, get versus() { return versus; }, get graph() { return graph; }, get running() { return !!callback; } };
+  return { element, event, advance, tap, poses, paintedColors, strokedColors, get progress() { return JSON.parse(storage.get("sandpile-progress-v2") || "{}"); }, get intros() { return JSON.parse(storage.get('sandpile-intros-v1') || '[]'); }, get focused() { return focused; }, get model() { return currentModel(); }, get view() { return view; }, get versus() { return versus; }, get graph() { return graph; }, get running() { return !!callback; } };
 }
 
 test('tap picking follows the same world square through a full orbit', () => {
@@ -176,14 +179,14 @@ test('three tutorial steps clear chain highlights and demonstrate falling sand w
   a.event('mode-game', 'click'); a.advance(32);
   assert.equal(a.model.size, 5); assert.equal(a.view.pitch, View.isometricPitch);
   a.event('level-3', 'click'); assert.equal(a.element('game-title').textContent, 'Tutorial');
-  for (let i = 0; i < 8; i++) a.tap(2, 2);
+  for (let i = 0; i < 2; i++) a.tap(2, 2);
   a.advance(1000);
   assert.equal(a.model.grains, 4); assert.equal(a.model.topplings, 1);
   a.event('game-next', 'click'); a.advance(32);
   a.event('view-top', 'click'); a.advance(400);
   a.tap(0, 0); a.advance(400);
-  assert.equal(a.element('game-retry').textContent, 'Try again');
-  a.event('game-retry', 'click'); a.advance(32);
+  assert.equal(a.element('game-panel')['data-status'], 'playing');
+  assert.equal(a.element('drop').disabled, false);
   a.tap(2, 1); a.advance(1200);
   assert.equal(a.model.topplings, 3);
   assert.equal(a.element('game-next').hidden, false);
@@ -225,7 +228,7 @@ test('switching modes pauses and restores incoming drops, reactions, selection, 
   assert.equal(game.grains, 2);
   const frozen = [...sandbox.cells], escaped = sandbox.escaped, topplings = sandbox.topplings;
   a.event('mode-game', 'click'); a.advance(1800);
-  assert.equal(game.grains, 4); assert.equal(a.element('game-next').hidden, false);
+  assert.equal(game.grains, 6); assert.equal(a.element('game-next').hidden, false);
   assert.deepEqual([...sandbox.cells], frozen); assert.equal(sandbox.escaped, escaped); assert.equal(sandbox.topplings, topplings);
   a.event('mode-sandbox', 'click'); a.advance(8000);
   const expected = new Sandpile(19); expected.add(360, 25); expected.stabilize();
@@ -351,70 +354,121 @@ test('category selection loads the pictured boards, shows targets, and saves sco
   assert.equal(a.element('game-best').textContent, 'Best: 2 moves');
   assert.ok(a.progress.completed.includes(3));
   assert.equal(a.element('game-next').textContent, 'Next level →');
-  a.event('level-menu-open', 'click'); a.event('level-2', 'click'); a.advance(32);
+  a.event('level-menu-open', 'click'); a.event('level-4', 'click'); a.advance(32);
   assert.equal(a.model.grains, 57);
   assert.ok(a.element('target-grid')['aria-label'].includes('1, 2, 2, 3, 0'));
   a.tap(0,3); a.advance(2000); a.tap(1,3); a.advance(5000);
   assert.equal(a.element('game-next').hidden, false);
-  a.event('level-menu-open', 'click'); a.event('category-avalanche', 'click'); a.event('level-1', 'click'); a.advance(32);
+  a.event('level-menu-open', 'click'); a.event('category-avalanche', 'click'); a.event('level-2', 'click'); a.advance(32);
   assert.equal(a.element('target-panel').hidden, true); assert.equal(a.model.grains, 56);
   a.tap(4,4); a.advance(6000);
   assert.equal(a.model.grains, 44); assert.equal(a.element('game-next').hidden, false);
-  assert.equal(a.element('game-next').textContent, 'Match the Pattern →');
+  assert.equal(a.element('game-title').textContent, 'Avalanche 2');
+  assert.equal(a.element('game-next').textContent, 'Next level →');
   a.event('game-next', 'click'); a.advance(32);
-  assert.equal(a.element('game-title').textContent, 'Match the Pattern 1');
+  assert.equal(a.element('game-title').textContent, 'Avalanche 3');
+  assert.equal(a.model.size, 6);
 });
 
-test('Mountain submits one center batch, prevents choosing squares, and scores after settling', () => {
+test('all four patterns are selectable in the requested order and excess menu buttons hide in other categories', () => {
   const a = app(false, {completed: [0,1,2]});
-  a.event('mode-game', 'click'); a.event('level-menu-open', 'click'); a.event('category-mountain', 'click'); a.event('level-1', 'click'); a.advance(32);
-  assert.equal(a.model.size, 3); assert.equal(a.element('mountain-form').hidden, false);
-  assert.equal(a.element('grain-control').hidden, true);
-  const square = a.element('square').textContent;
-  a.tap(0, 0); a.tap(1, 1); a.event('drop', 'click');
-  a.event('sandpile', 'keydown', {key: 'ArrowLeft'}); a.event('sandpile', 'keydown', {key: 'Enter'});
-  a.event('sandpile', 'pointermove', {pointerType: 'mouse'}); a.advance(1000);
-  assert.equal(a.model.grains, 0); assert.equal(a.element('square').textContent, square);
-  for (const value of ['', '0', '-1', '1.5', '10001']) {
-    a.element('mountain-count').value = value; a.event('mountain-form', 'submit');
-    assert.equal(a.element('mountain-drop').disabled, false);
-    assert.match(a.element('game-message').textContent, /whole number/);
+  a.event('mode-game', 'click'); a.event('level-menu-open', 'click'); a.event('category-match', 'click');
+  const indices = [3,6,7,4];
+  for (const [i, index] of indices.entries()) {
+    assert.equal(a.element(`level-${i + 1}`).hidden, false);
+    a.event(`level-${i + 1}`, 'click'); a.advance(32);
+    assert.equal(a.element('game-title').textContent, `Match the Pattern ${i + 1}`);
+    assert.equal(a.graph.size, SandpileGame.levels[index].size);
+    assert.equal(a.graph.targetKey, SandpileGame.levels[index].target.join(','));
+    a.event('level-menu-open', 'click');
   }
-  a.element('mountain-count').value = '14'; a.event('mountain-form', 'submit');
-  assert.equal(a.element('mountain-drop').disabled, true);
-  assert.equal(a.element('mountain-count').disabled, true);
-  a.event('mountain-form', 'submit'); a.advance(300);
-  assert.equal(a.model.grains, 0); assert.equal(a.element('game-retry').textContent, 'Start over');
-  a.advance(8000);
-  assert.equal(a.model.grains, 14); assert.equal(a.model.escaped, 0);
-  assert.equal(a.element('game-retry').textContent, 'Try again');
-  assert.match(a.element('game-message').textContent, /none fell off/);
-  a.event('game-retry', 'click');
-  a.element('mountain-count').value = '15'; a.event('mountain-form', 'submit'); a.advance(8000);
-  assert.equal(a.model.escaped, 0); assert.equal(a.element('game-next').hidden, false);
-  assert.ok(a.progress.completed.includes(6));
-  a.event('game-next', 'click'); a.advance(32); assert.equal(a.model.size, 5);
-  a.element('mountain-count').value = '44'; a.event('mountain-form', 'submit'); a.advance(12000);
-  assert.ok(a.model.escaped > 0); assert.match(a.element('game-message').textContent, /fell off/);
-  assert.equal(a.element('game-next').hidden, true);
+  for (let i = 5; i <= 6; i++) assert.equal(a.element(`level-${i}`).hidden, true);
+  a.event('category-avalanche', 'click');
+  for (let i = 1; i <= 6; i++) assert.equal(a.element(`level-${i}`).hidden, false);
+  a.event('category-tutorial', 'click');
+  for (let i = 4; i <= 6; i++) assert.equal(a.element(`level-${i}`).hidden, true);
 });
 
-test('Mountain preserves its input and pending batch across modes; retry clears the attempt', () => {
-  const a = app(false, {completed: [0,1,2]});
-  a.event('mode-game', 'click'); a.event('level-menu-open', 'click'); a.event('category-mountain', 'click'); a.event('level-2', 'click'); a.advance(32);
-  a.element('mountain-count').value = '43'; a.event('mountain-count', 'input');
-  a.event('mode-sandbox', 'click'); a.advance(32);
-  assert.equal(a.element('mountain-form').hidden, true); assert.equal(a.element('grain-control').hidden, false);
-  a.event('mode-game', 'click'); a.advance(32); assert.equal(a.element('mountain-count').value, '43');
-  a.event('mountain-form', 'submit'); a.advance(80); const model = a.model;
-  a.event('mode-sandbox', 'click'); a.advance(2000); assert.equal(model.grains, 0);
-  a.event('mode-game', 'click'); a.advance(12000);
-  assert.equal(model.grains, 43); assert.equal(model.escaped, 0); assert.ok(a.progress.completed.includes(7));
+test('the identity puzzle keeps its random draw across modes and New board starts another draw', () => {
+  const initial = [1,1,2, 1,0,1, 2,1,2]; let draw = 0;
+  const a = app(true, {completed: [0,1,2]}, 'game', {random: () => { const i = draw++; return i < 9 ? initial[i] / 4 : i < 18 ? .999 : 0; }});
+  a.event('level-menu-open', 'click'); a.event('category-match', 'click'); a.event('level-3', 'click');
+  a.event('view-top', 'click'); a.advance(32);
+  assert.equal(a.model.size, 3);
+  assert.deepEqual([...a.model.cells], initial);
+  assert.equal(a.graph.targetKey, '2,1,2,1,0,1,2,1,2');
+  assert.match(a.element('target-grid')['aria-label'], /Target, 3 by 3. Rows: 2, 1, 2; 1, 0, 1; 2, 1, 2/);
+  assert.equal(a.element('game-retry').textContent, 'New board');
+  assert.equal(a.element('match-budget').textContent, '1 of 1 move left');
+  assert.equal(a.element('game-next').hidden, true);
+  const graph = a.graph;
+  a.event('mode-sandbox', 'click'); a.event('mode-game', 'click'); a.advance(32);
+  assert.equal(a.graph, graph);
+  assert.deepEqual([...a.model.cells], initial);
+  assert.equal(draw, 9, 'resuming does not randomize again');
+  tapState(a, 0, 0, 0); a.advance(600);
+  assert.equal(a.element('game-panel')['data-status'], 'won');
+  assert.equal(a.element('game-message').textContent, 'Target found in 1 move!');
+  assert.ok(a.progress.completed.includes(7));
+  assert.equal(a.progress.best[7], undefined);
   a.event('game-retry', 'click'); a.advance(32);
-  assert.equal(a.model.grains, 0); assert.equal(a.element('mountain-count').value, ''); assert.equal(a.element('mountain-drop').disabled, false);
-  a.element('mountain-count').value = '100'; a.event('mountain-form', 'submit');
-  a.event('game-retry', 'click'); a.advance(12000); assert.equal(a.model.grains, 0);
+  const secondStart = [...a.model.cells];
+  assert.notDeepEqual(secondStart, initial);
+  assert.equal(Solver.shortestPath(3, secondStart, [2,1,2,1,0,1,2,1,2]).length, 6);
+  assert.equal(a.element('match-budget').textContent, '6 of 6 moves left');
+  assert.equal(a.graph.nodes.length, 1); assert.equal(a.graph.edges.length, 0);
+  assert.equal(a.element('game-best').textContent, '');
+  assert.equal(a.element('game-next').hidden, true);
+  tapState(a, 0, 0, 0); a.advance(16);
+  a.event('game-retry', 'click'); a.advance(3000);
+  assert.notDeepEqual([...a.model.cells], secondStart);
+  assert.equal(Solver.shortestPath(3, a.model.cells, [2,1,2,1,0,1,2,1,2]).length, 6);
+  assert.equal(a.element('match-budget').textContent, '6 of 6 moves left');
+  assert.equal(a.model.topplings, 0); assert.equal(a.model.escaped, 0);
+  assert.equal(a.graph.pending, null); assert.equal(a.graph.nodes.length, 1);
+  assert.equal(a.graph.targetKey, '2,1,2,1,0,1,2,1,2');
 });
+
+test('all six Avalanche levels play in order, save scores, and lead into Match the Pattern', () => {
+  const a = app(true, {completed: [0,1,2]}, 'game');
+  a.event('view-top', 'click'); a.advance(32);
+  a.event('level-menu-open', 'click'); a.event('category-avalanche', 'click'); a.event('level-1', 'click'); a.advance(32);
+  const solutions = [[8,0], [5,14], [9,8], [10,32], [11,35], [12,24]];
+  for (const [i, [index, square]] of solutions.entries()) {
+    const level = SandpileGame.levels[index];
+    assert.equal(a.element('game-title').textContent, `Avalanche ${i + 1}`);
+    assert.equal(a.element('game-prompt').textContent, `Make ${level.bestEscape} grains fall off`);
+    assert.equal(a.element('game-feedback').hidden, true);
+    assert.match(a.element('announcement').textContent, new RegExp(`^Avalanche ${i + 1}\\.`));
+    assert.equal(a.model.size, level.size);
+    assert.deepEqual([...a.model.cells], level.start);
+    assert.equal(a.element('target-panel').hidden, true);
+    assert.equal(a.element('category-avalanche').textContent, 'Avalanche');
+    a.tap(Math.floor(square / level.size), square % level.size);
+    a.event('drop', 'click'); // Extra input during a cascade cannot use another grain.
+    a.advance(20000);
+    assert.equal(a.model.grains, level.maxRemaining);
+    assert.equal(a.model.escaped, level.bestEscape);
+    assert.equal(a.element('game-panel')['data-status'], 'won');
+    assert.equal(a.element('game-feedback').hidden, false);
+    assert.equal(a.element('game-best').textContent, `Best: ${level.bestEscape} escaped`);
+    assert.ok(a.progress.completed.includes(index));
+    assert.equal(a.element('game-next').hidden, false);
+    assert.equal(a.element('game-next').textContent, i === 5 ? 'Match the Pattern →' : 'Next level →');
+    if (i === 5) assert.equal(a.element('category-avalanche').textContent, 'Avalanche ✓');
+    a.event('game-next', 'click'); a.advance(32);
+  }
+  assert.equal(a.element('game-title').textContent, 'Match the Pattern 1');
+  a.event('level-menu-open', 'click'); a.event('category-avalanche', 'click'); a.event('level-6', 'click'); a.advance(32);
+  a.tap(0, 1); a.advance(600);
+  assert.equal(a.element('game-panel')['data-status'], 'retry');
+  assert.match(a.element('game-message').textContent, /0 of 36 grains fell off/);
+  assert.equal(a.element('game-best').textContent, 'Best: 36 escaped');
+  a.event('game-retry', 'click'); a.advance(32);
+  assert.deepEqual([...a.model.cells], SandpileGame.levels[12].start);
+  assert.equal(a.element('game-budget').textContent, '1 grain left');
+});
+
 
 test('welcome rotates a real cascading pile, then a tap starts a clean tutorial without dropping', () => {
   const a = app(false, null, 'welcome');
@@ -432,7 +486,7 @@ test('welcome rotates a real cascading pile, then a tap starts a clean tutorial 
   assert.equal(a.element('game-title').textContent, 'Tutorial');
   assert.equal(a.model.size, 5);
   assert.equal(a.model.grains, 2);
-  assert.equal(a.element('game-budget').textContent, '2 grains left');
+  assert.equal(a.element('game-budget').hidden, true);
   assert.equal(a.running, false);
   a.event('mode-sandbox', 'click'); a.advance(32);
   assert.equal(a.model.size, 19);
@@ -469,9 +523,11 @@ test('participant reset requires an uninterrupted hold, forgets scores, and retu
   a.advance(160);
   assert.equal(a.element('welcome').hidden, false);
   assert.equal(a.element('participant-dialog').open, false);
-  assert.deepEqual(a.progress, {version: 3, completed: [], best: {}});
+  assert.deepEqual(a.progress, {version: 6, completed: [], best: {}});
+  assert.deepEqual(a.intros, []);
   a.event('participant-reset', 'pointerup');
   a.event('welcome', 'click'); a.advance(32);
+  assert.ok(!a.element('mode-intro').open);
   assert.equal(a.element('game-title').textContent, 'Tutorial');
   assert.equal(a.element('category-match').disabled, true);
   assert.equal(a.model.grains, 2);
@@ -582,10 +638,10 @@ test('compact level header opens a separate menu without resetting an attempt', 
   a.event('category-avalanche', 'click'); a.event('level-1', 'click'); a.advance(32);
   assert.equal(a.element('level-menu').open, false);
   assert.equal(a.element('game-title').textContent, 'Avalanche 1');
-  assert.equal(a.model.grains, 56);
-  a.event('level-menu-open', 'click'); a.event('category-mountain', 'click'); a.event('level-2', 'click'); a.advance(32);
-  assert.equal(a.element('game-title').textContent, 'Mountain 2');
-  assert.equal(a.model.size, 5);
+  assert.equal(a.model.grains, 14);
+  a.event('level-menu-open', 'click'); a.event('category-match', 'click'); a.event('level-3', 'click'); a.advance(32);
+  assert.equal(a.element('game-title').textContent, 'Match the Pattern 3');
+  assert.equal(a.model.size, 3);
 });
 
 test('level menu respects tutorial locks and provides routes to other modes', () => {
@@ -613,6 +669,104 @@ function matchMap(a) {
   a.event('category-match', 'click'); a.event('level-1', 'click'); a.advance(32);
   a.event('view-top', 'click'); a.advance(400);
 }
+
+test('tutorials open without an introduction and accept exploratory drops until the objective is met', () => {
+  const a = app(true, null, 'welcome', {intros: []});
+  assert.ok(!a.element('mode-intro').open);
+  a.event('welcome', 'click'); a.advance(32);
+  assert.ok(!a.element('mode-intro').open);
+  assert.equal(a.focused, 'sandpile');
+  assert.equal(a.element('game-budget').hidden, true);
+  a.event('help-open', 'click');
+  assert.equal(a.element('help').open, true);
+  assert.equal(a.element('intro-reopen').hidden, true);
+  a.event('help-close', 'click');
+  a.event('view-top', 'click'); a.advance(32);
+  for (let i = 0; i < 4; i++) { a.tap(0, 0); a.advance(600); }
+  assert.equal(a.model.escaped, 2);
+  assert.equal(a.element('game-panel')['data-status'], 'playing');
+  assert.equal(a.element('game-next').hidden, true);
+  assert.equal(a.element('drop').disabled, false);
+  for (let i = 0; i < 2; i++) { a.tap(2, 2); a.advance(600); }
+  assert.equal(a.element('game-panel')['data-status'], 'won');
+  assert.equal(a.element('game-next').hidden, false);
+  assert.deepEqual(a.intros, []);
+  a.event('game-retry', 'click');
+  assert.ok(!a.element('mode-intro').open);
+});
+
+test('each game type introduces itself once, remembers dismissal across reloads, and can reopen from Help', () => {
+  const a = app(true, {completed: [0,1,2]}, 'game', {intros: []});
+  assert.ok(!a.element('mode-intro').open);
+  assert.deepEqual(a.intros, []);
+  a.event('level-menu-open', 'click'); a.event('category-avalanche', 'click');
+  assert.ok(!a.element('mode-intro').open, 'browsing categories is not entering a game');
+  a.event('level-2', 'click');
+  assert.equal(a.element('level-menu').open, false);
+  assert.equal(a.element('mode-intro').open, true);
+  assert.equal(a.element('intro-title').textContent, 'Avalanche');
+  assert.equal(a.element('intro-lead').textContent, 'Choose a square to start an avalanche.');
+  assert.equal(a.element('intro-copy').textContent, 'Your goal is make as much sand fall off the edge as possible.');
+  const initial = [...a.model.cells];
+  a.event('drop', 'click'); a.event('sandpile', 'keydown', {key: 'Enter'}); a.advance(600);
+  assert.deepEqual([...a.model.cells], initial);
+  assert.equal(a.element('game-budget').textContent, '1 grain left');
+  assert.deepEqual(a.intros, [], 'remember only after dismissal');
+  a.event('mode-intro', 'click', {target: a.element('mode-intro')});
+  assert.equal(a.element('mode-intro').open, true, 'an inside click does not dismiss');
+  a.event('mode-intro', 'click', {target: a.element('mode-intro'), clientX: -1});
+  assert.equal(a.element('mode-intro').open, false);
+  assert.deepEqual([...a.model.cells], initial);
+  a.event('game-retry', 'click');
+  assert.equal(a.element('mode-intro').open, false);
+  a.event('level-menu-open', 'click'); a.event('level-6', 'click');
+  assert.equal(a.element('mode-intro').open, false);
+  a.event('help-open', 'click');
+  assert.equal(a.element('intro-reopen').textContent, 'Show Avalanche introduction');
+  a.event('intro-reopen', 'click');
+  assert.equal(a.element('intro-copy').textContent, 'Your goal is make as much sand fall off the edge as possible.');
+  a.event('intro-dismiss', 'click');
+  a.event('level-menu-open', 'click'); a.event('category-match', 'click'); a.event('level-1', 'click');
+  assert.equal(a.element('mode-intro').open, true);
+  assert.equal(a.element('intro-title').textContent, 'Match the Pattern');
+  assert.equal(a.element('intro-lead').textContent, 'Your goal is to match the target board by adding sand.');
+  assert.equal(a.element('intro-copy').textContent, 'Your previous board states will be remembered, and you can play on those too. Use as few grains as possible.');
+  a.event('drop', 'click'); a.advance(600);
+  assert.equal(a.graph.nodes.length, 1); assert.equal(a.graph.pending, null);
+  a.event('intro-close', 'click');
+  a.event('level-menu-open', 'click'); a.event('menu-versus', 'click');
+  assert.equal(a.element('mode-intro').open, true);
+  assert.equal(a.element('intro-title').textContent, 'Versus');
+  assert.equal(a.focused, 'intro-dismiss');
+  a.event('intro-dismiss', 'click');
+  a.event('mode-sandbox', 'click');
+  assert.equal(a.element('mode-intro').open, true);
+  assert.equal(a.element('intro-title').textContent, 'Sandbox');
+  a.event('mode-intro', 'cancel');
+  assert.deepEqual(a.intros, ['avalanche', 'match', 'versus', 'sandbox']);
+  const restored = app(true, a.progress, 'game', {intros: a.intros});
+  assert.ok(!restored.element('mode-intro').open);
+  for (const category of ['avalanche', 'match']) {
+    restored.event('level-menu-open', 'click'); restored.event(`category-${category}`, 'click'); restored.event('level-1', 'click');
+    assert.ok(!restored.element('mode-intro').open);
+  }
+  for (const mode of ['versus', 'sandbox']) {
+    restored.event(`mode-${mode}`, 'click');
+    assert.ok(!restored.element('mode-intro').open);
+  }
+});
+
+test('introductions still work and remain dismissed for the session when storage is unavailable', () => {
+  const a = app(true, null, 'game', {intros: [], storageAvailable: false});
+  assert.ok(!a.element('mode-intro').open);
+  a.event('mode-versus', 'click');
+  assert.equal(a.element('mode-intro').open, true);
+  a.event('intro-dismiss', 'click');
+  a.event('mode-game', 'click');
+  assert.equal(a.element('mode-intro').open, false);
+  a.event('mode-versus', 'click');
+  assert.equal(a.element('mode-intro').open, false);
+});
 function focusState(a, id) {
   while (a.graph.activeId !== id) a.event('sandpile', 'keydown', { key: ']' });
   a.advance(32);
@@ -637,15 +791,50 @@ test('map clicks branch on old and new boards, merge repeated states, and keep e
   tapState(a, 0, 1, 1); a.advance(700);
   assert.equal(a.graph.nodes.length, 2); assert.equal(a.graph.edges.length, 1);
   assert.match(a.element('game-message').textContent, /paths join/);
+  assert.equal(a.element('game-feedback').hidden, true);
   tapState(a, 1, 1, 1); a.advance(1500);
   assert.equal(a.graph.nodes.length, 3); assert.equal(a.graph.targetNode.moves, 2);
   assert.equal(a.element('game-best').textContent, 'Best: 2 moves');
-  assert.equal(a.element('drop').disabled, false);
+  assert.equal(a.element('drop').disabled, true);
   focusState(a, 0); tapState(a, 0, 0, 0); a.advance(700);
   assert.equal(a.graph.nodes.length, 4);
   assert.equal(a.graph.current.moves, 1);
   assert.equal(a.element('game-next').hidden, false);
   assert.deepEqual(a.graph.nodes[0].cells, start);
+});
+
+test('the prominent move allowance blocks touch, button, and keyboard drops at the limit', () => {
+  const a = app(true, {completed: [0,1,2]}); matchMap(a);
+  assert.equal(a.element('match-budget').hidden, false);
+  assert.equal(a.element('game-budget').hidden, true);
+  assert.equal(a.element('match-budget').textContent, '2 of 2 moves left');
+  tapState(a, 0, 0, 0); a.advance(600);
+  assert.equal(a.element('match-budget').textContent, '1 of 2 moves left');
+  tapState(a, a.graph.activeId, 0, 0); a.advance(600);
+  const capped = a.graph.activeId, nodes = a.graph.nodes.length;
+  assert.equal(a.element('match-budget').textContent, '0 of 2 moves left');
+  assert.equal(a.element('drop').disabled, true);
+  assert.match(a.element('game-message').textContent, /Choose an earlier board/);
+  assert.equal(a.element('game-feedback').hidden, false);
+  tapState(a, capped, 1, 1);
+  a.event('drop', 'click'); a.event('drop', 'pointerdown'); a.advance(800); a.event('drop', 'pointerup');
+  for (const key of [' ', 'Enter']) a.event('sandpile', 'keydown', {key});
+  a.advance(2000);
+  assert.equal(a.graph.pending, null);
+  assert.equal(a.graph.nodes.length, nodes);
+  focusState(a, 0);
+  assert.equal(a.element('drop').disabled, false);
+  assert.equal(a.element('match-budget').textContent, '2 of 2 moves left');
+  // Even a nonselected board at the limit cannot accept a direct tap.
+  a.event('zoom-reset', 'click'); a.advance(32);
+  tapState(a, capped, 1, 1); a.advance(600);
+  assert.equal(a.graph.pending, null); assert.equal(a.graph.nodes.length, nodes);
+  focusState(a, 0); a.event('sandpile', 'keydown', {key: 'ArrowRight'}); a.event('sandpile', 'keydown', {key: 'Enter'}); a.advance(600);
+  assert.equal(a.graph.nodes.length, nodes + 1);
+  a.event('mode-sandbox', 'click'); a.event('mode-game', 'click');
+  assert.equal(a.element('match-budget').textContent, '1 of 2 moves left');
+  a.event('game-retry', 'click'); a.advance(32);
+  assert.equal(a.element('match-budget').textContent, '2 of 2 moves left');
 });
 
 test('map pan, pinch, cancelled gestures, and orbit do not create drops', () => {
@@ -745,4 +934,75 @@ test('dragging down tilts toward overhead on regular boards and graph boards', (
     assert.equal(a.view.angle, angle);
     if (graphMode) assert.equal(a.graph.pending, null);
   }
+});
+
+test('sandbox setup applies a blank size, cancels pending sand, and preserves other modes', () => {
+  const a = app();
+  a.element('drop-size').value = '100';
+  a.event('drop', 'pointerdown');
+  a.event('sandbox-setup', 'click');
+  const original = a.model;
+  a.element('sandbox-size').value = '51'; a.element('sandbox-start').value = 'blank';
+  a.event('sandbox-cancel', 'click');
+  assert.equal(a.model, original);
+  a.event('sandbox-setup', 'click');
+  assert.equal(a.element('sandbox-size').value, '19');
+  a.element('sandbox-size').value = '51'; a.element('sandbox-start').value = 'blank';
+  a.event('sandbox-apply', 'click'); a.advance(3000);
+  assert.equal(a.model.size, 51); assert.equal(a.view.size, 51);
+  assert.equal(a.model.grains, 0); assert.equal(a.model.topplings, 0); assert.equal(a.model.escaped, 0);
+  assert.equal(a.element('square').textContent, 'Square 26, 26');
+  assert.equal(a.element('board-subtitle').textContent, 'Abelian · 51 × 51 · open edges');
+  assert.equal(a.view.zoom, 1);
+  a.element('drop-size').value = '1';
+  a.tap(25, 25); a.advance(600);
+  assert.equal(a.model.cells[25 * 51 + 25], 1);
+  a.event('mode-game', 'click');
+  assert.equal(a.model.size, 5); assert.equal(a.model.grains, 2);
+  a.event('mode-sandbox', 'click');
+  assert.equal(a.model.size, 51); assert.equal(a.model.grains, 1);
+  a.event('sandbox-setup', 'click');
+  assert.equal(a.element('sandbox-start').value, 'blank');
+  assert.equal(a.element('sandbox-size').value, '51');
+  a.event('sandbox-close', 'click'); a.event('pattern', 'click');
+  assert.equal(a.model.grains, 0);
+});
+
+test('sandbox random starts are stable, regenerate on reset, and clear at the same size', () => {
+  const a = app();
+  a.event('sandbox-setup', 'click');
+  a.element('sandbox-size').value = '101'; a.element('sandbox-start').value = 'random';
+  a.event('sandbox-apply', 'click'); a.advance(32);
+  assert.equal(a.model.size, 101); assert.equal(a.model.cells.length, 10201);
+  assert.ok(a.model.cells.every(value => Number.isInteger(value) && value >= 0 && value <= 3));
+  assert.equal(new Set(a.model.cells).size, 4);
+  assert.equal(a.model.topplings, 0); assert.equal(a.model.escaped, 0);
+  const first = [...a.model.cells];
+  a.event('pattern', 'click');
+  assert.notDeepEqual([...a.model.cells], first);
+  a.event('clear', 'click');
+  assert.equal(a.model.size, 101); assert.equal(a.model.grains, 0);
+  a.event('pattern', 'click');
+  assert.ok(a.model.grains > 0);
+  a.event('help-open', 'click'); a.event('participant-open', 'click');
+  a.event('participant-reset', 'pointerdown'); a.advance(3050);
+  a.event('welcome', 'click'); a.event('mode-sandbox', 'click');
+  a.event('sandbox-setup', 'click');
+  assert.equal(a.element('sandbox-size').value, '19');
+  assert.equal(a.element('sandbox-start').value, 'pattern');
+});
+
+test('sandbox setup rejects invalid sizes and cannot replace a level board', () => {
+  const a = app();
+  a.event('sandbox-setup', 'click');
+  const original = a.model;
+  for (const value of ['0', '-1', '4.5', '102', 'NaN']) {
+    a.element('sandbox-size').value = value; a.element('sandbox-start').value = 'blank';
+    a.event('sandbox-apply', 'click'); assert.equal(a.model, original);
+  }
+  a.event('mode-game', 'click');
+  const level = a.model;
+  a.event('sandbox-setup', 'click');
+  a.element('sandbox-size').value = '3'; a.event('sandbox-apply', 'click');
+  assert.equal(a.model, level); assert.equal(a.element('sandbox-dialog').open, false);
 });

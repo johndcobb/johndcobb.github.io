@@ -56,8 +56,15 @@ input[type="range"]::-webkit-slider-runnable-track { height: 4px; background: #d
 input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 24px; height: 24px; margin-top: -10px; border: 3px solid #fffffb; border-radius: 50%; background: var(--green); box-shadow: 0 1px 4px #34432e30; }
 input[type="range"]::-moz-range-track { height: 4px; background: #dce3d6; border-radius: 3px; }
 input[type="range"]::-moz-range-thumb { width: 18px; height: 18px; border: 3px solid #fffffb; border-radius: 50%; background: var(--green); box-shadow: 0 1px 4px #34432e30; }
-.reset-controls { display: flex; gap: 8px; }
+.reset-controls { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px; }
 .reset-controls button { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 0 13px; font-size: 12px; background: transparent; }
+.sandbox-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.sandbox-fields label { display: flex; flex-direction: column; gap: 7px; color: var(--muted); font-size: 12px; }
+.sandbox-fields select { width: 100%; min-width: 0; min-height: 48px; padding: 0 10px; border: 1px solid var(--line); border-radius: 12px; color: var(--ink); background: #fffffb; font: inherit; font-size: 14px; }
+#sandbox-description { margin: 20px 0; color: var(--muted); font-size: 13px; }
+.sandbox-actions { display: flex; justify-content: flex-end; gap: 10px; }
+.sandbox-actions button { padding: 0 16px; }
+#sandbox-close { min-height: 44px; min-width: 44px; font-size: 25px; }
 svg { width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 dialog { width: min(520px, calc(100% - 32px)); max-height: calc(100dvh - 48px); padding: 28px; border: 1px solid var(--line); border-radius: 24px; color: var(--ink); background: #fffffb; box-shadow: 0 24px 100px #23302730; overflow: auto; }
 dialog::backdrop { background: #303b3540; -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(5px); }
@@ -278,8 +285,12 @@ button:disabled { opacity: .4; cursor: default; transform: none; }
 .game-active .app-bar { flex-wrap: nowrap; flex-basis: 66px; }
 .game-active .app-bar > .brand, .game-active .app-bar > .mode-switch, .game-active .header-actions .legend { display: none; }
 .game-active .header-actions { margin-left: auto; }
-.game-active .game-panel { margin: 0 0 10px; padding: 10px 14px; border: 0; border-radius: 12px; background: transparent; }
-.game-active .game-panel .game-prompt { margin: 0; font-size: 13px; }
+.game-active .game-panel { flex-shrink: 0; margin: 0; padding: 14px 12px 4px; border: 0; border-radius: 12px; background: transparent; }
+.game-active .game-panel .game-prompt { margin: 0; font-size: 20px; line-height: 1.35; font-weight: 550; }
+.game-goal { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px 20px; }
+.match-budget { padding: 10px 16px; border: 1px solid #b5cbbb; border-radius: 12px; background: #edf4e9; color: #284f3d; font-size: 20px; font-weight: 650; font-variant-numeric: tabular-nums; }
+.match-budget[data-exhausted="true"] { background: #f4eee2; border-color: #d5c4a8; color: #70512f; }
+.game-active .game-panel #game-message { font-size: 15px; }
 .game-active .game-panel[data-status="won"] { background: #edf4e5; }
 .game-active .game-panel[data-status="retry"] { background: #faf0e8; }
 #level-menu { width: min(590px, calc(100% - 32px)); }
@@ -318,8 +329,11 @@ button:disabled { opacity: .4; cursor: default; transform: none; }
 }
 .graph-active .scene-top { justify-content: flex-end; }
 
-.mountain-form { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 12px; }
-.mountain-form label { display: grid; gap: 6px; font-size: 12px; color: var(--muted); }
-.mountain-form input { width: 180px; min-height: 44px; padding: 8px 12px; border: 1px solid var(--line); border-radius: 10px; background: #fffefa; color: var(--ink); font: inherit; font-size: 16px; }
-.mountain-form button { min-height: 44px; }
-.mountain-form input:focus-visible { outline: 2px solid var(--green); outline-offset: 3px; }
+/* Mode instructions appear once, leaving a short goal above the board. */
+#mode-intro { width: min(460px, calc(100% - 32px)); }
+#mode-intro .dialog-heading { margin-bottom: 20px; align-items: center; }
+#intro-close { min-width: 44px; min-height: 44px; border: 0; background: transparent; font-size: 25px; }
+#intro-lead { margin: 0 0 12px; font-size: 22px; line-height: 1.3; font-weight: 550; }
+#intro-copy { margin: 0; font-size: 16px; line-height: 1.6; color: var(--muted); }
+#intro-dismiss { width: 100%; margin-top: 24px; font-size: 16px; }
+#intro-reopen { padding: 0 16px; }
