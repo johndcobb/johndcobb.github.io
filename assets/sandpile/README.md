@@ -4,6 +4,8 @@ A self-contained Abelian sandpile with a freely orbiting camera and an automatic
 
 The interface fits an iPad in portrait or landscape, with safe-area spacing and large touch controls. The manifest and Apple web-app metadata request a standalone window when saved to the Home Screen. This is not an offline-cached app; initial loading from a hosted URL requires a connection.
 
+Touch input hides the green selected-square outline in every mode, including the state map. Mouse and keyboard input show it, including when used with an iPad. Blue tutorial guides remain visible, and Drop still targets the last selected square.
+
 ## Files
 
 - `index.html`: app layout and Help dialog.

@@ -25,6 +25,7 @@
     2: { top: '#4f91d2', dark: [34, 67, 113], bright: [67, 130, 191], shades: ['#afd3f3', '#4f91d2', '#245c9a'] }
   };
   let model, selected = center, phase = null, drops = [], hold = null, active = new Set();
+  let selectionVisible = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
   let width = 0, height = 0;
   const view = new SandpileView(size);
   let particles = [], rotation = null, gesture = null;
@@ -472,7 +473,7 @@
         }
         drawGameMarker(f.index, row, col, z);
         if (active.has(f.index) && !f.underside) polygon(view.diamond(row + .06, col + .06, z, .88), null, teams ? '#ffe07d' : '#ffb2a1', Math.max(1.5, view.cellSize * .08));
-        if (f.index === selected && !hideSelection) {
+        if (f.index === selected && selectionVisible && !hideSelection) {
           const selectedFace = view.diamond(row + .04, col + .04, z, .92);
           polygon(selectedFace, '#35624e15', '#fffef3', 4);
           polygon(selectedFace, null, colors.green, 2);
@@ -917,6 +918,17 @@
     }
   }
 
+  // Keep the drop target, but only outline it for mouse or keyboard input.
+  // Track touch on controls too, so switching input methods clears stale outlines.
+  function setSelectionVisible(visible) {
+    if (selectionVisible === visible) return;
+    selectionVisible = visible; redraw();
+  }
+  document.addEventListener('pointerdown', event => setSelectionVisible(event.pointerType === 'mouse'), { capture: true });
+  document.addEventListener('keydown', event => {
+    if (!['Shift', 'Control', 'Alt', 'Meta'].includes(event.key)) setSelectionVisible(true);
+  }, { capture: true });
+
   canvas.addEventListener('pointerdown', event => {
     if (isGraph()) { graphPointerDown(event); return; }
     if (event.button !== 0) return;
@@ -928,6 +940,7 @@
     gesture = { id: event.pointerId, x: event.clientX, y: event.clientY, lastY: event.clientY, angle: view.angle, moved: false, cancelled: false };
   });
   canvas.addEventListener('pointermove', event => {
+    if (event.pointerType === 'mouse') setSelectionVisible(true);
     if (isGraph()) { graphPointerMove(event); return; }
     if (gesture) {
       if (gesture.id !== event.pointerId || gesture.cancelled) return;

@@ -12,7 +12,7 @@ const Solver = require('../sandpile-solver.js');
 
 // Deterministic animation clock and minimal DOM. Exercise the real controller,
 // including pointer picking and particle lifetime, without a browser dependency.
-function app(reduced = false, progress = null, start = 'sandbox', {intros = ['avalanche', 'match', 'versus', 'sandbox'], storageAvailable = true, random = Math.random, motionPreference = null, legacyMedia = false} = {}) {
+function app(reduced = false, progress = null, start = 'sandbox', {intros = ['avalanche', 'match', 'versus', 'sandbox'], storageAvailable = true, random = Math.random, motionPreference = null, legacyMedia = false, hover = false} = {}) {
   const storage = new Map(progress ? [["sandpile-progress-v2", JSON.stringify({version: 3, ...progress})]] : []);
   storage.set('sandpile-intros-v1', JSON.stringify(intros));
   if (motionPreference !== null) storage.set('sandpile-motion-v1', motionPreference);
@@ -35,9 +35,10 @@ function app(reduced = false, progress = null, start = 'sandbox', {intros = ['av
     });
     return elements.get(id);
   }
+  const documentEvents = {};
   const sandbox = {
-    document: { createElement: () => element(Symbol()), getElementById: element, addEventListener() {} },
-    window: { localStorage: { getItem(key) { if (!storageAvailable) throw new Error('Storage unavailable'); return storage.get(key) ?? null; }, setItem(key, value) { if (!storageAvailable) throw new Error('Storage unavailable'); storage.set(key, value); } }, matchMedia: () => media, devicePixelRatio: 1, addEventListener() {} },
+    document: { createElement: () => element(Symbol()), getElementById: element, addEventListener(type, fn) { documentEvents[type] = fn; } },
+    window: { localStorage: { getItem(key) { if (!storageAvailable) throw new Error('Storage unavailable'); return storage.get(key) ?? null; }, setItem(key, value) { if (!storageAvailable) throw new Error('Storage unavailable'); storage.set(key, value); } }, matchMedia: query => query === '(prefers-reduced-motion: reduce)' ? media : { matches: hover }, devicePixelRatio: 1, addEventListener() {} },
     performance: { now: () => clock },
     requestAnimationFrame(fn) { callback = fn; return 1; },
     ResizeObserver: class { observe() {} },
@@ -52,7 +53,11 @@ function app(reduced = false, progress = null, start = 'sandbox', {intros = ['av
   };
   vm.runInNewContext(fs.readFileSync(path.join(__dirname, '../sandpile.js'), 'utf8'), sandbox);
   function advance(ms) { for (let i = 0; i < ms; i += 16) { clock += 16; const fn = callback; callback = null; if (fn) fn(clock); } }
-  function event(id, type, data = {}) { element(id).events[type]({ pointerId: 1, pointerType: 'touch', button: 0, clientX: 300, clientY: 300, preventDefault() {}, ...data }); }
+  function event(id, type, data = {}) {
+    const e = { pointerId: 1, pointerType: 'touch', button: 0, clientX: 300, clientY: 300, preventDefault() {}, ...data };
+    documentEvents[type]?.(e);
+    element(id).events[type]?.(e);
+  }
   function tap(row, col) {
     const model = currentModel();
     const camera = graph && element('board-stats').hidden === true ? graph.boardCamera(view, graph.pending || graph.current, 984, 590) : view;
@@ -69,6 +74,63 @@ function app(reduced = false, progress = null, start = 'sandbox', {intros = ['av
 }
 
 function setMotion(a, value) { a.element('motion-preference').value = value; a.event('motion-preference', 'change'); }
+
+test('touch boards hide the selected-square outline while preserving tutorial guides and drop targets', () => {
+  const a = app(false, null, 'game');
+  assert.equal(a.paintedColors.has('#35624e15'), false, 'no default cursor outline');
+  assert.equal(a.strokedColors.has('#397698'), true, 'tutorial guides remain visible');
+  a.tap(2, 2); a.advance(400);
+  assert.equal(a.model.cells[12], 3);
+  assert.equal(a.paintedColors.has('#35624e15'), false, 'touch focus does not enable the outline');
+  a.event('game-retry', 'click'); a.advance(32);
+  assert.equal(a.paintedColors.has('#35624e15'), false, 'retry stays in touch mode');
+  a.event('mode-sandbox', 'click'); a.event('clear', 'click'); a.advance(32);
+  a.tap(5, 13); a.advance(400);
+  a.event('drop', 'pointerdown'); a.event('drop', 'pointerup'); a.advance(400);
+  assert.equal(a.model.cells[5 * 19 + 13], 2, 'Drop still uses the last tapped square');
+  assert.equal(a.paintedColors.has('#35624e15'), false);
+  a.event('mode-versus', 'click'); a.advance(32);
+  a.tap(0, 0); a.advance(400);
+  assert.equal(a.model.cells[0], 1);
+  assert.equal(a.paintedColors.has('#35624e15'), false, 'Versus also hides the touch outline');
+});
+
+test('mouse and keyboard enable selection outlines, and touching any control hides them again', () => {
+  const a = app(false, null, 'sandbox', { hover: true });
+  assert.equal(a.paintedColors.has('#35624e15'), true, 'desktop keeps its initial selection');
+  a.paintedColors.clear();
+  a.event('clear', 'pointerdown'); a.event('clear', 'click'); a.advance(32);
+  assert.equal(a.paintedColors.has('#35624e15'), false, 'touch controls clear a mouse outline');
+  const p = a.view.point(9.5, 9.5);
+  a.event('sandpile', 'pointermove', { pointerType: 'mouse', clientX: p.x, clientY: p.y }); a.advance(32);
+  assert.equal(a.paintedColors.has('#35624e15'), true, 'hover restores even the same selected square');
+  a.paintedColors.clear(); a.tap(5, 13); a.advance(400);
+  assert.equal(a.paintedColors.has('#35624e15'), false);
+  a.event('sandpile', 'keydown', { key: 'ArrowRight' }); a.advance(32);
+  assert.equal(a.paintedColors.has('#35624e15'), true, 'an attached keyboard restores the outline');
+  a.event('sandpile', 'keydown', { key: 'Enter' }); a.advance(400);
+  assert.equal(a.model.cells[5 * 19 + 14], 1, 'keyboard drops still use the selected square');
+
+  const tablet = app();
+  assert.equal(tablet.paintedColors.has('#35624e15'), false);
+  tablet.event('sandpile', 'pointermove', { pointerType: 'mouse' }); tablet.advance(32);
+  assert.equal(tablet.paintedColors.has('#35624e15'), true, 'a connected mouse works on a touch-first device');
+});
+
+test('touch state maps omit selection outlines on both settling and stable boards', () => {
+  const a = app(false, { completed: [0, 1, 2] }); matchMap(a);
+  assert.equal(a.paintedColors.has('#35624e15'), false);
+  tapState(a, 0, 1, 1); a.advance(32);
+  assert.ok(a.graph.pending);
+  assert.equal(a.paintedColors.has('#35624e15'), false, 'the settling copy has no touch cursor');
+  a.advance(700);
+  assert.equal(a.graph.nodes.length, 2);
+  assert.equal(a.paintedColors.has('#35624e15'), false);
+  a.event('sandpile', 'keydown', { key: 'ArrowRight' }); a.advance(32);
+  assert.equal(a.paintedColors.has('#35624e15'), true, 'state maps retain keyboard selection');
+  a.paintedColors.clear(); tapState(a, 0, 0, 0); a.advance(700);
+  assert.equal(a.paintedColors.has('#35624e15'), false, 'touch hides a prior keyboard selection');
+});
 
 test('tap picking follows the same world square through a full orbit', () => {
   const a = app();
