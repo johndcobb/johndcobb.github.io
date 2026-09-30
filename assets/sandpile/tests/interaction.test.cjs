@@ -12,10 +12,15 @@ const Solver = require('../sandpile-solver.js');
 
 // Deterministic animation clock and minimal DOM. Exercise the real controller,
 // including pointer picking and particle lifetime, without a browser dependency.
-function app(reduced = false, progress = null, start = 'sandbox', {intros = ['avalanche', 'match', 'versus', 'sandbox'], storageAvailable = true, random = Math.random} = {}) {
+function app(reduced = false, progress = null, start = 'sandbox', {intros = ['avalanche', 'match', 'versus', 'sandbox'], storageAvailable = true, random = Math.random, motionPreference = null, legacyMedia = false} = {}) {
   const storage = new Map(progress ? [["sandpile-progress-v2", JSON.stringify({version: 3, ...progress})]] : []);
   storage.set('sandpile-intros-v1', JSON.stringify(intros));
-  let clock = 0, callback, view, versus, graph, focused;
+  if (motionPreference !== null) storage.set('sandpile-motion-v1', motionPreference);
+  let clock = 0, callback, view, versus, graph, focused, motionListener;
+  const media = { matches: reduced };
+  if (legacyMedia) media.addListener = fn => { motionListener = fn; };
+  else media.addEventListener = (type, fn) => { if (type === 'change') motionListener = fn; };
+  function setDeviceMotion(matches) { media.matches = matches; motionListener?.({matches}); }
   const models = [];
   const currentModel = () => [...models].reverse().find(model => model.size === view.size);
   const poses = [], elements = new Map(), paintedColors = new Set(), strokedColors = new Set();
@@ -32,7 +37,7 @@ function app(reduced = false, progress = null, start = 'sandbox', {intros = ['av
   }
   const sandbox = {
     document: { createElement: () => element(Symbol()), getElementById: element, addEventListener() {} },
-    window: { localStorage: { getItem(key) { if (!storageAvailable) throw new Error('Storage unavailable'); return storage.get(key) ?? null; }, setItem(key, value) { if (!storageAvailable) throw new Error('Storage unavailable'); storage.set(key, value); } }, matchMedia: () => ({ matches: reduced }), devicePixelRatio: 1, addEventListener() {} },
+    window: { localStorage: { getItem(key) { if (!storageAvailable) throw new Error('Storage unavailable'); return storage.get(key) ?? null; }, setItem(key, value) { if (!storageAvailable) throw new Error('Storage unavailable'); storage.set(key, value); } }, matchMedia: () => media, devicePixelRatio: 1, addEventListener() {} },
     performance: { now: () => clock },
     requestAnimationFrame(fn) { callback = fn; return 1; },
     ResizeObserver: class { observe() {} },
@@ -60,8 +65,10 @@ function app(reduced = false, progress = null, start = 'sandbox', {intros = ['av
     if (start === 'sandbox') event('mode-sandbox', 'click');
   }
   advance(32);
-  return { element, event, advance, tap, poses, paintedColors, strokedColors, get progress() { return JSON.parse(storage.get("sandpile-progress-v2") || "{}"); }, get intros() { return JSON.parse(storage.get('sandpile-intros-v1') || '[]'); }, get focused() { return focused; }, get model() { return currentModel(); }, get view() { return view; }, get versus() { return versus; }, get graph() { return graph; }, get running() { return !!callback; } };
+  return { element, event, advance, tap, poses, paintedColors, strokedColors, setDeviceMotion, get motionPreference() { return storage.get('sandpile-motion-v1'); }, get progress() { return JSON.parse(storage.get("sandpile-progress-v2") || "{}"); }, get intros() { return JSON.parse(storage.get('sandpile-intros-v1') || '[]'); }, get focused() { return focused; }, get model() { return currentModel(); }, get view() { return view; }, get versus() { return versus; }, get graph() { return graph; }, get running() { return !!callback; } };
 }
+
+function setMotion(a, value) { a.element('motion-preference').value = value; a.event('motion-preference', 'change'); }
 
 test('tap picking follows the same world square through a full orbit', () => {
   const a = app();
@@ -109,11 +116,112 @@ test('clear cancels pending particles; reduced motion skips particles and camera
   a.advance(500); a.event('clear', 'click'); a.advance(32);
   const count = a.poses.length; a.advance(2000);
   assert.equal(a.poses.length, count); assert.equal(a.model.grains, 0); assert.equal(a.running, false);
-  const b = app(true);
+  const b = app(true, null, 'sandbox', {motionPreference: 'reduced'});
   b.event('clear', 'click'); b.advance(32); b.tap(18, 18);
   for (let i = 0; i < 3; i++) b.event('drop', 'click');
   b.event('rotate-right', 'click'); assert.equal(b.element('view-angle').textContent, '90°');
   b.advance(2000); assert.equal(b.model.escaped, 2); assert.equal(b.poses.length, 0);
+});
+
+test('falling grains and camera turns animate by default even with device reduced motion', () => {
+  const a = app(true);
+  assert.equal(a.element('motion-preference').value, 'full');
+  assert.match(a.element('motion-description').textContent, /smooth camera turns are on/);
+  a.event('clear', 'click'); a.advance(32);
+  a.tap(18, 18); a.advance(80);
+  assert.equal(a.model.grains, 0, 'the grain is still in flight');
+  a.advance(160);
+  assert.equal(a.model.grains, 1);
+  for (let i = 0; i < 3; i++) a.event('drop', 'click');
+  a.event('rotate-right', 'click'); a.advance(80);
+  assert.ok(a.view.angle > 0 && a.view.angle < Math.PI / 2, 'camera interpolates');
+  a.advance(1800);
+  assert.equal(a.view.angle, Math.PI / 2);
+  assert.equal(a.model.escaped, 2);
+  assert.ok(a.poses.some(p => p.z < -1), 'escaped grains visibly fall below the board');
+  assert.equal(a.model.grains, 2);
+  assert.equal(a.running, false);
+});
+
+test('animation choices persist across reloads and modes, including the welcome board', () => {
+  const a = app(true);
+  setMotion(a, 'full');
+  a.event('mode-game', 'click'); a.advance(32);
+  assert.equal(a.element('motion-preference').value, 'full');
+  a.event('rotate-right', 'click'); a.advance(80);
+  assert.ok(a.view.angle > 0 && a.view.angle < Math.PI / 2);
+  const b = app(true, null, 'welcome', {motionPreference: a.motionPreference});
+  const angle = b.view.angle;
+  b.advance(6000);
+  assert.notEqual(b.view.angle, angle);
+  assert.ok(b.model.topplings > 0);
+  setMotion(a, 'reduced');
+  const c = app(false, null, 'welcome', {motionPreference: a.motionPreference});
+  const still = c.view.angle;
+  c.advance(2000);
+  assert.equal(c.view.angle, still);
+  assert.equal(c.running, false);
+});
+
+test('device motion changes restart an idle welcome animation and respect explicit overrides', () => {
+  for (const legacyMedia of [false, true]) {
+    const a = app(true, null, 'welcome', {legacyMedia, motionPreference: 'system'});
+    assert.equal(a.running, false);
+    const angle = a.view.angle;
+    a.setDeviceMotion(false); a.advance(160);
+    assert.notEqual(a.view.angle, angle);
+    a.setDeviceMotion(true); a.advance(32);
+    const stopped = a.view.angle;
+    a.advance(160);
+    assert.equal(a.view.angle, stopped);
+    assert.equal(a.running, false);
+    setMotion(a, 'full'); a.advance(160);
+    assert.notEqual(a.view.angle, stopped);
+    a.setDeviceMotion(false); a.setDeviceMotion(true);
+    const full = a.view.angle;
+    a.advance(160);
+    assert.notEqual(a.view.angle, full);
+    setMotion(a, 'system'); a.advance(32);
+    assert.equal(a.running, false);
+  }
+});
+
+test('switching to reduced motion stops current and paused camera motion without losing sand', () => {
+  const a = app();
+  a.event('clear', 'click'); a.advance(32);
+  a.tap(18, 18);
+  for (let i = 0; i < 3; i++) a.event('drop', 'click');
+  a.advance(400);
+  a.event('rotate-right', 'click'); a.advance(80);
+  const poseCount = a.poses.length;
+  assert.ok(poseCount > 0);
+  a.event('mode-game', 'click'); a.advance(32);
+  a.event('rotate-right', 'click'); a.advance(80);
+  setMotion(a, 'reduced');
+  assert.equal(a.view.angle, Math.PI / 2);
+  a.event('mode-sandbox', 'click'); a.advance(2000);
+  assert.equal(a.view.angle, Math.PI / 2);
+  assert.equal(a.poses.length, poseCount);
+  assert.equal(a.model.grains + a.model.escaped, 4);
+  assert.equal(a.model.escaped, 2);
+  assert.equal(a.running, false);
+});
+
+test('animations default to full without storage or a valid saved choice', () => {
+  const a = app(true, null, 'sandbox', {storageAvailable: false});
+  assert.equal(a.element('motion-preference').value, 'full');
+  a.event('rotate-right', 'click'); a.advance(80);
+  assert.ok(a.view.angle > 0 && a.view.angle < Math.PI / 2);
+  setMotion(a, 'reduced');
+  assert.equal(a.view.angle, Math.PI / 2);
+  for (const motionPreference of [null, 'invalid']) {
+    const b = app(true, null, 'welcome', {motionPreference});
+    assert.equal(b.element('motion-preference').value, 'full');
+    const angle = b.view.angle;
+    b.advance(6000);
+    assert.notEqual(b.view.angle, angle);
+    assert.ok(b.model.topplings > 0);
+  }
 });
 
 
@@ -295,7 +403,7 @@ test('camera motion resumes across mode changes and reduced motion snaps presets
   a.event('mode-game', 'click'); a.advance(800);
   a.event('mode-sandbox', 'click'); assert.equal(a.view.pitch, pitch);
   a.advance(400); assert.equal(a.view.topBlend, 1);
-  const b = app(true); b.event('view-top', 'click');
+  const b = app(true, null, 'sandbox', {motionPreference: 'reduced'}); b.event('view-top', 'click');
   assert.equal(b.view.pitch, Math.PI / 2);
   b.event('sandpile', 'keydown', { key: 's' });
   assert.equal(b.view.pitch, Math.PI / 2);
@@ -495,7 +603,7 @@ test('welcome rotates a real cascading pile, then a tap starts a clean tutorial 
 });
 
 test('welcome respects reduced motion and still opens the tutorial with saved completion', () => {
-  const a = app(true, {completed: [0,1,2,3], best: {3: 2}}, 'welcome');
+  const a = app(true, {completed: [0,1,2,3], best: {3: 2}}, 'welcome', {motionPreference: 'reduced'});
   const angle = a.view.angle;
   a.advance(8000);
   assert.equal(a.view.angle, angle);

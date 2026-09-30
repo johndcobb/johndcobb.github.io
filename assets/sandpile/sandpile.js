@@ -8,7 +8,17 @@
   const sandboxSizes = [3, 5, 9, 19, 31, 51, 101];
   let sandboxStart = 'pattern';
   let center = Math.floor(size * size / 2);
-  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const deviceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const motionKey = 'sandpile-motion-v1';
+  const motionOptions = ['system', 'full', 'reduced'];
+  function readMotionPreference() {
+    try {
+      const value = window.localStorage.getItem(motionKey);
+      return motionOptions.includes(value) ? value : 'full';
+    } catch { return 'full'; }
+  }
+  let motionPreference = readMotionPreference();
+  let reducedMotion = motionPreference === 'reduced' || (motionPreference === 'system' && deviceMotion.matches);
   const colors = { top: '#efac69', seam: '#af693732', redTop: '#f07861', green: '#35624e' };
   const playerColors = {
     1: { top: '#d85a4d', dark: [132, 43, 39], bright: [208, 79, 64], shades: ['#f4b2a8', '#d85a4d', '#a6352d'] },
@@ -24,6 +34,21 @@
   let mode = 'sandbox';
   let landing = false, demoElapsed = 0, demoDrops = 0, resetHold = null;
   const saved = { sandbox: null, game: null, versus: null };
+  function updateMotionPreference() {
+    reducedMotion = motionPreference === 'reduced' || (motionPreference === 'system' && deviceMotion.matches);
+    $('motion-preference').value = motionPreference;
+    $('motion-description').textContent = motionPreference === 'system' && reducedMotion ? 'Your device requests reduced motion. Choose Full animations to see falling grains and smooth camera turns.' : reducedMotion ? 'Falling grains are hidden and camera changes are instant.' : 'Falling grains and smooth camera turns are on.';
+    if (reducedMotion) {
+      // Stop decorative motion immediately, including in modes that are paused.
+      if (rotation) { view.angle = rotation.to; view.pitch = rotation.toPitch; rotation = null; }
+      particles = [];
+      for (const state of Object.values(saved)) if (state) {
+        if (state.rotation) { state.angle = state.rotation.to; state.pitch = state.rotation.toPitch; state.rotation = null; }
+        state.particles = [];
+      }
+    }
+    updateAngle(); updateReadout(); redraw();
+  }
   let versus = null, graph = null;
   let graphHits = [], graphGesture = null;
   const graphTouches = new Map();
@@ -406,7 +431,7 @@
         face(corners(row, col, -.85), '#b17e4d', { index, cell: { row, col, z: -.85, grains }, underside: true });
       }
     }
-    if (!reducedMotion.matches) {
+    if (!reducedMotion) {
       for (const packet of drops) {
         const row = Math.floor(packet.index / size), col = packet.index % size;
         const progress = Math.min(1, packet.elapsed / packet.duration);
@@ -468,7 +493,7 @@
       if (f.label) countLabel(f.label.row, f.label.col, f.label.z, f.label.text);
       ctx.restore();
     }
-    if (blend > 0 && !reducedMotion.matches) for (const packet of drops) {
+    if (blend > 0 && !reducedMotion) for (const packet of drops) {
       const progress = Math.min(1, packet.elapsed / packet.duration);
       const span = .4 + .6 * progress, inset = (1 - span) / 2;
       ctx.save(); ctx.globalAlpha = blend;
@@ -513,7 +538,7 @@
     }
     model = graphModel(source); selected = index;
     phase = null; active = new Set(); particles = []; avalancheStart = model.topplings;
-    drops = [{ index, count: 1, elapsed: 0, duration: reducedMotion.matches ? 32 : 360 }];
+    drops = [{ index, count: 1, elapsed: 0, duration: reducedMotion ? 32 : 360 }];
     graph.fit(width, height, [source, graph.pending]);
     game.used = source.moves + 1;
     updateReadout(); updateAngle(); redraw();
@@ -583,7 +608,7 @@
   }
 
   function emitEscapingGrains() {
-    if (reducedMotion.matches) return;
+    if (reducedMotion) return;
     for (const [i, index] of phase.sites.entries()) {
       const row = Math.floor(index / size), col = index % size;
       for (const [dr, dc] of [[-1, 0], [0, 1], [1, 0], [0, -1]]) {
@@ -609,7 +634,7 @@
 
   function moveCamera(angle, pitch) {
     pitch = view.topLocked ? Math.PI / 2 : SandpileView.clampPitch(pitch);
-    rotation = reducedMotion.matches ? null : { from: view.angle, to: angle, fromPitch: view.pitch, toPitch: pitch, elapsed: 0 };
+    rotation = reducedMotion ? null : { from: view.angle, to: angle, fromPitch: view.pitch, toPitch: pitch, elapsed: 0 };
     if (!rotation) { view.angle = angle; view.pitch = pitch; }
     updateAngle(); redraw();
   }
@@ -639,7 +664,7 @@
     if (sites.length) {
       // Capture the entire wave before new drops arrive. A new arrival cannot
       // secretly join a toppling that has already started its red animation.
-      phase = { type: 'topple', sites, counts: sites.map(index => Math.floor(model.cells[index] / 4)), elapsed: 0, duration: reducedMotion.matches ? 90 : 220 };
+      phase = { type: 'topple', sites, counts: sites.map(index => Math.floor(model.cells[index] / 4)), elapsed: 0, duration: reducedMotion ? 90 : 220 };
       emitEscapingGrains();
       // Bound decorative work during sustained pouring; counters remain exact.
       if (particles.length > 512) particles.splice(0, particles.length - 512);
@@ -664,7 +689,7 @@
       $('participant-label').textContent = `Keep holding… ${Math.max(1, Math.ceil((3000 - resetHold.elapsed) / 1000))}`;
       if (progress === 1) resetParticipant();
     }
-    if (landing && !reducedMotion.matches && !document.hidden) {
+    if (landing && !reducedMotion && !document.hidden) {
       view.angle = (view.angle + elapsed * .00009) % (Math.PI * 2);
       // Give each reaction time to settle, including grains falling off the edge.
       demoElapsed = !phase && !drops.length && !particles.length ? demoElapsed + elapsed : 0;
@@ -689,7 +714,7 @@
     }
     if (particles.length) {
       for (const particle of particles) particle.age += elapsed * Number($('speed').value);
-      particles = reducedMotion.matches ? [] : particles.filter(particle => particle.age < particle.duration);
+      particles = reducedMotion ? [] : particles.filter(particle => particle.age < particle.duration);
       if (!particles.length) updateReadout();
       dirty = true;
     }
@@ -728,7 +753,7 @@
     }
     if (dirty) { render(); dirty = false; }
     ticking = false;
-    if (phase || drops.length || particles.length || rotation || hold || resetHold || (landing && !reducedMotion.matches && !document.hidden)) frame = requestAnimationFrame(tick);
+    if (phase || drops.length || particles.length || rotation || hold || resetHold || (landing && !reducedMotion && !document.hidden)) frame = requestAnimationFrame(tick);
   }
 
   function redraw() {
@@ -750,7 +775,7 @@
     if (![1, 5, 10, 25, 50, 100].includes(count)) return;
     if (!phase && !drops.length) avalancheStart = model.topplings;
     // Each input gets a short, independent flight, even during an avalanche.
-    drops.push({ index, count, elapsed: 0, duration: reducedMotion.matches ? 32 : 180 });
+    drops.push({ index, count, elapsed: 0, duration: reducedMotion ? 32 : 180 });
     updateReadout(); redraw();
   }
 
@@ -1016,6 +1041,15 @@
     menuKind = kind; updateLevelMenu();
   });
   $('speed').addEventListener('input', () => { $('speed-value').textContent = `${$('speed').value}×`; });
+  $('motion-preference').addEventListener('change', () => {
+    const value = $('motion-preference').value;
+    if (!motionOptions.includes(value)) return;
+    motionPreference = value;
+    try { window.localStorage.setItem(motionKey, motionPreference); } catch { /* Keep the choice for this session when storage is unavailable. */ }
+    updateMotionPreference();
+  });
+  if (deviceMotion.addEventListener) deviceMotion.addEventListener('change', updateMotionPreference);
+  else if (deviceMotion.addListener) deviceMotion.addListener(updateMotionPreference);
   $('help-open').addEventListener('click', () => {
     stopPouring();
     const intro = introductions[currentKind()];
@@ -1082,4 +1116,5 @@
   reset(true);
   updateAngle();
   showWelcome();
+  updateMotionPreference();
 })();

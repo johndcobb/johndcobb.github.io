@@ -11,14 +11,14 @@
   <title>Sandpile</title>
   <link rel="icon" type="image/svg+xml" href="icon.svg">
   <link rel="manifest" href="manifest.webmanifest">
-  <link rel="stylesheet" href="sandpile.css?v=move-limits-1">
+  <link rel="stylesheet" href="sandpile.css?v=motion-preference-1">
   <script defer src="sandpile-model.js"></script>
   <script defer src="sandpile-view.js?v=fixed-scale-1"></script>
   <script defer src="sandpile-solver.js?v=1"></script>
   <script defer src="sandpile-game.js?v=identity-six-moves-1"></script>
   <script defer src="sandpile-versus.js?v=versus-1"></script>
   <script defer src="sandpile-graph.js?v=move-limits-1"></script>
-  <script defer src="sandpile.js?v=move-limits-1"></script>
+  <script defer src="sandpile.js?v=motion-preference-2"></script>
 </head>
 <body>
   <main class="app landing-active" id="app">
@@ -88,6 +88,7 @@
   </dialog>
   <dialog id="help" aria-labelledby="help-title">
     <div class="dialog-heading"><div><p class="eyebrow">Abelian sandpile</p><h2 id="help-title">A little grain. A big reaction.</h2></div><button id="help-close" aria-label="Close help" autofocus>×</button></div>
+    <div class="motion-settings"><label for="motion-preference">Animations</label><select id="motion-preference" aria-describedby="motion-description"><option value="full" selected>Full animations</option><option value="system">Use device setting</option><option value="reduced">Reduced motion</option></select><p id="motion-description" role="status"></p></div>
     <button id="intro-reopen">Show game introduction</button>
     <div class="rule"><span>01</span><div><h3>Pour some sand.</h3><p>Choose a drop size in the toolbar, then tap a square or the Drop button. Hold the button to keep pouring onto the highlighted square. New drops arrive while the pile is toppling.</p></div></div>
     <div class="rule"><span>02</span><div><h3>Four is the tipping point.</h3><p>A stack with four or more grains turns red and gives one grain to each of its four neighbors per topple. Large stacks topple in batches. Tall stacks are drawn shorter, with a label showing their exact grain count.</p></div></div>
