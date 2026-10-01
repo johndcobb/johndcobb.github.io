@@ -12,7 +12,7 @@ sections: Overview, Talks, Schedule, Participant Information, Funding
 Organizers: [John Cobb](https://johndcobb.github.io), [Sean Grate](https://seangrate.com), [Michael Brown](https://webhome.auburn.edu/~mkb0096/)
 
 ## Overview
-[Macaulay2 workshops](https://macaulay2.com/Events/) have historically served as the primary onboarding for Macualay2 and consists of tutorials, presentations, and working on group projects. Persons of all levels of Macaulay2 experience and knowledge are encouraged to apply. This workshop will aim to serve several purposes:
+[Macaulay2 workshops](https://macaulay2.com/Events/) have historically served as the primary onboarding for Macaulay2 and consists of tutorials, presentations, and working on group projects. Persons of all levels of Macaulay2 experience and knowledge are encouraged to apply. This workshop will aim to serve several purposes:
 - To expand the capabilities and functionality of Macaulay2 and its accompanying packages.
 - To bring together members of diverse mathematical communities and begin new collaborations.
 - To provide students with hands-on learning and coding experiences
