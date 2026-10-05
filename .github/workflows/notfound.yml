@@ -59,7 +59,7 @@ jobs:
       - uses: actions/checkout@v5
       - name: Check for pending bot fixes
         id: pending
-        uses: actions/github-script@v8
+        uses: actions/github-script@v9
         with:
           script: |
             const issues = await github.paginate(github.rest.issues.listForRepo, {
