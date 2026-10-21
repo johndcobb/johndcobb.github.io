@@ -69,7 +69,9 @@
 - id: NonsimplicialSplines
   title: "Homological Defects of the Forgetful Map in Toric Chow Cohomology"
   year: 2026
-  venue: Submitted
+  venue: To appear in IMRN
+  venue_tags:
+    - IMRN
   authors:
     - John Cobb
     - Hal Schenck
@@ -78,7 +80,7 @@
     - Toric Varieties 
     - Algebraic Geometry
     - Syzygies
-  type: Preprint
+  type: Journal
 
 - id: FloquetIsospectrality
   title: "Inverse Eigenvalue Problems, Floquet Isospectrality and the Hilbert-Chow Morphism"
