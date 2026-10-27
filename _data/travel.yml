@@ -5,6 +5,14 @@
   invited: true
   start: 2027-05-03
   end: 2027-05-07
+- title: "Numerical Algebraic Geometry and Correlated Electrons"
+  venue: IPAM, UCLA
+  where: Los Angeles, CA
+  position: senior fellow
+  invited: true
+  type: visit
+  start: 2027-03-30
+  end: 2027-06-11
 - title: Macaulay2 Workshop
   venue: Auburn University
   where: Auburn, AL
@@ -18,7 +26,7 @@
   start: 2027-02-08
   end: 2027-02-12
 - title: Semester Program in Metric AG
-  venue: ICERM
+  venue: ICERM, Brown University
   where: Providence, RI
   position: long-term visitor
   invited: true
@@ -51,7 +59,7 @@
   start: 2026-05-13
   end: 2026-05-21
 - title: 'Collaborate@ICERM: AG in Spectral Theory'
-  venue: ICERM
+  venue: ICERM, Brown University
   where: Providence, RI
   type: visit
   invited: true
