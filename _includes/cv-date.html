@@ -1,0 +1,2 @@
+{%- assign cv_date = include.value | replace: '-', '–' | replace: ' –', '–' | replace: '– ', '–' | strip -%}
+<span class="date date-wrap">{{ cv_date | escape | replace: ' ', '&nbsp;' | replace: '–', '–<wbr>' | replace: ',&nbsp;', ',<wbr>&nbsp;' }}</span>

@@ -204,6 +204,11 @@
         white-space: nowrap;
     }
 
+    // Wrap long ranges at their separators, keeping each month/season and year together.
+    .date-container .date-wrap {
+        white-space: normal;
+    }
+
     .date-container .right {
         padding-left: 10px;
         color: #828282;

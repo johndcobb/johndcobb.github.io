@@ -301,7 +301,7 @@ title: CV
   {% for meeting in meetings %}
     {% if meeting.hide==nil %}
       <div class="date-container">
-        <span class="date">{{meeting.dates | replace: "-", "–" }}</span>
+        {% include cv-date.html value=meeting.dates %}
         <span style="flex: 1">{{ meeting.title}}, <small class="muted"> <em>{{ meeting.location }}</em> </small> </span>
         {% if meeting.url or meeting.grant_link %}
           <div class="extra-links">
@@ -323,7 +323,7 @@ title: CV
   {% for outreach in outreaches %}
   {% if outreach.hide==nil %}
     <div class="date-container">
-        <span class="date">{{outreach.dates | replace: "-", "–" }}</span>
+        {% include cv-date.html value=outreach.dates %}
         <span style="flex: 1">{{ outreach.title }}, {{ outreach.role }}, <small class="muted"> <em>{{ outreach.location }}</em> </small> </span>
         {% if outreach.url %}
       <div class="extra-links">
@@ -346,7 +346,7 @@ title: CV
   {% for group in groups %}
     {% if group.hide==nil %}
       <div class="date-container">
-        <span class="date">{{group.dates | replace: "-", "–" }}</span>
+        {% include cv-date.html value=group.dates %}
         <span style="flex: 1">{{ group.title }}, <small class="muted"> <em>{{ group.location }}</em> </small> </span>
         {% if group.url %}
       <div class="extra-links">
@@ -415,7 +415,7 @@ title: CV
   {% for mentor in mentorship %}
   {% if mentor.hide==nil %}
   <div class ="date-container">
-  <span class="date"> {{ mentor.years }} </span>
+  {% include cv-date.html value=mentor.years %}
   <span class="fill">{{ mentor.title }} </span>
   <span class="right">{{ mentor.location }}</span>
   </div> 
@@ -434,7 +434,7 @@ title: CV
   {% for volunteer in volunteering %}
   {% if volunteer.hide==nil %}
   <div class ="date-container">
-  <span class="date"> {{ volunteer.years }} </span>
+  {% include cv-date.html value=volunteer.years %}
   <span class="fill">{{ volunteer.title }} </span>
   <span class="right">{{ volunteer.location }}</span>
   </div> 
@@ -452,7 +452,7 @@ title: CV
   {% assign panels = site.data.service | where_exp: "item", "item.type == 'Panel'" %}
   {% for panel in panels %}
   <div class ="date-container">
-  <span class="date"> {{ panel.years }} </span>
+  {% include cv-date.html value=panel.years %}
   <span class="fill">{{ panel.title}}, {{ panel.venue }} </span>
   <span class="right">{{ panel.location }}</span>
   </div> 
