@@ -81,6 +81,7 @@
     - Algebraic Geometry
     - Syzygies
   type: Journal
+  highlight: true
 
 - id: FloquetIsospectrality
   title: "Inverse Eigenvalue Problems, Floquet Isospectrality and the Hilbert-Chow Morphism"
