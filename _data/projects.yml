@@ -11,7 +11,7 @@
   paper: "https://arxiv.org/abs/2411.11165"
 - title: Macaulay2 VSCode Extension
   type: Software
-  description: An extension in visual studio code for Macaulay2.
+  description: An extension in visual studio code for Macaulay2. Over 2000 downloads.
   code: "https://github.com/Macaulay2/vscode-macaulay2"
   image: "m2vscode.png"
 - title: "ProjectedHypersurfaceRegions.jl"
