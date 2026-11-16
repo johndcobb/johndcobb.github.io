@@ -1,3 +1,17 @@
+- title: AMS Spring Central Sectional Meeting
+  type: conference
+  venue: University of Notre Dame
+  where: Notre Dame, IN
+  start: 2028-03-18
+  end: 2028-03-19
+- title: Macaulay2 Workshop
+  type: workshop
+  venue: University of Notre Dame
+  where: Notre Dame, IN
+  invited: true
+  role: Group leader
+  start: 2028-03-13
+  end: 2028-03-17
 - title: SIAM Applied Algebraic Geometry
   type: conference
   venue: Osnabrück University
@@ -23,6 +37,7 @@
   venue: Auburn University
   where: Auburn, AL
   type: workshop
+  role: Group leader
   start: 2027-02-22
   end: 2027-02-26
 - title: Commutative Algebra, Representation Theory, and Other Interactions

@@ -94,7 +94,7 @@ I am on the job market for positions beginning in Fall 2027.
 <div class="news-travel" markdown="1">
 
 <div class="news" markdown="1">
-## Latest News
+## News
 
 <ul>
 {% for news in site.data.news limit:5 %}
@@ -106,7 +106,7 @@ I am on the job market for positions beginning in Fall 2027.
 </div>
 
 <div class="travel" markdown="1">
-## Latest Travel
+## Travel
 
 <table>
 <tbody>
@@ -114,8 +114,21 @@ I am on the job market for positions beginning in Fall 2027.
 {% for travel in future_travel %}
   {% include travel.html travel=travel %}
 {% endfor %}
-{% assign sorted_travel = site.data.travel | where_exp:'item','item.start' | sort: 'start' | reverse %}
-{% for travel in sorted_travel limit: 8 %}
+{% assign travel_limit = 8 %}
+{% assign today = site.time | date: '%Y-%m-%d' %}
+{% assign sorted_travel = site.data.travel | where_exp:'item','item.start' | sort: 'start' %}
+{% assign upcoming_travel = '' | split: ',' %}
+{% for travel in sorted_travel %}
+  {% assign travel_end = travel.end | default: travel.start | date: '%Y-%m-%d' %}
+  {% if travel_end >= today %}
+    {% assign upcoming_travel = upcoming_travel | push: travel %}
+  {% endif %}
+{% endfor %}
+{% assign latest_travel = sorted_travel | reverse %}
+{% if upcoming_travel.size >= travel_limit %}
+  {% assign latest_travel = upcoming_travel | slice: 0, travel_limit | reverse %}
+{% endif %}
+{% for travel in latest_travel limit: travel_limit %}
   {% include travel.html travel=travel %}
 {% endfor %}
 </tbody>
