@@ -69,9 +69,9 @@
 - id: NonsimplicialSplines
   title: "Homological Defects of the Forgetful Map in Toric Chow Cohomology"
   year: 2026
-  venue: To appear in IMRN
+  venue: Recommended to appear in IMRN
   venue_tags:
-    - IMRN
+    - Int. Math. Res. Not.
   authors:
     - John Cobb
     - Hal Schenck
@@ -81,6 +81,7 @@
     - Algebraic Geometry
     - Syzygies
   type: Journal
+  highlight: true
 
 - id: FloquetIsospectrality
   title: "Inverse Eigenvalue Problems, Floquet Isospectrality and the Hilbert-Chow Morphism"
@@ -98,7 +99,7 @@
     - Algebraic Geometry
     - Spectral Theory
   highlight: true
-  type: Preprint
+  type: Journal
 
 - id: ParametricGradients
   title: 'Elimination Without Eliminating: Computing Complements of Real Hypersurfaces Using Pseudo-Witness Sets'
@@ -151,7 +152,9 @@
     - David Barnhill
     - John Cobb
     - Matthew Faust
-  venue: Submitted
+  venue: Recommended to appear in J. Softw. Algebra Geom.
+  venue_tags: 
+    - J. Softw. Algebra Geom.
   pdf: https://arxiv.org/pdf/2411.11165
   arxiv: "2411.11165"
   description: A Macaulay2 package for computing the likelihood correspondence of statistical models.
@@ -161,7 +164,7 @@
     - Toric Varieties
     - Algebraic Statistics
     - Commutative Algebra
-  type: Preprint
+  type: Journal
 
 - id: SheafDiffusion
   title: Feature Propagation on Knowledge Graphs Using Cellular Sheaves
@@ -169,9 +172,9 @@
   authors:
     - John Cobb
     - Thomas Gebhart
-  venue: To appear in Journal of Applied and Computational Topology
+  venue: Recommended to appear in J. Appl. Comput. Topol.
   venue_tags:
-    - Journal of Applied and Computational Topology
+    - J. Appl. Comput. Topol.
   pdf: https://arxiv.org/pdf/2309.03773.pdf
   link: https://github.com/tgebhart/sheaf_kg_transind
   arxiv: "2309.03773"
